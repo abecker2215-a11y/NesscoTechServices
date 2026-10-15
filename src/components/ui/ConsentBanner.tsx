@@ -159,7 +159,7 @@ export function ConsentBanner() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+    <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-labelledby="consent-title">
       <div className="fixed inset-0 bg-black/50 animate-fade-in" onClick={() => setIsOpen(false)} aria-hidden="true" />
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-background shadow-xl animate-slide-up max-h-[85vh] overflow-y-auto">
         <div className="p-4 sm:p-6">
@@ -295,35 +295,6 @@ export function ConsentBanner() {
       </div>
     </div>
   );
-}
-
-// Initialize consent on app load
-export function useConsentInit() {
-  useEffect(() => {
-    // Apply stored consent on mount
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("nessco-consent");
-      if (stored) {
-        try {
-          const parsed = JSON.parse(stored);
-          if (parsed.version === 1 && parsed.consent && window.gtag) {
-            const consent = parsed.consent;
-            const granted: Record<string, "granted"> = {};
-            for (const [key, value] of Object.entries(consent)) {
-              if (value === "granted") {
-                granted[key] = "granted";
-              }
-            }
-            if (Object.keys(granted).length > 0 && window.gtag) {
-              window.gtag("consent", "update", granted);
-            }
-          }
-        } catch {
-          // Ignore parse errors
-        }
-      }
-    }
-  }, []);
 }
 
 export default ConsentBanner;
