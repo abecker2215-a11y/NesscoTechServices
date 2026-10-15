@@ -93,7 +93,3 @@ export async function dispatchOutboxItem(id: string): Promise<boolean> {
     return false;
   }
 }
-
-export function psaOutboundConfigured(): boolean {
-  return !!process.env.PSA_OUTBOUND_URL;
-}

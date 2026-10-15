@@ -15,7 +15,3 @@ export function formatPhone(phone: string): string {
   }
   return phone;
 }
-
-export function generateId(prefix = "id"): string {
-  return `${prefix}-${Math.random().toString(36).slice(2, 9)}`;
-}

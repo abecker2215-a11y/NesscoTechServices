@@ -1,7 +1,5 @@
 "use client";
 
-import { getStoredReferralCode } from "@/components/refer/ReferralCapture";
-
 export interface FunnelBeacon {
   email?: string;
   name?: string;
@@ -31,8 +29,4 @@ export function beaconDraft(beacon: FunnelBeacon): void {
   } catch {
     // Analytics must never break the user flow.
   }
-}
-
-export function beaconReferral(): string | null {
-  return getStoredReferralCode();
 }

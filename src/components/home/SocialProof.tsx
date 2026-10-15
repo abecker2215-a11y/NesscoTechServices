@@ -67,25 +67,6 @@ export function HeroTestimonial() {
   );
 }
 
-export function StatsBar() {
-  return (
-    <section className="border-y border-border bg-muted/30" aria-label="Service highlights">
-      <div className="container">
-        <dl className="grid grid-cols-2 gap-6 py-8 lg:grid-cols-4">
-          {businessStats.map((stat) => (
-            <div key={stat.label} className="text-center lg:text-left">
-              <dt className="order-2 mt-1 block text-sm text-muted-foreground">{stat.label}</dt>
-              <dd className="order-1 text-2xl font-bold tracking-tight text-foreground">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </section>
-  );
-}
-
 interface ReviewsResponse {
   source: "google" | "fallback";
   rating?: number | null;

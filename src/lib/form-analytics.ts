@@ -67,9 +67,3 @@ export function useFormAnalytics({ step, stepName, category }: FormAnalyticsOpti
 
   return { trackBack };
 }
-
-/**
- * API route for beacon analytics (POST /api/analytics/beacon)
- * This receives sendBeacon data for reliable tracking on page unload.
- */
-export const BEACON_API_PATH = "/api/analytics/beacon";

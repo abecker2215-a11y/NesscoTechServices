@@ -29,18 +29,6 @@ export function updateConsent(consent: ConsentState) {
 }
 
 /**
- * Grant all consent (user clicks "Accept All")
- */
-export function acceptAllConsent() {
-  updateConsent({
-    ad_storage: 'granted',
-    analytics_storage: 'granted',
-    ad_user_data: 'granted',
-    ad_personalization: 'granted',
-  });
-}
-
-/**
  * Grant analytics only (user accepts analytics but rejects ads)
  */
 export function acceptAnalyticsOnly() {
@@ -81,22 +69,6 @@ export function getConsentState(): ConsentState | null {
     }
   }
   return null;
-}
-
-/**
- * Check if user has granted analytics consent
- */
-export function hasAnalyticsConsent(): boolean {
-  const state = getConsentState();
-  return state?.analytics_storage === 'granted';
-}
-
-/**
- * Check if user has granted ads consent
- */
-export function hasAdsConsent(): boolean {
-  const state = getConsentState();
-  return state?.ad_storage === 'granted';
 }
 
 /**

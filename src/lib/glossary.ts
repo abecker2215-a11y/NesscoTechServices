@@ -716,28 +716,6 @@ export const glossaryTerms: GlossaryTerm[] = [
   },
 ];
 
-export function groupTermsByLetter(terms: GlossaryTerm[]): { letter: string; terms: GlossaryTerm[] }[] {
-  const groups = new Map<string, GlossaryTerm[]>();
-  for (const term of [...terms].sort((a, b) => a.term.localeCompare(b.term))) {
-    const letter = term.term[0].toUpperCase();
-    if (!groups.has(letter)) groups.set(letter, []);
-    groups.get(letter)!.push(term);
-  }
-  return [...groups.entries()].map(([letter, terms]) => ({ letter, terms }));
-}
-
-export function groupTermsByCategory(terms: GlossaryTerm[]): { category: GlossaryCategory; terms: GlossaryTerm[] }[] {
-  const groups = new Map<GlossaryCategory, GlossaryTerm[]>();
-  const categoryOrder: GlossaryCategory[] = ["Security", "Networking", "Backup", "Microsoft 365", "Cloud", "Hardware", "Support", "General"];
-  for (const term of terms) {
-    if (!groups.has(term.category)) groups.set(term.category, []);
-    groups.get(term.category)!.push(term);
-  }
-  return categoryOrder
-    .filter((cat) => groups.has(cat))
-    .map((category) => ({ category, terms: groups.get(category)!.sort((a, b) => a.term.localeCompare(b.term)) }));
-}
-
 export function getPopularTerms(terms: GlossaryTerm[], count = 6): GlossaryTerm[] {
   return [...terms].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, count);
 }

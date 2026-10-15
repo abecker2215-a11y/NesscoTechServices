@@ -190,32 +190,9 @@ export const chatEntries: ChatEntry[] = [
   },
 ];
 
-const GREETINGS = ["hi", "hello", "hey", "yo", "good morning", "good afternoon", "thanks", "thank you", "bye"];
-
 export interface ChatAnswer {
   entry: ChatEntry | null;
   greeting: boolean;
-}
-
-export function answerQuery(raw: string): ChatAnswer {
-  const q = raw.toLowerCase().trim();
-  if (!q) return { entry: null, greeting: false };
-  if (GREETINGS.some((g) => q === g || q.startsWith(g + " ") || q.startsWith(g + "!"))) {
-    return { entry: null, greeting: true };
-  }
-  let best: ChatEntry | null = null;
-  let bestScore = 0;
-  for (const entry of chatEntries) {
-    let score = 0;
-    for (const kw of entry.keywords) {
-      if (q.includes(kw)) score += kw.length > 4 ? 2 : 1;
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      best = entry;
-    }
-  }
-  return { entry: bestScore > 0 ? best : null, greeting: false };
 }
 
 export const chatChips = [
