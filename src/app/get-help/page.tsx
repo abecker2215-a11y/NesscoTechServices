@@ -1,37 +1,23 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { Suspense, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+interface Props {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
 
 /**
  * Entry redirect that preserves deep links, e.g.
  * /get-help?category=wifi&type=onsite&hours=2 → /get-help/step-1?...
  */
-function Forwarder() {
-  const router = useRouter();
-  const params = useSearchParams();
-
-  useEffect(() => {
-    const query = params.toString();
-    router.replace(`/get-help/step-1${query ? `?${query}` : ""}`);
-  }, [router, params]);
-
-  return (
-    <section className="py-16 lg:py-24" aria-label="Loading">
-      <div className="container">
-        <div className="mx-auto max-w-2xl animate-pulse space-y-4">
-          <div className="mx-auto h-8 w-3/4 rounded bg-muted" />
-          <div className="mx-auto h-4 w-1/2 rounded bg-muted" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default function GetHelpEntryPage() {
-  return (
-    <Suspense fallback={null}>
-      <Forwarder />
-    </Suspense>
-  );
+export default async function GetHelpEntryPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const query = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (Array.isArray(value)) {
+      value.forEach((v) => query.append(key, v));
+    } else if (value !== undefined) {
+      query.append(key, value);
+    }
+  }
+  const qs = query.toString();
+  redirect(`/get-help/step-1${qs ? `?${qs}` : ""}`);
 }
