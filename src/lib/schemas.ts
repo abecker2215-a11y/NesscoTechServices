@@ -12,7 +12,7 @@ export function organizationSchema() {
     name: siteConfig.name,
     alternateName: "Nessco",
     url: siteUrl,
-    logo: `${siteUrl}/icon-512.png`,
+    logo: `${siteUrl}/icon-512.svg`,
     sameAs: [
       "https://www.google.com/maps/place/Nessco+Tech+Services",
       "https://www.facebook.com/nesscotechservices",
@@ -58,7 +58,7 @@ export function localBusinessSchema() {
     name: siteConfig.name,
     alternateName: "Nessco",
     url: siteUrl,
-    logo: `${siteUrl}/icon-512.png`,
+    logo: `${siteUrl}/icon-512.svg`,
     description: "Professional managed IT, cybersecurity, and cloud services for Tampa Bay businesses. Microsoft 365, networking, security, data backup, and IT support for growing companies.",
     telephone: siteConfig.phone,
     email: siteConfig.email,
