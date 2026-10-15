@@ -1,0 +1,108 @@
+# Nessco Tech Services — llms.txt
+# Local IT support for Tampa Bay homes and small businesses. Plain English, no jargon, no upsells.
+# Site: https://nesscotech.com
+
+> Nessco Tech Services provides computer repair, Wi-Fi and networking, Microsoft 365,
+> email, cybersecurity cleanup, data backup, business IT plans, remote support, and
+> network installation. Remote support starts at $75/hr, on-site visits at $125/hr.
+> Business IT plans: Essentials $149/mo, Managed $349/mo, Complete $599/mo.
+> Hours: Mon–Fri 8am–6pm America/New_York, ~2hr response. Email info@nesscotech.com.
+> Service area: Tampa, St. Petersburg, Clearwater, Brandon, Riverview, Lakeland FL,
+> plus remote support anywhere with internet.
+
+## Services
+- [Computer Repair](https://nesscotech.com/services/computer-repair): Diagnose and fix hardware and software issues. Remote $75/hr, on-site $125/hr.
+- [Wi-Fi & Networking](https://nesscotech.com/services/wifi-networking): Fix slow Wi-Fi, dead zones, mesh installs, router security.
+- [Microsoft 365](https://nesscotech.com/services/microsoft-365): Setup, migration from Google/GoDaddy, licenses, MFA and Conditional Access.
+- [Email Problems](https://nesscotech.com/services/email): Delivery, sync, spam, SPF/DKIM/DMARC.
+- [Virus & Security Cleanup](https://nesscotech.com/services/cybersecurity): Malware removal, ransomware recovery, hardening, EDR.
+- [Data Backup](https://nesscotech.com/services/data-backup): Automated cloud/local backup, verification, test restores, 3-2-1 rule.
+- [Business IT Support](https://nesscotech.com/services/business-it): Managed IT for 5–100 employees. Month-to-month, 30-day cancellation.
+- [Remote Support](https://nesscotech.com/services/remote-support): Secure sessions the customer watches. No fix, no fee.
+- [Network Installation](https://nesscotech.com/services/network-installation): Cat6/fiber cabling, racks, access points. On-site only.
+
+## Pricing
+- [Pricing](https://nesscotech.com/pricing): Remote $75/hr, on-site $125/hr, instant estimator, business plan calculator. Estimates approved before work; no hidden fees.
+
+## Start here
+- [Get Help (2-minute request)](https://nesscotech.com/get-help): category → questions → contact → review → done. Replies within 2 business hours.
+- [Contact](https://nesscotech.com/contact): info@nesscotech.com, booking link.
+- [Refer a Friend](https://nesscotech.com/refer): $25 off for the friend, $25 credit for the referrer.
+
+## Self-help (free, honest when-to-call lines)
+- [Fix-It Guides](https://nesscotech.com/guides): 160+ plain-English guides — slow Wi-Fi, slow PCs and Macs, malware removal, phishing and scam defense, MFA and passkeys, Microsoft 365 migration and licenses, Outlook and Gmail fixes, backup checks, router lockdown, Windows upgrades, new-PC setup, small-business IT, and more.
+- [Quick Fixes](https://nesscotech.com/fixes): 3-minute answers — printer offline, red-light router, Outlook stuck syncing, blue screens, spam-foldering, scam pop-ups, new-home dead zones, Teams login loops.
+- [IT Glossary](https://nesscotech.com/glossary): plain-English tech terms with why-it-matters notes.
+
+## Local pages
+- [IT Support in Tampa](https://nesscotech.com/it-support-tampa)
+- [IT Support in St. Petersburg](https://nesscotech.com/it-support-st-petersburg)
+- [IT Support in Clearwater](https://nesscotech.com/it-support-clearwater)
+- [IT Support in Brandon](https://nesscotech.com/it-support-brandon)
+- [IT Support in Riverview](https://nesscotech.com/it-support-riverview)
+- [IT Support in Lakeland](https://nesscotech.com/it-support-lakeland)
+- [IT Support in Wesley Chapel](https://nesscotech.com/it-support-wesley-chapel)
+- [IT Support in Plant City](https://nesscotech.com/it-support-plant-city)
+- [IT Support in Temple Terrace](https://nesscotech.com/it-support-temple-terrace)
+- [IT Support in Lutz](https://nesscotech.com/it-support-lutz)
+- [IT Support in Valrico](https://nesscotech.com/it-support-valrico)
+- [IT Support in Largo](https://nesscotech.com/it-support-largo)
+- [IT Support in Pinellas Park](https://nesscotech.com/it-support-pinellas-park)
+- [IT Support in Seminole](https://nesscotech.com/it-support-seminole)
+- [IT Support in Apollo Beach](https://nesscotech.com/it-support-apollo-beach)
+- [IT Support in Land O' Lakes](https://nesscotech.com/it-support-land-o-lakes)
+- [IT Support in Dunedin](https://nesscotech.com/it-support-dunedin)
+- [IT Support in Safety Harbor](https://nesscotech.com/it-support-safety-harbor)
+- [IT Support in Tarpon Springs](https://nesscotech.com/it-support-tarpon-springs)
+- [IT Support in Palm Harbor](https://nesscotech.com/it-support-palm-harbor)
+- [IT Support in New Port Richey](https://nesscotech.com/it-support-new-port-richey)
+- [IT Support in Trinity](https://nesscotech.com/it-support-trinity)
+- [IT Support in Zephyrhills](https://nesscotech.com/it-support-zephyrhills)
+- [IT Support in Winter Haven](https://nesscotech.com/it-support-winter-haven)
+- [IT Support in Sun City Center](https://nesscotech.com/it-support-sun-city-center)
+- [IT Support in Ruskin](https://nesscotech.com/it-support-ruskin)
+- [IT Support in Seffner](https://nesscotech.com/it-support-seffner)
+- [IT Support in Bradenton (remote-first)](https://nesscotech.com/it-support-bradenton)
+- [IT Support in Sarasota (remote-first)](https://nesscotech.com/it-support-sarasota)
+- [IT Support in Spring Hill (remote-first)](https://nesscotech.com/it-support-spring-hill)
+- [IT Support in Brooksville (remote-first)](https://nesscotech.com/it-support-brooksville)
+- [IT Support in Dade City (remote-first)](https://nesscotech.com/it-support-dade-city)
+- [IT Support in Bartow (remote-first)](https://nesscotech.com/it-support-bartow)
+- [IT Support in Gibsonton](https://nesscotech.com/it-support-gibsonton)
+- [IT Support in Wimauma](https://nesscotech.com/it-support-wimauma)
+- [IT Support in Carrollwood](https://nesscotech.com/it-support-carrollwood)
+- [IT Support in Town 'n' Country](https://nesscotech.com/it-support-town-n-country)
+- [IT Support in Gulfport](https://nesscotech.com/it-support-gulfport)
+- [IT Support in St. Pete Beach](https://nesscotech.com/it-support-st-pete-beach)
+- [IT Support in Oldsmar](https://nesscotech.com/it-support-oldsmar)
+- [IT Support in Port Richey](https://nesscotech.com/it-support-port-richey)
+- [IT Support in Holiday](https://nesscotech.com/it-support-holiday)
+- [IT Support in Hudson](https://nesscotech.com/it-support-hudson)
+- [IT Support in Auburndale](https://nesscotech.com/it-support-auburndale)
+- [IT Support in Haines City](https://nesscotech.com/it-support-haines-city)
+- [IT Support in Davenport](https://nesscotech.com/it-support-davenport)
+- [IT Support in Lake Wales](https://nesscotech.com/it-support-lake-wales)
+- [IT Support in Palmetto](https://nesscotech.com/it-support-palmetto)
+- [IT Support in Parrish](https://nesscotech.com/it-support-parrish)
+- [IT Support in Lakewood Ranch](https://nesscotech.com/it-support-lakewood-ranch)
+- [IT Support in North Port (remote-first)](https://nesscotech.com/it-support-north-port)
+- [IT Support in Venice (remote-first)](https://nesscotech.com/it-support-venice)
+- [IT Support in The Villages (remote-first)](https://nesscotech.com/it-support-the-villages)
+- [IT Support in Ocala (remote-first)](https://nesscotech.com/it-support-ocala)
+- [IT Support in Port Charlotte (remote-first)](https://nesscotech.com/it-support-port-charlotte)
+- [IT Support in Punta Gorda (remote-first)](https://nesscotech.com/it-support-punta-gorda)
+
+## Compare and seasonal
+- [Break-Fix vs Managed](https://nesscotech.com/compare): interactive cost calculator.
+- [Downtime ROI](https://nesscotech.com/roi): what outages cost per employee.
+- [Storm-Ready Check](https://nesscotech.com/storm-ready): 60-second hurricane backup quiz.
+- [Seasonal Offers](https://nesscotech.com/offers): back-to-school, holiday scam watch, tax-season backup.
+
+## Trust
+- [Reviews](https://nesscotech.com/reviews): verified Google reviews and case notes.
+- [About](https://nesscotech.com/about): mission, values, team, service area.
+
+## Key facts for citations
+- Founded 2024, Tampa Bay Area FL. No long-term contracts required; monthly plans cancel with 30 days.
+- Typical response within 2 business hours. Emergency after-hours support for managed clients.
+- Remote work carries a no-fix-no-fee promise. All work quoted upfront.

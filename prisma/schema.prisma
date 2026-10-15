@@ -1,0 +1,602 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String?
+  role          Role      @default(CLIENT)
+  emailVerified DateTime?
+  image         String?
+  clientId      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime?
+  magicLinkToken String?  @unique
+  magicLinkExpires DateTime?
+
+  client            Client?          @relation(fields: [clientId], references: [id])
+  sessions          Session[]
+  accounts          Account[]
+  tickets           Ticket[]         @relation("TicketAssignee")
+  createdTickets    Ticket[]         @relation("TicketCreator")
+  comments          TicketComment[]  @relation("CommentAuthor")
+  activities        Activity[]
+  pushSubscriptions PushSubscription[]
+
+  @@index([clientId])
+  @@index([magicLinkToken])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Client {
+  id              String   @id @default(cuid())
+  name            String
+  slug            String   @unique
+  domain          String?  @unique
+  logo            String?
+  primaryContact  String?
+  primaryEmail    String
+  primaryPhone    String?
+  address         String?
+  city            String?
+  state           String?
+  zipCode         String?
+  timezone        String   @default("America/New_York")
+  planId          String?
+  status          ClientStatus @default(ACTIVE)
+  portalEnabled   Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  users           User[]
+  tickets         Ticket[]
+  assets          Asset[]
+  billings        Billing[]
+  usages          Usage[]
+  maintenanceWindows MaintenanceWindow[]
+  serviceRequests ServiceRequest[]
+  activities      Activity[]
+  churnAlerts     ChurnAlert[]
+
+  @@index([slug])
+  @@index([domain])
+  @@index([status])
+}
+
+model Ticket {
+  id            String       @id @default(cuid())
+  externalId    String?      @unique
+  title         String
+  description   String       @db.Text
+  status        TicketStatus @default(OPEN)
+  priority      Priority     @default(MEDIUM)
+  category      TicketCategory
+  source        TicketSource @default(PORTAL)
+  clientId      String
+  createdById   String
+  assigneeId    String?
+  slaDueAt      DateTime?
+  resolvedAt    DateTime?
+  closedAt      DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  client        Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  createdBy     User         @relation("TicketCreator", fields: [createdById], references: [id])
+  assignee      User?        @relation("TicketAssignee", fields: [assigneeId], references: [id])
+  comments      TicketComment[]
+  activities    Activity[]
+
+  @@index([clientId])
+  @@index([status])
+  @@index([assigneeId])
+  @@index([externalId])
+}
+
+model TicketComment {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  internal  Boolean  @default(false)
+  ticketId  String
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  author    User     @relation("CommentAuthor", fields: [authorId], references: [id])
+
+  @@index([ticketId])
+}
+
+model Asset {
+  id              String        @id @default(cuid())
+  externalId      String?       @unique
+  name            String
+  type            AssetType
+  manufacturer    String?
+  model           String?
+  serialNumber    String?
+  os              String?
+  osVersion       String?
+  ipAddress       String?
+  macAddress      String?
+  location        String?
+  purchaseDate    DateTime?
+  warrantyExpires DateTime?
+  status          AssetStatus   @default(ACTIVE)
+  clientId        String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  client          Client        @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([type])
+  @@index([status])
+  @@index([externalId])
+}
+
+model Billing {
+  id            String         @id @default(cuid())
+  externalId    String?        @unique
+  clientId      String
+  type          BillingType
+  amount        Decimal        @db.Decimal(10, 2)
+  currency      String         @default("USD")
+  status        BillingStatus  @default(PENDING)
+  description   String
+  invoiceUrl    String?
+  dueDate       DateTime?
+  paidAt        DateTime?
+  periodStart   DateTime
+  periodEnd     DateTime
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  client        Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([status])
+  @@index([externalId])
+}
+
+model Usage {
+  id            String   @id @default(cuid())
+  clientId      String
+  metric        UsageMetric
+  value         Decimal  @db.Decimal(12, 2)
+  unit          String
+  periodStart   DateTime
+  periodEnd     DateTime
+  recordedAt    DateTime @default(now())
+
+  client        Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId, metric])
+  @@index([periodStart, periodEnd])
+}
+
+model MaintenanceWindow {
+  id            String       @id @default(cuid())
+  clientId      String
+  title         String
+  description   String?
+  type          MaintenanceType
+  status        MaintenanceStatus @default(SCHEDULED)
+  scheduledStart DateTime
+  scheduledEnd   DateTime
+  actualStart   DateTime?
+  actualEnd     DateTime?
+  createdById   String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  client        Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([status])
+  @@index([scheduledStart])
+}
+
+model ServiceRequest {
+  id            String             @id @default(cuid())
+  clientId      String
+  type          ServiceRequestType
+  title         String
+  description   String             @db.Text
+  status        ServiceRequestStatus @default(PENDING)
+  priority      Priority           @default(MEDIUM)
+  requestedFor  DateTime?
+  assignedToId  String?
+  completedAt   DateTime?
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  client        Client             @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([status])
+  @@index([type])
+}
+
+model Activity {
+  id        String        @id @default(cuid())
+  type      ActivityType
+  title     String
+  description String?     @db.Text
+  metadata  Json?
+  userId    String?
+  clientId  String?
+  ticketId  String?
+  createdAt DateTime      @default(now())
+
+  user      User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  client    Client?       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  ticket    Ticket?       @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([userId])
+  @@index([ticketId])
+  @@index([createdAt])
+}
+
+model StormLead {
+  id            String    @id @default(cuid())
+  email         String
+  name          String?
+  score         Int
+  answers       Json
+  reportToken   String    @unique
+  unsubscribedAt DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  dripSends     DripSend[]
+
+  @@index([email])
+  @@index([reportToken])
+}
+
+model DripSend {
+  id        String    @id @default(cuid())
+  leadId    String
+  step      Int
+  sentAt    DateTime  @default(now())
+
+  lead      StormLead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@unique([leadId, step])
+  @@index([leadId])
+}
+
+enum ReferralStatus {
+  SENT
+  BOOKED
+  CONVERTED
+  CREDITED
+}
+
+model Referral {
+  id            String         @id @default(cuid())
+  code          String         @unique
+  referrerName  String
+  referrerEmail String
+  friendName    String?
+  friendEmail   String?
+  status        ReferralStatus @default(SENT)
+  convertedAt   DateTime?
+  creditIssuedAt DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@index([code])
+  @@index([referrerEmail])
+  @@index([friendEmail])
+  @@index([status])
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  TECHNICIAN
+  CLIENT
+  CLIENT_ADMIN
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  ONBOARDING
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_CLIENT
+  WAITING_VENDOR
+  RESOLVED
+  CLOSED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+  EMERGENCY
+}
+
+enum TicketCategory {
+  HARDWARE
+  SOFTWARE
+  NETWORK
+  SECURITY
+  EMAIL
+  BACKUP
+  ACCESS
+  ONBOARDING
+  OFFBOARDING
+  OTHER
+}
+
+enum TicketSource {
+  PORTAL
+  EMAIL
+  PHONE
+  CHAT
+  MONITORING
+  PSA_SYNC
+}
+
+enum AssetType {
+  WORKSTATION
+  LAPTOP
+  SERVER
+  NETWORK_DEVICE
+  PRINTER
+  MOBILE
+  TABLET
+  STORAGE
+  OTHER
+}
+
+enum AssetStatus {
+  ACTIVE
+  MAINTENANCE
+  RETIRED
+  LOST
+  STAGING
+}
+
+enum BillingType {
+  RECURRING
+  USAGE
+  PROJECT
+  HARDWARE
+  LICENSE
+  CREDIT
+}
+
+enum BillingStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+  REFUNDED
+}
+
+enum UsageMetric {
+  REMOTE_HOURS
+  ONSITE_HOURS
+  TICKETS_CREATED
+  TICKETS_RESOLVED
+  BACKUP_GB
+  ENDPOINTS_PROTECTED
+  M365_LICENSES
+  STORAGE_GB
+  BANDWIDTH_GB
+}
+
+enum MaintenanceType {
+  PATCHING
+  BACKUP_VERIFICATION
+  SECURITY_AUDIT
+  HARDWARE_CHECK
+  NETWORK_OPTIMIZATION
+  OTHER
+}
+
+enum MaintenanceStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  FAILED
+}
+
+enum ServiceRequestType {
+  NEW_USER
+  USER_ACCESS
+  SOFTWARE_INSTALL
+  HARDWARE_REQUEST
+  ACCOUNT_RESET
+  PERMISSION_CHANGE
+  EMAIL_CONFIG
+  BACKUP_RESTORE
+  SECURITY_REVIEW
+  OTHER
+}
+
+enum ServiceRequestStatus {
+  PENDING
+  APPROVED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ActivityType {
+  TICKET_CREATED
+  TICKET_UPDATED
+  TICKET_COMMENT
+  TICKET_ASSIGNED
+  TICKET_RESOLVED
+  ASSET_ADDED
+  ASSET_UPDATED
+  BILLING_GENERATED
+  BILLING_PAID
+  MAINTENANCE_SCHEDULED
+  MAINTENANCE_COMPLETED
+  SERVICE_REQUESTED
+  USER_LOGIN
+  PASSWORD_CHANGED
+}
+
+// Abandoned get-help funnel drafts. Captured server-side as visitors move
+// through the wizard; emailed once the next morning if never submitted.
+model FunnelDraft {
+  id          String    @id @default(cuid())
+  email       String?
+  name        String?
+  step        Int       @default(1)
+  category    String?
+  payload     Json?
+  submittedAt DateTime?
+  recoveredAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([email])
+  @@index([submittedAt])
+  @@index([updatedAt])
+}
+
+// One review ask per resolved ticket (plus one nudge).
+model ReviewRequest {
+  id        String    @id @default(cuid())
+  ticketId  String    @unique
+  clientId  String
+  email     String?
+  asksSent  Int       @default(0)
+  lastSentAt DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([clientId])
+}
+
+// Web-push subscriptions for portal users (ticket updates, credits).
+model PushSubscription {
+  id        String   @id @default(cuid())
+  userId    String
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+enum PsaOutboxStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+// Outbound PSA sync queue: portal-originated events (comments, ticket
+// creates) dispatched to the connected PSA by the cron worker with retry.
+model PsaOutbox {
+  id        String          @id @default(cuid())
+  source    String
+  event     String
+  payload   Json
+  status    PsaOutboxStatus @default(PENDING)
+  attempts  Int             @default(0)
+  lastError String?
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Churn-risk alerts (de-duplicated: one open alert per client+reason).
+model ChurnAlert {
+  id        String    @id @default(cuid())
+  clientId  String
+  reason    String
+  detail    String?
+  resolvedAt DateTime?
+  createdAt DateTime  @default(now())
+
+  client    Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([createdAt])
+}
+
+enum IncidentStatus {
+  INVESTIGATING
+  IDENTIFIED
+  MONITORING
+  RESOLVED
+}
+
+// Public status page incidents (staff-managed via API).
+model Incident {
+  id        String         @id @default(cuid())
+  title     String
+  status    IncidentStatus @default(INVESTIGATING)
+  updates   Json?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  resolvedAt DateTime?
+
+  @@index([status])
+  @@index([createdAt])
+}

@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: msp-portal-db
+    environment:
+      POSTGRES_USER: msp
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-msp_local_dev}
+      POSTGRES_DB: msp_portal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U msp -d msp_portal"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-}
+    container_name: msp-website
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgresql://msp:${DB_PASSWORD:-msp_local_dev}@postgres:5432/msp_portal?schema=public
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=http://localhost:3000
+      - AUTH_TRUST_HOST=true
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://nesscotech.com}
+      - NEXT_PUBLIC_PLAUSIBLE_DOMAIN=${NEXT_PUBLIC_PLAUSIBLE_DOMAIN:-nesscotech.com}
+      - SMTP_URL=smtp://no-reply:Nessco2215!654!@mail.nesscotech.com:587
+      - RESEND_API_KEY=re_QE2yJbxS_AmmEkY4r6tVEY6di1VUpHqBa
+      - NOTIFY_TO=abecker2215@gmail.com
+      - EMAIL_FROM=Nessco Tech Services <onboarding@resend.dev>
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID:-G-05K9T7QMCP}
+      - NEXT_PUBLIC_BOOKING_URL=${NEXT_PUBLIC_BOOKING_URL:-}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}
+      - AZURE_OPENAI_DEPLOYMENT=${AZURE_OPENAI_DEPLOYMENT:-gpt-4o-mini}
+      - CONNECTWISE_WEBHOOK_SECRET=${CONNECTWISE_WEBHOOK_SECRET:-}
+      - AUTOTASK_WEBHOOK_SECRET=${AUTOTASK_WEBHOOK_SECRET:-}
+      - HALOPSA_WEBHOOK_SECRET=${HALOPSA_WEBHOOK_SECRET:-}
+      - CRON_SECRET=${CRON_SECRET:-}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID:-}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN:-}
+      - TWILIO_FROM_NUMBER=${TWILIO_FROM_NUMBER:-}
+      - EMERGENCY_SMS_TO=${EMERGENCY_SMS_TO:-}
+      - PSA_OUTBOUND_URL=${PSA_OUTBOUND_URL:-}
+      - PSA_OUTBOUND_SECRET=${PSA_OUTBOUND_SECRET:-}
+      - PSA_OUTBOUND_SOURCE=${PSA_OUTBOUND_SOURCE:-NESSCO-PORTAL}
+      - GOOGLE_REVIEW_URL=${GOOGLE_REVIEW_URL:-}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

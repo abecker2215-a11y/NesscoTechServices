@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+Disallow: /get-help/step-*
+
+# Host
+Host: https://nesscotech.com
+
+# Sitemaps
+Sitemap: https://nesscotech.com/sitemap.xml

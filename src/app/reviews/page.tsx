@@ -1,0 +1,44 @@
+import { Metadata } from "next";
+import { ReviewsWall } from "@/components/reviews/ReviewsWall";
+import { Button } from "@/components/ui";
+import { JsonLd } from "@/components/layout/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
+import { Star } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Reviews — Tampa Bay Folks Who Got Fixed",
+  description:
+    "Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay. Real problems, exact quotes, no surprises.",
+};
+
+export default function ReviewsPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Reviews", path: "/reviews" }])} />
+      <section className="py-16 lg:py-24" aria-labelledby="reviews-heading">
+        <div className="container">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <Star className="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h1 id="reviews-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
+              Tampa Bay folks who got fixed
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Real jobs, real local businesses. Ask us for references — we&apos;re happy to connect you.
+            </p>
+          </div>
+
+          <ReviewsWall />
+
+          <div className="mt-12 text-center">
+            <p className="mb-4 text-muted-foreground">Ready to be our next five stars?</p>
+            <Button size="lg" href="/get-help">
+              Start a service request
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

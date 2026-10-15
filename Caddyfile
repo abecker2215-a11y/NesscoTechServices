@@ -1,0 +1,13 @@
+# Caddy serves HTTPS automatically for the configured hostname.
+# Before starting: point an A record for nesscotech.com (and www.) at your VPS IP.
+# Email delivery for info@nesscotech.com must be handled separately (MX records).
+
+nesscotech.com {
+	encode gzip
+	header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	reverse_proxy app:3000
+}
+
+www.nesscotech.com {
+	redir https://nesscotech.com{uri} permanent
+}
