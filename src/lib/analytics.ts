@@ -1,10 +1,12 @@
 /**
  * Provider-agnostic funnel analytics.
  *
- * Every event goes to two places:
+ * Every event goes to three places:
  *  1. `window.dataLayer` — picked up automatically by Google Tag Manager /
  *     GA4 if you ever add it.
- *  2. Plausible custom events (`plausible('event-name')`) — active now that
+ *  2. Google Analytics 4 via `gtag('event', ...)` — active now that the GA4
+ *     gtag snippet is in `src/app/layout.tsx` (NEXT_PUBLIC_GA_ID).
+ *  3. Plausible custom events (`plausible('event-name')`) — active now that
  *     the Plausible snippet is in `src/app/layout.tsx`. Plausible props are
  *     flat strings only, so values are stringified and personal data must
  *     never be passed here (see Privacy Policy).
@@ -12,6 +14,8 @@
  * No-ops on the server and when providers are blocked. Analytics must never
  * break the user flow.
  */
+export type GtagFn = (command: string, ...args: unknown[]) => void;
+
 export type FunnelEvent =
   | "hero_quiz_pick"
   | "pricing_tab_select"
@@ -72,6 +76,7 @@ export type FunnelEvent =
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    gtag?: GtagFn;
     plausible?: (event: string, options?: { props?: Record<string, string> }) => void;
   }
 }
@@ -81,6 +86,11 @@ export function trackEvent(event: FunnelEvent, props?: Record<string, unknown>):
   try {
     window.dataLayer = window.dataLayer ?? [];
     window.dataLayer.push({ event, ...props });
+    // Send to Google Analytics 4 so funnel/conversion events appear in GA4
+    // reporting, not just Plausible. Requires the GA4 gtag snippet in layout.tsx.
+    if (typeof window.gtag === "function") {
+      window.gtag("event", event, ga4SafeProps(props));
+    }
     if (typeof window.plausible === "function") {
       const safeProps: Record<string, string> = {};
       for (const [key, value] of Object.entries(props ?? {})) {
@@ -97,4 +107,23 @@ export function trackEvent(event: FunnelEvent, props?: Record<string, unknown>):
   } catch {
     // Analytics must never break the user flow.
   }
+}
+
+/** Sanitize event props for GA4: drop objects/arrays, cap string length,
+ *  and strip known PII keys. Never passes email/phone/name to GA4. */
+function ga4SafeProps(props?: Record<string, unknown>): Record<string, unknown> {
+  if (!props) return {};
+  const clean: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(props)) {
+    const k = key.toLowerCase();
+    if (k.includes("email") || k.includes("phone") || k.includes("name")) continue; // no PII
+    if (value === undefined || value === null) continue;
+    if (typeof value === "object") continue; // GA4 drops non-primitives
+    let str = String(value);
+    if (str.length > 0) {
+      if (str.length > 500) str = str.slice(0, 500) + "…"; // GA4 param value limit
+      clean[key] = str;
+    }
+  }
+  return clean;
 }

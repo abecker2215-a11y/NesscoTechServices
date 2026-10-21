@@ -2,6 +2,7 @@
  * Consent Mode v2 utilities for Google Analytics 4
  * Call these functions when user interacts with your consent banner
  */
+import type { GtagFn } from "./analytics";
 
 export type ConsentState = {
   ad_storage?: 'granted' | 'denied';
@@ -10,12 +11,9 @@ export type ConsentState = {
   ad_personalization?: 'granted' | 'denied';
 };
 
-/** Extend Window type for gtag and dataLayer */
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-    dataLayer?: Record<string, unknown>[];
-  }
+function getGtag(): GtagFn | undefined {
+  if (typeof window === 'undefined') return undefined;
+  return window.gtag;
 }
 
 /**
@@ -23,8 +21,9 @@ declare global {
  * Call this when user accepts/rejects cookies
  */
 export function updateConsent(consent: ConsentState) {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('consent', 'update', consent);
+  const gtag = getGtag();
+  if (gtag) {
+    gtag('consent', 'update', consent);
   }
 }
 
@@ -57,10 +56,10 @@ export function rejectAllConsent() {
  */
 export function getConsentState(): ConsentState | null {
   if (typeof window === 'undefined') return null;
-  
+
   const dataLayer = window.dataLayer;
   if (!dataLayer || !Array.isArray(dataLayer)) return null;
-  
+
   // Find the most recent consent state
   for (let i = dataLayer.length - 1; i >= 0; i--) {
     const entry = dataLayer[i];
@@ -80,7 +79,7 @@ export function applyStoredConsent() {
     const stored = localStorage.getItem('nessco-consent');
     if (stored) {
       const parsed = JSON.parse(stored);
-      if (parsed.version === 1 && parsed.consent && window.gtag) {
+      if (parsed.version === 1 && parsed.consent) {
         const consent = parsed.consent;
         const granted: Record<string, 'granted'> = {};
         for (const [key, value] of Object.entries(consent)) {
@@ -88,8 +87,11 @@ export function applyStoredConsent() {
             granted[key] = 'granted';
           }
         }
-        if (Object.keys(granted).length > 0 && window.gtag) {
-          window.gtag('consent', 'update', granted);
+        if (Object.keys(granted).length > 0) {
+          const gtag = getGtag();
+          if (gtag) {
+            gtag('consent', 'update', granted);
+          }
         }
       }
     }
