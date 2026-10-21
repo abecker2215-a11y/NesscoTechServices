@@ -7,11 +7,14 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 export const metadata: Metadata = {
   title: "IT Resources & Blog",
   description: "IT tips, security alerts, and technology guides for Tampa Bay businesses. Plain-English advice from your local IT team.",
+  alternates: { canonical: "/blog" },
 };
 
 const posts = [
   {
     slug: "signs-you-need-managed-it",
+    href: "/services/managed-it-services",
+    linkLabel: "See managed IT services",
     title: "7 Signs Your Business Needs Managed IT (And What to Do About It)",
     excerpt: "Frequent downtime, security worries, and IT costs that spiral — here's when to stop DIY-ing and start delegating.",
     category: "Business IT",
@@ -20,6 +23,8 @@ const posts = [
   },
   {
     slug: "mfa-small-business",
+    href: "/guides/turn-on-mfa-microsoft-365",
+    linkLabel: "Turn on MFA in 10 minutes",
     title: "MFA: The 10-Minute Security Upgrade That Stops 99% of Attacks",
     excerpt: "Most breaches start with a stolen password. Here's how to lock down your Microsoft 365 or Google Workspace in minutes.",
     category: "Security",
@@ -28,6 +33,8 @@ const posts = [
   },
   {
     slug: "backup-mistakes",
+    href: "/guides/backup-checklist-small-business",
+    linkLabel: "Monthly backup check guide",
     title: "5 Backup Mistakes That Give Tampa Businesses a False Sense of Security",
     excerpt: "You have backups — but would they actually work when you need them? Here's how to test without the panic.",
     category: "Data Protection",
@@ -36,6 +43,8 @@ const posts = [
   },
   {
     slug: "hurricane-it-prep",
+    href: "/guides/outage-continuity-small-business",
+    linkLabel: "Storm continuity guide",
     title: "Hurricane Season IT Prep: A 15-Minute Checklist for Tampa Bay Businesses",
     excerpt: "Storm season is here. Make sure your data, devices, and team are ready for whatever comes.",
     category: "Disaster Prep",
@@ -44,6 +53,8 @@ const posts = [
   },
   {
     slug: "microsoft-copilot-guide",
+    href: "/services/cloud-solutions/microsoft-365",
+    linkLabel: "Microsoft 365 services",
     title: "Microsoft Copilot for Small Business: What It Is, What It Costs, and Whether You Need It",
     excerpt: "Copilot is everywhere — but is it worth $30/user/mo for your team? An honest breakdown.",
     category: "Microsoft 365",
@@ -52,6 +63,8 @@ const posts = [
   },
   {
     slug: "phishing-red-flags",
+    href: "/guides/spot-stop-phishing-emails",
+    linkLabel: "Phishing spotting guide",
     title: "Phishing Emails: 10 Red Flags Your Team Should Know",
     excerpt: "The best phishing training is the one people actually read. Share this with your team.",
     category: "Security",
@@ -107,25 +120,25 @@ export default function BlogPage() {
                       <span aria-hidden="true">·</span>
                       <span>{post.date}</span>
                     </div>
-                    <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h2>
-                    <p className="text-sm text-muted-foreground flex-1">{post.excerpt}</p>
-                    <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-                        {post.readTime}
-                      </span>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="flex items-center gap-1 font-medium text-primary hover:underline"
-                      >
-                        Read more
-                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                      </Link>
-                    </div>
+                      <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        <Link href={post.href}>
+                          {post.title}
+                        </Link>
+                      </h2>
+                      <p className="text-sm text-muted-foreground flex-1">{post.excerpt}</p>
+                      <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                          {post.readTime}
+                        </span>
+                        <Link
+                          href={post.href}
+                          className="flex items-center gap-1 font-medium text-primary hover:underline"
+                        >
+                          {post.linkLabel}
+                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        </Link>
+                      </div>
                   </article>
                 </Reveal>
               ))}

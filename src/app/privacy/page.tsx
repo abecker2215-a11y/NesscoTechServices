@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Nessco Tech Services collects, uses, and protects information you share through this website.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -56,9 +58,9 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-semibold text-foreground mb-2">Contact</h2>
               <p>
                 Questions about this policy? Email{" "}
-                <a href={`mailto:${siteConfig.email}`} className="text-primary underline hover:text-primary/80">
+                <Link href="/contact" className="text-primary underline hover:text-primary/80">
                   {siteConfig.email}
-                </a>{" "}
+                </Link>{" "}
                 or call{" "}
                 <a href={`tel:${siteConfig.phone.replace(/\D/g, "")}`} className="text-primary underline hover:text-primary/80">
                   {siteConfig.phone}

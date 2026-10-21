@@ -44,6 +44,13 @@ const nextConfig: NextConfig = {
       { source: "/guides/wifi-kids-homework-priority", destination: "/guides/wifi-business-traffic-priority", permanent: true },
       { source: "/guides/snowbird-setup", destination: "/guides/multi-site-business-setup", permanent: true },
       { source: "/guides/kid-safe-tablet-setup", destination: "/guides/employee-device-restrictions", permanent: true },
+      { source: "/wheresmyvape/:path*", destination: "http://wheresmyvape-nginx/wheresmyvape/:path*", permanent: true },
+      { source: "/blog/signs-you-need-managed-it", destination: "/services/managed-it-services", permanent: true },
+      { source: "/blog/mfa-small-business", destination: "/guides/turn-on-mfa-microsoft-365", permanent: true },
+      { source: "/blog/backup-mistakes", destination: "/guides/backup-checklist-small-business", permanent: true },
+      { source: "/blog/hurricane-it-prep", destination: "/guides/outage-continuity-small-business", permanent: true },
+      { source: "/blog/microsoft-copilot-guide", destination: "/services/cloud-solutions/microsoft-365", permanent: true },
+      { source: "/blog/phishing-red-flags", destination: "/guides/spot-stop-phishing-emails", permanent: true },
     ];
   },
   async headers() {

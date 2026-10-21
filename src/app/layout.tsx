@@ -85,25 +85,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           }}
         />
         
-        {/* Google Ads Conversion — AW-18506894977 */}
-        <Script
-          id="google-ads-conversion"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-18506894977');
-            `,
-          }}
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18506894977"
-          strategy="afterInteractive"
-        />
-        
-        {/* Google Analytics 4 — set NEXT_PUBLIC_GA_ID to enable */}
+{/* Google Analytics 4 — set NEXT_PUBLIC_GA_ID to enable */}
         {gaId && (
           <>
             <Script
@@ -164,7 +146,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <PWAManager />
         <StructuredData />
         <PageContainer>{children}</PageContainer>
-        <ConsentBanner />
+        {/* <ConsentBanner /> */}
         <ConsentInit />
       </body>
     </html>

@@ -8,6 +8,7 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm.",
+  alternates: { canonical: "/contact" },
 };
 
 function ContactFormSkeleton() {
@@ -67,7 +68,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Email Us</h3>
-                  <a href="mailto:info@nesscotech.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                     info@nesscotech.com
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Replies within 2 business hours</p>

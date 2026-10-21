@@ -6,6 +6,7 @@ import { Phone, Mail, RefreshCw, AlertTriangle, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Scheduled Maintenance",
   description: "We're currently performing scheduled maintenance. We'll be back shortly.",
+  alternates: { canonical: "/maintenance" },
   robots: { index: false, follow: false },
 };
 
@@ -51,7 +52,7 @@ export default function MaintenancePage() {
                 <Phone className="h-4 w-4 mr-2" aria-hidden="true" />
                 {siteConfig.phone}
               </Button>
-              <Button size="lg" variant="outline" href={`mailto:${siteConfig.email}`}>
+              <Button size="lg" variant="outline" href="/contact">
                 <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
                 {siteConfig.email}
               </Button>

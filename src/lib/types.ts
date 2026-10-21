@@ -100,6 +100,7 @@ export interface NavItem {
   href: string;
   children?: NavChild[];
   groups?: NavGroup[];
+  hideOnMobile?: boolean;
 }
 
 export interface SiteConfig {

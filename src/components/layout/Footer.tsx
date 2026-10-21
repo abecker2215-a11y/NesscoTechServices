@@ -80,7 +80,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-foreground transition-colors">{siteConfig.email}</a>
+                <a href="/contact" className="hover:text-foreground transition-colors">{siteConfig.email}</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
