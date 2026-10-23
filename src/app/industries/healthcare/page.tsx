@@ -6,8 +6,13 @@ import { Shield, Server, Database, Lock, FileText, CheckCircle, Clock, Headset, 
 
 export const metadata: Metadata = {
   title: "IT Services for Healthcare & Medical Practices | Tampa Bay",
-  description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR management, patient data protection, and reliable infrastructure for medical practices.",
+  description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR management, patient data protection, and reliable infrastructure.",
   alternates: { canonical: "https://nesscotech.com/industries/healthcare" },
+  openGraph: {
+    title: "IT Services for Healthcare & Medical Practices | Tampa Bay",
+    description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR, patient data protection.",
+    url: "https://nesscotech.com/industries/healthcare",
+  },
 };
 
 const healthcareFaqs = [

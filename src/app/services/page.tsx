@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "IT Services",
   description: "Managed IT, cybersecurity, cloud solutions, network & server, IT support, backup & disaster recovery, applications, and business communications for Tampa Bay businesses.",
   alternates: { canonical: "https://nesscotech.com/services" },
+  openGraph: {
+    title: "IT Services",
+    description: "Managed IT, cybersecurity, cloud solutions, network & server, IT support, backup & disaster recovery, applications, and business communications for Tampa Bay businesses.",
+    url: "https://nesscotech.com/services",
+  },
 };
 
 const categories = [

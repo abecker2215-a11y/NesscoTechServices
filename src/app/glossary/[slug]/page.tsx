@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: GlossaryTermPageProps): Promi
   return {
     title: `${term.term} — IT Glossary`,
     description: term.plain,
+    alternates: { canonical: `/glossary/${slug}` },
     openGraph: {
       title: `${term.term} — IT Glossary`,
       description: term.plain,

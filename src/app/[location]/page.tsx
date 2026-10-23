@@ -44,6 +44,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `IT Support in ${loc.name}, FL`,
     description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
+    alternates: { canonical: `/${location}` },
+    openGraph: {
+      title: `IT Support in ${loc.name}, FL`,
+      description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
+      url: `https://nesscotech.com/${location}`,
+      type: "website",
+    },
   };
 }
 

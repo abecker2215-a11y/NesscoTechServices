@@ -289,7 +289,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "VPN (Virtual Private Network)",
     slug: "vpn",
     plain: "An encrypted tunnel that lets you use a network as if you were plugged into it — safely from anywhere.",
-    whyItMatters: "Useful for working from home or public Wi-Fi. But if your files live in Microsoft 365, you may not need one at all — we'll tell you honestly.",
+    whyItMatters: "Useful for staff working remotely or on public Wi-Fi. But if your files live in Microsoft 365, you may not need one at all — we'll tell you honestly.",
     category: "Security",
     tags: ["remote access", "encryption", "tunnel", "public Wi-Fi"],
     relatedService: { slug: "wifi-networking", label: "Wi-Fi & Networking" },

@@ -23,7 +23,7 @@ export const testimonials: Testimonial[] = [
     location: "Riverview",
     service: "Wi-Fi & Networking",
     quote:
-      "Dead zones all over our house. They installed a mesh network in one visit and now every room is fast. Explained everything in plain English.",
+      "Dead zones all over our office. They installed a mesh network in one visit and now every room is fast. Explained everything in plain English.",
     rating: 5,
     source: "curated",
   },

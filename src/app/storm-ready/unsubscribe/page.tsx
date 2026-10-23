@@ -3,6 +3,7 @@ import { StormUnsubscribe } from "./StormUnsubscribe";
 
 export const metadata: Metadata = {
   title: "Unsubscribe — Storm Report Follow-ups",
+  alternates: { canonical: "/storm-ready/unsubscribe" },
   robots: "noindex, nofollow",
 };
 

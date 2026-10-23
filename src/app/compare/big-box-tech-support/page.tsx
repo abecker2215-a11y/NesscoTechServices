@@ -7,6 +7,7 @@ import { Check, X, Users, Building } from "lucide-react";
 export const metadata: Metadata = {
   title: "Nessco vs Big-Box Tech Support | Local vs National Comparison",
   description: "Compare Nessco Tech Services with Geek Squad, Asurion, and national remote-only providers. Local expertise, transparent pricing, and no upsells.",
+  alternates: { canonical: "/compare/big-box-tech-support" },
 };
 
 const comparisons = [

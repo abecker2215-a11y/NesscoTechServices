@@ -10,6 +10,12 @@ import { Monitor, Shield, Truck, Users, Target, Zap, BadgeCheck, MapPin } from "
 export const metadata: Metadata = {
   title: "About Us",
   description: "Learn about Nessco Tech Services - local IT support for Tampa Bay businesses. Our mission, values, and approach to honest IT help.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us",
+    description: "Learn about Nessco Tech Services - local IT support for Tampa Bay businesses. Our mission, values, and approach to honest IT help.",
+    url: "https://nesscotech.com/about",
+  },
 };
 
 const values = [

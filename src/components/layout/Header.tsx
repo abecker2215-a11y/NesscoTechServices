@@ -20,6 +20,7 @@ import {
   Database,
   Briefcase,
   Cable,
+  Download,
   Headset,
   Building2,
   Lock,
@@ -44,6 +45,7 @@ import {
   Calculator,
   ArrowRightLeft,
   Key,
+  Phone,
   MessageSquare,
   MessageCircle,
   Video,
@@ -54,7 +56,6 @@ import type { NavChild, NavItem } from "@/lib/types";
 import { ThemeToggle } from "./ThemeToggle";
 import { OpenStatus } from "./OpenStatus";
 import { EmergencyTriageWidget } from "@/components/emergency/EmergencyTriageWidget";
-import { Network3D } from "@/components/network/Network3D";
 import { AIRecommendations } from "@/components/recommendations/AIRecommendations";
 import { TechnicianAvailability } from "@/components/status/TechnicianAvailability";
 
@@ -80,7 +81,9 @@ const iconMap: Record<string, IconComponent> = {
   database: Database,
   briefcase: Briefcase,
   cable: Cable,
+  download: Download,
   headset: Headset,
+  lock: Lock,
   building: Building2,
   harddrive: HardDrive,
   activity: Activity,
@@ -88,6 +91,7 @@ const iconMap: Record<string, IconComponent> = {
   users: Users,
   cpu: Cpu,
   checkcircle: CheckCircle2,
+  shieldcheck: ShieldCheck,
   "shield-check": ShieldCheck,
   searchcheck: SearchCheck,
   clipboardcheck: ClipboardCheck,
@@ -103,6 +107,7 @@ const iconMap: Record<string, IconComponent> = {
   calculator: Calculator,
   arrowrightleft: ArrowRightLeft,
   key: Key,
+  phone: Phone,
   messagesquare: MessageSquare,
   messagecircle: MessageCircle,
   video: Video,
@@ -136,7 +141,7 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <nav className="w-full px-4 lg:px-6 xl:px-8 max-w-[1600px] mx-auto" aria-label="Main navigation">
+      <nav className="w-full px-4 lg:px-6 xl:px-8 max-w-[1800px] mx-auto" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between gap-4">
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
@@ -156,8 +161,9 @@ export function Header() {
             <div className="relative flex-shrink-0">
               <FuseSearch placeholder="Search..." className="w-40 lg:w-48 xl:w-56" />
             </div>
-            <div className="hidden lg:flex lg:items-center lg:gap-4 flex-1 min-w-0">
+            <div className="hidden lg:flex lg:items-center lg:gap-3 flex-1 min-w-0">
               {navItems.map((item) => {
+                if (item.hideOnMobile) return null;
                 if (item.children) {
                   return <DropdownMenu key={item.href} item={item} />;
                 }
@@ -344,7 +350,7 @@ function DropdownMenu({ item }: { item: NavItem }) {
 
             <div
               key={isOpen ? "open" : "closed"}
-              className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 lg:p-8 max-h-[70vh] overflow-y-auto scrollbar-hide"
+              className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 lg:p-8 max-h-[70vh] overflow-y-auto scrollbar-hide"
             >
               {groups.map((group, groupIndex) => {
                 const GroupIcon = group.icon ? iconMap[group.icon] : undefined;
@@ -409,21 +415,13 @@ function DropdownMenu({ item }: { item: NavItem }) {
               )}
 
               {featured && (
-                <FeaturedCard
-                  child={featured}
-                  onClick={closeNow}
-                  style={columnBase(groups.length + extras.length)}
-                />
+                <div className="animate-mega-item-in" style={columnBase(groups.length + extras.length)}>
+                  <FeaturedCard
+                    child={featured}
+                    onClick={closeNow}
+                  />
+                </div>
               )}
-            </div>
-
-            {/* Next-Level Features Section */}
-            <div className="border-t border-border bg-muted/30 px-6 py-4 lg:px-8">
-              <div className="grid gap-4 lg:grid-cols-3">
-                <Network3D />
-                <AIRecommendations />
-                <TechnicianAvailability />
-              </div>
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border bg-muted/40 px-6 py-3.5 lg:px-8">

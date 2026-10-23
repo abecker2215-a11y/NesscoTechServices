@@ -25,9 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: guide.title,
     description: guide.excerpt,
+    alternates: { canonical: `/guides/${slug}` },
     openGraph: {
       title: `${guide.title} | ${siteConfig.name}`,
       description: guide.excerpt,
+      url: `https://nesscotech.com/guides/${slug}`,
       type: "article",
     },
   };

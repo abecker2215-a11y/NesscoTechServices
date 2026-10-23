@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "IT Glossary — Plain-English Tech Terms",
   description:
     "Confused by IT jargon? Our glossary explains 36+ networking, security, backup, and Microsoft 365 terms in plain English — with honest guidance on what actually matters.",
+  alternates: { canonical: "/glossary" },
   openGraph: {
     title: "IT Glossary — Plain-English Tech Terms",
     description: "36+ tech terms explained simply. Search, filter by category, and find related guides.",

@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Switch MSPs Without the Risk — Free Migration",
   description:
     "Firing your IT company shouldn't feel risky. Free audit, parallel run, scheduled cutover, 90-day fit guarantee. We migrate you off ConnectWise, Autotask, HaloPSA, or chaos.",
+  alternates: { canonical: "/switch" },
+  openGraph: {
+    title: "Switch MSPs Without the Risk — Free Migration",
+    description:
+      "Firing your IT company shouldn't feel risky. Free audit, parallel run, scheduled cutover, 90-day fit guarantee.",
+    url: "https://nesscotech.com/switch",
+  },
 };
 
 const faqs = [

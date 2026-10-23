@@ -6,7 +6,13 @@ import { CheckCircle, Clock, DollarSign, Users, Shield, CloudLightning, Trending
 
 export const metadata: Metadata = {
   title: "Law Firm Microsoft 365 Migration | Zero-Downtime Case Study",
-  description: "How a 12-person Tampa law firm migrated from GoDaddy to Microsoft 365 with zero downtime, 30% cost savings, and MFA security.",
+  description: "Law firm migrated from GoDaddy to Microsoft 365 with zero downtime, 30% cost savings, and MFA security.",
+  alternates: { canonical: "/case-studies/law-firm-m365-migration" },
+  openGraph: {
+    title: "Law Firm Microsoft 365 Migration | Zero-Downtime Case Study",
+    description: "Law firm migrated from GoDaddy to Microsoft 365 with zero downtime.",
+    url: "https://nesscotech.com/case-studies/law-firm-m365-migration",
+  },
 };
 
 const faqs = [

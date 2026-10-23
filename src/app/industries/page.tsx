@@ -3,12 +3,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
-import { Stethoscope, Scale, ShoppingCart, HardHat, ArrowRight, CheckCircle, Clock, Headset, Shield } from "lucide-react";
+import { Stethoscope, Scale, ShoppingCart, HardHat, Calculator, Home, Heart, Utensils, Briefcase, Key, ArrowRight, CheckCircle, Clock, Headset, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Tampa Bay IT Services",
   description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries. Industry-specific solutions and compliance expertise.",
   alternates: { canonical: "https://nesscotech.com/industries" },
+  openGraph: {
+    title: "Industries We Serve | Tampa Bay IT Services",
+    description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries.",
+    url: "https://nesscotech.com/industries",
+  },
 };
 
 const industries = [
@@ -43,6 +48,54 @@ const industries = [
     icon: HardHat,
     compliance: "Mobile Security",
     color: "from-orange-500 to-amber-500",
+  },
+  {
+    slug: "accounting",
+    title: "Accounting & Tax Firms",
+    description: "Secure tax software, client data protection, and compliance for CPA firms.",
+    icon: Calculator,
+    compliance: "IRS Pub 4557",
+    color: "from-emerald-500 to-teal-500",
+  },
+  {
+    slug: "real-estate",
+    title: "Real Estate & Property Management",
+    description: "MLS systems, transaction management, and tenant portal technology.",
+    icon: Home,
+    compliance: "State Licensing",
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    slug: "nonprofits",
+    title: "Nonprofits & Associations",
+    description: "Donor management, grant tracking, and secure volunteer coordination systems.",
+    icon: Heart,
+    compliance: "Data Privacy",
+    color: "from-pink-500 to-rose-500",
+  },
+  {
+    slug: "hospitality",
+    title: "Restaurants & Hospitality",
+    description: "POS, reservation systems, Wi-Fi for guests, and PCI-compliant payment processing.",
+    icon: Utensils,
+    compliance: "PCI DSS",
+    color: "from-amber-500 to-orange-500",
+  },
+  {
+    slug: "professional-services",
+    title: "Professional Services",
+    description: "Document management, secure collaboration, and client portal solutions.",
+    icon: Briefcase,
+    compliance: "Data Privacy",
+    color: "from-indigo-500 to-purple-500",
+  },
+  {
+    slug: "property-management",
+    title: "Property Management",
+    description: "Tenant portals, maintenance tracking, and building access systems.",
+    icon: Key,
+    compliance: "Data Privacy",
+    color: "from-slate-500 to-gray-500",
   },
 ];
 
@@ -106,7 +159,7 @@ export default function IndustriesPage() {
                 className="group p-8 rounded-xl border-2 border-border bg-background hover:border-primary/50 hover:shadow-lg transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-br ${industry.color} text-white flex-shrink-0`}>
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary flex-shrink-0">
                     <industry.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <div className="flex-1">

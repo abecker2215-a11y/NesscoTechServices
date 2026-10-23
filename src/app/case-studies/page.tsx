@@ -6,6 +6,12 @@ import { ArrowRight, Clock, DollarSign, Users, CheckCircle } from "lucide-react"
 export const metadata: Metadata = {
   title: "Case Studies",
   description: "Real IT problems we've solved for Tampa Bay businesses. See how we cut downtime, reduced costs, and improved security.",
+  alternates: { canonical: "/case-studies" },
+  openGraph: {
+    title: "Case Studies",
+    description: "Real IT problems we've solved for Tampa Bay businesses. See how we cut downtime, reduced costs, and improved security.",
+    url: "https://nesscotech.com/case-studies",
+  },
 };
 
 const caseStudies = [

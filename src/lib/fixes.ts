@@ -162,8 +162,8 @@ export const fixes: QuickFix[] = [
     ],
   },
   {
-    slug: "new-home-wifi-dead-zones",
-    title: "New Home, Big Dead Zones (Builder Router Can't Cope)",
+    slug: "new-office-wifi-dead-zones",
+    title: "New Office, Big Dead Zones (Builder Router Can't Cope)",
     excerpt: "2,500+ sq ft, block walls, one weak ISP combo box. Why mesh beats repeaters and where the nodes actually go.",
     readMinutes: 4,
     helpCategory: "wifi",
@@ -171,7 +171,7 @@ export const fixes: QuickFix[] = [
     serviceLabel: "Wi-Fi & Networking",
     symptoms: ["Back bedrooms or office drop constantly", "Builder/ISP router in a closet or garage", "20+ devices fighting one box"],
     steps: [
-      { heading: "1. Map the dead zones", body: "Walk the house with a speed test at each room. One bad room = placement. Half the house = coverage — no settings tweak fixes physics." },
+      { heading: "1. Map the dead zones", body: "Walk the office with a speed test at each room. One bad room = placement. Half the office = coverage — no settings tweak fixes physics." },
       { heading: "2. Move the main unit central and high", body: "Garage and closet installs kill signal through concrete. Central hallway, chest-high, is worth 2 bars before spending a dollar." },
       { heading: "3. Add mesh, not a repeater", body: "Two to three mesh nodes halve the distance every device shouts across. Wire what you can (TV, office) — wired devices stop competing for airtime." },
     ],

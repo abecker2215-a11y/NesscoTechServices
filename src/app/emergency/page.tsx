@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Emergency IT Pager — Down Now? Page the On-Call Tech",
   description:
     "Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now. Transparent 1.5x after-hours rate, live status tracking.",
+  alternates: { canonical: "/emergency" },
+  openGraph: {
+    title: "Emergency IT Pager — Down Now? Page the On-Call Tech",
+    description: "Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now.",
+    url: "https://nesscotech.com/emergency",
+  },
 };
 
 export default function EmergencyPage() {

@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: "Refer a Friend — $25 for You, $25 for Them",
   description:
     "Know someone fighting their Wi-Fi or computer? Send them $25 off their first fix with Nessco Tech Services and get $25 credit when they book. No limits.",
+  alternates: { canonical: "/refer" },
+  openGraph: {
+    title: "Refer a Friend — $25 for You, $25 for Them",
+    description: "Refer a friend to Nessco Tech Services — $25 off their first fix, $25 credit for you.",
+    url: "https://nesscotech.com/refer",
+  },
 };
 
 async function ReferralWelcome({ code }: { code?: string }) {

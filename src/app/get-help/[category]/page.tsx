@@ -13,6 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Get Help with ${cat.label} | Nessco Tech Services`,
     description: cat.description,
+    alternates: { canonical: `/get-help/${category}` },
+    openGraph: {
+      title: `Get Help with ${cat.label} | Nessco Tech Services`,
+      description: cat.description,
+      url: `https://nesscotech.com/get-help/${category}`,
+    },
   };
 }
 

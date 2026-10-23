@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description: "Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us",
+    description: "Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm.",
+    url: "https://nesscotech.com/contact",
+  },
 };
 
 function ContactFormSkeleton() {

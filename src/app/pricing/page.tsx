@@ -7,10 +7,17 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Wrench, ShieldAlert, CalendarX } from "lucide-react";
 import { PricingCalculator } from "@/components/ui/PricingCalculator";
 import { ServiceComparisonTable } from "@/components/ui/ComparisonTable";
+import { ServiceModelComparison } from "@/components/pricing/ServiceModelComparison";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
+  alternates: { canonical: "/pricing" },
+  openGraph: {
+    title: "Pricing",
+    description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
+    url: "https://nesscotech.com/pricing",
+  },
 };
 
 const pricingFaqs = [
@@ -62,6 +69,8 @@ export default function PricingPage() {
               <ServiceComparisonTable />
             </div>
           </section>
+
+          <ServiceModelComparison />
 
           <section className="mb-16" aria-labelledby="downtime-heading">
             <div className="rounded-2xl border-2 border-dashed border-primary/40 bg-primary/5 p-8 lg:p-10">

@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "IT Services for Retail & E-Commerce | Tampa Bay",
   description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management, and customer-facing technology.",
   alternates: { canonical: "https://nesscotech.com/industries/retail" },
+  openGraph: {
+    title: "IT Services for Retail & E-Commerce | Tampa Bay",
+    description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management.",
+    url: "https://nesscotech.com/industries/retail",
+  },
 };
 
 const retailFaqs = [

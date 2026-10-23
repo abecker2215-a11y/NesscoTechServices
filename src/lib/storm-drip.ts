@@ -47,7 +47,7 @@ export const stormDripSteps: DripStep[] = [
       const v = stormVerdict(score);
       const pitch =
         v.key === "exposed"
-          ? "For most homes and small offices, a proper backup setup is one visit — and it's the difference between 'annoying weekend' and 'everything is gone.'"
+          ? "For most small businesses, a proper backup setup is one visit — and it's the difference between 'annoying weekend' and 'everything is gone.'"
           : v.key === "gaps"
             ? "Your remaining gaps are mostly 1–2 remote hours ($75/hr). We confirm the exact scope before any work — no charges until you approve."
             : "You're in great shape. The thing that protects it: a monthly restore test. Our Managed plan ($349/mo) runs it for you, plus monitoring and patching.";

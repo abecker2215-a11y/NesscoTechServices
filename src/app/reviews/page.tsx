@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Reviews — Tampa Bay Folks Who Got Fixed",
   description:
     "Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay. Real problems, exact quotes, no surprises.",
+  alternates: { canonical: "/reviews" },
+  openGraph: {
+    title: "Reviews — Tampa Bay Folks Who Got Fixed",
+    description: "Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay.",
+    url: "https://nesscotech.com/reviews",
+  },
 };
 
 export default function ReviewsPage() {

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Downtime ROI — What Outages Really Cost",
   description:
     "Interactive calculator: what IT downtime costs your Tampa Bay business per year in idle staff time — and which managed plan pays for itself.",
+  alternates: { canonical: "/roi" },
+  openGraph: {
+    title: "Downtime ROI — What Outages Really Cost",
+    description: "What IT downtime costs your Tampa Bay business per year in idle staff time.",
+    url: "https://nesscotech.com/roi",
+  },
 };
 
 export default function RoiPage() {

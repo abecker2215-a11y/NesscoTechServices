@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Nessco Tech Services collects, uses, and protects information you share through this website.",
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy",
+    description: "How Nessco Tech Services collects, uses, and protects information you share through this website.",
+    url: "https://nesscotech.com/privacy",
+  },
 };
 
 export default function PrivacyPage() {

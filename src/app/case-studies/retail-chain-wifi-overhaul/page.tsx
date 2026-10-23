@@ -6,7 +6,13 @@ import { CheckCircle, Clock, DollarSign, Users, TrendingUp, Wifi, Building2, Net
 
 export const metadata: Metadata = {
   title: "Retail Chain Wi-Fi Overhaul | 5 Locations Case Study",
-  description: "How a St. Petersburg retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime, and gained centralized network management.",
+  description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime, and gained centralized network management.",
+  alternates: { canonical: "/case-studies/retail-chain-wifi-overhaul" },
+  openGraph: {
+    title: "Retail Chain Wi-Fi Overhaul | 5 Locations Case Study",
+    description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime.",
+    url: "https://nesscotech.com/case-studies/retail-chain-wifi-overhaul",
+  },
 };
 
 const faqs = [

@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms governing use of the Nessco Tech Services website and IT services.",
   alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service",
+    description: "Terms governing use of the Nessco Tech Services website and IT services.",
+    url: "https://nesscotech.com/terms",
+  },
 };
 
 export default function TermsPage() {

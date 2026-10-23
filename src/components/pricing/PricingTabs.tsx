@@ -8,7 +8,7 @@ import { PricingCard, PriceEstimator } from "@/components/pricing";
 import { BusinessPlanCalculator } from "@/components/pricing/BusinessPlanCalculator";
 import { businessPlans } from "@/lib/plans";
 
-type Tab = "home" | "business";
+type Tab = "payg" | "business";
 
 const hourlyPlans = [
   {
@@ -51,7 +51,7 @@ const hourlyPlans = [
 const monthlyPlans = businessPlans.filter((p) => p.period === "month");
 
 export function PricingTabs() {
-  const [tab, setTab] = useState<Tab>("home");
+  const [tab, setTab] = useState<Tab>("business");
 
   const select = (t: Tab) => {
     setTab(t);
@@ -67,8 +67,8 @@ export function PricingTabs() {
       >
         {(
           [
-            { id: "home", label: "Home & Personal", icon: Home },
             { id: "business", label: "Business", icon: Building2 },
+            { id: "payg", label: "Pay-As-You-Go", icon: Home },
           ] as const
         ).map((t) => (
           <button
@@ -90,8 +90,8 @@ export function PricingTabs() {
         ))}
       </div>
 
-      {tab === "home" ? (
-        <div role="tabpanel" aria-label="Home pricing">
+      {tab === "payg" ? (
+        <div role="tabpanel" aria-label="Pay-As-You-Go pricing">
           <h2 className="text-2xl font-bold text-foreground text-center mb-2">Hourly Services</h2>
           <p className="text-center text-muted-foreground mb-8">
             Pay as you go. You approve the estimate before we start — no contracts.

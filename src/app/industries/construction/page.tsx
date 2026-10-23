@@ -6,8 +6,13 @@ import { Shield, Server, Database, Lock, CheckCircle, Clock, Headset, Users, Har
 
 export const metadata: Metadata = {
   title: "IT Services for Construction & Field Services | Tampa Bay",
-  description: "Mobile IT support for Tampa Bay construction companies. Field service management, project tracking, and remote connectivity for job sites.",
+  description: "Mobile IT support for Tampa Bay construction companies. Field service management, project tracking, remote job site connectivity.",
   alternates: { canonical: "https://nesscotech.com/industries/construction" },
+  openGraph: {
+    title: "IT Services for Construction & Field Services | Tampa Bay",
+    description: "Mobile IT support for Tampa Bay construction. Field service management, remote job site connectivity.",
+    url: "https://nesscotech.com/industries/construction",
+  },
 };
 
 const constructionFaqs = [

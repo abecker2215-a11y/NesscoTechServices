@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${service.title} | Nessco Tech Services`,
       description: service.shortDescription,
+      url: `https://nesscotech.com/services/${service.slug}`,
       type: "website",
     },
   };

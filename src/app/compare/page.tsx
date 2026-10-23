@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Break-Fix vs Managed IT — The Real Math",
   description:
     "What reactive IT really costs Tampa Bay small businesses vs a managed plan. Interactive calculator plus an honest comparison with big-box tech support.",
+  alternates: { canonical: "/compare" },
+  openGraph: {
+    title: "Break-Fix vs Managed IT — The Real Math",
+    description: "What reactive IT really costs Tampa Bay small businesses vs a managed plan.",
+    url: "https://nesscotech.com/compare",
+  },
 };
 
 export default function ComparePage() {

@@ -157,6 +157,16 @@ const details: Record<string, Detail> = {
       "Executive reporting and planning",
     ],
   },
+  "managed-it-services/co-managed": {
+    problem: "Your team already has in-house IT but needs enterprise-level expertise and 24/7 coverage.",
+    whatWeDo: [
+      "Strategic partnership with your existing IT team",
+      "24/7 monitoring and response while you handle daily operations",
+      "Shared risk/reward pricing models",
+      "Regular reporting and strategic IT planning",
+      "Vendor management and technology roadmap alignment",
+    ],
+  },
   "it-security": {
     problem: "Cyber threats are evolving faster than your defenses can keep up.",
     whatWeDo: [
@@ -528,7 +538,7 @@ const details: Record<string, Detail> = {
     ],
   },
   "applications/hosting": {
-    problem: "Legacy or resource-heavy applications need a modern, reliable home.",
+    problem: "Legacy or resource-heavy applications need a modern, reliable environment.",
     whatWeDo: [
       "Application hosting in cloud or virtual environments",
       "Resource scaling and optimization",
@@ -617,6 +627,12 @@ const parentFaqs: Record<string, FAQItem[]> = {
     { q: "How is pricing structured?", a: "Plans are priced per user or per device per month based on the services you need. We'll scope it and give you a flat monthly number with no surprise invoices." },
     { q: "Do we lose control of our IT?", a: "No. You keep ownership of all systems and data. We document everything and work as an extension of your team." },
     { q: "Is there a minimum contract term?", a: "Most agreements are month-to-month or annual. We'd rather earn your business every month than lock you in." },
+  ],
+  "managed-it-services/co-managed": [
+    { q: "What is co-managed IT?", a: "Co-managed IT is a partnership model where we supplement your existing in-house IT team with enterprise-level expertise, 24/7 monitoring, and strategic planning — without replacing your internal staff." },
+    { q: "How does pricing work?", a: "Co-managed plans are typically priced as a shared risk/reward model with a base monthly fee plus performance incentives, tailored to the scope and your team's capacity." },
+    { q: "Will we lose control of our systems?", a: "No. Your internal team maintains full control and ownership. We work as an extension of your team with clear boundaries and shared accountability." },
+    { q: "Can we start with just 24/7 monitoring?", a: "Yes. Many co-managed engagements begin with monitoring and response, then expand to strategy and vendor management as trust builds." },
   ],
   "it-security": [
     { q: "What does your security service actually cover?", a: "Endpoint (EDR/XDR), email protection, identity/MFA, network defense, vulnerability management, security awareness training, and compliance reporting." },

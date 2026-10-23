@@ -80,6 +80,13 @@ export const navItems: NavItem[] = [
         description: "End-to-end IT management from helpdesk to infrastructure.",
         group: "managed",
       },
+      {
+        label: "Co-Managed IT Services",
+        href: "/services/managed-it-services/co-managed",
+        icon: "users",
+        description: "Partner with your in-house team for enterprise-level IT management and 24/7 support.",
+        group: "managed",
+      },
 
       // IT Security
       {
@@ -414,5 +421,6 @@ export const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
   { label: "Industries", href: "/industries" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

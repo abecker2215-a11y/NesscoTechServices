@@ -15,7 +15,13 @@ import { Wrench, ArrowRight, Zap, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Fix-It Guides — Plain-English IT How-Tos",
   description:
-    "Free step-by-step IT guides for Tampa Bay homes and businesses: slow Wi-Fi, slow PCs, malware removal, phishing defense, MFA setup, Microsoft 365 migration, backup checks. Plus 9 quick fixes. No jargon — and honest advice on when to call us.",
+    "Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first — no jargon, honest advice on when to call us.",
+  alternates: { canonical: "/guides" },
+  openGraph: {
+    title: "Fix-It Guides — Plain-English IT How-Tos",
+    description: "Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first.",
+    url: "https://nesscotech.com/guides",
+  },
 };
 
 const guidesFaqs = [

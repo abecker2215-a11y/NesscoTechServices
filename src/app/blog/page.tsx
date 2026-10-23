@@ -6,8 +6,13 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "IT Resources & Blog",
-  description: "IT tips, security alerts, and technology guides for Tampa Bay businesses. Plain-English advice from your local IT team.",
+  description: "IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "IT Resources & Blog",
+    description: "IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team.",
+    url: "https://nesscotech.com/blog",
+  },
 };
 
 const posts = [

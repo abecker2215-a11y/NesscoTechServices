@@ -10,6 +10,12 @@ import { auth } from "@/lib/auth/config";
 export const metadata: Metadata = {
   title: "System Status — Nessco Tech Services",
   description: "Live status of the Nessco website, client portal, email delivery, and integrations.",
+  alternates: { canonical: "/status" },
+  openGraph: {
+    title: "System Status — Nessco Tech Services",
+    description: "Live status of the Nessco website, client portal, email delivery, and integrations.",
+    url: "https://nesscotech.com/status",
+  },
 };
 
 export const revalidate = 60;

@@ -7,7 +7,8 @@ import { Phone, Search, Home, FileText, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
-  description: "The page you're looking for doesn&apos;t exist. Search our services and guides, or contact us for help.",
+  description: "The page you're looking for doesn't exist. Search our services and guides, or contact us for help.",
+  robots: { index: false, follow: false },
 };
 
 const helpfulLinks = [

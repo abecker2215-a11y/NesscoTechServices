@@ -6,6 +6,7 @@ import { Check, Clock, DollarSign, Shield, Wrench } from "lucide-react";
 export const metadata: Metadata = {
   title: "DIY IT vs Professional IT Support",
   description: "Should you fix it yourself or call a pro? Compare time, cost, risk, and when to DIY vs when to call Nessco Tech Services.",
+  alternates: { canonical: "/compare/diy-vs-pro" },
 };
 
 const comparisons = [

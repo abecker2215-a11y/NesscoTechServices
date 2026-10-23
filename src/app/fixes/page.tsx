@@ -9,7 +9,13 @@ import { Zap, ArrowRight, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Quick Fixes — Exact Error, Exact Steps",
   description:
-    "Type-what-you-see IT fixes for Tampa Bay homes and businesses: printer offline, red-light router, Outlook stuck syncing, blue screens. 2–4 minutes each, with honest when-to-call lines.",
+    "Type-what-you-see IT fixes for Tampa Bay businesses: printer offline, red-light router, Outlook stuck syncing. 2–4 minutes each.",
+  alternates: { canonical: "/fixes" },
+  openGraph: {
+    title: "Quick Fixes — Exact Error, Exact Steps",
+    description: "Type-what-you-see IT fixes for Tampa Bay businesses. 2–4 minutes each.",
+    url: "https://nesscotech.com/fixes",
+  },
 };
 
 export default function FixesPage() {

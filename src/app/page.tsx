@@ -4,7 +4,6 @@ import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { services } from "@/lib/services";
 import { HeroVisual } from "@/components/home/HeroVisual";
 import { HeroQuizClient } from "@/components/home/HeroQuizClient";
-import { ClientLogos } from "@/components/home/ClientLogos";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { Testimonials, HeroTestimonial } from "@/components/home/SocialProof";
 import { OpenStatus } from "@/components/layout/OpenStatus";
@@ -57,7 +56,7 @@ const whyChooseUs = [
   },
   {
     title: "Remote & On-Site Options",
-    description: "Software issues? Remote from $75/hr. Hardware or cabling? We come to you from $125/hr.",
+      description: "Software issues? Remote from $75/hr. Hardware or cabling? We come to you from $125/hr.",
   },
   {
     title: "Business IT Expertise",
@@ -183,8 +182,6 @@ export default function HomePage() {
       </section>
 
       <TrustSignalBarClient />
-
-      <ClientLogos />
 
       <LiveStatsClient />
 

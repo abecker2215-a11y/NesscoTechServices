@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "We're currently performing scheduled maintenance. We'll be back shortly.",
   alternates: { canonical: "/maintenance" },
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Scheduled Maintenance",
+    description: "We're currently performing scheduled maintenance. We'll be back shortly.",
+    url: "https://nesscotech.com/maintenance",
+  },
 };
 
 export default function MaintenancePage() {

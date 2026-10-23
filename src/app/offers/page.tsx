@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: "Seasonal Offers — Right Fix, Right Season",
   description:
     "Limited-season IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks. Same flat rates, seasonal focus.",
+  alternates: { canonical: "/offers" },
+  openGraph: {
+    title: "Seasonal Offers — Right Fix, Right Season",
+    description: "Limited-season IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks.",
+    url: "https://nesscotech.com/offers",
+  },
 };
 
 export default function OffersPage() {
