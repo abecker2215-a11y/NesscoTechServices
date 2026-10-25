@@ -59,18 +59,19 @@ export function localBusinessSchema() {
     alternateName: "Nessco",
     url: siteUrl,
     logo: `${siteUrl}/icon-512.svg`,
-    description: "Professional managed IT, cybersecurity, and cloud services for Tampa Bay businesses. Microsoft 365, networking, security, data backup, and IT support for growing companies.",
+    description:
+      "Professional managed IT, cybersecurity, and cloud services for Tampa Bay businesses. Microsoft 365, networking, security, data backup, and IT support for growing companies.",
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    priceRange: "$75-$150/hr",
+    priceRange: "$75-$125/hr",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card, ACH, Check",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Tampa",
+      addressLocality: siteConfig.addressCity ?? "Tampa",
       addressRegion: "FL",
       addressCountry: "US",
-      postalCode: "33602",
+      postalCode: siteConfig.addressZip ?? "33602",
     },
     geo: {
       "@type": "GeoCoordinates",
@@ -131,11 +132,11 @@ export function localBusinessSchema() {
             name: "Managed IT Services",
             description: "Proactive monitoring, security, backups, and strategy",
           },
-          price: "199",
+          price: "499",
           priceCurrency: "USD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "199",
+            price: "499",
             priceCurrency: "USD",
             billingIncrement: "1",
             unitCode: "MON",
@@ -153,43 +154,6 @@ export function localBusinessSchema() {
       "Business IT Consulting",
       "Network Cabling",
       "Surveillance Systems",
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "127",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Sarah M.",
-        },
-        datePublished: "2024-01-15",
-        reviewBody: "Fixed my Wi-Fi in 30 mins. Professional and explained everything.",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "James R.",
-        },
-        datePublished: "2024-01-10",
-        reviewBody: "Best IT support in Tampa. Honest pricing, no upsells.",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-      },
     ],
   };
 }

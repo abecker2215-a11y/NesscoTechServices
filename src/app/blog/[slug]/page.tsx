@@ -1,0 +1,151 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getArticle, getAllArticles, type BlogArticle } from "@/lib/blog";
+import { siteConfig } from "@/lib/config";
+import { JsonLd } from "@/components/layout/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
+import { Clock, User, Tag, ArrowLeft, ArrowRight } from "lucide-react";
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const articles = getAllArticles();
+  return articles.map((article) => ({ slug: article.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) return { title: "Article Not Found" };
+
+  const baseUrl = `https://${siteConfig.domain}`;
+  const pageUrl = `${baseUrl}/blog/${slug}`;
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical: pageUrl },
+    openGraph: {
+      title: `${article.title} | ${siteConfig.name}`,
+      description: article.excerpt,
+      url: pageUrl,
+      type: "article",
+      publishedTime: article.date,
+      authors: [article.author],
+      tags: [article.category],
+      images: [
+        {
+          url: article.image ?? `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [article.image ?? `${baseUrl}/og-image.png`],
+    },
+  };
+}
+
+function articleSchema(article: BlogArticle) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    author: {
+      "@type": "Organization",
+      name: article.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+    },
+  };
+}
+
+export default async function BlogArticlePage({ params }: Props) {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) notFound();
+
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: article.title, path: `/blog/${slug}` },
+      ])} />
+      <JsonLd data={articleSchema(article)} />
+      <article className="py-16 lg:py-24">
+        <div className="container">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground flex items-center gap-1">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              Home
+            </Link>
+            <span aria-hidden="true"> / </span>
+            <Link href="/blog" className="hover:text-foreground">Blog</Link>
+            <span aria-hidden="true"> / </span>
+            <span className="text-foreground">{article.title}</span>
+          </nav>
+
+          <header className="mb-8 max-w-3xl">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <Tag className="h-4 w-4" aria-hidden="true" />
+              <span className="font-medium text-primary">{article.category}</span>
+              <span aria-hidden="true">·</span>
+              <span>{article.date}</span>
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-4">
+              {article.title}
+            </h1>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1">
+                <User className="h-4 w-4" aria-hidden="true" />
+                {article.author}
+              </span>
+              <span className="flex items-center gap-1">
+                <Clock className="h-4 w-4" aria-hidden="true" />
+                {article.readTime}
+              </span>
+            </div>
+          </header>
+
+          <div className="max-w-3xl prose prose-lg prose-neutral dark:prose-invert">
+            {article.body.split('\n').map((paragraph, i) => (
+              <p key={i} className="mb-6 text-muted-foreground leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <hr className="my-12 border-border" />
+
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground mb-6">
+              Need help implementing this for your Tampa Bay business?
+            </p>
+            {article.serviceSlug && (
+              <Link
+                href={`/services/${article.serviceSlug}`}
+                className="inline-flex items-center gap-2 font-medium text-primary hover:underline"
+              >
+                View related services
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </div>
+      </article>
+    </>
+  );
+}

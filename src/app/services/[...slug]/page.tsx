@@ -23,15 +23,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug.join("/"));
   if (!service) return { title: "Service Not Found" };
 
+  const baseUrl = `https://nesscotech.com`;
+  const pageUrl = `${baseUrl}/services/${service.slug}`;
+
   return {
     title: service.title,
     description: service.shortDescription,
-    alternates: { canonical: `https://nesscotech.com/services/${service.slug}` },
+    alternates: { canonical: pageUrl },
     openGraph: {
       title: `${service.title} | Nessco Tech Services`,
       description: service.shortDescription,
-      url: `https://nesscotech.com/services/${service.slug}`,
+      url: pageUrl,
       type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} — Nessco Tech Services`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} | Nessco Tech Services`,
+      description: service.shortDescription,
+      images: [`${baseUrl}/og-image.png`],
     },
   };
 }

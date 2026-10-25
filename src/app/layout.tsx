@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     template: "%s | Nessco Tech Services",
   },
   description: "Managed IT services, cybersecurity, cloud solutions, network & server support, and backup/disaster recovery for Tampa Bay businesses. Proactive monitoring, 24/7 support, and IT strategy.",
-  keywords: ["managed IT services Tampa", "business IT support", "cybersecurity Tampa Bay", "cloud solutions", "network and server support", "backup and disaster recovery", "managed service provider Tampa", "MSP Tampa Bay", "IT consulting"],
   authors: [{ name: "Nessco Tech Services" }],
   creator: "Nessco Tech Services",
   publisher: "Nessco Tech Services",
@@ -51,9 +50,7 @@ export const metadata: Metadata = {
     title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud",
     description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses.",
   },
-  verification: {
-    google: "google-site-verification-placeholder",
-  },
+  
 };
 
 export const viewport: Viewport = {

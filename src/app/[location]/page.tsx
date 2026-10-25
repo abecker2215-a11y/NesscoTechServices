@@ -41,6 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const loc = getLocation(location);
   if (!loc) return { title: "Location Not Found" };
 
+  const baseUrl = `https://nesscotech.com`;
+  const pageUrl = `${baseUrl}/${location}`;
+
   return {
     title: `IT Support in ${loc.name}, FL`,
     description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
@@ -48,8 +51,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `IT Support in ${loc.name}, FL`,
       description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
-      url: `https://nesscotech.com/${location}`,
+      url: pageUrl,
       type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `Nessco Tech Services — IT Support in ${loc.name}, FL`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `IT Support in ${loc.name}, FL`,
+      description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr.`,
+      images: [`${baseUrl}/og-image.png`],
     },
   };
 }

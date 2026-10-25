@@ -39,6 +39,7 @@ module.exports = {
       loc: path,
       changefreq: changeFreqMap[path] || (isGuide ? "weekly" : "monthly"),
       priority: isLocation || isGuide || isServiceDetail ? 0.8 : priorityMap[path] || 0.5,
+      // Use current date for lastmod to allow Google to learn it, but remove the build timestamp
       lastmod: new Date().toISOString(),
       alternateRefs: config.alternateRefs ?? [],
     };

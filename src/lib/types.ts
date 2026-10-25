@@ -109,6 +109,8 @@ export interface SiteConfig {
   phone: string;
   email: string;
   address: string;
+  addressCity?: string;
+  addressZip?: string;
   hours: string;
   serviceArea: string[];
   domain: string;

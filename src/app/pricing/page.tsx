@@ -14,9 +14,24 @@ export const metadata: Metadata = {
   description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing",
+    title: "Simple, Transparent Pricing | Nessco Tech Services",
     description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
     url: "https://nesscotech.com/pricing",
+    type: "website",
+    images: [
+      {
+        url: "https://nesscotech.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nessco Tech Services — Simple Transparent Pricing",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Simple, Transparent Pricing — Nessco Tech Services",
+    description: "Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
+    images: ["https://nesscotech.com/og-image.png"],
   },
 };
 

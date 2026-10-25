@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-G-05K9T7QMCP}
+        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-G-Q4XQPV4FH7}
     container_name: msp-website
     environment:
       - NODE_ENV=production
@@ -34,11 +34,11 @@ services:
       - AUTH_TRUST_HOST=true
       - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://nesscotech.com}
       - NEXT_PUBLIC_PLAUSIBLE_DOMAIN=${NEXT_PUBLIC_PLAUSIBLE_DOMAIN:-nesscotech.com}
-      - SMTP_URL=smtp://no-reply:Nessco2215!654!@mail.nesscotech.com:587
-      - RESEND_API_KEY=re_QE2yJbxS_AmmEkY4r6tVEY6di1VUpHqBa
-      - NOTIFY_TO=abecker2215@gmail.com
-      - EMAIL_FROM=Nessco Tech Services <onboarding@resend.dev>
-      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID:-G-05K9T7QMCP}
+      - SMTP_URL=${SMTP_URL:-}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+      - NOTIFY_TO=${NOTIFY_TO:-info@nesscotech.com}
+      - EMAIL_FROM=${EMAIL_FROM:-"Nessco Tech Services <onboarding@resend.dev>"}
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID:-G-Q4XQPV4FH7}
       - NEXT_PUBLIC_BOOKING_URL=${NEXT_PUBLIC_BOOKING_URL:-}
       - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
       - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}

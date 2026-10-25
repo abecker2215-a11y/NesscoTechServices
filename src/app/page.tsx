@@ -107,9 +107,9 @@ export default function HomePage() {
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="order-2 lg:order-1 max-w-xl min-w-0 animate-fade-in-up">
-              <h1 id="hero-heading" className="fluid-4xl font-bold text-foreground tracking-tight mb-6 text-balance break-words">
-                Business IT Without the Jargon
-              </h1>
+<h1 id="hero-heading" className="fluid-4xl font-bold text-foreground tracking-tight mb-6 text-balance break-words">
+                 Tampa Bay Business IT Without the Jargon
+               </h1>
               <p className="fluid-lg text-muted-foreground mb-8">
                 IT support, security, cloud, and infrastructure for Tampa Bay businesses.
                 No jargon. No upsells. Just results.

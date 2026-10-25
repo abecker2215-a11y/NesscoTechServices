@@ -10,9 +10,9 @@ interface GroupMeta {
 
 const groupMeta: Record<string, GroupMeta> = {
   managed: {
-    who: "Businesses with 5-500 employees that need proactive, fully managed IT.",
-    remote: 95,
-    onsite: 145,
+    who: "Businesses with 5-100 employees that need proactive, fully managed IT.",
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "What is included in managed IT?", a: "Monitoring, patching, helpdesk, vendor management, and strategic planning under a predictable monthly agreement." },
       { q: "Is there a long-term contract?", a: "Most agreements are month-to-month or annual. We earn your business every month." },
@@ -21,8 +21,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   security: {
     who: "Organizations that handle sensitive data and must meet security or compliance requirements.",
-    remote: 95,
-    onsite: 145,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "Do you help with HIPAA, PCI, or SOC 2?", a: "Yes. We map controls to your framework and provide the evidence auditors expect." },
       { q: "Can you secure remote workers?", a: "Yes. We protect endpoints, email, and identities regardless of where your team works." },
@@ -31,8 +31,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   cloud: {
     who: "Businesses modernizing infrastructure or moving workloads to Microsoft 365, Azure, or AWS.",
-    remote: 95,
-    onsite: 145,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "Will there be downtime during migration?", a: "We plan migrations to minimize disruption, typically moving cutovers outside business hours." },
       { q: "Do you support hybrid environments?", a: "Yes. We manage on-prem, cloud, and hybrid setups side by side." },
@@ -41,8 +41,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   network: {
     who: "Businesses that need reliable, scalable network, server, and data center infrastructure.",
-    remote: 95,
-    onsite: 150,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "Do you design and install cabling?", a: "Yes. We handle structured cabling (CAT6/CAT6a/fiber), design, and installation." },
       { q: "Can you manage our existing servers?", a: "Yes. We support Windows, Linux, and virtualized server fleets." },
@@ -61,8 +61,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   backup: {
     who: "Businesses that cannot afford to lose data or endure prolonged downtime.",
-    remote: 95,
-    onsite: 145,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "How often are backups tested?", a: "Backups are verified automatically and restored in periodic recovery drills." },
       { q: "Where are backups stored?", a: "Encrypted on-site and off-site, with cloud options for geographic separation." },
@@ -71,8 +71,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   apps: {
     who: "Businesses running line-of-business apps that must stay fast, secure, and available.",
-    remote: 95,
-    onsite: 145,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "Can you host our existing software?", a: "Yes. We host legacy and resource-intensive apps in secure cloud or virtual environments." },
       { q: "Will remote users still have access?", a: "Yes. We provide secure access from any device, anywhere." },
@@ -81,8 +81,8 @@ const groupMeta: Record<string, GroupMeta> = {
   },
   comm: {
     who: "Businesses that want unified, reliable voice, video, and collaboration tools.",
-    remote: 85,
-    onsite: 135,
+    remote: 75,
+    onsite: 125,
     faqs: [
       { q: "Can we keep our current numbers?", a: "Yes. We port existing numbers and configure call flows during cutover." },
       { q: "Do you support hybrid meetings?", a: "Yes. We design and support room systems and conferencing platforms." },
