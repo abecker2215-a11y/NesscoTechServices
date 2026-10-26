@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { services } from "@/lib/services";
+import { BottomCTABar } from "@/components/layout/BottomCTABar";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { Testimonials } from "@/components/home/SocialProof";
 import { OpenStatus } from "@/components/layout/OpenStatus";
@@ -114,24 +115,20 @@ export default function HomePage() {
             <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
               <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
                 <div className="flex flex-col sm:flex-row items-end justify-center gap-4 mb-8">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto min-h-[48px] hero-secondary-outline text-lg"
+                  <a
                     href="/get-help"
-                    style={{ color: 'white' }}
+                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap flex-shrink-0"
+                    style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
                   >
                     Get Help
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto min-h-[48px] hero-secondary-outline text-lg"
+                  </a>
+                  <a
                     href="/quote"
-                    style={{ color: 'white' }}
+                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap flex-shrink-0"
+                    style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
                   >
                     Request a Quote
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -530,6 +527,8 @@ export default function HomePage() {
         </div>
         </Reveal>
       </section>
+
+      <BottomCTABar />
     </>
   );
 }
