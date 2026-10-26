@@ -155,9 +155,11 @@ img {
 }
 
 .hero-secondary-outline {
-  border: 1px solid var(--cyan-400);
-  color: white;
-  background: transparent;
+  border: 1px solid var(--cyan-400) !important;
+  color: white !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 .stat-card-navy {
