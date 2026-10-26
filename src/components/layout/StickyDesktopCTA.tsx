@@ -73,7 +73,7 @@ export function StickyDesktopCTA({
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-40 animate-slide-down print:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 animate-slide-up print:hidden"
       role="banner"
       aria-label="Quick contact"
     >

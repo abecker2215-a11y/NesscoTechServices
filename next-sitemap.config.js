@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://nesscotech.com",
   generateRobotsTxt: true,
   generateIndexSitemap: true,
-  exclude: ["/server-sitemap.xml", "/get-help", "/get-help/*", "/icon.svg", "/apple-icon", "/opengraph-image", "/maintenance", "/not-found"],
+  exclude: ["/server-sitemap.xml", "/get-help", "/get-help/*", "/icon.svg", "/apple-icon", "/opengraph-image", "/maintenance", "/not-found", "/network-visualization"],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },

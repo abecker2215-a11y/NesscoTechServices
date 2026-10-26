@@ -2,15 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { services } from "@/lib/services";
-import { HeroVisual } from "@/components/home/HeroVisual";
-import { HeroQuizClient } from "@/components/home/HeroQuizClient";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
-import { Testimonials, HeroTestimonial } from "@/components/home/SocialProof";
+import { Testimonials } from "@/components/home/SocialProof";
 import { OpenStatus } from "@/components/layout/OpenStatus";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { faqPageSchema } from "@/lib/schemas";
-import { businessStats } from "@/lib/testimonials";
-import { Monitor, Shield, Database, Briefcase, Check, Truck, MousePointer, CloudLightning, ArrowRight, Mail, Cable, Star, BadgeCheck, Users, Award, Headset, HardDrive, LayoutDashboard } from "lucide-react";
+import { Monitor, Shield, Database, Briefcase, Check, Truck, MousePointer, CloudLightning, ArrowRight, Mail, Cable, Star, BadgeCheck, Users, Award, Headset, HardDrive, LayoutDashboard, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud for Tampa Bay Business",
@@ -103,85 +100,97 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={faqPageSchema(faqs)} />
-<section className="relative py-12 sm:py-16 lg:py-24 overflow-hidden" aria-labelledby="hero-heading">
-        <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="order-2 lg:order-1 max-w-xl min-w-0 animate-fade-in-up">
-<h1 id="hero-heading" className="fluid-4xl font-bold text-foreground tracking-tight mb-6 text-balance break-words">
-                 Tampa Bay Business IT Without the Jargon
-               </h1>
-              <p className="fluid-lg text-muted-foreground mb-8">
-                IT support, security, cloud, and infrastructure for Tampa Bay businesses.
-                No jargon. No upsells. Just results.
-              </p>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
-                <Button size="lg" className="w-full sm:w-auto min-h-[48px]" href="/get-help">
-                  Get Help
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]" href="/quote">
-                  Request a Quote
-                </Button>
-              </div>
-              <HeroQuizClient />
-              
-              {/* Enhanced Social Proof in Hero */}
-              <div className="mt-6 space-y-4">
-                <HeroTestimonial />
-                
-                {/* Stats Bar moved into hero */}
-                <div className="border-y border-border bg-muted/30 py-4" aria-label="Service highlights">
-                  <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    {businessStats.map((stat) => (
-                      <div key={stat.label} className="text-center">
-                        <dd className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-                          {stat.value}
-                        </dd>
-                        <dt className="mt-0.5 text-sm text-muted-foreground">{stat.label}</dt>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-  
-                {/* Trust badges */}
-                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                  <span className="flex items-center gap-1.5">
-                    <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
-                    <span className="font-medium text-foreground">4.9★</span>
-                    <span>Google</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <BadgeCheck className="h-4 w-4 text-success" aria-hidden="true" />
-                    <span>Licensed & Insured</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Users className="h-4 w-4" aria-hidden="true" />
-                    <span>500+ Clients</span>
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Award className="h-4 w-4 text-warning" aria-hidden="true" />
-                    <span>Top Rated Tampa Bay</span>
-                  </span>
+<section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-labelledby="hero-heading">
+        <div className="relative h-[450px] sm:h-[520px] lg:h-[600px] min-h-[350px] w-full rounded-2xl overflow-hidden">
+            <img
+              src="/hero-banner.png"
+              alt="Nessco Tech Services banner"
+              className="object-contain object-top w-full h-auto block"
+              decoding="async"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-navy-950/20 z-5" />
+            <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+            <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
+              <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
+                <div className="flex flex-col sm:flex-row items-end justify-center gap-4 mb-8">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto min-h-[48px] hero-secondary-outline text-lg"
+                    href="/get-help"
+                    style={{ color: 'white' }}
+                  >
+                    Get Help
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto min-h-[48px] hero-secondary-outline text-lg"
+                    href="/quote"
+                    style={{ color: 'white' }}
+                  >
+                    Request a Quote
+                  </Button>
                 </div>
               </div>
-              
-              <p className="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
-                <OpenStatus variant="inline" />
-                <span aria-hidden="true">•</span>
-                <span>Starting at $75</span>
-                <span aria-hidden="true">•</span>
-                <span>Remote & On-Site</span>
-                <span aria-hidden="true">•</span>
-                <span>Tampa Bay Area</span>
-              </p>
-            </div>
-            <div className="order-1 lg:order-2 min-w-0 animate-fade-in-up-delayed">
-              <HeroVisual />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <TrustSignalBarClient />
+        {/* Stats section below banner */}
+        <section className="mt-12" aria-label="Service highlights">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-960 mx-auto px-4" role="list">
+              <article className="stat-card-navy text-center">
+                <b>2 hrs</b>
+                <span>Typical response</span>
+              </article>
+              <article className="stat-card-navy text-center">
+                <b>$75</b>
+                <span>Remote fixes from</span>
+              </article>
+              <article className="stat-card-navy text-center">
+                <b>56 cities</b>
+                <span>Across Tampa Bay</span>
+              </article>
+              <article className="stat-card-navy text-center">
+                <b className="stat-value-cyan">4.9 ★</b>
+                <span>Google rating</span>
+              </article>
+            </div>
+          </section>
+
+          {/* Trust badges below stats */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
+              <span className="font-medium text-foreground">4.9★</span>
+              <span>Google</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <BadgeCheck className="h-4 w-4 text-success" aria-hidden="true" />
+              <span>Licensed & Insured</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Users className="h-4 w-4" aria-hidden="true" />
+              <span>500+ Clients</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Award className="h-4 w-4 text-warning" aria-hidden="true" />
+              <span>Top Rated Tampa Bay</span>
+            </span>
+          </div>
+
+          <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+            <OpenStatus variant="inline" />
+            <span aria-hidden="true">•</span>
+            <span>Starting at $75</span>
+            <span aria-hidden="true">•</span>
+            <span>Remote & On-Site</span>
+            <span aria-hidden="true">•</span>
+            <span>Tampa Bay Area</span>
+          </p>
+        <TrustSignalBarClient />
 
       <LiveStatsClient />
 

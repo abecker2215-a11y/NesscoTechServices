@@ -22,7 +22,7 @@ export function PageContainer({ children, skipLink = true, className, ...props }
         </a>
       )}
       <Header />
-      <main id="main-content" className="flex-1 pt-16" role="main">
+      <main id="main-content" className="flex-1 pt-0" role="main">
         {children}
       </main>
       <Footer />

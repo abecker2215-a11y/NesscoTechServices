@@ -38,6 +38,20 @@ img {
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
+
+  /* Navy/cyan design tokens (homepage-first) */
+  --navy-950: #060d1f;
+  --navy-900: #0a1530;
+  --navy-800: #0e2250;
+  --navy-700: #123378;
+  --blue-600: #1a56d6;
+  --blue-500: #2b7bff;
+  --cyan-400: #1fb6f2;
+  --cyan-300: #6fd6ff;
+  --orange: #f59a5b;
+  --pink: #e98ba8;
+  --text: #c9d6f2;
+  --muted: #8da2cc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,6 +133,58 @@ img {
   --shadow: var(--shadow);
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
+}
+
+/* Nessco Preview Design Tokens (navy / cyan / orange / pink) */
+.navy-950 { --bg: var(--navy-950); }
+.navy-900 { --bg: var(--navy-900); }
+.navy-800 { --bg: var(--navy-800); }
+.navy-700 { --bg: var(--navy-700); }
+
+.hero-navy {
+  background: var(--navy-900);
+  color: var(--text);
+}
+
+.hero-primary-gradient {
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-500) 45%, var(--cyan-400));
+}
+
+.hero-glow-cyan {
+  box-shadow: 0 0 22px rgba(31, 182, 242, 0.35);
+}
+
+.hero-secondary-outline {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: white;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.stat-card-navy {
+  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  border: 1px solid var(--navy-700);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.stat-card-navy b {
+  display: block;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.stat-card-navy span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stat-value-cyan { color: var(--cyan-400); }
+
+.emergency-gradient {
+  background: linear-gradient(90deg, var(--orange), var(--pink));
+  color: #1a0f08;
 }
 
 * {

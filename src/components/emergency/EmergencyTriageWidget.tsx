@@ -193,7 +193,7 @@ export function EmergencyTriageWidget({ inline = false }: EmergencyTriageWidgetP
         variant="outline"
         size="sm"
         onClick={handleOpen}
-        className="whitespace-nowrap gap-1.5"
+        className="whitespace-nowrap gap-1.5 bg-gradient-to-r from-orange-500 to-pink-500 border-none hover:from-orange-600 hover:to-pink-600 text-white font-medium shadow-sm hover:shadow-md transition-all"
         aria-label="Emergency IT triage"
         aria-expanded={isOpen}
       >

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -55,7 +55,6 @@ import { navItems, siteConfig } from "@/lib/config";
 import type { NavChild, NavItem } from "@/lib/types";
 import { ThemeToggle } from "./ThemeToggle";
 import { OpenStatus } from "./OpenStatus";
-import { EmergencyTriageWidget } from "@/components/emergency/EmergencyTriageWidget";
 import { AIRecommendations } from "@/components/recommendations/AIRecommendations";
 import { TechnicianAvailability } from "@/components/status/TechnicianAvailability";
 
@@ -136,9 +135,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
-        isScrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-sm border-b border-border"
-          : "bg-transparent"
+        isScrolled ? "bg-[var(--navy-900)] border-b border-[var(--navy-700)]" : "bg-transparent"
       )}
     >
       <nav className="w-full px-4 lg:px-6 xl:px-8 max-w-[1800px] mx-auto" aria-label="Main navigation">
@@ -146,11 +143,14 @@ export function Header() {
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               href="/"
-              className="flex items-center gap-2 font-semibold text-xl text-foreground hover:opacity-80 transition-opacity"
+              className="flex items-center gap-2 font-semibold tracking-tight text-navy-50 hover:opacity-80 transition-opacity"
               aria-label={`${siteConfig.name} - Home`}
             >
-              <Monitor className="h-6 w-6 text-primary" aria-hidden="true" />
-              <span>{siteConfig.name}</span>
+              <Monitor className="h-6 w-6 text-cyan-400" aria-hidden="true" />
+              <span>
+                <span className="tracking-tighter text-white">NESSCO</span>{" "}
+                <span className="text-cyan-400 text-[12px] tracking-[2px] font-medium">TECH SERVICES</span>
+              </span>
             </Link>
             <div className="hidden lg:flex items-center">
               <OpenStatus />
@@ -169,16 +169,19 @@ export function Header() {
                 }
                 if (item.label === "Contact") {
                   return (
-                    <>
-                      <NavLink key={item.href} item={item} />
+                    <React.Fragment key={item.href}>
+                      <NavLink key={`${item.href}-nav`} item={item} />
                       <Link
                         href="/portal"
-                        className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors whitespace-nowrap flex-shrink-0"
+                        className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors whitespace-nowrap flex-shrink-0"
                       >
                         <Lock className="h-4 w-4" aria-hidden="true" />
                         <span>Portal</span>
                       </Link>
-                    </>
+                      <Button size="sm" className="whitespace-nowrap hero-secondary-outline">
+                        Get Help
+                      </Button>
+                    </React.Fragment>
                   );
                 }
                 return <NavLink key={item.href} item={item} />;
@@ -188,14 +191,10 @@ export function Header() {
 
           <div className="hidden lg:flex lg:items-center lg:gap-2 flex-shrink-0">
             <ThemeToggle />
-            <Button size="sm" href="/get-help" className="whitespace-nowrap">
-              Get Help
-            </Button>
-            <EmergencyTriageWidget inline />
           </div>
 
           <button
-            className="xl:hidden p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className="xl:hidden p-2 rounded-md text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors"
             onClick={() => setIsMobileOpen(true)}
             aria-label="Open menu"
             aria-expanded={isMobileOpen}
@@ -220,14 +219,14 @@ function NavLink({ item }: { item: NavItem }) {
       aria-current={isActive ? "page" : undefined}
       className={cn(
         "relative text-sm font-medium transition-colors",
-        isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+        isActive ? "text-white" : "text-white hover:text-cyan-300"
       )}
     >
       {item.label}
       <span
         className={cn(
-          "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-primary transition-all duration-200",
-          isActive ? "w-4 opacity-100" : "w-0 opacity-0"
+          "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full transition-all duration-200",
+          isActive ? "w-4 opacity-100 bg-cyan-400" : "w-0 opacity-0"
         )}
         aria-hidden="true"
       />
@@ -308,21 +307,21 @@ function DropdownMenu({ item }: { item: NavItem }) {
       <button
         type="button"
         onClick={() => (isOpen ? closeNow() : setIsOpen(true))}
-        className={cn(
+    className={cn(
           "relative flex items-center gap-1 rounded-md px-1 py-1 text-sm font-medium transition-colors",
-          isActive || isOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+          isActive || isOpen ? "text-white" : "text-white hover:text-cyan-300"
         )}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         {item.label}
         <ChevronDown
-          className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180 text-primary")}
+          className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180 text-cyan-400")}
           aria-hidden="true"
         />
         <span
           className={cn(
-            "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-primary transition-all duration-200",
+            "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-cyan-400 transition-all duration-200",
             isActive ? "w-4 opacity-100" : "w-0 opacity-0"
           )}
           aria-hidden="true"
@@ -484,7 +483,7 @@ function MegaLink({
         <span className="flex items-center gap-1 text-sm font-semibold text-foreground">
           {child.label}
           <ArrowRight
-            className="h-3.5 w-3.5 -translate-x-1 text-primary opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
+            className="h-3.5 w-3.5 -translate-x-1 text-cyan-400 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
             aria-hidden="true"
           />
         </span>
@@ -512,14 +511,14 @@ function FeaturedCard({
   return (
     <div
       style={style}
-      className="animate-mega-item-in relative flex flex-col rounded-xl border border-primary/25 bg-gradient-to-b from-primary/10 via-primary/5 to-transparent p-5 md:col-span-2 lg:col-span-1"
+      className="animate-mega-item-in relative flex flex-col rounded-xl border border-navy-700/50 bg-gradient-to-b from-navy-900/50 via-navy-900/25 to-transparent p-5 md:col-span-2 lg:col-span-1"
     >
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-sky-600 text-primary-foreground shadow-sm">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-cyan-50 shadow-sm">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <div>
-          <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-primary">
+          <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-cyan-400">
             Most requested
           </span>
           <h3 className="text-sm font-semibold text-foreground">{child.label}</h3>
@@ -534,7 +533,7 @@ function FeaturedCard({
         <ul className="mt-3 space-y-1.5">
           {child.bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-2 text-xs text-muted-foreground">
-              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" aria-hidden="true" />
+              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-foreground" aria-hidden="true" />
               {bullet}
             </li>
           ))}
@@ -544,7 +543,7 @@ function FeaturedCard({
       <Link
         href={child.href}
         onClick={onClick}
-        className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+        className="mt-auto inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent px-3 py-2 text-xs font-semibold text-accent-foreground shadow-sm transition-all hover:bg-accent/90 hover:shadow-md"
       >
         {child.ctaLabel ?? `Explore ${child.label}`}
         <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -559,14 +558,16 @@ function MobileNav({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-label="Mobile menu">
       <div className="fixed inset-0 bg-black/50 animate-fade-in" onClick={onClose} aria-hidden="true" />
-      <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-background shadow-xl animate-slide-in-right">
+      <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-navy-950 shadow-xl animate-slide-in-right border-l border-navy-700">
         <div className="flex h-full flex-col">
-          <div className="flex h-16 items-center justify-between border-b border-border p-4">
-            <span className="font-semibold text-lg">{siteConfig.name}</span>
+          <div className="flex h-16 items-center justify-between border-b border-navy-700 p-4">
+            <span className="font-semibold text-lg text-white">
+              <span className="tracking-tighter">NESSCO</span>
+            </span>
           <div className="flex flex-1 items-center justify-end gap-1">
             <ThemeToggle />
             <button
-              className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              className="p-2 rounded-md text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors"
               onClick={onClose}
               aria-label="Close menu"
             >
@@ -590,8 +591,8 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                     className={cn(
                       "block px-4 py-4 text-base font-medium rounded-lg transition-colors min-h-[48px]",
                       isPathActive(pathname, item.href)
-                        ? "text-foreground bg-accent"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "text-white bg-navy-800/50"
+                        : "text-cyan-200 hover:text-white hover:bg-navy-800/50"
                     )}
                     onClick={onClose}
                   >
@@ -600,7 +601,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
                 )
               )}
             </div>
-            <div className="border-t border-border pt-4 space-y-3">
+            <div className="border-t border-navy-700 pt-4 space-y-3">
               <Button className="w-full min-h-[48px]" size="lg" href="/get-help" onClick={onClose}>
                 Get Help
               </Button>
@@ -635,11 +636,11 @@ function MobileDropdown({ item, onClose }: { item: NavItem; onClose: () => void 
         className={cn(
           "flex items-center gap-2.5 rounded-md px-3 py-3 text-sm transition-colors min-h-[44px]",
           active
-            ? "bg-accent font-medium text-foreground"
-            : "text-muted-foreground hover:text-foreground"
+            ? "bg-accent font-medium text-white"
+            : "text-cyan-200 hover:text-white"
         )}
       >
-        {Icon && <Icon className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />}
+        {Icon && <Icon className="h-4 w-4 shrink-0 text-cyan-400" aria-hidden="true" />}
         <span>{child.label}</span>
       </Link>
     );
@@ -651,7 +652,7 @@ function MobileDropdown({ item, onClose }: { item: NavItem; onClose: () => void 
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "flex w-full items-center justify-between px-4 py-3 text-base font-medium rounded-lg transition-colors min-h-[48px]",
-          isActive ? "text-foreground bg-accent" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+          isActive ? "text-white bg-accent" : "text-cyan-200 hover:text-white hover:bg-muted"
         )}
         aria-expanded={isOpen}
       >
