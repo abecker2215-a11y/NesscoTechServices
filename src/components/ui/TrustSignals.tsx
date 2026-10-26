@@ -75,7 +75,7 @@ export function LiveCounter({
       <div className="text-3xl sm:text-4xl font-bold text-foreground">
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm text-muted-foreground">{label}</div>
+      <div className="text-sm text-slate-300">{label}</div>
     </div>
   );
 }

@@ -66,7 +66,7 @@ export function PWAInstallPrompt({ className, children: _children }: PWAInstallP
   return (
     <div 
       className={cn(
-        "fixed bottom-4 left-4 right-4 md:bottom-6 md:left-auto md:right-6 md:w-80 z-50 animate-slide-up",
+        "hidden md:flex fixed bottom-4 left-4 right-4 md:bottom-6 md:left-auto md:right-6 md:w-80 z-50 animate-slide-up",
         className
       )}
       role="dialog"

@@ -27,8 +27,6 @@ export const navItems: NavItem[] = [
       { id: "network", label: "Network & Server", icon: "cable" },
       { id: "support", label: "IT Support", icon: "headset" },
       { id: "backup", label: "Backup & Disaster Recovery", icon: "harddrive" },
-      { id: "apps", label: "Applications", icon: "monitor" },
-      { id: "comm", label: "Communications", icon: "mail" },
     ],
     children: [
       // Managed IT Services

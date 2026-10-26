@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
+import { HeroBanner } from "@/components/home/HeroBanner";
 import { services } from "@/lib/services";
-import { BottomCTABar } from "@/components/layout/BottomCTABar";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { Testimonials } from "@/components/home/SocialProof";
 import { OpenStatus } from "@/components/layout/OpenStatus";
@@ -102,29 +102,23 @@ export default function HomePage() {
     <>
       <JsonLd data={faqPageSchema(faqs)} />
 <section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-labelledby="hero-heading">
-        <div className="relative h-[450px] sm:h-[520px] lg:h-[600px] min-h-[350px] w-full rounded-2xl overflow-hidden">
-            <img
-              src="/hero-banner.png"
-              alt="Nessco Tech Services banner"
-              className="object-contain object-top w-full h-auto block"
-              decoding="async"
-              loading="eager"
-            />
+            <div className="relative h-auto sm:h-[400px] lg:h-[600px] min-h-[160px] max-h-[60dvh] w-full rounded-2xl overflow-hidden">
+            <HeroBanner />
             <div className="absolute inset-0 bg-navy-950/20 z-5" />
             <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
             <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
               <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
-                <div className="flex flex-col sm:flex-row items-end justify-center gap-4 mb-8">
+                <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
                   <a
                     href="/get-help"
-                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap flex-shrink-0"
+                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
                     style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
                   >
                     Get Help
                   </a>
                   <a
                     href="/quote"
-                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap flex-shrink-0"
+                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
                     style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
                   >
                     Request a Quote
@@ -527,8 +521,6 @@ export default function HomePage() {
         </div>
         </Reveal>
       </section>
-
-      <BottomCTABar />
     </>
   );
 }

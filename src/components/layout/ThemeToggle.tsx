@@ -9,7 +9,7 @@ const STORAGE_KEY = "nessco-theme";
 const CHANGE_EVENT = "nessco-theme-change";
 
 function getServerSnapshot(): Theme {
-  return "light";
+  return "dark";
 }
 
 function getSnapshot(): Theme {

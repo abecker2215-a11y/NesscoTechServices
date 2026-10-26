@@ -6,7 +6,6 @@ import { MobileCTABar } from "./MobileCTABar";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { CallTracker } from "@/components/CallTracker";
-import { StickyDesktopCTA } from "./StickyDesktopCTA";
 
 export interface PageContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -28,7 +27,6 @@ export function PageContainer({ children, skipLink = true, className, ...props }
       <Footer />
       <MobileCTABar />
       <ChatWidget />
-      <StickyDesktopCTA />
       <ExitIntentPopup />
       <CallTracker />
     </div>

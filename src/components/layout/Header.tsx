@@ -124,22 +124,46 @@ function isPathActive(pathname: string, href: string) {
 export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 1024 : false
+  );
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setIsScrolled(y > 10);
+      setScrolledPastHero(y > 250);
+    };
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  const showHeaderBg = isScrolled;
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
-        isScrolled ? "bg-[var(--navy-900)] border-b border-[var(--navy-700)]" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out",
+        showHeaderBg ? "bg-[var(--navy-900)] border-b border-[var(--navy-700)]" : "bg-transparent"
       )}
     >
+      {/* Logo + desktop nav: hidden on mobile until scrolled past hero */}
       <nav className="w-full px-4 lg:px-6 xl:px-8 max-w-[1800px] mx-auto" aria-label="Main navigation">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div
+          className={cn(
+            "flex h-16 items-center justify-between gap-4 transition-transform duration-300 ease-out",
+            isMobile && !scrolledPastHero
+              ? "-translate-y-[-100%] opacity-0 pointer-events-none"
+              : "translate-y-0 opacity-100 pointer-events-auto"
+          )}
+        >
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               href="/"
@@ -192,17 +216,22 @@ export function Header() {
           <div className="hidden lg:flex lg:items-center lg:gap-2 flex-shrink-0">
             <ThemeToggle />
           </div>
-
-          <button
-            className="xl:hidden p-2 rounded-md text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors"
-            onClick={() => setIsMobileOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={isMobileOpen}
-          >
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          </button>
         </div>
       </nav>
+
+      {/* Mobile hamburger: always visible and clickable, not affected by the nav wrapper transform */}
+      <button
+        className={cn(
+          "xl:hidden fixed top-4 right-4 z-50 p-2 rounded-md text-white",
+          !scrolledPastHero ? "bg-black/20 backdrop-blur-sm" : "bg-navy-800/80 backdrop-blur",
+          "hover:text-cyan-300 hover:bg-white/10 transition-colors"
+        )}
+        onClick={() => setIsMobileOpen(true)}
+        aria-label="Open menu"
+        aria-expanded={isMobileOpen}
+      >
+        <Menu className="h-6 w-6" aria-hidden="true" />
+      </button>
 
       {isMobileOpen && <MobileNav onClose={() => setIsMobileOpen(false)} />}
     </header>
@@ -557,7 +586,7 @@ function MobileNav({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-label="Mobile menu">
-      <div className="fixed inset-0 bg-black/50 animate-fade-in" onClick={onClose} aria-hidden="true" />
+      <div className="fixed inset-0 bg-black/90 animate-fade-in" onClick={onClose} aria-hidden="true" />
       <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-navy-950 shadow-xl animate-slide-in-right border-l border-navy-700">
         <div className="flex h-full flex-col">
           <div className="flex h-16 items-center justify-between border-b border-navy-700 p-4">

@@ -120,7 +120,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         </noscript>
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("nessco-theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.dataset.theme="dark"}else{document.documentElement.dataset.theme="light"}}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("nessco-theme");if(t==="light"){document.documentElement.dataset.theme="light"}else{document.documentElement.dataset.theme="dark"}}catch(e){}`,
           }}
         />
         <script
