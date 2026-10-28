@@ -67,17 +67,17 @@ export function LiveCounter({
   return (
     <div 
       ref={elementRef}
-      className="flex flex-col items-center gap-1.5 text-center px-3 py-3"
+      className="flex flex-col items-center gap-2 text-center px-4 pt-0 pb-6"
     >
       {Icon && (
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <Icon className="h-4 w-4" aria-hidden="true" />
+        <div className="flex h-5 w-5 items-center justify-center rounded-md bg-primary/10 text-primary">
+          <Icon className="h-3 w-3" aria-hidden="true" />
         </div>
       )}
       <div className="text-3xl sm:text-4xl font-bold text-foreground">
         {prefix}{count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm text-slate-300">{label}</div>
+      <div className="text-base text-slate-300">{label}</div>
     </div>
   );
 }
@@ -135,8 +135,8 @@ export function LiveStats() {
   ];
 
   return (
-    <div className="bg-primary text-primary-foreground rounded-2xl pt-4 md:pt-5 pb-2 px-3 md:px-4 flex flex-col items-center" aria-label="Live statistics">
-      <div className="flex flex-wrap gap-3 md:gap-5 items-center justify-center">
+    <div className="bg-primary text-primary-foreground rounded-2xl pt-2 md:pt-3 pb-4 md:py-5 px-4 md:px-6 flex flex-col items-center" aria-label="Live statistics">
+      <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center">
         {stats.map((stat, i) => (
           <LiveCounter key={i} {...stat} duration={2500} />
         ))}
