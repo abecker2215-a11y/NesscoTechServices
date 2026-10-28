@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import { Shield, CheckCircle, Users, Award, Star, Clock, Lock, BadgeCheck, TrendingUp } from "lucide-react";
+import { Shield, CheckCircle, Users, Award, Star, Clock, Lock, BadgeCheck, TrendingUp, DollarSign, MapPin } from "lucide-react";
 interface LiveCounterProps {
   label: string;
   start: number;
   end: number;
   duration?: number;
   suffix?: string;
+  prefix?: string;
   icon?: React.ComponentType<{ className?: string }>;
 }
 
@@ -17,6 +18,7 @@ export function LiveCounter({
   end, 
   duration = 2000, 
   suffix = "+",
+  prefix = "",
   icon: Icon 
 }: LiveCounterProps) {
   const [count, setCount] = useState(start);
@@ -65,15 +67,15 @@ export function LiveCounter({
   return (
     <div 
       ref={elementRef}
-      className="flex flex-col items-center gap-2 text-center p-4"
+      className="flex flex-col items-center gap-1.5 text-center px-3 py-3"
     >
       {Icon && (
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-          <Icon className="h-6 w-6" aria-hidden="true" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <Icon className="h-4 w-4" aria-hidden="true" />
         </div>
       )}
       <div className="text-3xl sm:text-4xl font-bold text-foreground">
-        {count.toLocaleString()}{suffix}
+        {prefix}{count.toLocaleString()}{suffix}
       </div>
       <div className="text-sm text-slate-300">{label}</div>
     </div>
@@ -123,15 +125,18 @@ export function TrustSignalBar() {
 
 export function LiveStats() {
   const stats = [
-    { label: "Clients Served", start: 0, end: 500, icon: Users, suffix: "+" },
-    { label: "Tickets Resolved", start: 0, end: 1247, icon: CheckCircle, suffix: "+" },
+    { label: "Remote fixes from", start: 0, end: 75, icon: DollarSign, prefix: "$", suffix: "" },
     { label: "Avg Response Time", start: 0, end: 47, icon: Clock, suffix: " min" },
+    { label: "Clients Served", start: 0, end: 500, icon: Users, suffix: "+" },
+    { label: "Tickets Resolved", start: 0, end: 10247, icon: CheckCircle, suffix: "+" },
+    { label: "Across Tampa Bay", start: 0, end: 56, icon: MapPin, suffix: " cities" },
     { label: "Satisfaction Rate", start: 0, end: 98, icon: Star, suffix: "%" },
+    { label: "Google rating", start: 0, end: 5, icon: Star, suffix: " ★" },
   ];
 
   return (
-    <div className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-10" aria-label="Live statistics">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <div className="bg-primary text-primary-foreground rounded-2xl pt-4 md:pt-5 pb-2 px-3 md:px-4 flex flex-col items-center" aria-label="Live statistics">
+      <div className="flex flex-wrap gap-3 md:gap-5 items-center justify-center">
         {stats.map((stat, i) => (
           <LiveCounter key={i} {...stat} duration={2500} />
         ))}
@@ -140,9 +145,9 @@ export function LiveStats() {
   );
 }
 
-export function GoogleReviewsWidget({ 
-  placeId = "ChIJXXXXXXXXXXXX", 
-  apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "" 
+export function GoogleReviewsWidget({
+  placeId = "ChIJXXXXXXXXXXXX",
+  apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""
 }: { placeId?: string; apiKey?: string }) {
   const [reviews, setReviews] = useState<{ author: string; rating: number; text: string; time: number }[]>([]);
   const [rating, setRating] = useState(0);
@@ -168,7 +173,7 @@ export function GoogleReviewsWidget({
     return () => clearTimeout(timeout);
   }, [apiKey, placeId]);
 
-  if (loading) {
+if (loading) {
     return (
       <div className="animate-pulse space-y-4 max-w-md mx-auto">
         <div className="h-8 bg-muted rounded w-1/2 mx-auto" />

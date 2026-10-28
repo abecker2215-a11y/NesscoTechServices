@@ -153,28 +153,6 @@ export default function HomePage() {
 
         <TrustSignalBarClient />
 
-        {/* Stats section below banner */}
-        <section className="mt-12" aria-label="Service highlights">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-960 mx-auto px-4" role="list">
-              <article className="stat-card-navy text-center">
-                <b>2 hrs</b>
-                <span>Typical response</span>
-              </article>
-              <article className="stat-card-navy text-center">
-                <b>$75</b>
-                <span>Remote fixes from</span>
-              </article>
-              <article className="stat-card-navy text-center">
-                <b>56 cities</b>
-                <span>Across Tampa Bay</span>
-              </article>
-              <article className="stat-card-navy text-center">
-                <b className="stat-value-cyan">4.9 ★</b>
-                <span>Google rating</span>
-              </article>
-            </div>
-          </section>
-
           <p className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
             <OpenStatus variant="inline" />
             <span aria-hidden="true">•</span>

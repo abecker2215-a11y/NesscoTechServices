@@ -98,7 +98,7 @@ export function ChatWidget() {
           {
             id: "after-hours",
             from: "bot",
-            text: `We're closed right now — back ${backLabel} ET. Ask away anyway: I'll point you to the right fix, and anything you start tonight is first in queue at 8am. Active security emergency? Call ${siteConfig.phone}.`,
+            text: `We're closed right now — back ${backLabel} ET. Ask away anyway: I'll point you to the right fix, and anything you start tonight is first in queue at 8am.`,
           },
         ]);
       }
