@@ -128,7 +128,7 @@ export function LiveStats() {
     { label: "Remote fixes from", start: 0, end: 75, icon: DollarSign, prefix: "$", suffix: "" },
     { label: "Avg Response Time", start: 0, end: 47, icon: Clock, suffix: " min" },
     { label: "Clients Served", start: 0, end: 500, icon: Users, suffix: "+" },
-    { label: "Tickets Resolved", start: 0, end: 10247, icon: CheckCircle, suffix: "+" },
+    { label: "Tickets Resolved", start: 0, end: 88247, icon: CheckCircle, suffix: "+" },
     { label: "Across Tampa Bay", start: 0, end: 56, icon: MapPin, suffix: " cities" },
     { label: "Satisfaction Rate", start: 0, end: 98, icon: Star, suffix: "%" },
     { label: "Google rating", start: 0, end: 5, icon: Star, suffix: " ★" },
