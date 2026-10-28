@@ -28,7 +28,7 @@ export function HeroBanner() {
     <img
       src={src}
       alt="Nessco Tech Services banner"
-      className="object-contain object-top w-full h-full block"
+      className="object-contain object-top w-full h-auto block"
       decoding="async"
       loading="eager"
     />

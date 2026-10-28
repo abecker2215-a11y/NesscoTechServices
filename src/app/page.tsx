@@ -102,7 +102,7 @@ export default function HomePage() {
     <>
       <JsonLd data={faqPageSchema(faqs)} />
 <section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-labelledby="hero-heading">
-            <div className="relative h-auto sm:h-[400px] lg:h-[600px] min-h-[160px] max-h-[60dvh] w-full rounded-2xl overflow-hidden">
+            <div className="relative w-full h-auto min-h-[160px] rounded-2xl overflow-hidden">
             <HeroBanner />
             <div className="absolute inset-0 bg-navy-950/20 z-5" />
             <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
