@@ -10,6 +10,7 @@ import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, cityBusinessSchema, faqPageSchema } from "@/lib/schemas";
 import { FAQItem } from "@/lib/types";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 interface Props {
   params: Promise<{ location: string }>;
@@ -45,12 +46,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageUrl = `${baseUrl}/${location}`;
 
   return {
-    title: `IT Support in ${loc.name}, FL`,
-    description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
+    title: pageTitle(`IT Support in ${loc.name}, FL`),
+    description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
     alternates: { canonical: `/${location}` },
     openGraph: {
-      title: `IT Support in ${loc.name}, FL`,
-      description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`,
+      title: pageTitle(`IT Support in ${loc.name}, FL`),
+      description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
       url: pageUrl,
       type: "website",
       images: [
@@ -64,8 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `IT Support in ${loc.name}, FL`,
-      description: `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr.`,
+      title: pageTitle(`IT Support in ${loc.name}, FL`),
+      description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr.`),
       images: [`${baseUrl}/og-image.png`],
     },
   };

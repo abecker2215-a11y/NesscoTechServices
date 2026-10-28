@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           </h1>
           <p className="text-sm text-muted-foreground mb-8">Last updated: October 2026</p>
 
-          <div className="prose-sm space-y-6 text-muted-foreground">
+            <div className="prose-sm space-y-6 text-muted-foreground">
             <div>
               <h2 className="text-xl font-semibold text-foreground mb-2">What we collect</h2>
               <p>
@@ -38,7 +38,8 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-semibold text-foreground mb-2">What we don&apos;t do</h2>
               <p>
                 We don&apos;t sell, rent, or share your personal information with third parties for marketing.
-                We don&apos;t use advertising cookies or build profiles of visitors.
+                We don&apos;t use advertising cookies or build profiles of visitors. We do not use tracking pixels
+                from advertising networks and we do not run retargeting campaigns.
               </p>
             </div>
 
@@ -55,7 +56,17 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-semibold text-foreground mb-2">Data retention</h2>
               <p>
                 Form submissions are retained only as long as needed to handle your request and maintain business
-                records. You may request deletion of your information at any time.
+                records. You may request deletion of your information at any time by emailing us. We will confirm
+                deletion in writing.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Your rights</h2>
+              <p>
+                You have the right to see what information we hold about you, to correct inaccuracies, and to ask
+                us to delete your data. Contact us using the information below and we&apos;ll respond within one
+                business day.
               </p>
             </div>
 

@@ -4,15 +4,16 @@ import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { CloudLightning } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Storm-Ready IT Check | Tampa Bay MSP",
+    title: pageTitle("Storm-Ready IT Check | Tampa Bay MSP"),
   description:
-    "60-second quiz: would your files survive a surge, flood, or week without power? Get your storm-readiness score.",
+    metaDescription("60-second quiz: would your files survive a surge, flood, or week without power? Get your storm-readiness score."),
   alternates: { canonical: "/storm-ready" },
   openGraph: {
-  title: "Storm-Ready IT Check | Tampa Bay MSP",
-    description: "60-second storm-readiness quiz for Tampa Bay businesses.",
+  title: pageTitle("Storm-Ready IT Check | Tampa Bay MSP"),
+    description: metaDescription("60-second storm-readiness quiz for Tampa Bay businesses."),
     url: "https://nesscotech.com/storm-ready",
   },
 };

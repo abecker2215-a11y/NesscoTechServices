@@ -8,11 +8,12 @@ import { Testimonials } from "@/components/home/SocialProof";
 import { OpenStatus } from "@/components/layout/OpenStatus";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { faqPageSchema } from "@/lib/schemas";
+import { pageTitle, metaDescription } from "@/lib/meta";
 import { Monitor, Shield, Database, Briefcase, Check, Truck, MousePointer, CloudLightning, ArrowRight, Mail, Cable, Star, BadgeCheck, Users, Award, Headset, HardDrive, LayoutDashboard, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Nessco Tech Services | Tampa Bay IT Support",
-  description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring, 24/7 support.",
+    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
+  description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring, 24/7 support."),
   metadataBase: new URL("https://nesscotech.com"),
   alternates: {
     canonical: "https://nesscotech.com/",
@@ -20,15 +21,15 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://nesscotech.com/",
     siteName: "Nessco Tech Services",
-    title: "Nessco Tech Services | Tampa Bay IT Support",
-    description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support.",
+    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
+    description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support."),
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nessco Tech Services | Managed IT & Cybersecurity",
-    description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses.",
+    title: pageTitle("Nessco Tech Services | Managed IT & Cybersecurity"),
+    description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses."),
   },
   robots: { index: true, follow: true },
 };

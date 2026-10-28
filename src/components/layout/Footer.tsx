@@ -54,20 +54,20 @@ export function Footer() {
           <nav aria-label="Services">
             <h3 className="font-semibold text-foreground">Services</h3>
             <ul className="mt-4 space-y-2" role="list">
-              <li><Link href="/services/computer-repair" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Computer Repair</Link></li>
-              <li><Link href="/services/wifi-networking" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Wi-Fi & Networking</Link></li>
-              <li><Link href="/services/microsoft-365" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Microsoft 365</Link></li>
-              <li><Link href="/services/cybersecurity" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Security Cleanup</Link></li>
-              <li><Link href="/services/data-backup" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Data Backup</Link></li>
-              <li><Link href="/services/business-it" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Business IT</Link></li>
-              <li><Link href="/services/remote-support" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Remote Support</Link></li>
-              <li><Link href="/services/network-installation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Network Installation</Link></li>
-              <li><Link href="/services/email" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Email Problems</Link></li>
-              <li><Link href="/services/voip-phone-systems" className="text-sm text-muted-foreground hover:text-foreground transition-colors">VoIP & Phone Systems</Link></li>
-              <li><Link href="/services/it-consulting" className="text-sm text-muted-foreground hover:text-foreground transition-colors">IT Consulting & vCIO</Link></li>
-              <li><Link href="/services/compliance-support" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Compliance Support</Link></li>
-              <li><Link href="/services/copilot-deployment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Microsoft Copilot</Link></li>
-              <li><Link href="/services/google-workspace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Google Workspace</Link></li>
+              <li><Link href="/services/it-support/pc-mac" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Computer Repair</Link></li>
+              <li><Link href="/services/network-server/wireless" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Wi-Fi & Networking</Link></li>
+              <li><Link href="/services/cloud-solutions/microsoft-365" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Microsoft 365</Link></li>
+              <li><Link href="/services/it-security" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Security Cleanup</Link></li>
+              <li><Link href="/services/backup-disaster-recovery/backup" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Data Backup</Link></li>
+              <li><Link href="/services/managed-it-services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Business IT</Link></li>
+              <li><Link href="/services/it-support" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Remote Support</Link></li>
+              <li><Link href="/services/network-server/infrastructure" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Network Installation</Link></li>
+              <li><Link href="/services/communications/business-email" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Email Problems</Link></li>
+              <li><Link href="/services/communications/phone-systems" className="text-sm text-muted-foreground hover:text-foreground transition-colors">VoIP & Phone Systems</Link></li>
+              <li><Link href="/services/managed-it-services/vcio" className="text-sm text-muted-foreground hover:text-foreground transition-colors">IT Consulting & vCIO</Link></li>
+              <li><Link href="/services/it-security/audit-compliance" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Compliance Support</Link></li>
+              <li><Link href="/services/applications/m365-management" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Microsoft Copilot</Link></li>
+              <li><Link href="/services/cloud-solutions/google-workspace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Google Workspace</Link></li>
             </ul>
           </nav>
 

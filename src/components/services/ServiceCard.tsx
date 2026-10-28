@@ -76,7 +76,7 @@ export function ServiceCard({ service, variant = "grid" }: ServiceCardProps) {
           <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{service.shortDescription}</p>
           <p className="mt-2 text-xs font-medium text-muted-foreground">{rateLabel}</p>
           <div className="mt-3 flex items-center gap-2 text-sm font-medium text-primary">
-            <span>Learn more</span>
+            <span>View {service.title}</span>
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </div>
         </div>
@@ -94,7 +94,7 @@ export function ServiceCard({ service, variant = "grid" }: ServiceCardProps) {
         <p className="text-sm text-muted-foreground flex-1 mb-4">{service.shortDescription}</p>
         <p className="text-xs font-medium text-muted-foreground mb-3">{rateLabel}</p>
         <div className="flex items-center gap-2 text-sm font-medium text-primary">
-          <span>Learn more</span>
+          <span>View {service.title}</span>
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </div>
       </CardContent>

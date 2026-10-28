@@ -6,15 +6,16 @@ import { GlossarySearch } from "@/components/glossary/GlossarySearch";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { BookOpen, Shield, Wifi, Database, Monitor, HardDrive, Headphones, FileText, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "IT Glossary — Plain-English Tech Terms",
+  title: pageTitle("IT Glossary — Plain-English Tech Terms"),
   description:
-    "Confused by IT jargon? Our glossary explains 36+ tech terms in plain English, from networking to Microsoft 365.",
+    metaDescription("Confused by IT jargon? Our glossary explains 36+ tech terms in plain English, from networking to Microsoft 365."),
   alternates: { canonical: "/glossary" },
   openGraph: {
-    title: "IT Glossary — Plain-English Tech Terms",
-    description: "36+ tech terms explained simply. Search, filter by category, and find related guides.",
+    title: pageTitle("IT Glossary — Plain-English Tech Terms"),
+    description: metaDescription("36+ tech terms explained simply. Search, filter by category, and find related guides."),
     type: "website",
   },
 };
@@ -153,7 +154,9 @@ export default function GlossaryPage() {
                 </div>
                 <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{term.plain}</p>
                 <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-sm font-medium text-primary group-hover:underline">Read more</span>
+                  <span className="text-sm font-medium text-primary group-hover:underline">
+                    Read about {term.term}
+                  </span>
                   <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
                 </div>
               </Link>

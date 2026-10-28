@@ -7,14 +7,15 @@ import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, serviceListSchema } from "@/lib/schemas";
 import { Monitor } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "IT Services",
-    description: "Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses.",
+  title: pageTitle("IT Services"),
+    description: metaDescription("Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses."),
   alternates: { canonical: "https://nesscotech.com/services" },
   openGraph: {
-    title: "IT Services",
-  description: "Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses.",
+    title: pageTitle("IT Services"),
+  description: metaDescription("Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses."),
     url: "https://nesscotech.com/services",
   },
 };

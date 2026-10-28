@@ -81,7 +81,7 @@ export default function CoManagedPage() {
         </div>
       </section>
 
-      <ServiceFAQ faqs={service.faqs} />
+      <ServiceFAQ faqs={service.faqs} title={`Frequently Asked Questions About ${service.title}`} />
 
       {relatedServices.length > 0 && (
         <section className="py-16 lg:py-24 bg-muted/30">

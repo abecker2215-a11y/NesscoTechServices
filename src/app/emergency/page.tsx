@@ -3,15 +3,16 @@ import { EmergencyForm } from "@/components/emergency/EmergencyForm";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { getBusinessStatus } from "@/lib/hours";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Emergency IT Pager | Tampa Bay MSP",
+    title: pageTitle("Emergency IT Pager | Tampa Bay MSP"),
   description:
-    "Active outage, ransomware, or emergency? Page the Nessco on-call technician now. Transparent 1.5x after-hours rate.",
+    metaDescription("Active outage, ransomware, or emergency? Page the Nessco on-call technician now. Transparent 1.5x after-hours rate."),
   alternates: { canonical: "/emergency" },
   openGraph: {
-  title: "Emergency IT Pager | Tampa Bay MSP",
-    description: "Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now.",
+  title: pageTitle("Emergency IT Pager | Tampa Bay MSP"),
+    description: metaDescription("Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now."),
     url: "https://nesscotech.com/emergency",
   },
 };

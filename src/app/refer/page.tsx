@@ -6,15 +6,16 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Gift, BadgeCheck } from "lucide-react";
 import { prisma } from "@/lib/prisma";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Refer a Friend — $25 for You, $25 for Them",
+  title: pageTitle("Refer a Friend — $25 for You, $25 for Them"),
   description:
-    "Refer a friend to Nessco — $25 off their first fix, $25 credit for you when they book.",
+    metaDescription("Refer a friend to Nessco — $25 off their first fix, $25 credit for you when they book."),
   alternates: { canonical: "/refer" },
   openGraph: {
-    title: "Refer a Friend — $25 for You, $25 for Them",
-    description: "Refer a friend to Nessco Tech Services — $25 off their first fix, $25 credit for you.",
+    title: pageTitle("Refer a Friend — $25 for You, $25 for Them"),
+    description: metaDescription("Refer a friend to Nessco Tech Services — $25 off their first fix, $25 credit for you."),
     url: "https://nesscotech.com/refer",
   },
 };
@@ -63,7 +64,9 @@ export default function ReferPage({
             <p className="text-lg text-muted-foreground">
               Your friend gets <strong className="text-foreground">$25 off</strong> their first fix.
               When they book, you get <strong className="text-foreground">$25 credit</strong>.
-              Three steps, no apps, no points to track.
+              Three steps, no apps, no points to track. There's no limit on how many people you can
+              refer — every friend who books earns you another $25 credit. Credits apply to any service,
+              from a quick computer fix to a full managed IT plan.
             </p>
           </div>
 

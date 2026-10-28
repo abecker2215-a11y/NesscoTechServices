@@ -5,15 +5,16 @@ import { Button, Reveal } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Zap, ArrowRight, Clock } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Quick Fixes — Exact Error, Exact Steps",
+  title: pageTitle("Quick Fixes — Exact Error, Exact Steps"),
   description:
-    "Type-what-you-see IT fixes for Tampa Bay businesses: printer offline, red-light router, Outlook stuck syncing. 2–4 minutes each.",
+    metaDescription("Type-what-you-see IT fixes for Tampa Bay businesses: printer offline, red-light router, Outlook stuck syncing. 2–4 minutes each."),
   alternates: { canonical: "/fixes" },
   openGraph: {
-    title: "Quick Fixes — Exact Error, Exact Steps",
-    description: "Type-what-you-see IT fixes for Tampa Bay businesses. 2–4 minutes each.",
+    title: pageTitle("Quick Fixes — Exact Error, Exact Steps"),
+    description: metaDescription("Type-what-you-see IT fixes for Tampa Bay businesses. 2–4 minutes each."),
     url: "https://nesscotech.com/fixes",
   },
 };

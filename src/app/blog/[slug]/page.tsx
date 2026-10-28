@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/config";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Clock, User, Tag, ArrowLeft, ArrowRight } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -25,12 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageUrl = `${baseUrl}/blog/${slug}`;
 
   return {
-    title: article.title,
-    description: article.excerpt,
+    title: pageTitle(article.title),
+    description: metaDescription(article.excerpt),
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: article.title.length > 40 ? article.title : `${article.title} | ${siteConfig.name}`,
-      description: article.excerpt,
+      title: pageTitle(article.title),
+      description: metaDescription(article.excerpt),
       url: pageUrl,
       type: "article",
       publishedTime: article.date,
@@ -47,8 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
-      description: article.excerpt,
+      title: pageTitle(article.title),
+      description: metaDescription(article.excerpt),
       images: [article.image ?? `${baseUrl}/og-image.png`],
     },
   };

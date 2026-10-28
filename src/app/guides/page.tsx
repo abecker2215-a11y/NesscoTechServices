@@ -11,15 +11,16 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { FAQAccordion } from "@/components/ui";
 import { Wrench, ArrowRight, Zap, Clock } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Fix-It Guides — Plain-English IT How-Tos",
+  title: pageTitle("Fix-It Guides — Plain-English IT How-Tos"),
   description:
-    "Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first — no jargon, honest advice on when to call us.",
+    metaDescription("Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first — no jargon, honest advice on when to call us."),
   alternates: { canonical: "/guides" },
   openGraph: {
-    title: "Fix-It Guides — Plain-English IT How-Tos",
-    description: "Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first.",
+    title: pageTitle("Fix-It Guides — Plain-English IT How-Tos"),
+    description: metaDescription("Free step-by-step IT guides for Tampa Bay businesses. Try it yourself first."),
     url: "https://nesscotech.com/guides",
   },
 };

@@ -20,6 +20,7 @@ import { BookingEmbed } from "@/components/booking/BookingEmbed";
 import { Button, Badge } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceListSchema } from "@/lib/schemas";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "managed-it-services": Briefcase,
@@ -53,12 +54,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `https://nesscotech.com/services/category/${category}`;
   return {
-    title: `${parent.title} in Tampa Bay`,
-    description: parent.shortDescription,
+    title: pageTitle(`${parent.title} in Tampa Bay`),
+    description: metaDescription(`${parent.shortDescription} Overview of all ${parent.title.toLowerCase()} services for Tampa Bay businesses.`),
     alternates: { canonical: url },
     openGraph: {
-      title: `${parent.title} | Nessco Tech Services`,
-      description: parent.shortDescription,
+      title: pageTitle(`${parent.title} in Tampa Bay`),
+      description: metaDescription(`${parent.shortDescription} Overview of all ${parent.title.toLowerCase()} services for Tampa Bay businesses.`),
       url,
       type: "website",
     },
@@ -114,7 +115,7 @@ export default async function CategoryPage({ params }: Props) {
               <Badge variant="primary">Service Category</Badge>
             </div>
             <h1 id="category-title" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-4">
-              {parent.title}
+              {parent.title} Services
             </h1>
             <p className="text-lg text-muted-foreground mb-8">{parent.problem}</p>
             <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -159,7 +160,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {items.length > 0 && <CategoryPillarContent parent={parent} items={items} />}
 
-      <ServiceFAQ faqs={parent.faqs} />
+      <ServiceFAQ faqs={parent.faqs} title={`Frequently Asked Questions About ${parent.title}`} />
 
       <section className="py-16 lg:py-24 bg-muted/30" aria-labelledby="other-categories-heading">
         <div className="container">

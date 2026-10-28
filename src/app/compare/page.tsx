@@ -4,15 +4,16 @@ import { CompareCalculator, CompareTable } from "@/components/compare/CompareSec
 import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Break-Fix vs Managed IT — The Real Math",
+  title: pageTitle("Break-Fix vs Managed IT — The Real Math"),
   description:
-    "Break-fix vs managed IT costs for Tampa Bay small businesses. Interactive calculator plus honest comparison.",
+    metaDescription("Break-fix vs managed IT costs for Tampa Bay small businesses. Interactive calculator plus honest comparison."),
   alternates: { canonical: "/compare" },
   openGraph: {
-    title: "Break-Fix vs Managed IT — The Real Math",
-    description: "What reactive IT really costs Tampa Bay small businesses vs a managed plan.",
+    title: pageTitle("Break-Fix vs Managed IT — The Real Math"),
+    description: metaDescription("What reactive IT really costs Tampa Bay small businesses vs a managed plan."),
     url: "https://nesscotech.com/compare",
   },
 };

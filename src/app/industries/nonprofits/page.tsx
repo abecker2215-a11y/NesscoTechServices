@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Heart, Users, FileText, CheckCircle, Clock, Headset, Building } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Nonprofit IT Services | Tampa Bay",
-  description: "IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, compliance, and volunteer coordination.",
+    title: pageTitle("Nonprofit IT Services | Tampa Bay"),
+  description: metaDescription("IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, compliance, and volunteer coordination."),
   alternates: { canonical: "https://nesscotech.com/industries/nonprofits" },
   openGraph: {
-  title: "Nonprofit IT Services | Tampa Bay",
-    description: "IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, and volunteer coordination.",
+  title: pageTitle("Nonprofit IT Services | Tampa Bay"),
+    description: metaDescription("IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, and volunteer coordination."),
     url: "https://nesscotech.com/industries/nonprofits",
   },
 };

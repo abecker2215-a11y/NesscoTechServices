@@ -6,13 +6,14 @@ import { CheckCircle2, AlertTriangle, XCircle, MinusCircle, Rss } from "lucide-r
 import { cn } from "@/lib/utils";
 import { IncidentManager } from "./IncidentManager";
 import { auth } from "@/lib/auth/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "System Status — Nessco Tech Services",
-  description: "Live status of the Nessco website, client portal, email delivery, and integrations.",
+  title: pageTitle("System Status — Nessco Tech Services"),
+  description: metaDescription("Live status of the Nessco website, client portal, email delivery, and integrations."),
   alternates: { canonical: "/status" },
   openGraph: {
-    title: "System Status — Nessco Tech Services",
+    title: pageTitle("System Status — Nessco Tech Services"),
     description: "Live status of the Nessco website, client portal, email delivery, and integrations.",
     url: "https://nesscotech.com/status",
   },
@@ -121,7 +122,8 @@ export default async function StatusPage() {
                 Nessco Tech Services provides managed IT support across Tampa Bay with proactive monitoring,
                 24/7 security oversight, and rapid incident response. This status page reports the live health
                 of our website, client portal, email delivery, and integration systems so you always know
-                whether our services are operating normally.
+                whether our services are operating normally. If something is degraded, check here first —
+                we post updates as we investigate and resolve incidents.
               </p>
               <p
                 className={cn(

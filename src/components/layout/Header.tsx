@@ -550,7 +550,7 @@ function FeaturedCard({
           <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-cyan-400">
             Most requested
           </span>
-          <h3 className="text-sm font-semibold text-foreground">{child.label}</h3>
+          <div className="text-sm font-semibold text-foreground">{child.label}</div>
         </div>
       </div>
 

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { ShareButtons } from "@/components/glossary/ShareButtons";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 interface GlossaryTermPageProps {
   params: Promise<{ slug: string }>;
@@ -26,18 +27,18 @@ export async function generateMetadata({ params }: GlossaryTermPageProps): Promi
   }
 
   return {
-    title: `${term.term} — IT Glossary`,
-    description: term.plain,
+    title: pageTitle(`${term.term} — IT Glossary`),
+    description: metaDescription(term.plain),
     alternates: { canonical: `/glossary/${slug}` },
     openGraph: {
-      title: `${term.term} — IT Glossary`,
-      description: term.plain,
+      title: pageTitle(`${term.term} — IT Glossary`),
+      description: metaDescription(term.plain),
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `${term.term} — IT Glossary`,
-      description: term.plain,
+      title: pageTitle(`${term.term} — IT Glossary`),
+      description: metaDescription(term.plain),
     },
   };
 }
@@ -111,7 +112,7 @@ export default async function GlossaryTermPage({ params }: GlossaryTermPageProps
 
           <section className="prose prose-lg max-w-none mb-10" aria-labelledby="definition-heading">
             <h2 id="definition-heading" className="text-2xl font-bold text-foreground mb-4">
-              Definition
+              What is {term.term}?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">{term.plain}</p>
           </section>
@@ -119,7 +120,7 @@ export default async function GlossaryTermPage({ params }: GlossaryTermPageProps
           <section className="mb-10 p-6 bg-muted/30 rounded-xl" aria-labelledby="why-it-matters-heading">
             <h2 id="why-it-matters-heading" className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-primary" aria-hidden="true" />
-              Why It Matters
+              Why {term.term} Matters
             </h2>
             <p className="text-muted-foreground leading-relaxed">{term.whyItMatters}</p>
           </section>

@@ -2,14 +2,15 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms governing use of the Nessco Tech Services website and IT services.",
+  title: pageTitle("Terms of Service"),
+  description: metaDescription("Terms governing use of the Nessco Tech Services website and IT services."),
   alternates: { canonical: "/terms" },
   openGraph: {
-    title: "Terms of Service",
-    description: "Terms governing use of the Nessco Tech Services website and IT services.",
+    title: pageTitle("Terms of Service"),
+    description: metaDescription("Terms governing use of the Nessco Tech Services website and IT services."),
     url: "https://nesscotech.com/terms",
   },
 };

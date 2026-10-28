@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Calculator, FileText, CheckCircle, Clock, Headset, Users, DollarSign, PieChart } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Accounting & Tax Firm IT | Tampa Bay",
-  description: "Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, compliance.",
+  title: pageTitle("Accounting & Tax Firm IT | Tampa Bay"),
+  description: metaDescription("Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, compliance."),
   alternates: { canonical: "https://nesscotech.com/industries/accounting" },
   openGraph: {
-    title: "Accounting & Tax Firm IT | Tampa Bay",
-    description: "Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, and compliance.",
+    title: pageTitle("Accounting & Tax Firm IT | Tampa Bay"),
+    description: metaDescription("Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, and compliance."),
     url: "https://nesscotech.com/industries/accounting",
   },
 };

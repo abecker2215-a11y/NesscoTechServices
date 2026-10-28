@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Utensils, MapPin, CheckCircle, Clock, Headset, Users, Building, Star, CreditCard } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Restaurants & Hospitality IT | Tampa Bay",
-  description: "IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management.",
+  title: pageTitle("Restaurants & Hospitality IT | Tampa Bay"),
+  description: metaDescription("IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management."),
   alternates: { canonical: "https://nesscotech.com/industries/hospitality" },
   openGraph: {
-    title: "Restaurants & Hospitality IT | Tampa Bay",
-    description: "IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management.",
+    title: pageTitle("Restaurants & Hospitality IT | Tampa Bay"),
+    description: metaDescription("IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management."),
     url: "https://nesscotech.com/industries/hospitality",
   },
 };

@@ -8,6 +8,7 @@ import { GuideActions } from "@/components/guides/GuideActions";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 import { PhoneCall, Clock, CircleAlert } from "lucide-react";
 
 interface Props {
@@ -23,12 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuide(slug);
   if (!guide) return { title: "Guide Not Found" };
   return {
-    title: guide.title,
-    description: guide.excerpt,
+    title: pageTitle(guide.title),
+    description: metaDescription(guide.excerpt),
     alternates: { canonical: `/guides/${slug}` },
     openGraph: {
-      title: guide.title.length > 40 ? guide.title : `${guide.title} | ${siteConfig.name}`,
-      description: guide.excerpt,
+      title: pageTitle(guide.title),
+      description: metaDescription(guide.excerpt),
       url: `https://nesscotech.com/guides/${slug}`,
       type: "article",
     },

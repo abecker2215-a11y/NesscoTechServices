@@ -7,15 +7,16 @@ import { breadcrumbSchema } from "@/lib/schemas";
 import { CalendarHeart, ArrowRight } from "lucide-react";
 import { CampaignCountdown } from "@/components/offers/CampaignCountdown";
 import { cn } from "@/lib/utils";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Seasonal Offers — Right Fix, Right Season",
+  title: pageTitle("Seasonal Offers — Right Fix, Right Season"),
   description:
-    "Seasonal IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks.",
+    metaDescription("Seasonal IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks."),
   alternates: { canonical: "/offers" },
   openGraph: {
-    title: "Seasonal Offers — Right Fix, Right Season",
-    description: "Limited-season IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks.",
+    title: pageTitle("Seasonal Offers — Right Fix, Right Season"),
+    description: metaDescription("Limited-season IT checkups for Tampa Bay: back-to-school setup, holiday scam protection, tax-season backup checks."),
     url: "https://nesscotech.com/offers",
   },
 };
@@ -39,7 +40,8 @@ export default function OffersPage() {
               The right fix at the right time of year. Same flat rates — seasonal focus.
               These limited-time checkups target the IT issues Tampa Bay businesses face each season:
               hurricane preparedness in summer, tax-season data protection in spring, and year-end
-              security reviews in winter.
+              security reviews in winter. Each offer includes a flat-fee checklist of specific tasks
+              so you know exactly what you're getting before we start — no hourly surprises, no upsells.
             </p>
             {live.length > 0 && (
               <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-success/10 px-4 py-1.5 text-sm font-medium text-success">

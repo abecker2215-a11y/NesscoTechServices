@@ -4,14 +4,15 @@ import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Stethoscope, Scale, ShoppingCart, HardHat, Calculator, Home, Heart, Utensils, Briefcase, Key, ArrowRight, CheckCircle, Clock, Headset, Shield } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Tampa Bay IT Services",
-  description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries.",
+  title: pageTitle("Industries We Serve | Tampa Bay IT Services"),
+  description: metaDescription("Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries."),
   alternates: { canonical: "https://nesscotech.com/industries" },
   openGraph: {
-    title: "Industries We Serve | Tampa Bay IT Services",
-    description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries.",
+    title: pageTitle("Industries We Serve | Tampa Bay IT Services"),
+    description: metaDescription("Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries."),
     url: "https://nesscotech.com/industries",
   },
 };

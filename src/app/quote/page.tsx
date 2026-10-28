@@ -3,16 +3,17 @@ import { QuoteWizard } from "@/components/quote/QuoteWizard";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Calculator } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Get a Quote — Business IT Pricing in Tampa Bay",
+  title: pageTitle("Get a Quote — Business IT Pricing in Tampa Bay"),
   description:
-    "Build a custom IT quote in 2 minutes. Clear starting point for managed IT, security, cloud, and support.",
+    metaDescription("Build a custom IT quote in 2 minutes. Clear starting point for managed IT, security, cloud, and support."),
   alternates: { canonical: "https://nesscotech.com/quote" },
   openGraph: {
-    title: "Get a Quote | Nessco Tech Services",
+    title: pageTitle("Get a Quote | Nessco Tech Services"),
     description:
-      "Answer a few questions and get a clear starting point for your business IT — managed IT, security, cloud, and support in Tampa Bay.",
+      metaDescription("Answer a few questions and get a clear starting point for your business IT — managed IT, security, cloud, and support in Tampa Bay."),
     url: "https://nesscotech.com/quote",
     type: "website",
   },

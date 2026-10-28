@@ -3,16 +3,17 @@ import Link from "next/link";
 import { getAllArticles } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { ArrowRight, Clock, Tag } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "IT Resources & Blog",
+  title: pageTitle("IT Resources & Blog"),
   description:
-    "IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team.",
+    metaDescription("IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team."),
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "IT Resources & Blog",
+    title: pageTitle("IT Resources & Blog"),
     description:
-      "IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team.",
+      metaDescription("IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team."),
     url: "https://nesscotech.com/blog",
     type: "website",
     images: [
@@ -51,11 +52,12 @@ export default function BlogPage() {
         </div>
 
           <div className="max-w-5xl mx-auto">
-            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Practical IT guidance written for Tampa Bay small businesses. Each article covers a real
-              problem we&apos;ve seen in the field — from printer issues to Microsoft 365 security — with
-              steps you can follow yourself and a clear line for when it&apos;s time to call for help.
-            </p>
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Practical IT guidance written for Tampa Bay small businesses. Each article covers a real
+            problem we&apos;ve seen in the field — from printer issues to Microsoft 365 security — with
+            steps you can follow yourself and a clear line for when it&apos;s time to call for help. New
+            articles are added regularly based on the questions our customers ask most often.
+          </p>
             <div className="flex flex-wrap gap-2 justify-center mb-12" role="list" aria-label="Categories">
             {categories.map((cat) => (
               <button
@@ -97,7 +99,7 @@ export default function BlogPage() {
                     href={`/blog/${article.slug}`}
                     className="flex items-center gap-1 font-medium text-primary hover:underline"
                   >
-                    Read more
+                    Read: {article.title}
                     <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </Link>
                 </div>

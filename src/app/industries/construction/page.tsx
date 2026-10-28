@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, CheckCircle, Clock, Headset, Users, HardHat, Truck, MapPin } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Construction IT Services | Tampa Bay",
-  description: "Mobile IT support for Tampa Bay construction companies. Field service management, project tracking, remote job site connectivity.",
+    title: pageTitle("Construction IT Services | Tampa Bay"),
+  description: metaDescription("Mobile IT support for Tampa Bay construction companies. Field service management, project tracking, remote job site connectivity."),
   alternates: { canonical: "https://nesscotech.com/industries/construction" },
   openGraph: {
-  title: "Construction IT Services | Tampa Bay",
-    description: "Mobile IT support for Tampa Bay construction. Field service management, remote job site connectivity.",
+  title: pageTitle("Construction IT Services | Tampa Bay"),
+    description: metaDescription("Mobile IT support for Tampa Bay construction. Field service management, remote job site connectivity."),
     url: "https://nesscotech.com/industries/construction",
   },
 };

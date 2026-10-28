@@ -4,15 +4,16 @@ import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Star } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Reviews — Tampa Bay Folks Who Got Fixed",
+  title: pageTitle("Reviews — Tampa Bay Folks Who Got Fixed"),
   description:
-    "Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay. Real problems, exact quotes, no surprises.",
+    metaDescription("Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay. Real problems, exact quotes, no surprises."),
   alternates: { canonical: "/reviews" },
   openGraph: {
-    title: "Reviews — Tampa Bay Folks Who Got Fixed",
-    description: "Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay.",
+    title: pageTitle("Reviews — Tampa Bay Folks Who Got Fixed"),
+    description: metaDescription("Verified Google reviews and recent jobs from Nessco Tech Services across Tampa Bay."),
     url: "https://nesscotech.com/reviews",
   },
 };

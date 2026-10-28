@@ -4,14 +4,15 @@ import ContactFormClient from "./ContactFormClient";
 import { BookingEmbed } from "@/components/booking/BookingEmbed";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm.",
+  title: pageTitle("Contact Us"),
+  description: metaDescription("Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm."),
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Us",
-    description: "Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm.",
+    title: pageTitle("Contact Us"),
+    description: metaDescription("Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm."),
     url: "https://nesscotech.com/contact",
   },
 };
@@ -53,6 +54,8 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold text-foreground mb-6">Get in Touch</h2>
             <p className="text-lg text-muted-foreground">
               Have a question? Need a quote? Fill out the form and we&apos;ll get back to you within 2 business hours.
+              Tell us what&rsquo;s not working, what you&rsquo;ve already tried, and when you need help —
+              we&rsquo;ll match you with the right technician for your situation.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

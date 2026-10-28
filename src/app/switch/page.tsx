@@ -6,16 +6,17 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { ArrowRightLeft, ShieldCheck, FileCheck, PhoneCall, BadgeCheck } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Switch MSPs Without the Risk — Free Migration",
+  title: pageTitle("Switch MSPs Without the Risk — Free Migration"),
   description:
-    "Firing your IT company shouldn't feel risky. Free audit, parallel run, cutover, 90-day fit guarantee.",
+    metaDescription("Firing your IT company shouldn't feel risky. Free audit, parallel run, cutover, 90-day fit guarantee."),
   alternates: { canonical: "/switch" },
   openGraph: {
-    title: "Switch MSPs Without the Risk — Free Migration",
+    title: pageTitle("Switch MSPs Without the Risk — Free Migration"),
     description:
-      "Firing your IT company shouldn't feel risky. Free audit, parallel run, scheduled cutover, 90-day fit guarantee.",
+      metaDescription("Firing your IT company shouldn't feel risky. Free audit, parallel run, scheduled cutover, 90-day fit guarantee."),
     url: "https://nesscotech.com/switch",
   },
 };

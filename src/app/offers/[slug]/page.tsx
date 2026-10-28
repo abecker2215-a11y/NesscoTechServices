@@ -6,6 +6,7 @@ import { Button, Reveal } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 import { PhoneCall, BadgeCheck } from "lucide-react";
 import { CampaignCountdown } from "@/components/offers/CampaignCountdown";
 
@@ -22,10 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getCampaign(slug);
   if (!c) return { title: "Offer Not Found" };
   return {
-    title: `${c.title} — ${c.season} Offer`,
-    description: c.excerpt,
+    title: pageTitle(`${c.title} — ${c.season} Offer`),
+    description: metaDescription(c.excerpt),
     alternates: { canonical: `/offers/${slug}` },
-    openGraph: { title: `${c.title} | ${siteConfig.name}`, description: c.excerpt, url: `/offers/${slug}`, type: "website" },
+    openGraph: { title: pageTitle(`${c.title} | ${siteConfig.name}`), description: metaDescription(c.excerpt), url: `/offers/${slug}`, type: "website" },
   };
 }
 
@@ -68,6 +69,11 @@ export default async function OfferPage({ params }: Props) {
               {campaign.title}
             </h1>
             <p className="mb-10 text-lg text-muted-foreground">{campaign.pitch}</p>
+            <p className="mb-6 text-lg text-muted-foreground">
+              Every item on this checklist is a flat-fee task — we quote upfront and don&rsquo;t bill by the hour.
+              If something takes longer than expected, the price doesn&rsquo;t change. Seasonal offers run for a
+              limited window each year and focus on the issues Tampa Bay businesses face most during that time.
+            </p>
 
             <ol className="space-y-6" role="list">
               {campaign.checklist.map((item, i) => (

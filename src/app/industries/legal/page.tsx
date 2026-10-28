@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, FileText, CheckCircle, Clock, Headset, Scale, Search } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Law Firm IT Services | Tampa Bay",
-  description: "Secure IT support for Tampa Bay law firms. Client confidentiality, document management, and reliable infrastructure.",
+    title: pageTitle("Law Firm IT Services | Tampa Bay"),
+  description: metaDescription("Secure IT support for Tampa Bay law firms. Client confidentiality, document management, and reliable infrastructure."),
   alternates: { canonical: "https://nesscotech.com/industries/legal" },
   openGraph: {
-  title: "Law Firm IT Services | Tampa Bay",
-    description: "Secure IT support for Tampa Bay law firms. Client confidentiality, document management.",
+  title: pageTitle("Law Firm IT Services | Tampa Bay"),
+    description: metaDescription("Secure IT support for Tampa Bay law firms. Client confidentiality, document management."),
     url: "https://nesscotech.com/industries/legal",
   },
 };

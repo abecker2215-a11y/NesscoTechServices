@@ -3,15 +3,16 @@ import { RoiCalculator } from "@/components/roi/RoiCalculator";
 import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Downtime ROI — What Outages Really Cost",
+  title: pageTitle("Downtime ROI — What Outages Really Cost"),
   description:
-    "Interactive calculator: what IT downtime costs your Tampa Bay business per year in idle staff time.",
+    metaDescription("Interactive calculator: what IT downtime costs your Tampa Bay business per year in idle staff time."),
   alternates: { canonical: "/roi" },
   openGraph: {
-    title: "Downtime ROI — What Outages Really Cost",
-    description: "What IT downtime costs your Tampa Bay business per year in idle staff time.",
+    title: pageTitle("Downtime ROI — What Outages Really Cost"),
+    description: metaDescription("What IT downtime costs your Tampa Bay business per year in idle staff time."),
     url: "https://nesscotech.com/roi",
   },
 };

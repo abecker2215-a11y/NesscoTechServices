@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { services, getService, getRelatedServices, getServiceHelpCategory } from "@/lib/services";
 import { getGuidesForService } from "@/lib/guides";
 import { getFixesForService } from "@/lib/fixes";
+import { pageTitle, metaDescription } from "@/lib/meta";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ServiceFAQ } from "@/components/services/ServiceFAQ";
 import { ServiceCard } from "@/components/services/ServiceCard";
@@ -27,12 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageUrl = `${baseUrl}/services/${service.slug}`;
 
   return {
-    title: service.title,
-    description: service.shortDescription,
+    title: pageTitle(service.title),
+    description: metaDescription(service.shortDescription),
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: service.title.length > 40 ? service.title : `${service.title} | Nessco Tech Services`,
-      description: service.shortDescription,
+      title: pageTitle(service.title),
+      description: metaDescription(service.shortDescription),
       url: pageUrl,
       type: "website",
       images: [
@@ -46,8 +47,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: service.title.length > 40 ? service.title : `${service.title} | Nessco Tech Services`,
-      description: service.shortDescription,
+      title: pageTitle(service.title),
+      description: metaDescription(service.shortDescription),
       images: [`${baseUrl}/og-image.png`],
     },
   };
@@ -130,7 +131,7 @@ async function ServiceContent({ params }: Props) {
         </div>
       </section>
 
-      <ServiceFAQ faqs={service.faqs} />
+      <ServiceFAQ faqs={service.faqs} title={`Frequently Asked Questions About ${service.title}`} />
 
       <VideoSection
         serviceSlug={service.slug}

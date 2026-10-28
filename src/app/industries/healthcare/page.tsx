@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, FileText, CheckCircle, Clock, Headset, Activity, Users, Stethoscope } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Healthcare IT Services | Tampa Bay",
-  description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR management, patient data protection, and reliable infrastructure.",
+    title: pageTitle("Healthcare IT Services | Tampa Bay"),
+  description: metaDescription("HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR management, patient data protection, and reliable infrastructure."),
   alternates: { canonical: "https://nesscotech.com/industries/healthcare" },
   openGraph: {
-  title: "Healthcare IT Services | Tampa Bay",
-    description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR, patient data protection.",
+  title: pageTitle("Healthcare IT Services | Tampa Bay"),
+    description: metaDescription("HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR, patient data protection."),
     url: "https://nesscotech.com/industries/healthcare",
   },
 };

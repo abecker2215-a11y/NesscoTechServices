@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Briefcase, Building2, FileText, CheckCircle, Clock, Headset, Users, Calculator, Home } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Professional Services IT | Tampa Bay",
-  description: "IT support for Tampa Bay professional services firms. Document management, secure collaboration.",
+  title: pageTitle("Professional Services IT | Tampa Bay"),
+  description: metaDescription("IT support for Tampa Bay professional services firms. Document management, secure collaboration."),
   alternates: { canonical: "https://nesscotech.com/industries/professional-services" },
   openGraph: {
-    title: "Professional Services IT | Tampa Bay",
-    description: "IT support for Tampa Bay professional services. Document management, secure collaboration, and practice management.",
+    title: pageTitle("Professional Services IT | Tampa Bay"),
+    description: metaDescription("IT support for Tampa Bay professional services. Document management, secure collaboration, and practice management."),
     url: "https://nesscotech.com/industries/professional-services",
   },
 };

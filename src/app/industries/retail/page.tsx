@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, CheckCircle, Clock, Headset, Users, ShoppingCart, CreditCard, Wifi } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Retail & E-Commerce IT | Tampa Bay",
-  description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management.",
+  title: pageTitle("Retail & E-Commerce IT | Tampa Bay"),
+  description: metaDescription("Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management."),
   alternates: { canonical: "https://nesscotech.com/industries/retail" },
   openGraph: {
-    title: "Retail & E-Commerce IT | Tampa Bay",
-    description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management.",
+    title: pageTitle("Retail & E-Commerce IT | Tampa Bay"),
+    description: metaDescription("Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management."),
     url: "https://nesscotech.com/industries/retail",
   },
 };

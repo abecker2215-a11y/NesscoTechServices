@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Key, Building, Users, FileText, CheckCircle, Clock, Headset, Home, DollarSign } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Property Management IT | Tampa Bay",
-  description: "IT support for Tampa Bay property management. Tenant portals, building access systems, lease management.",
+  title: pageTitle("Property Management IT | Tampa Bay"),
+  description: metaDescription("IT support for Tampa Bay property management. Tenant portals, building access systems, lease management."),
   alternates: { canonical: "https://nesscotech.com/industries/property-management" },
   openGraph: {
-    title: "Property Management IT | Tampa Bay",
-    description: "IT support for Tampa Bay property management. Tenant portals, building access systems, and lease management.",
+    title: pageTitle("Property Management IT | Tampa Bay"),
+    description: metaDescription("IT support for Tampa Bay property management. Tenant portals, building access systems, and lease management."),
     url: "https://nesscotech.com/industries/property-management",
   },
 };

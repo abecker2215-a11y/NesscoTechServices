@@ -8,14 +8,15 @@ import { Wrench, ShieldAlert, CalendarX } from "lucide-react";
 import { PricingCalculator } from "@/components/ui/PricingCalculator";
 import { ServiceComparisonTable } from "@/components/ui/ComparisonTable";
 import { ServiceModelComparison } from "@/components/pricing/ServiceModelComparison";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-  title: "Pricing",
-    description: "Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing.",
+  title: pageTitle("Pricing"),
+    description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Simple, Transparent Pricing | Nessco Tech Services",
-  description: "Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing.",
+    title: pageTitle("Simple, Transparent Pricing | Nessco Tech Services"),
+  description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),
     url: "https://nesscotech.com/pricing",
     type: "website",
     images: [

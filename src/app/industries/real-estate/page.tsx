@@ -3,14 +3,15 @@ import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Home, Building2, Key, CheckCircle, Clock, Headset, Users, FileText, MapPin, DollarSign } from "lucide-react";
+import { pageTitle, metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
-    title: "Real Estate IT Services | Tampa Bay",
-  description: "IT support for Tampa Bay real estate and property management. MLS systems, tenant portals.",
+    title: pageTitle("Real Estate IT Services | Tampa Bay"),
+  description: metaDescription("IT support for Tampa Bay real estate and property management. MLS systems, tenant portals."),
   alternates: { canonical: "https://nesscotech.com/industries/real-estate" },
   openGraph: {
-  title: "Real Estate IT Services | Tampa Bay",
-    description: "IT support for Tampa Bay real estate and property management. MLS systems, tenant portals.",
+  title: pageTitle("Real Estate IT Services | Tampa Bay"),
+    description: metaDescription("IT support for Tampa Bay real estate and property management. MLS systems, tenant portals."),
     url: "https://nesscotech.com/industries/real-estate",
   },
 };

@@ -158,7 +158,7 @@ export function LoginForm() {
             {/* Forgot password / Submit */}
             <div className="flex items-center justify-between">
               <Link
-                href="/contact?subject=Portal%20password%20reset"
+                href="/contact?subject=portal%20password%20reset"
                 className="text-sm text-primary hover:underline"
               >
                 Forgot password?

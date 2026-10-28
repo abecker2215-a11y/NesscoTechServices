@@ -7,6 +7,7 @@ import { GuideActions } from "@/components/guides/GuideActions";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
+import { pageTitle, metaDescription } from "@/lib/meta";
 import { PhoneCall, Clock, CircleAlert, Stethoscope } from "lucide-react";
 
 interface Props {
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fix = getFix(slug);
   if (!fix) return { title: "Fix Not Found" };
   return {
-    title: `${fix.title} — Quick Fix`,
-    description: fix.excerpt,
+    title: pageTitle(`${fix.title} — Quick Fix`),
+    description: metaDescription(fix.excerpt),
     alternates: { canonical: `/fixes/${slug}` },
     openGraph: {
-      title: `${fix.title} | ${siteConfig.name}`,
-      description: fix.excerpt,
+      title: pageTitle(`${fix.title} | ${siteConfig.name}`),
+      description: metaDescription(fix.excerpt),
       url: `https://nesscotech.com/fixes/${slug}`,
       type: "article",
     },
