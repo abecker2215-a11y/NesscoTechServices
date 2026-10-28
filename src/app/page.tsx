@@ -129,6 +129,30 @@ export default function HomePage() {
           </div>
         </section>
 
+      <section className="border-b border-border bg-primary/5" aria-label="Storm readiness check">
+        <div className="container">
+          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
+            <p className="flex items-center gap-3 text-sm text-foreground">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <CloudLightning className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <span>
+                <strong>Hurricane season doesn&apos;t negotiate.</strong>{" "}
+                <span className="text-muted-foreground">60-second check: would your files survive an outage?</span>
+              </span>
+            </p>
+            <Button variant="outline" size="sm" href="/storm-ready" className="shrink-0">
+              Check my score
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <LiveStatsClient />
+
+        <TrustSignalBarClient />
+
         {/* Stats section below banner */}
         <section className="mt-12" aria-label="Service highlights">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-960 mx-auto px-4" role="list">
@@ -151,8 +175,18 @@ export default function HomePage() {
             </div>
           </section>
 
+          <p className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            <OpenStatus variant="inline" />
+            <span aria-hidden="true">•</span>
+            <span>Starting at $75</span>
+            <span aria-hidden="true">•</span>
+            <span>Remote & On-Site</span>
+            <span aria-hidden="true">•</span>
+            <span>Tampa Bay Area</span>
+          </p>
+
           {/* Trust badges below stats */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
               <span className="font-medium text-foreground">4.9★</span>
@@ -171,39 +205,6 @@ export default function HomePage() {
               <span>Top Rated Tampa Bay</span>
             </span>
           </div>
-
-          <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-            <OpenStatus variant="inline" />
-            <span aria-hidden="true">•</span>
-            <span>Starting at $75</span>
-            <span aria-hidden="true">•</span>
-            <span>Remote & On-Site</span>
-            <span aria-hidden="true">•</span>
-            <span>Tampa Bay Area</span>
-          </p>
-        <TrustSignalBarClient />
-
-      <LiveStatsClient />
-
-      <section className="border-b border-border bg-primary/5" aria-label="Storm readiness check">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-            <p className="flex items-center gap-3 text-sm text-foreground">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <CloudLightning className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Hurricane season doesn&apos;t negotiate.</strong>{" "}
-                <span className="text-muted-foreground">60-second check: would your files survive an outage?</span>
-              </span>
-            </p>
-            <Button variant="outline" size="sm" href="/storm-ready" className="shrink-0">
-              Check my score
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 lg:py-24" aria-labelledby="how-it-works-heading">
         <Reveal>
