@@ -131,7 +131,7 @@ async function ServiceContent({ params }: Props) {
         </div>
       </section>
 
-      <ServiceFAQ faqs={service.faqs} title={`Frequently Asked Questions About ${service.title}`} />
+      <ServiceFAQ faqs={service.faqs} title={`${service.title} — FAQs`} />
 
       <VideoSection
         serviceSlug={service.slug}

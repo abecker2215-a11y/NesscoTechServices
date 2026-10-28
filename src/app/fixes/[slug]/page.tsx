@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: metaDescription(fix.excerpt),
     alternates: { canonical: `/fixes/${slug}` },
     openGraph: {
-      title: pageTitle(`${fix.title} | ${siteConfig.name}`),
+      title: pageTitle(fix.title),
       description: metaDescription(fix.excerpt),
       url: `https://nesscotech.com/fixes/${slug}`,
       type: "article",
@@ -96,7 +96,7 @@ export default async function FixPage({ params }: Props) {
             <div className="mb-10 rounded-xl border border-border bg-muted/30 p-6">
               <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-foreground">
                 <Stethoscope className="h-5 w-5 text-primary" aria-hidden="true" />
-                Does this match?
+                {fix.title} — Symptom Check
               </h2>
               <ul className="space-y-2 text-muted-foreground" role="list">
                 {fix.symptoms.map((s, i) => (

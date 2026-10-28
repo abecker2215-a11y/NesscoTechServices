@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT Resources & Blog | Nessco Tech Services",
+    title: "IT Resources & Blog",
     description:
       "IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team.",
     images: [`https://${siteConfig.domain}/og-image.png`],

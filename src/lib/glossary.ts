@@ -24,7 +24,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Antivirus",
     slug: "antivirus",
-    plain: "Software that scans your computer for malicious programs — viruses, trojans, spyware, and more — and blocks them before they cause harm. It compares files against a database of known threats and watches for suspicious behavior in real time.",
+    plain: "Software that scans your computer for viruses, trojans, spyware, and other malware, blocking threats before they cause harm. Compares files against known threat databases and monitors for suspicious behavior.",
     whyItMatters: "Modern protection goes beyond classic antivirus — tools called EDR watch for suspicious behavior in real time. Built-in options like Microsoft Defender are decent; businesses usually need something managed and monitored.",
     category: "Security",
     tags: ["protection", "EDR", "Microsoft Defender", "malware"],

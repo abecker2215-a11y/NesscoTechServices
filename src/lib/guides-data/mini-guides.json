@@ -1121,7 +1121,7 @@
   },
   {
     "slug": "m365-backup-myth",
-    "title": "Microsoft Doesn't Back Up Your 365 Data (The Shared-Responsibility Truth)",
+    "title": "Microsoft Doesn't Back Up Your 365 Data — Shared Responsibility",
     "excerpt": "Deleted mailbox? 30 days, then gone. What Microsoft actually retains, where the gaps are, and the backup that closes them.",
     "readMinutes": 5,
     "helpCategory": "m365",
@@ -2245,7 +2245,7 @@
   },
   {
     "slug": "wifi-extender-placement",
-    "title": "Where to Actually Place a Wi-Fi Extender (Halfway, Not in the Dead Zone)",
+    "title": "Where to Place a Wi-Fi Extender (Halfway, Not in the Dead Zone)",
     "excerpt": "The #1 extender mistake and the hallway-outlet rule — plus when to skip extenders for mesh.",
     "readMinutes": 3,
     "helpCategory": "wifi",
@@ -3979,7 +3979,7 @@
         "body": "Router QoS → add workstations, VoIP phones, and meeting devices by MAC with High priority. Business video calls need steady upload most — one rule protects meeting time from other network traffic."
       },
       {
-        "heading": "2. Schedule bandwidth limits for non-essential traffic during peak hours",
+        "heading": "2. Schedule bandwidth limits during peak hours",
         "body": "Set bandwidth caps or pause schedules on non-essential devices during your busiest work hours. Most router apps do this per-device in two taps — no arguments, just automation."
       },
       {
@@ -4085,7 +4085,7 @@
   },
   {
     "slug": "crypto-scam-pig-butchering",
-    "title": "Pig-Butchering Crypto Scams: The Playbook (Wrong Number to Empty Account)",
+    "title": "Pig-Butchering Crypto Scams: Wrong Number to Empty Account",
     "excerpt": "'Wrong number' texts that become investment mentors — the months-long fattening process and the exit signs.",
     "readMinutes": 5,
     "helpCategory": "security",

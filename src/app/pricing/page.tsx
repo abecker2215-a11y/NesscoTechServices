@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: pageTitle("Simple, Transparent Pricing | Nessco Tech Services"),
+    title: pageTitle("Simple, Transparent Pricing"),
   description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),
     url: "https://nesscotech.com/pricing",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simple, Transparent Pricing — Nessco Tech Services",
+    title: "Simple, Transparent Pricing",
     description: "Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
     images: ["https://nesscotech.com/og-image.png"],
   },

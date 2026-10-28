@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nesscotech.com"),
   title: {
     default: "Nessco Tech Services | Tampa Bay IT Support",
-    template: "%s | Nessco Tech Services",
+    template: "%s",
   },
   description: "Managed IT services, cybersecurity, cloud, and network support for Tampa Bay businesses.",
   authors: [{ name: "Nessco Tech Services" }],
