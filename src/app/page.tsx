@@ -102,36 +102,36 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={faqPageSchema(faqs)} />
-<section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-labelledby="hero-heading">
-            <div className="relative w-full h-auto min-h-[160px] rounded-2xl overflow-hidden">
-            <HeroBanner />
-            <div className="absolute inset-0 bg-navy-950/20 z-5" />
-            <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
-            <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
-              <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
-                <h1 id="hero-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-                  Nessco Tech Services — Tampa Bay IT Support
-                </h1>
-                <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
-                  <a
-                    href="/get-help"
-                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
-                    style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
-                  >
-                    Get Help
-                  </a>
-                  <a
-                    href="/quote"
-                    className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
-                    style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
-                  >
-                    Request a Quote
-                  </a>
-                </div>
+      <section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-labelledby="hero-heading">
+        <div className="relative w-full">
+          <HeroBanner />
+          <div className="absolute inset-0 bg-navy-950/20" />
+          <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+          <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
+            <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
+              <h1 id="hero-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6 sr-only">
+                Nessco Tech Services — Tampa Bay IT Support
+              </h1>
+              <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
+                <a
+                  href="/get-help"
+                  className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
+                >
+                  Get Help
+                </a>
+                <a
+                  href="/quote"
+                  className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
+                >
+                  Request a Quote
+                </a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       <section className="border-b border-border bg-primary/5" aria-label="Storm readiness check">
         <div className="container">
