@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://nesscotech.com/",
     siteName: "Nessco Tech Services",
-  title: "Nessco Tech Services | Tampa Bay Managed IT & Cybersecurity",
+    title: "Nessco Tech Services | Tampa Bay IT Support",
     description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support.",
     type: "website",
     locale: "en_US",
