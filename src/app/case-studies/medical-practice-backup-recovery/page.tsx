@@ -67,7 +67,7 @@ export default function MedicalPracticeCaseStudy() {
                 Healthcare &middot; Clearwater, FL &middot; Emergency Response
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-                Ransomware Recovery in 4 Hours &mdash; No Ransom Paid
+                Ransomware Recovery in 4 Hours
               </h1>
               <p className="text-lg text-muted-foreground">
                 A phishing click encrypted a medical practice&apos;s scheduling system. We restored from monitored backups, hardened their defenses, and had them seeing patients the next day.

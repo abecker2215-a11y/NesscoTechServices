@@ -150,6 +150,7 @@ function Step1Content() {
             <h1 id="step1-heading" className="fluid-3xl lg:text-4xl font-bold text-foreground mb-4">
               What do you need help with?
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Select Your Issue Category</h2>
             <p className="fluid-lg text-muted-foreground mb-10">
               Select the category that best matches your issue. We&apos;ll ask a few relevant questions next.
             </p>

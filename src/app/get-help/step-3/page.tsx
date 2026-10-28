@@ -122,6 +122,7 @@ export default function Step3Page() {
             <h1 id="step3-heading" className="text-3xl font-bold text-foreground mb-2">
               Your Contact Information
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Contact Details</h2>
             <p className="text-muted-foreground mb-8">
               We&apos;ll use this to reach out and discuss your issue. No marketing emails.
             </p>

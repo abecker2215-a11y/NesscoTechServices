@@ -30,8 +30,15 @@ export default function ReviewsPage() {
             <h1 id="reviews-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Tampa Bay folks who got fixed
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Customer Reviews</h2>
             <p className="text-lg text-muted-foreground">
-              Real jobs, real local businesses. Ask us for references — we&apos;re happy to connect you.
+              Real jobs, real local businesses across Tampa Bay. These are actual customer experiences
+              with our IT support, cybersecurity, and managed services. Ask us for references — we&apos;re happy to connect you.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              Reading reviews is a good first step. The best way to judge an IT partner is to see how
+              they handle your actual systems. Start with a free consultation or a quick fix and see
+              the difference for yourself.
             </p>
           </div>
 

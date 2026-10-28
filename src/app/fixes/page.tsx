@@ -33,7 +33,9 @@ export default function FixesPage() {
             </h1>
             <p className="text-lg text-muted-foreground">
               Find the exact symptom, follow 3–4 steps, done in minutes.
-              Every fix ends with exactly when it&apos;s time to call us instead.
+              Every fix ends with exactly when it&apos;s time to call us instead. These are the most
+              common issues Tampa Bay small businesses run into — printer connectivity, router
+              outages, email sync problems, and more.
             </p>
           </div>
 

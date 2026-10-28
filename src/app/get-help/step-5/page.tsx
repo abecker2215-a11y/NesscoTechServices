@@ -55,6 +55,11 @@ function Step5Content() {
     <section className="py-16 lg:py-24" aria-labelledby="step5-heading">
       <div className="container">
         <div className="max-w-md mx-auto">
+          <h1 id="step5-heading" className="text-3xl font-bold text-foreground mb-4">Request Submitted</h1>
+          <p className="text-lg text-muted-foreground mb-6">
+            Thank you. Your service request has been received and a technician will review it
+            within 2 business hours. Use the reference number above to check your status.
+          </p>
           <StepIndicator steps={["Problem", "Details", "Contact", "Review", "Done"]} current={5} completed={[1, 2, 3, 4]} />
 
           <SuccessStep referenceNumber={referenceNumber || undefined} />

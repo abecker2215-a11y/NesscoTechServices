@@ -108,8 +108,8 @@ export default function HomePage() {
             <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
             <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
               <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
-                <h1 id="hero-heading" className="sr-only">
-                  Nessco Tech Services | Tampa Bay Managed IT & Cybersecurity
+                <h1 id="hero-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
+                  Nessco Tech Services | Tampa Bay IT Support
                 </h1>
                 <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
                   <a

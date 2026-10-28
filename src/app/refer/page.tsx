@@ -59,6 +59,7 @@ export default function ReferPage({
             <h1 id="refer-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Give $25, get $25
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Referral Program</h2>
             <p className="text-lg text-muted-foreground">
               Your friend gets <strong className="text-foreground">$25 off</strong> their first fix.
               When they book, you get <strong className="text-foreground">$25 credit</strong>.

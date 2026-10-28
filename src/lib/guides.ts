@@ -28,9 +28,9 @@ export interface Guide {
 export const coreGuides: Guide[] = [
   {
     slug: "fix-slow-wifi-tampa",
-    title: "Slow Wi-Fi? Fix It Yourself in 15 Minutes (Tampa Businesses)",
+    title: "Slow Wi-Fi? Fix It Yourself in 15 Minutes",
     excerpt:
-      "Dead zones, buffering, devices dropping off — try these 5 proven steps before you call anyone. Most Tampa slowdowns are placement or interference, not your plan.",
+      "Dead zones, buffering, devices dropping off — try these 5 steps before calling anyone.",
     readMinutes: 6,
     serviceSlug: "network-server/wireless",
     serviceLabel: "Wi-Fi & Networking",
@@ -80,9 +80,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "turn-on-mfa-microsoft-365",
-    title: "Turn On MFA in Microsoft 365 Before Someone Else Turns It On For You",
+    title: "Turn On MFA in Microsoft 365 First",
     excerpt:
-      "Multi-factor authentication blocks nearly all password-based break-ins and takes 10 minutes per user. Here's the setup order we use for Tampa small businesses.",
+      "MFA blocks nearly all password-based break-ins. Here's the setup order we use for Tampa small businesses.",
     readMinutes: 5,
     serviceSlug: "cloud-solutions/microsoft-365",
     serviceLabel: "Microsoft 365",
@@ -128,9 +128,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "backup-checklist-small-business",
-    title: "The 10-Minute Backup Check Every Small Business Should Run Monthly",
+    title: "10-Minute Monthly Backup Check for Small Business",
     excerpt:
-      "Backups only matter the day you need them. This monthly checklist verifies yours actually work — before ransomware or a dead drive does it for you.",
+      "Backups only matter the day you need them. Verify yours actually work before ransomware strikes.",
     readMinutes: 4,
     serviceSlug: "backup-disaster-recovery",
     serviceLabel: "Data Backup",
@@ -176,9 +176,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "speed-up-slow-windows-pc",
-    title: "Slow Computer? 6 Fixes That Actually Speed Up Windows 10 & 11",
+    title: "Slow Computer? 6 Fixes to Speed Up Windows",
     excerpt:
-      "Spinning wheels, 5-minute startups, fans screaming — most slow PCs are bloated software and full drives, not dead hardware. Here's what to try first.",
+      "Spinning wheels, slow startups, fans screaming — most slow PCs are bloated software, not dead hardware.",
     readMinutes: 6,
     serviceSlug: "it-support/pc-mac",
     serviceLabel: "Computer Repair",
@@ -228,9 +228,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "remove-virus-malware-windows",
-    title: "Think You Have a Virus? Remove Malware Safely in 30 Minutes",
+    title: "Think You Have a Virus? Remove Malware Safely",
     excerpt:
-      "Pop-ups, fake Microsoft warnings, browser hijacks — don't click anything. Isolate it, scan it, and clean it in this exact order.",
+      "Pop-ups, fake warnings, browser hijacks — don't click anything. Isolate it, scan it, clean it.",
     readMinutes: 5,
     serviceSlug: "it-security",
     serviceLabel: "Virus & Security Cleanup",
@@ -276,9 +276,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "spot-stop-phishing-emails",
-    title: "Spot a Phishing Email in 60 Seconds (With Real Examples)",
+    title: "Spot a Phishing Email in 60 Seconds",
     excerpt:
-      "99% of breaches start with one click. Teach your team this 5-point check and cut your risk more than any firewall upgrade.",
+      "99% of breaches start with one click. Teach your team this 5-point check and cut your risk.",
     readMinutes: 5,
     serviceSlug: "it-security",
     serviceLabel: "Virus & Security Cleanup",
@@ -328,9 +328,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "fix-outlook-not-syncing",
-    title: "Outlook Not Syncing? Fix Send, Receive & Mobile Sync Fast",
+    title: "Outlook Not Syncing? Fix Send & Receive Fast",
     excerpt:
-      "Emails stuck in Outbox, phone missing new mail, 'disconnected' warnings — walk this checklist before rebuilding anything.",
+      "Emails stuck in Outbox, phone missing new mail — walk this checklist before rebuilding anything.",
     readMinutes: 5,
     serviceSlug: "communications/business-email",
     serviceLabel: "Email Problems",
@@ -376,9 +376,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "migrate-google-to-microsoft-365",
-    title: "Switching From Google to Microsoft 365? A No-Downtime Plan",
+    title: "Switching From Google to Microsoft 365",
     excerpt:
-      "Licenses, mail flow, Drive files, calendars — the order that avoids lost email and Monday-morning chaos for teams of 5–50.",
+      "Licenses, mail flow, Drive files, calendars — the order that avoids lost email for teams of 5–50.",
     readMinutes: 7,
     serviceSlug: "cloud-solutions/microsoft-365",
     serviceLabel: "Microsoft 365",
@@ -428,9 +428,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "fix-wireless-printer-not-printing",
-    title: "Wireless Printer Won't Print? Reconnect It in 10 Minutes",
+    title: "Wireless Printer Won't Print? Reconnect It Fast",
     excerpt:
-      "Offline errors, print jobs stuck in queue, phone can't find the printer — 90% fixed without drivers or a new printer.",
+      "Offline errors, print jobs stuck in queue, phone can't find the printer — 90% fixed without drivers.",
     readMinutes: 4,
     serviceSlug: "it-support",
     serviceLabel: "Remote Support",
@@ -476,9 +476,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "lock-down-office-wifi-router",
-    title: "Lock Down Your Office Router in 20 Minutes (Stop the Drive-By Hack)",
+    title: "Lock Down Your Office Router in 20 Minutes",
     excerpt:
-      "Default passwords, ancient firmware, and wide-open guest access — the 5 router settings that keep intruders off your network.",
+      "Default passwords, ancient firmware, wide-open guest access — the 5 router settings that block intruders.",
     readMinutes: 5,
     serviceSlug: "network-server/wireless",
     serviceLabel: "Wi-Fi & Networking",
@@ -528,9 +528,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "password-manager-first-hour",
-    title: "Set Up a Password Manager in Your First Hour (Never Reuse Again)",
+    title: "Set Up a Password Manager in Your First Hour",
     excerpt:
-      "One master password to remember, unique 20-character passwords everywhere else. The exact first-hour setup that kills 90% of account-takeover risk.",
+      "One master password, unique passwords everywhere else. The first-hour setup that kills 90% of account-takeover risk.",
     readMinutes: 5,
     serviceSlug: "it-security",
     serviceLabel: "Virus & Security Cleanup",
@@ -580,9 +580,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "windows-10-still-running-upgrade",
-    title: "Still on Windows 10? Your Upgrade Options (Support Is Over)",
+    title: "Still on Windows 10? Your Upgrade Options",
     excerpt:
-      "Windows 10 support ended October 2025 — no more security patches. Check if your PC can run Windows 11, and what to do if it can't.",
+      "Windows 10 support ended October 2025 — no more security patches. Check if your PC can run Windows 11.",
     readMinutes: 6,
     serviceSlug: "it-support/pc-mac",
     serviceLabel: "Computer Repair",
@@ -632,9 +632,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "new-computer-setup-checklist",
-    title: "New Computer? The 30-Minute Setup Checklist (Do It Right Once)",
+    title: "New Computer? The 30-Minute Setup Checklist",
     excerpt:
-      "Updates, bloatware removal, backup from day one, password manager, printer — the exact order that prevents 90% of 'new PC' headaches.",
+      "Updates, bloatware removal, backup from day one, password manager, printer — prevents 90% of 'new PC' headaches.",
     readMinutes: 5,
     serviceSlug: "it-support/pc-mac",
     serviceLabel: "Computer Repair",
@@ -684,9 +684,9 @@ export const coreGuides: Guide[] = [
   },
   {
     slug: "passkeys-stop-reusing-passwords",
-    title: "Passkeys Explained: Stop Typing Passwords (and Stop Getting Phished)",
+    title: "Passkeys Explained: Stop Typing Passwords",
     excerpt:
-      "Your face or fingerprint instead of a password — phishing-proof by design. Where passkeys work now and how to turn them on for Google, Microsoft, and Apple.",
+      "Face or fingerprint instead of a password — phishing-proof by design. Turn passkeys on for Google, Microsoft, Apple.",
     readMinutes: 4,
     serviceSlug: "it-security",
     serviceLabel: "Virus & Security Cleanup",

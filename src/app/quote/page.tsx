@@ -31,6 +31,7 @@ export default function QuotePage() {
             <h1 id="quote-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Build your IT quote in 2 minutes
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Transparent IT Pricing</h2>
             <p className="text-lg text-muted-foreground">
               Answer a few quick questions and get a clear starting point. We&apos;ll follow up within 2 business
               hours with next steps — no obligation, no pressure.

@@ -104,6 +104,7 @@ export default function Step4Page() {
             <h1 id="step4-heading" className="text-3xl font-bold text-foreground mb-2">
               Review Your Request
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Review Before Submitting</h2>
             <p className="text-muted-foreground mb-8">
               Please verify all information before submitting. You can edit any section.
             </p>

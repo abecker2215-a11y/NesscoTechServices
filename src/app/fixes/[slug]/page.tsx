@@ -121,7 +121,7 @@ export default async function FixPage({ params }: Props) {
             <div className="mt-10 rounded-xl border-2 border-dashed border-primary/40 bg-primary/5 p-6 lg:p-8">
               <h2 className="mb-3 flex items-center gap-2 text-xl font-bold text-foreground">
                 <CircleAlert className="h-5 w-5 text-primary" aria-hidden="true" />
-                When to call us instead
+                {fix.title} — When to Call a Pro
               </h2>
               <ul className="space-y-2 text-muted-foreground" role="list">
                 {fix.whenToCall.map((item, i) => (

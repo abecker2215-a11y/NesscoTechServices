@@ -67,7 +67,7 @@ export default function RetailChainCaseStudy() {
                 Retail &middot; St. Petersburg, FL &middot; 5 Locations
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-                Enterprise Wi-Fi Overhaul for 5-Location Retail Chain
+                Retail Chain Wi-Fi Overhaul
               </h1>
               <p className="text-lg text-muted-foreground">
                 Replaced 5 different consumer router setups with cloud-managed enterprise access points. POS downtime eliminated, guest Wi-Fi now captures customer emails, one dashboard manages everything.

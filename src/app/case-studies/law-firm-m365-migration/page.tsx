@@ -67,7 +67,7 @@ export default function LawFirmCaseStudy() {
                 Legal · Tampa, FL
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
-                Zero-Downtime Microsoft 365 Migration for 12-Person Law Firm
+                Law Firm Microsoft 365 Migration
               </h1>
               <p className="text-lg text-muted-foreground">
                 Migrated from legacy GoDaddy Workspace to Microsoft 365 over a weekend — no lost emails, no disrupted billable hours, MFA enforced day one.

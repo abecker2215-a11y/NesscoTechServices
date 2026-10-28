@@ -108,6 +108,7 @@ export default async function BlogArticlePage({ params }: Props) {
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-4">
               {article.title}
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">{article.category}</h2>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <User className="h-4 w-4" aria-hidden="true" />

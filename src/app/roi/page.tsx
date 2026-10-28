@@ -26,6 +26,7 @@ export default function RoiPage() {
             <h1 id="roi-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Every outage has a price tag
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Downtime Cost Calculator</h2>
             <p className="text-lg text-muted-foreground">
               Idle staff still get paid. Drag the sliders to your reality —
               then see which plan turns that cost into prevention.

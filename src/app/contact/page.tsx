@@ -50,6 +50,7 @@ export default function ContactPage() {
             <h1 id="contact-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-4">
               Contact Us
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Get in Touch</h2>
             <p className="text-lg text-muted-foreground">
               Have a question? Need a quote? Fill out the form and we&apos;ll get back to you within 2 business hours.
             </p>

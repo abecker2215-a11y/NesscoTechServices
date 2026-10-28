@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-2">Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Contact Nessco</h2>
               <p>
                 Questions about this policy? Email{" "}
                 <Link href="/contact" className="text-primary underline hover:text-primary/80">

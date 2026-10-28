@@ -30,6 +30,7 @@ export default function StormReadyPage() {
             <h1 id="storm-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Would your files survive a Tampa storm?
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Storm Readiness Quiz</h2>
             <p className="text-lg text-muted-foreground">
               Surges, floods, week-long outages — 5 questions, 60 seconds, and you&apos;ll know exactly
               where you stand before hurricane season.

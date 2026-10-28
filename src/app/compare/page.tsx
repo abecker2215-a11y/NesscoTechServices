@@ -27,9 +27,15 @@ export default function ComparePage() {
             <h1 id="compare-heading" className="mb-4 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
               Break-fix vs. managed: the real math
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Break-Fix vs Managed IT</h2>
             <p className="text-lg text-muted-foreground">
               Reactive repairs feel cheap until you add them up. Drag the sliders —
               the numbers use our own published $125/hr on-site rate.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              Break-fix means you only pay when something breaks — but downtime, emergency rates,
+              and repeated issues add up fast. Managed IT means proactive monitoring, patching, and
+              support for a flat monthly cost. See which model fits your Tampa Bay business below.
             </p>
           </div>
           <div className="mx-auto mb-16 max-w-5xl">

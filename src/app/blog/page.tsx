@@ -50,8 +50,13 @@ export default function BlogPage() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-wrap gap-2 justify-center mb-12" role="list" aria-label="Categories">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Practical IT guidance written for Tampa Bay small businesses. Each article covers a real
+              problem we&apos;ve seen in the field — from printer issues to Microsoft 365 security — with
+              steps you can follow yourself and a clear line for when it&apos;s time to call for help.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center mb-12" role="list" aria-label="Categories">
             {categories.map((cat) => (
               <button
                 key={cat}

@@ -30,6 +30,7 @@ export default function MaintenancePage() {
           <h1 id="maintenance-heading" className="mb-4 text-4xl lg:text-5xl font-bold text-foreground">
             Scheduled Maintenance
           </h1>
+          <h2 className="text-xl font-semibold text-foreground mb-6">Maintenance Notice</h2>
           <p className="mb-8 text-lg text-muted-foreground">
             We&apos;re currently performing scheduled maintenance to improve our services. We&apos;ll be back shortly.
           </p>

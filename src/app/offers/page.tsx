@@ -37,6 +37,9 @@ export default function OffersPage() {
             </h1>
             <p className="text-lg text-muted-foreground">
               The right fix at the right time of year. Same flat rates — seasonal focus.
+              These limited-time checkups target the IT issues Tampa Bay businesses face each season:
+              hurricane preparedness in summer, tax-season data protection in spring, and year-end
+              security reviews in winter.
             </p>
             {live.length > 0 && (
               <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-success/10 px-4 py-1.5 text-sm font-medium text-success">

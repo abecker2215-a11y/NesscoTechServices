@@ -27,6 +27,7 @@ export default function EmergencyPage() {
             <h1 id="emergency-heading" className="fluid-4xl font-bold tracking-tight text-foreground mb-4">
               Down right now?
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Emergency IT Support</h2>
             <p className="fluid-lg text-muted-foreground">
               {status.open
                 ? "We're open — call for the fastest response, or page below and we'll jump."

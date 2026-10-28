@@ -42,9 +42,9 @@ If more than one sign above sounds familiar, book a 15-minute intro call.
   },
   {
     slug: "mfa-small-business-security",
-    title: "MFA: The 10-Minute Security Upgrade That Stops 99% of Attacks",
+    title: "MFA: Stop 99% of Attacks in 10 Minutes",
     excerpt:
-      "Most breaches start with a stolen password. Here's how to lock down your Microsoft 365 or Google Workspace in minutes without disrupting your team.",
+      "Most breaches start with a stolen password. Lock down Microsoft 365 or Google Workspace in minutes without disrupting your team.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
     category: "Security",
@@ -70,7 +70,7 @@ If you have not enabled MFA on every business email account today, start now. It
   },
   {
     slug: "backup-checklist-small-business",
-    title: "5 Backup Mistakes That Give Tampa Businesses a False Sense of Security",
+    title: "5 Backup Mistakes Tampa Businesses Make",
     excerpt:
       "You have backups — but would they actually work when you need them? Here's how to test without the panic.",
     date: "Sep 2026",

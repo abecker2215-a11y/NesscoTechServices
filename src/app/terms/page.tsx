@@ -70,7 +70,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-2">Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Contact Information</h2>
               <p>
                 Questions? Email{" "}
                 <Link href="/contact" className="text-primary underline hover:text-primary/80">

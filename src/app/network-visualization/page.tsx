@@ -22,6 +22,7 @@ export default function NetworkVisualizationPage() {
             <h1 id="network-heading" className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Interactive Network Visualization
             </h1>
+            <h2 className="text-xl font-semibold text-foreground mb-6">Network Monitoring Demo</h2>
             <p className="text-lg text-muted-foreground mb-10">
               See how Nessco Tech Services monitors and protects your network 24/7 with our interactive
               network visualization demo. Explore device topology, connection health, and proactive IT monitoring

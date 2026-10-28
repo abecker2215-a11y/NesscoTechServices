@@ -52,6 +52,11 @@ export default function CoManagedPage() {
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold text-foreground mb-6">Co-Managed IT — The Problem</h2>
               <p className="text-lg text-muted-foreground mb-8">{service.problem}</p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Co-Managed IT works best for businesses that already have internal IT staff but need
+                additional expertise, after-hours coverage, or specialized security support. Your team
+                handles day-to-day tasks; we handle monitoring, strategy, and escalation.
+              </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-4">What We Do</h3>
               <ul className="space-y-3 text-muted-foreground mb-8">
