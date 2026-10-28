@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Utensils, MapPin, CheckCircle, Clock, Headset, Users, Building, Star, CreditCard } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Restaurants & Hospitality | Tampa Bay",
-  description: "IT support for Tampa Bay restaurants and hospitality businesses. POS systems, payment security, reservation management, and guest Wi-Fi.",
+  title: "Restaurants & Hospitality IT | Tampa Bay",
+  description: "IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management.",
   alternates: { canonical: "https://nesscotech.com/industries/hospitality" },
   openGraph: {
-    title: "IT Services for Restaurants & Hospitality | Tampa Bay",
+    title: "Restaurants & Hospitality IT | Tampa Bay",
     description: "IT support for Tampa Bay restaurants and hospitality. POS systems, payment security, reservation management.",
     url: "https://nesscotech.com/industries/hospitality",
   },

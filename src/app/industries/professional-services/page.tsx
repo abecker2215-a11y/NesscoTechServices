@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Briefcase, Building2, FileText, CheckCircle, Clock, Headset, Users, Calculator, Home } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Professional Services | Tampa Bay",
-  description: "IT support for Tampa Bay professional services firms. Document management, secure collaboration, compliance, and practice management.",
+  title: "Professional Services IT | Tampa Bay",
+  description: "IT support for Tampa Bay professional services firms. Document management, secure collaboration.",
   alternates: { canonical: "https://nesscotech.com/industries/professional-services" },
   openGraph: {
-    title: "IT Services for Professional Services | Tampa Bay",
+    title: "Professional Services IT | Tampa Bay",
     description: "IT support for Tampa Bay professional services. Document management, secure collaboration, and practice management.",
     url: "https://nesscotech.com/industries/professional-services",
   },

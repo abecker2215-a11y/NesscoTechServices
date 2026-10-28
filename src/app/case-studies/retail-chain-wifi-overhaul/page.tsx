@@ -5,11 +5,11 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, TrendingUp, Wifi, Building2, Network } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Retail Chain Wi-Fi Overhaul | 5 Locations Case Study",
-  description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime, and gained centralized network management.",
+  title: "Retail Chain Wi-Fi Overhaul Case Study",
+  description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime.",
   alternates: { canonical: "/case-studies/retail-chain-wifi-overhaul" },
   openGraph: {
-    title: "Retail Chain Wi-Fi Overhaul | 5 Locations Case Study",
+    title: "Retail Chain Wi-Fi Overhaul Case Study",
     description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime.",
     url: "https://nesscotech.com/case-studies/retail-chain-wifi-overhaul",
   },

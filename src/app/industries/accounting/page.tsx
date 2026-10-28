@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Calculator, FileText, CheckCircle, Clock, Headset, Users, DollarSign, PieChart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Accounting & Tax Firms | Tampa Bay",
-  description: "Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, compliance, and document security.",
+  title: "Accounting & Tax Firm IT | Tampa Bay",
+  description: "Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, compliance.",
   alternates: { canonical: "https://nesscotech.com/industries/accounting" },
   openGraph: {
-    title: "IT Services for Accounting & Tax Firms | Tampa Bay",
+    title: "Accounting & Tax Firm IT | Tampa Bay",
     description: "Secure IT support for Tampa Bay accounting firms. Tax software hosting, data protection, and compliance.",
     url: "https://nesscotech.com/industries/accounting",
   },

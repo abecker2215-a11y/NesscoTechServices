@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, CheckCircle, Clock, Headset, Users, ShoppingCart, CreditCard, Wifi } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Retail & E-Commerce | Tampa Bay",
-  description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management, and customer-facing technology.",
+  title: "Retail & E-Commerce IT | Tampa Bay",
+  description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management.",
   alternates: { canonical: "https://nesscotech.com/industries/retail" },
   openGraph: {
-    title: "IT Services for Retail & E-Commerce | Tampa Bay",
+    title: "Retail & E-Commerce IT | Tampa Bay",
     description: "Reliable IT support for Tampa Bay retail businesses. POS systems, payment processing, inventory management.",
     url: "https://nesscotech.com/industries/retail",
   },

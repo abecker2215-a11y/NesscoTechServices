@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Key, Building, Users, FileText, CheckCircle, Clock, Headset, Home, DollarSign } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Property Management | Tampa Bay",
-  description: "IT support for Tampa Bay property management firms. Tenant portals, building access systems, lease management, and maintenance systems.",
+  title: "Property Management IT | Tampa Bay",
+  description: "IT support for Tampa Bay property management. Tenant portals, building access systems, lease management.",
   alternates: { canonical: "https://nesscotech.com/industries/property-management" },
   openGraph: {
-    title: "IT Services for Property Management | Tampa Bay",
+    title: "Property Management IT | Tampa Bay",
     description: "IT support for Tampa Bay property management. Tenant portals, building access systems, and lease management.",
     url: "https://nesscotech.com/industries/property-management",
   },
