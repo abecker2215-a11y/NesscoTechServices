@@ -11,6 +11,7 @@ import { getCategoryCounts, getPopularTerms } from "@/lib/glossary";
 
 interface GlossarySearchProps {
   terms: GlossaryTerm[];
+  initialCategory?: GlossaryCategory | string;
 }
 
 const CATEGORY_COLORS: Record<GlossaryCategory, string> = {
@@ -24,11 +25,11 @@ const CATEGORY_COLORS: Record<GlossaryCategory, string> = {
   General: "bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700",
 };
 
-export function GlossarySearch({ terms }: GlossarySearchProps) {
+export function GlossarySearch({ terms, initialCategory }: GlossarySearchProps) {
   const [q, setQ] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<GlossaryCategory | "all">("all");
+  const [selectedCategory, setSelectedCategory] = useState<GlossaryCategory | "all">((initialCategory as GlossaryCategory) || "all");
   const [viewMode, setViewMode] = useState<"list" | "cards">("list");
-  const [showPopular, setShowPopular] = useState(true);
+  const [showPopular, setShowPopular] = useState(initialCategory ? false : true);
 
   const categoryCounts = useMemo(() => getCategoryCounts(terms), [terms]);
   const popularTerms = useMemo(() => getPopularTerms(terms, 6), [terms]);
@@ -38,7 +39,8 @@ export function GlossarySearch({ terms }: GlossarySearchProps) {
     const needle = q.trim().toLowerCase();
 
     if (selectedCategory !== "all") {
-      result = result.filter((t) => t.category === selectedCategory);
+      const catLower = String(selectedCategory).toLowerCase();
+      result = result.filter((t) => t.category.toLowerCase() === catLower);
     }
 
     if (needle) {

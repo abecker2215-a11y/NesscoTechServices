@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { glossaryTerms, getCategoryCounts, getPopularTerms } from "@/lib/glossary";
-import { Button } from "@/components/ui";
-import { GlossarySearch } from "@/components/glossary/GlossarySearch";
+import { GlossarySearchWithParams } from "@/components/glossary/GlossarySearchWithParams";
 import { JsonLd } from "@/components/layout/JsonLd";
+import { Button } from "@/components/ui";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { BookOpen, Shield, Wifi, Database, Monitor, HardDrive, Headphones, FileText, Users, TrendingUp, ArrowRight } from "lucide-react";
 import { pageTitle, metaDescription } from "@/lib/meta";
+import { getCategoryCounts, getPopularTerms, glossaryTerms } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: pageTitle("IT Glossary — Plain-English Tech Terms"),
@@ -74,7 +74,7 @@ export default function GlossaryPage() {
             </div>
           </div>
 
-          <GlossarySearch terms={glossaryTerms} />
+          <GlossarySearchWithParams terms={glossaryTerms} />
         </div>
       </section>
 
@@ -95,7 +95,7 @@ export default function GlossaryPage() {
               return (
                 <Link
                   key={cat.value}
-                  href={`/glossary?category=${cat.value}`}
+                  href={`/glossary?category=${encodeURIComponent(cat.value)}`}
                   className="group rounded-xl border border-border bg-background p-6 hover:border-primary/50 hover:shadow-lg transition-all"
                 >
                   <div className="flex items-center gap-4 mb-3">

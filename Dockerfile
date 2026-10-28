@@ -1,11 +1,14 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 WORKDIR /app
 
 # Install dependencies first (with prisma schema available)
 COPY package*.json ./
 COPY prisma ./prisma/
 RUN npm ci --legacy-peer-deps
+
+# Install openssl for Prisma engine detection
+RUN apt-get update -y && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Generate Prisma client
 RUN npx prisma generate
