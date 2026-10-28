@@ -10,11 +10,11 @@ import { Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "IT Services",
-  description: "Managed IT, cybersecurity, cloud solutions, network & server, IT support, backup & disaster recovery, applications, and business communications for Tampa Bay businesses.",
+    description: "Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses.",
   alternates: { canonical: "https://nesscotech.com/services" },
   openGraph: {
     title: "IT Services",
-    description: "Managed IT, cybersecurity, cloud solutions, network & server, IT support, backup & disaster recovery, applications, and business communications for Tampa Bay businesses.",
+  description: "Managed IT, cybersecurity, cloud, network, IT support, backup & recovery for Tampa Bay businesses.",
     url: "https://nesscotech.com/services",
   },
 };
@@ -119,7 +119,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 id="process-heading" className="text-3xl font-bold text-foreground mb-4">
-              How It Works
+              How Our IT Services Work
             </h2>
             <p className="text-muted-foreground text-lg">
               Three simple steps to get your technology working again.

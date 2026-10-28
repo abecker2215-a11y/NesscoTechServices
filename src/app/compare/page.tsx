@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schemas";
 export const metadata: Metadata = {
   title: "Break-Fix vs Managed IT — The Real Math",
   description:
-    "What reactive IT really costs Tampa Bay small businesses vs a managed plan. Interactive calculator plus an honest comparison with big-box tech support.",
+    "Break-fix vs managed IT costs for Tampa Bay small businesses. Interactive calculator plus honest comparison.",
   alternates: { canonical: "/compare" },
   openGraph: {
     title: "Break-Fix vs Managed IT — The Real Math",

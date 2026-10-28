@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, CheckCircle, Clock, Headset, Users, HardHat, Truck, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Construction & Field Services | Tampa Bay",
+    title: "Construction IT Services | Tampa Bay",
   description: "Mobile IT support for Tampa Bay construction companies. Field service management, project tracking, remote job site connectivity.",
   alternates: { canonical: "https://nesscotech.com/industries/construction" },
   openGraph: {
-    title: "IT Services for Construction & Field Services | Tampa Bay",
+  title: "Construction IT Services | Tampa Bay",
     description: "Mobile IT support for Tampa Bay construction. Field service management, remote job site connectivity.",
     url: "https://nesscotech.com/industries/construction",
   },

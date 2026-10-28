@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const caseStudies = [
   {
     slug: "law-firm-m365-migration",
-    title: "12-Person Law Firm: Zero-Downtime Microsoft 365 Migration",
+    title: "Law Firm Microsoft 365 Migration Case Study",
     industry: "Legal",
     location: "Tampa",
     challenge: "A 12-attorney law firm was losing billable hours to email outages and file sync issues on their legacy GoDaddy workspace. They needed to migrate to Microsoft 365 without losing a single email or disrupting client work.",

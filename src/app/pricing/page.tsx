@@ -11,11 +11,11 @@ import { ServiceModelComparison } from "@/components/pricing/ServiceModelCompari
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
+    description: "Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Simple, Transparent Pricing | Nessco Tech Services",
-    description: "Simple, transparent IT pricing. Remote support starting at $75/hr, on-site at $125/hr. Business IT plans with fixed monthly pricing. No hidden fees.",
+  description: "Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing.",
     url: "https://nesscotech.com/pricing",
     type: "website",
     images: [

@@ -130,7 +130,7 @@ export default function DiyVsProPage() {
 
           <Reveal>
             <div className="mt-16 max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Common Questions</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Common Questions: DIY vs Professional IT</h2>
               <FAQAccordion items={faqs} />
             </div>
           </Reveal>

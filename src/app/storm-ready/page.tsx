@@ -6,12 +6,12 @@ import { breadcrumbSchema } from "@/lib/schemas";
 import { CloudLightning } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Storm-Ready Check — Would Your Files Survive a Tampa Outage?",
+    title: "Storm-Ready IT Check | Tampa Bay MSP",
   description:
-    "60-second quiz: would your files and business survive a surge, flood, or week without power? Get your storm-readiness score and close the gaps before hurricane season.",
+    "60-second quiz: would your files survive a surge, flood, or week without power? Get your storm-readiness score.",
   alternates: { canonical: "/storm-ready" },
   openGraph: {
-    title: "Storm-Ready Check — Would Your Files Survive a Tampa Outage?",
+  title: "Storm-Ready IT Check | Tampa Bay MSP",
     description: "60-second storm-readiness quiz for Tampa Bay businesses.",
     url: "https://nesscotech.com/storm-ready",
   },

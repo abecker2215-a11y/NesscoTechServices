@@ -7,7 +7,7 @@ import { Calculator } from "lucide-react";
 export const metadata: Metadata = {
   title: "Get a Quote — Business IT Pricing in Tampa Bay",
   description:
-    "Build a custom IT quote in 2 minutes. Tell us what you need and get a clear starting point for managed IT, security, cloud, and support — no obligation.",
+    "Build a custom IT quote in 2 minutes. Clear starting point for managed IT, security, cloud, and support.",
   alternates: { canonical: "https://nesscotech.com/quote" },
   openGraph: {
     title: "Get a Quote | Nessco Tech Services",
@@ -34,6 +34,17 @@ export default function QuotePage() {
             <p className="text-lg text-muted-foreground">
               Answer a few quick questions and get a clear starting point. We&apos;ll follow up within 2 business
               hours with next steps — no obligation, no pressure.
+            </p>
+            <p className="text-lg text-muted-foreground mt-6">
+              We provide transparent pricing for managed IT services, cybersecurity, cloud solutions, network and
+              server support, and backup/disaster recovery for Tampa Bay businesses. Whether you need remote
+              support starting at $75/hr or on-site visits at $125/hr, our quote tool gives you a clear estimate
+              before any work begins.
+            </p>
+            <p className="text-lg text-muted-foreground mt-6">
+              Monthly managed IT plans are billed per user or per device with no long-term contracts required.
+              Hourly break-fix work is available with same-day scheduling. Fill out the form below and we&apos;ll
+              deliver a customized quote tailored to your business needs.
             </p>
           </div>
 

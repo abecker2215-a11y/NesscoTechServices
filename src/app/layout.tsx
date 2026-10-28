@@ -29,10 +29,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nesscotech.com"),
   title: {
-    default: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud for Tampa Bay Business",
+    default: "Nessco Tech Services | Tampa Bay IT Support",
     template: "%s | Nessco Tech Services",
   },
-  description: "Managed IT services, cybersecurity, cloud solutions, network & server support, and backup/disaster recovery for Tampa Bay businesses. Proactive monitoring, 24/7 support, and IT strategy.",
+  description: "Managed IT services, cybersecurity, cloud, and network support for Tampa Bay businesses.",
   authors: [{ name: "Nessco Tech Services" }],
   creator: "Nessco Tech Services",
   publisher: "Nessco Tech Services",
@@ -42,12 +42,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nesscotech.com/",
     siteName: "Nessco Tech Services",
-    title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud for Tampa Bay Business",
-    description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring, 24/7 support, and IT strategy.",
+    title: "Nessco Tech Services | Tampa Bay IT Support",
+    description: "Managed IT, cybersecurity, cloud, and network services for Tampa Bay businesses.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud",
+    title: "Nessco Tech Services | Managed IT & Cybersecurity",
     description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses.",
   },
   

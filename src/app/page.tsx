@@ -11,8 +11,8 @@ import { faqPageSchema } from "@/lib/schemas";
 import { Monitor, Shield, Database, Briefcase, Check, Truck, MousePointer, CloudLightning, ArrowRight, Mail, Cable, Star, BadgeCheck, Users, Award, Headset, HardDrive, LayoutDashboard, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud for Tampa Bay Business",
-  description: "Managed IT, cybersecurity, cloud, network and backup/disaster recovery services for Tampa Bay businesses. Proactive monitoring, 24/7 support, and IT strategy.",
+    title: "Nessco Tech Services | Tampa Bay IT Support",
+  description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring, 24/7 support.",
   metadataBase: new URL("https://nesscotech.com"),
   alternates: {
     canonical: "https://nesscotech.com/",
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://nesscotech.com/",
     siteName: "Nessco Tech Services",
-    title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud for Tampa Bay Business",
+  title: "Nessco Tech Services | Tampa Bay Managed IT & Cybersecurity",
     description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nessco Tech Services | Managed IT, Cybersecurity & Cloud",
+    title: "Nessco Tech Services | Managed IT & Cybersecurity",
     description: "Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses.",
   },
   robots: { index: true, follow: true },
@@ -108,6 +108,9 @@ export default function HomePage() {
             <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
             <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
               <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
+                <h1 id="hero-heading" className="sr-only">
+                  Nessco Tech Services | Tampa Bay Managed IT & Cybersecurity
+                </h1>
                 <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
                   <a
                     href="/get-help"
@@ -189,7 +192,7 @@ export default function HomePage() {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 id="how-it-works-heading" className="text-3xl font-bold text-foreground mb-4">
-              How It Works
+              How It Works: Get Help in 3 Steps
             </h2>
             <p className="text-muted-foreground text-lg">
               Three simple steps to get your technology working again.

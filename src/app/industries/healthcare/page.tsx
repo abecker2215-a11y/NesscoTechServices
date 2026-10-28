@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, FileText, CheckCircle, Clock, Headset, Activity, Users, Stethoscope } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Healthcare & Medical Practices | Tampa Bay",
+    title: "Healthcare IT Services | Tampa Bay",
   description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR management, patient data protection, and reliable infrastructure.",
   alternates: { canonical: "https://nesscotech.com/industries/healthcare" },
   openGraph: {
-    title: "IT Services for Healthcare & Medical Practices | Tampa Bay",
+  title: "Healthcare IT Services | Tampa Bay",
     description: "HIPAA-compliant IT support for Tampa Bay healthcare providers. Secure EHR, patient data protection.",
     url: "https://nesscotech.com/industries/healthcare",
   },

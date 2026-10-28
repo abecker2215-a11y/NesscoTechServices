@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Heart, Users, FileText, CheckCircle, Clock, Headset, Building } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Nonprofits & Associations | Tampa Bay",
+    title: "Nonprofit IT Services | Tampa Bay",
   description: "IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, compliance, and volunteer coordination.",
   alternates: { canonical: "https://nesscotech.com/industries/nonprofits" },
   openGraph: {
-    title: "IT Services for Nonprofits & Associations | Tampa Bay",
+  title: "Nonprofit IT Services | Tampa Bay",
     description: "IT support for Tampa Bay nonprofits and associations. Donor management, grant tracking, and volunteer coordination.",
     url: "https://nesscotech.com/industries/nonprofits",
   },

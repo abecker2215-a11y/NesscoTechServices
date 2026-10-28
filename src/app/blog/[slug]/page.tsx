@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.excerpt,
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: `${article.title} | ${siteConfig.name}`,
+      title: article.title.length > 40 ? article.title : `${article.title} | ${siteConfig.name}`,
       description: article.excerpt,
       url: pageUrl,
       type: "article",

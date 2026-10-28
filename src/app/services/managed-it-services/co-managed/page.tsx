@@ -50,7 +50,7 @@ export default function CoManagedPage() {
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
             <div className="max-w-3xl">
-              <h2 className="text-3xl font-bold text-foreground mb-6">The Problem</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">Co-Managed IT — The Problem</h2>
               <p className="text-lg text-muted-foreground mb-8">{service.problem}</p>
 
               <h3 className="text-xl font-semibold text-foreground mb-4">What We Do</h3>
@@ -82,7 +82,7 @@ export default function CoManagedPage() {
         <section className="py-16 lg:py-24 bg-muted/30">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Often bundled with</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Often bundled with Co-Managed IT</h2>
               <p className="text-muted-foreground">Services commonly paired with Co-Managed IT</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

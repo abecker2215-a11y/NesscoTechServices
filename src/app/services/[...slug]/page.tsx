@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.shortDescription,
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: `${service.title} | Nessco Tech Services`,
+      title: service.title.length > 40 ? service.title : `${service.title} | Nessco Tech Services`,
       description: service.shortDescription,
       url: pageUrl,
       type: "website",
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title} | Nessco Tech Services`,
+      title: service.title.length > 40 ? service.title : `${service.title} | Nessco Tech Services`,
       description: service.shortDescription,
       images: [`${baseUrl}/og-image.png`],
     },
@@ -87,7 +87,7 @@ async function ServiceContent({ params }: Props) {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <div className="max-w-3xl">
             <h2 id="problem-heading" className="text-3xl font-bold text-foreground mb-6">
-              The Problem
+              {service.title} — The Problem
             </h2>
             <p className="text-lg text-muted-foreground mb-8">{service.problem}</p>
             
@@ -197,7 +197,7 @@ async function ServiceContent({ params }: Props) {
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 id="related-heading" className="text-3xl font-bold text-foreground mb-4">
-                Often bundled with
+                Often bundled with {service.title}
               </h2>
               <p className="text-muted-foreground">
                 Clients who needed {service.title.toLowerCase()} often add one of these in the same visit:
@@ -216,7 +216,7 @@ async function ServiceContent({ params }: Props) {
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 id="cta-heading" className="text-3xl font-bold text-foreground mb-4">
-              Ready to Get Started?
+              Ready to Get Started with {service.title}?
             </h2>
             <p className="text-muted-foreground mb-8">
               Start a service request in under 2 minutes. We&apos;ll contact you within 2 hours during business hours.

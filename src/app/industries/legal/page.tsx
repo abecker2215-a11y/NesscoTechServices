@@ -5,11 +5,11 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Shield, Server, Database, Lock, FileText, CheckCircle, Clock, Headset, Scale, Search } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Law Firms & Legal Practices | Tampa Bay",
+    title: "Law Firm IT Services | Tampa Bay",
   description: "Secure IT support for Tampa Bay law firms. Client confidentiality, document management, and reliable infrastructure.",
   alternates: { canonical: "https://nesscotech.com/industries/legal" },
   openGraph: {
-    title: "IT Services for Law Firms & Legal Practices | Tampa Bay",
+  title: "Law Firm IT Services | Tampa Bay",
     description: "Secure IT support for Tampa Bay law firms. Client confidentiality, document management.",
     url: "https://nesscotech.com/industries/legal",
   },

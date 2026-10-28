@@ -5,11 +5,11 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, TrendingUp, AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Medical Practice Ransomware Recovery | 4-Hour Case Study",
+    title: "Medical Practice Ransomware Recovery Case Study",
   description: "Medical practice recovered from ransomware in 4 hours with zero data loss and no ransom paid.",
   alternates: { canonical: "/case-studies/medical-practice-backup-recovery" },
   openGraph: {
-    title: "Medical Practice Ransomware Recovery | 4-Hour Case Study",
+  title: "Medical Practice Ransomware Recovery Case Study",
     description: "Medical practice recovered from ransomware in 4 hours with zero data loss.",
     url: "https://nesscotech.com/case-studies/medical-practice-backup-recovery",
   },

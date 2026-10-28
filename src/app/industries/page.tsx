@@ -7,7 +7,7 @@ import { Stethoscope, Scale, ShoppingCart, HardHat, Calculator, Home, Heart, Ute
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Tampa Bay IT Services",
-  description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries. Industry-specific solutions and compliance expertise.",
+  description: "Specialized IT services for Healthcare, Legal, Retail, Construction, and other Tampa Bay industries.",
   alternates: { canonical: "https://nesscotech.com/industries" },
   openGraph: {
     title: "Industries We Serve | Tampa Bay IT Services",

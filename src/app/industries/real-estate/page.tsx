@@ -5,12 +5,12 @@ import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { Home, Building2, Key, CheckCircle, Clock, Headset, Users, FileText, MapPin, DollarSign } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services for Real Estate & Property Management | Tampa Bay",
-  description: "IT support for Tampa Bay real estate and property management firms. MLS systems, tenant portals, building management, and transaction technology.",
+    title: "Real Estate IT Services | Tampa Bay",
+  description: "IT support for Tampa Bay real estate and property management. MLS systems, tenant portals.",
   alternates: { canonical: "https://nesscotech.com/industries/real-estate" },
   openGraph: {
-    title: "IT Services for Real Estate & Property Management | Tampa Bay",
-    description: "IT support for Tampa Bay real estate and property management. MLS systems, tenant portals, and building management.",
+  title: "Real Estate IT Services | Tampa Bay",
+    description: "IT support for Tampa Bay real estate and property management. MLS systems, tenant portals.",
     url: "https://nesscotech.com/industries/real-estate",
   },
 };

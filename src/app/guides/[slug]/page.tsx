@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: guide.excerpt,
     alternates: { canonical: `/guides/${slug}` },
     openGraph: {
-      title: `${guide.title} | ${siteConfig.name}`,
+      title: guide.title.length > 40 ? guide.title : `${guide.title} | ${siteConfig.name}`,
       description: guide.excerpt,
       url: `https://nesscotech.com/guides/${slug}`,
       type: "article",

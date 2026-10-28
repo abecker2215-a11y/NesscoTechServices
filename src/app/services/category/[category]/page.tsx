@@ -208,7 +208,7 @@ export default async function CategoryPage({ params }: Props) {
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 id="category-cta-heading" className="text-3xl font-bold text-foreground mb-4">
-              Ready to Get Started?
+              Ready to Get Started with {parent.title}?
             </h2>
             <p className="text-muted-foreground mb-8">
               Start a service request in under 2 minutes. We&apos;ll contact you within 2 business hours.

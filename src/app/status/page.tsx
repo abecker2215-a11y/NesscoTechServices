@@ -117,6 +117,12 @@ export default async function StatusPage() {
               <h1 id="status-heading" className="fluid-4xl font-bold text-foreground mb-4">
                 System status
               </h1>
+              <p className="text-lg text-muted-foreground mb-6">
+                Nessco Tech Services provides managed IT support across Tampa Bay with proactive monitoring,
+                24/7 security oversight, and rapid incident response. This status page reports the live health
+                of our website, client portal, email delivery, and integration systems so you always know
+                whether our services are operating normally.
+              </p>
               <p
                 className={cn(
                   "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold",

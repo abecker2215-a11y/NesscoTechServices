@@ -10,7 +10,7 @@ import { prisma } from "@/lib/prisma";
 export const metadata: Metadata = {
   title: "Refer a Friend — $25 for You, $25 for Them",
   description:
-    "Know someone fighting their Wi-Fi or computer? Send them $25 off their first fix with Nessco Tech Services and get $25 credit when they book. No limits.",
+    "Refer a friend to Nessco — $25 off their first fix, $25 credit for you when they book.",
   alternates: { canonical: "/refer" },
   openGraph: {
     title: "Refer a Friend — $25 for You, $25 for Them",

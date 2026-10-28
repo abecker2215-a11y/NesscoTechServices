@@ -10,7 +10,7 @@ import { BookOpen, Shield, Wifi, Database, Monitor, HardDrive, Headphones, FileT
 export const metadata: Metadata = {
   title: "IT Glossary — Plain-English Tech Terms",
   description:
-    "Confused by IT jargon? Our glossary explains 36+ networking, security, backup, and Microsoft 365 terms in plain English — with honest guidance on what actually matters.",
+    "Confused by IT jargon? Our glossary explains 36+ tech terms in plain English, from networking to Microsoft 365.",
   alternates: { canonical: "/glossary" },
   openGraph: {
     title: "IT Glossary — Plain-English Tech Terms",

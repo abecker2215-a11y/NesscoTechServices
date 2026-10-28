@@ -5,8 +5,8 @@ import { breadcrumbSchema } from "@/lib/schemas";
 import { Check, X, Users, Building } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nessco vs Big-Box Tech Support | Local vs National Comparison",
-  description: "Compare Nessco Tech Services with Geek Squad, Asurion, and national remote-only providers. Local expertise, transparent pricing, and no upsells.",
+  title: "Nessco vs Big-Box Tech Support | Local Comparison",
+  description: "Compare Nessco vs Geek Squad, Asurion, and national remote-only providers. Local expertise, transparent pricing.",
   alternates: { canonical: "/compare/big-box-tech-support" },
 };
 
@@ -157,7 +157,7 @@ export default function BigBoxComparisonPage() {
 
           <Reveal>
             <div className="mt-16 max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Common Questions</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Common Questions: Nessco vs Big-Box</h2>
               <FAQAccordion items={faqs} />
             </div>
           </Reveal>

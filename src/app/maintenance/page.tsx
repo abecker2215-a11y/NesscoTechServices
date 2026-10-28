@@ -33,6 +33,12 @@ export default function MaintenancePage() {
           <p className="mb-8 text-lg text-muted-foreground">
             We&apos;re currently performing scheduled maintenance to improve our services. We&apos;ll be back shortly.
           </p>
+          <p className="text-lg text-muted-foreground mb-8">
+            Nessco Tech Services provides managed IT support, cybersecurity, cloud solutions, and backup/disaster
+            recovery to Tampa Bay businesses. During maintenance windows we may temporarily take systems offline
+            to apply updates, improve performance, or strengthen security. If you have an urgent IT issue, our
+            on-call technician is available for emergency support.
+          </p>
 
           <div className="mb-8 p-6 rounded-lg border border-border bg-muted/30">
             <div className="flex items-center justify-center gap-3 mb-4">

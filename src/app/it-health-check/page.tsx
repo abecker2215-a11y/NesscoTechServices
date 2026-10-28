@@ -7,11 +7,11 @@ import { CheckCircle, Shield, AlertTriangle, FileText, ArrowRight } from "lucide
 
 export const metadata: Metadata = {
   title: "Free IT Health Check | Tampa Bay MSP",
-  description: "Get a free IT health check for your Tampa Bay business. Identify security risks, backup gaps, and IT issues before they become expensive problems.",
+    description: "Free IT health check for Tampa Bay businesses. Identify security risks, backup gaps, and IT issues early.",
   alternates: { canonical: "https://nesscotech.com/it-health-check" },
   openGraph: {
     title: "Free IT Health Check | Nessco Tech Services",
-    description: "Get a free IT health check for your Tampa Bay business. Identify security risks, backup gaps, and IT issues before they become expensive problems.",
+  description: "Free IT health check for Tampa Bay businesses. Identify security risks, backup gaps, and IT issues early.",
     url: "https://nesscotech.com/it-health-check",
     type: "website",
   },
@@ -114,7 +114,7 @@ export default function ITHealthCheckPage() {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 id="steps-heading" className="text-3xl font-bold text-foreground mb-4">
-              How It Works
+              How the Health Check Works
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">

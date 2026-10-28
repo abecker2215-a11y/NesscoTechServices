@@ -5,12 +5,12 @@ import { breadcrumbSchema } from "@/lib/schemas";
 import { getBusinessStatus } from "@/lib/hours";
 
 export const metadata: Metadata = {
-  title: "Emergency IT Pager — Down Now? Page the On-Call Tech",
+    title: "Emergency IT Pager | Tampa Bay MSP",
   description:
-    "Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now. Transparent 1.5x after-hours rate, live status tracking.",
+    "Active outage, ransomware, or emergency? Page the Nessco on-call technician now. Transparent 1.5x after-hours rate.",
   alternates: { canonical: "/emergency" },
   openGraph: {
-    title: "Emergency IT Pager — Down Now? Page the On-Call Tech",
+  title: "Emergency IT Pager | Tampa Bay MSP",
     description: "Active outage, ransomware, or down-business emergency? Page the Nessco on-call technician now.",
     url: "https://nesscotech.com/emergency",
   },
