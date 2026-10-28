@@ -117,7 +117,7 @@ export default async function OfferPage({ params }: Props) {
 
             {others.length > 0 && (
               <div className="mt-10">
-                <h2 className="mb-4 text-xl font-bold text-foreground">Other seasons</h2>
+                <h2 className="mb-4 text-xl font-bold text-foreground">Other {campaign.season === "January" ? "seasonal" : campaign.season.toLowerCase()} offers</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {others.map((o) => (
                     <Link

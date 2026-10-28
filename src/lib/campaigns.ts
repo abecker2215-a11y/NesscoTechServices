@@ -67,7 +67,7 @@ export const campaigns: Campaign[] = [
     slug: "q1-planning",
     season: "January",
     title: "Q1 IT Strategy & Budget Planning",
-    excerpt: "Start the year with a clear IT roadmap and budget - no surprises.",
+    excerpt: "Start the year with a clear IT roadmap and budget to avoid surprises and control costs.",
     pitch:
       "January is the ideal time to align IT with business goals. We help you build a realistic budget, plan migrations/upgrades, and set measurable IT objectives for the year.",
     checklist: [

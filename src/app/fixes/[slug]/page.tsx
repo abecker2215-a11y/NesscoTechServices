@@ -177,7 +177,7 @@ export default async function FixPage({ params }: Props) {
               <div className="mt-10">
                 <h2 className="mb-4 text-xl font-bold text-foreground">Other quick fixes</h2>
                 <div className="grid gap-4 sm:grid-cols-3">
-                  {others.map((o) => (
+                  {others.map((o, idx) => (
                     <Link
                       key={o.slug}
                       href={`/fixes/${o.slug}`}

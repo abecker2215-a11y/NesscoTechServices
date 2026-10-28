@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getArticle, getAllArticles, type BlogArticle } from "@/lib/blog";
+import { getArticle, getAllArticles, getRelatedArticles, getRecentArticles, type BlogArticle } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
@@ -130,6 +130,30 @@ export default async function BlogArticlePage({ params }: Props) {
             ))}
           </div>
 
+          {getRelatedArticles(article, getAllArticles()).length > 0 && (
+            <div className="mt-12 max-w-3xl">
+              <h2 className="mb-6 text-xl font-bold text-foreground">Related articles</h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {getRelatedArticles(article, getAllArticles()).map((related) => (
+                  <Link
+                    key={related.slug}
+                    href={`/blog/${related.slug}`}
+                    className="block rounded-lg border border-border bg-background p-5 lift-hover hover:border-primary/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                      <Tag className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span className="font-medium text-primary">{related.category}</span>
+                    </div>
+                    <span className="block font-semibold text-foreground">{related.title}</span>
+                    <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
+                      {related.excerpt}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           <hr className="my-12 border-border" />
 
           <div className="max-w-3xl mx-auto text-center">
@@ -146,6 +170,29 @@ export default async function BlogArticlePage({ params }: Props) {
               </Link>
             )}
           </div>
+
+          <section className="mt-16 max-w-3xl">
+            <h2 className="mb-6 text-xl font-bold text-foreground">Recent posts</h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {getRecentArticles(getAllArticles(), 5).map((recent) => (
+                <article
+                  key={recent.slug}
+                  className="rounded-lg border border-border bg-background p-5"
+                >
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                    <Tag className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span className="font-medium text-primary">{recent.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{recent.date}</span>
+                  </div>
+                  <span className="block font-semibold text-foreground">{recent.title}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">
+                    {recent.excerpt}
+                  </span>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
     </>
