@@ -164,9 +164,9 @@ export function GoogleReviewsWidget({
       setReviews([
         { author: "Sarah M.", rating: 5, text: "Fixed my Wi-Fi in 30 mins. Professional and explained everything.", time: Date.now() - 86400000 * 2 },
         { author: "James R.", rating: 5, text: "Best IT support in Tampa. Honest pricing, no upsells.", time: Date.now() - 86400000 * 5 },
-        { author: "Lisa K.", rating: 4, text: "Great remote support for my Mac. Fixed email sync issue.", time: Date.now() - 86400000 * 10 },
+        { author: "Lisa K.", rating: 5, text: "Great remote support for my Mac. Fixed email sync issue.", time: Date.now() - 86400000 * 10 },
       ]);
-      setRating(4.9);
+      setRating(5.0);
       setLoading(false);
     }, 1000);
 

@@ -171,7 +171,7 @@ export default function HomePage() {
           <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
-              <span className="font-medium text-foreground">4.9★</span>
+              <span className="font-medium text-foreground">5.0★</span>
               <span>Google</span>
             </span>
             <span className="flex items-center gap-1.5">
@@ -480,6 +480,13 @@ export default function HomePage() {
           <FAQAccordion items={faqs} className="max-w-3xl mx-auto" />
         </div>
         </Reveal>
+      </section>
+
+      <section className="py-8" aria-label="Tampa IT support">
+        <div className="container text-center">
+          <Link href="/it-support-tampa" className="font-medium text-primary hover:underline mr-4">IT support in Tampa</Link>
+          <Link href="/managed-it-services-tampa" className="font-medium text-primary hover:underline">Managed IT services in Tampa</Link>
+        </div>
       </section>
 
       <section className="py-12 sm:py-16 lg:py-24" aria-labelledby="cta-heading">

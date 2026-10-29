@@ -22,11 +22,14 @@ export const locations: Location[] = [
     name: "Tampa",
     county: "Hillsborough",
     intro:
-      "From downtown offices to Westshore and Hyde Park businesses, we keep Tampa working — remote help in hours, on-site visits when the hardware demands it.",
+      "From downtown offices to Westshore and Hyde Park businesses, we keep Tampa working — remote help in hours, on-site visits when the hardware demands it. Business IT support, managed IT services, helpdesk, and IT consulting for Tampa companies with 5–500 employees.",
     highlights: [
       "Downtown + Westshore office Wi-Fi and cabling builds",
       "Hyde Park / Seminole Heights boutique-office networks for block-wall buildings",
       "Microsoft 365 migrations for 5–50 person firms",
+      "Managed IT services and 24/7 monitoring for Tampa businesses",
+      "IT helpdesk and business IT support with same-day remote response",
+      "IT consulting and vCIO strategy for growing Tampa companies",
     ],
     responseNote: "Remote issues often fixed same-day. On-site across Tampa typically next business day.",
     geo: { lat: 27.9506, lon: -82.4572 },

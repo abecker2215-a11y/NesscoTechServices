@@ -33,12 +33,13 @@ module.exports = {
       "/guides": "weekly",
     };
     const isLocation = /^\/it-support-/.test(path);
+    const isManagedTampa = path === "/managed-it-services-tampa";
     const isGuide = /^\/guides(\/|$)/.test(path);
     const isServiceDetail = /^\/services\//.test(path);
     return {
       loc: path,
       changefreq: changeFreqMap[path] || (isGuide ? "weekly" : "monthly"),
-      priority: isLocation || isGuide || isServiceDetail ? 0.8 : priorityMap[path] || 0.5,
+      priority: isLocation || isManagedTampa || isGuide || isServiceDetail ? 0.8 : priorityMap[path] || 0.5,
       // Use current date for lastmod to allow Google to learn it, but remove the build timestamp
       lastmod: new Date().toISOString(),
       alternateRefs: config.alternateRefs ?? [],

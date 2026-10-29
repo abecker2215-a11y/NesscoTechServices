@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locations, getLocation } from "@/lib/locations";
 import { services } from "@/lib/services";
+import { blogArticles } from "@/lib/blog";
+import { Briefcase, Shield, Database, Cable, Headset, HardDrive, Monitor, Mail } from "lucide-react";
 import { guides } from "@/lib/guides";
 import { fixes } from "@/lib/fixes";
-import { ServiceCard } from "@/components/services";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, cityBusinessSchema, faqPageSchema } from "@/lib/schemas";
@@ -16,7 +17,8 @@ interface Props {
   params: Promise<{ location: string }>;
 }
 
-const locationFaqs = (name: string, remoteFirst?: boolean): FAQItem[] => [
+const locationFaqs = (name: string, remoteFirst?: boolean): FAQItem[] => {
+  const base: FAQItem[] = [
   {
     q: `Do you provide on-site IT support in ${name}?`,
     a: remoteFirst
@@ -31,7 +33,21 @@ const locationFaqs = (name: string, remoteFirst?: boolean): FAQItem[] => [
     q: "Do you also support remote workers?",
     a: "Yes — remote support works anywhere with an internet connection, so we can help home offices and traveling employees no matter where they are.",
   },
-];
+  ];
+  if (name === "Tampa") {
+    base.push(
+      {
+        q: "Do you offer managed IT services in Tampa?",
+        a: "Yes. We provide managed IT services in Tampa for businesses with 5–500 employees, including 24/7 monitoring, patching, security, backups, and vCIO strategy. See /managed-it-services-tampa for details.",
+      },
+      {
+        q: "Is there IT support near me in Tampa?",
+        a: "Yes. We serve Tampa and the greater Tampa Bay area with same-day remote IT support and next-business-day on-site visits for hardware and network issues.",
+      }
+    );
+  }
+  return base;
+};
 
 export function generateStaticParams() {
   return locations.map((l) => ({ location: l.slug }));
@@ -42,16 +58,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const loc = getLocation(location);
   if (!loc) return { title: "Location Not Found" };
 
+  const isTampa = loc.name === "Tampa";
+  const titleBase = isTampa
+    ? "IT Support & Managed IT Services in Tampa, FL"
+    : `IT Support in ${loc.name}, FL`;
   const baseUrl = `https://nesscotech.com`;
   const pageUrl = `${baseUrl}/${location}`;
+  const descriptionText = isTampa
+    ? "Business IT support in Tampa, FL. Managed IT services, helpdesk, cybersecurity, Microsoft 365, and backups for companies with 5-500 employees. Remote from $75/hr, on-site from $125/hr."
+    : `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`;
 
   return {
-    title: pageTitle(`IT Support in ${loc.name}, FL`),
-    description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site visits at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
+    title: pageTitle(titleBase),
+    description: metaDescription(descriptionText),
     alternates: { canonical: `/${location}` },
     openGraph: {
-      title: pageTitle(`IT Support in ${loc.name}, FL`),
-      description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
+      title: pageTitle(titleBase),
+      description: metaDescription(isTampa ? "Business IT support in Tampa, FL. Managed IT services, helpdesk, cybersecurity, Microsoft 365, and backups for companies with 5-500 employees. Remote from $75/hr, on-site from $125/hr." : `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
       url: pageUrl,
       type: "website",
       images: [
@@ -65,8 +88,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: pageTitle(`IT Support in ${loc.name}, FL`),
-      description: metaDescription(`Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr.`),
+      title: pageTitle(titleBase),
+      description: metaDescription(isTampa ? "Professional IT support in Tampa, FL. Managed IT, helpdesk, cybersecurity, Microsoft 365, and backups." : `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr.`),
       images: [`${baseUrl}/og-image.png`],
     },
   };
@@ -151,10 +174,41 @@ export default async function LocationPage({ params }: Props) {
                 Every service below is available to {loc.name} residents and businesses — remotely or on-site.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
-              ))}
+            <div className="space-y-4">
+              {[
+                { key: "managed-it-services", label: "Managed IT Services", icon: Briefcase },
+                { key: "it-security", label: "IT Security", icon: Shield },
+                { key: "cloud-solutions", label: "Cloud Solutions", icon: Database },
+                { key: "network-server", label: "Network & Server", icon: Cable },
+                { key: "it-support", label: "IT Support & Helpdesk", icon: Headset },
+                { key: "backup-disaster-recovery", label: "Backup & Disaster Recovery", icon: HardDrive },
+                { key: "applications", label: "Business Applications", icon: Monitor },
+                { key: "communications", label: "Business Communications", icon: Mail },
+              ].map((group) => {
+                const groupServices = services.filter((s) => s.slug.split("/")[0] === group.key);
+                if (groupServices.length === 0) return null;
+                const Icon = group.icon;
+                return (
+                  <details key={group.key} className="group rounded-lg border border-border bg-background">
+                    <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-medium text-foreground marker:content-none">
+                      <span className="flex items-center gap-2">
+                        <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                        {group.label} ({groupServices.length})
+                      </span>
+                      <span className="text-muted-foreground transition-transform group-open:rotate-180">▾</span>
+                    </summary>
+                    <ul className="grid grid-cols-1 gap-2 border-t border-border p-4 md:grid-cols-2 lg:grid-cols-3" role="list">
+                      {groupServices.map((service) => (
+                        <li key={service.slug}>
+                          <Link href={`/services/${service.slug}`} className="block rounded-md border border-border px-3 py-2 text-sm hover:border-primary/50 transition-colors">
+                            {service.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                );
+              })}
             </div>
           </Reveal>
 
@@ -201,6 +255,31 @@ export default async function LocationPage({ params }: Props) {
                 {" · "}
                 <Link href="/fixes" className="font-medium text-primary hover:underline">All quick fixes</Link>
               </p>
+              {loc.slug === "it-support-tampa" && (
+                <div className="mt-8">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tampa IT resources</p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
+                    {blogArticles
+                      .filter((a) =>
+                        [
+                          "it-support-tampa-bay-small-business",
+                          "it-helpdesk-tampa-bay",
+                          "it-consulting-tampa-bay",
+                          "microsoft-365-security-tampa",
+                          "cybersecurity-audit-tampa-bay",
+                        ].includes(a.slug)
+                      )
+                      .map((a) => (
+                        <li key={a.slug}>
+                          <a href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
+                            <span className="block text-sm font-medium text-foreground">{a.title}</span>
+                            <span className="text-xs text-muted-foreground">{a.readTime}</span>
+                          </a>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </Reveal>
         </div>
