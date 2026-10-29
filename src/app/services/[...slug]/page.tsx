@@ -11,7 +11,7 @@ import { ServiceFAQ } from "@/components/services/ServiceFAQ";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ServiceQuoteSidebar } from "@/components/services/ServiceQuoteSidebar";
 import { VideoSection } from "@/components/services/VideoSection";
-import { Button } from "@/components/ui";
+import { Button, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schemas";
 
@@ -24,16 +24,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug.join("/"));
   if (!service) return { title: "Service Not Found" };
 
+  const serviceSlug = slug.join("/");
+  const isTampaTarget = new Set([
+    "managed-it-services",
+    "it-support",
+    "network-server",
+    "cloud-solutions/microsoft-365",
+  ]).has(serviceSlug);
+
   const baseUrl = `https://nesscotech.com`;
   const pageUrl = `${baseUrl}/services/${service.slug}`;
 
+  const titleBase = isTampaTarget ? `${service.title} for Tampa Businesses` : service.title;
+  const descriptionText = isTampaTarget
+    ? `${service.shortDescription} Serving Tampa Bay businesses with remote and on-site support.`
+    : service.shortDescription;
+
   return {
-    title: pageTitle(service.title),
-    description: metaDescription(service.shortDescription),
+    title: pageTitle(titleBase),
+    description: metaDescription(descriptionText),
     alternates: { canonical: pageUrl },
     openGraph: {
-      title: pageTitle(service.title),
-      description: metaDescription(service.shortDescription),
+      title: pageTitle(titleBase),
+      description: metaDescription(descriptionText),
       url: pageUrl,
       type: "website",
       images: [
@@ -47,8 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: pageTitle(service.title),
-      description: metaDescription(service.shortDescription),
+      title: pageTitle(titleBase),
+      description: metaDescription(descriptionText),
       images: [`${baseUrl}/og-image.png`],
     },
   };
@@ -71,6 +84,26 @@ async function ServiceContent({ params }: Props) {
   const relatedGuides = getGuidesForService(key);
   const relatedFixes = getFixesForService(key);
   const shownGuides = relatedGuides.slice(0, 6);
+  const isTampaTarget = new Set([
+    "managed-it-services",
+    "it-support",
+    "network-server",
+    "cloud-solutions/microsoft-365",
+  ]).has(key);
+  const tampaFaqs = [
+    {
+      q: `Do you provide ${service.title} in Tampa?`,
+      a: `Yes. We provide ${service.title.toLowerCase()} for Tampa Bay businesses, with remote support and on-site visits when hardware or cabling is required.`,
+    },
+    {
+      q: `How fast can you respond in Tampa?`,
+      a: `During business hours (Mon–Fri, 8am–6pm) we typically respond within 2 hours. Remote issues are often resolved the same day; on-site visits are scheduled at your convenience.`,
+    },
+    {
+      q: `How much does ${service.title.toLowerCase()} cost in Tampa?`,
+      a: `Remote support starts at $75/hr and on-site support at $125/hr. Most projects receive a fixed quote before work begins.`,
+    },
+  ];
 
   return (
     <>
@@ -132,6 +165,35 @@ async function ServiceContent({ params }: Props) {
       </section>
 
       <ServiceFAQ faqs={service.faqs} title={`${service.title} — FAQs`} />
+
+      {isTampaTarget && (
+        <section className="py-16 lg:py-24 bg-muted/30" aria-labelledby="tampa-service-heading">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 id="tampa-service-heading" className="text-3xl font-bold text-foreground mb-6">
+                {service.title} for Tampa Businesses
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                We provide {service.title.toLowerCase()} for Tampa Bay businesses with remote support and on-site visits when hardware, cabling, or network work is required.
+              </p>
+              <ul className="space-y-3 text-muted-foreground mb-8" role="list">
+                <li>Remote support starting at $75/hr and on-site support starting at $125/hr.</li>
+                <li>Service for companies with 5–500 employees across Tampa and the greater Tampa Bay area.</li>
+                <li>Clear quotes before work begins and plain-English explanations.</li>
+              </ul>
+              <p className="text-muted-foreground mb-8">
+                <Link href="/it-support-tampa" className="font-medium text-primary hover:underline">IT support in Tampa</Link>
+                {" · "}
+                <Link href="/managed-it-services-tampa" className="font-medium text-primary hover:underline">Managed IT services in Tampa</Link>
+                {" · "}
+                <Link href="/get-help" className="font-medium text-primary hover:underline">Get help in Tampa</Link>
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-4">{service.title} in Tampa — FAQs</h3>
+              <FAQAccordion items={tampaFaqs} className="max-w-3xl" />
+            </div>
+          </div>
+        </section>
+      )}
 
       <VideoSection
         serviceSlug={service.slug}

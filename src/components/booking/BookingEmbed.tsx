@@ -36,7 +36,7 @@ export function BookingEmbed({
     if (!isBookingConfigured(siteConfig.bookingUrl)) return null;
     try {
       const url = new URL(siteConfig.bookingUrl);
-      url.searchParams.set("embed_domain", typeof window !== "undefined" ? window.location.hostname : siteConfig.domain);
+      url.searchParams.set("embed_domain", siteConfig.domain);
       url.searchParams.set("embed_type", "Inline");
       url.searchParams.set("hide_gdpr_banner", "1");
       return url.toString();

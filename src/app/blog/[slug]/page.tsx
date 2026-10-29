@@ -130,6 +130,22 @@ export default async function BlogArticlePage({ params }: Props) {
             ))}
           </div>
 
+          {article.slug.includes("tampa") && (
+            <div className="mt-12 max-w-3xl rounded-xl border border-border bg-background p-6">
+              <h2 className="mb-4 text-xl font-bold text-foreground">Tampa IT resources</h2>
+              <p className="text-muted-foreground mb-4">
+                Need help implementing this for your Tampa Bay business?
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/it-support-tampa" className="font-medium text-primary hover:underline">IT support in Tampa</Link>
+                <Link href="/managed-it-services-tampa" className="font-medium text-primary hover:underline">Managed IT services in Tampa</Link>
+                {article.serviceSlug && (
+                  <Link href={`/services/${article.serviceSlug}`} className="font-medium text-primary hover:underline">Related services</Link>
+                )}
+              </div>
+            </div>
+          )}
+
           {getRelatedArticles(article, getAllArticles()).length > 0 && (
             <div className="mt-12 max-w-3xl">
               <h2 className="mb-6 text-xl font-bold text-foreground">Related articles</h2>

@@ -489,6 +489,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-12 sm:py-16 lg:py-24 bg-muted/30" aria-labelledby="tampa-bay-services-heading">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 id="tampa-bay-services-heading" className="fluid-3xl font-bold text-foreground mb-4">
+              IT Services for Tampa Bay Businesses
+            </h2>
+            <p className="fluid-lg text-muted-foreground mb-8">
+              Managed IT, cybersecurity, help desk, Microsoft 365, network support, and backup services for companies across Tampa Bay. Remote support from $75/hr, on-site from $125/hr.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/services" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">All services</Link>
+              <Link href="/services/it-support" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">IT support</Link>
+              <Link href="/services/network-server" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">Network support</Link>
+              <Link href="/services/cloud-solutions/microsoft-365" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">Microsoft 365</Link>
+              <Link href="/it-support-tampa" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">IT support in Tampa</Link>
+              <Link href="/managed-it-services-tampa" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">Managed IT in Tampa</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 sm:py-16 lg:py-24" aria-labelledby="cta-heading">
         <Reveal>
         <div className="container">

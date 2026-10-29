@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef } from "react";
+import { HTMLAttributes, forwardRef, useId } from "react";
 import { cn } from "@/lib/utils";
 
 export interface FormFieldProps extends HTMLAttributes<HTMLDivElement> {
@@ -11,7 +11,8 @@ export interface FormFieldProps extends HTMLAttributes<HTMLDivElement> {
 
 const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
   ({ className, label, error, hint, required, children, id, ...props }, ref) => {
-    const fieldId = id || `field-${Math.random().toString(36).slice(2, 9)}`;
+    const generatedId = useId();
+    const fieldId = id || generatedId;
     const errorId = error ? `${fieldId}-error` : undefined;
     const hintId = hint ? `${fieldId}-hint` : undefined;
     const describedBy = [errorId, hintId].filter(Boolean).join(" ") || undefined;
