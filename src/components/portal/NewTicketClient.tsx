@@ -32,7 +32,7 @@ const categories = [
 ] as const;
 
 const priorities = [
-  { value: "LOW", label: "Low", description: "Minor issue, no urgency", color: "bg-gray-100 text-gray-800" },
+  { value: "LOW", label: "Low", description: "Minor issue, no urgency", color: "bg-muted text-gray-800" },
   { value: "MEDIUM", label: "Medium", description: "Normal business impact", color: "bg-blue-100 text-blue-800" },
   { value: "HIGH", label: "High", description: "Significant impact, needs attention soon", color: "bg-orange-100 text-orange-800" },
   { value: "URGENT", label: "Urgent", description: "Critical impact, immediate attention needed", color: "bg-red-100 text-red-800" },
@@ -91,12 +91,12 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <Link href="/portal/tickets" className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Back to tickets">
+        <Link href="/portal/tickets" className="p-2 rounded-lg text-muted-foreground hover:text-muted-foreground hover:bg-muted transition-colors" aria-label="Back to tickets">
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Create New Ticket</h1>
-          <p className="text-gray-500 mt-1">Describe your issue and we&apos;ll get it routed to the right team</p>
+          <h1 className="text-2xl font-bold text-foreground">Create New Ticket</h1>
+          <p className="text-muted-foreground mt-1">Describe your issue and we&apos;ll get it routed to the right team</p>
         </div>
       </div>
 
@@ -110,7 +110,7 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
         {/* Title */}
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="title" className="block text-sm font-medium text-muted-foreground mb-1.5">
             Subject <span className="text-red-500">*</span>
           </label>
           <input
@@ -118,9 +118,9 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
             id="title"
             type="text"
             className={cn(
-              "w-full px-4 py-2.5 border rounded-lg text-gray-900 placeholder-gray-400",
+              "w-full px-4 py-2.5 border rounded-lg text-foreground placeholder-gray-400",
               "focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-              errors.title ? "border-red-300 bg-red-50" : "border-gray-300 hover:border-gray-400"
+              errors.title ? "border-red-300 bg-red-50" : "border-border hover:border-gray-400"
             )}
             placeholder="Brief summary of the issue"
             disabled={isSubmitting}
@@ -136,7 +136,7 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
 
         {/* Category */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label className="block text-sm font-medium text-muted-foreground mb-1.5">
             Category <span className="text-red-500">*</span>
           </label>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -151,12 +151,12 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
                     ? "border-red-300 bg-red-50"
                     : selectedCategory === cat.value
                     ? "border-primary bg-primary/5"
-                    : "border-gray-200 hover:border-primary/50 hover:bg-gray-50"
+                    : "border-border hover:border-primary/50 hover:bg-muted"
                 )}
                 aria-pressed={selectedCategory === cat.value}
               >
-                <div className="font-medium text-gray-900">{cat.label}</div>
-                <div className="mt-1 text-sm text-gray-500">{cat.description}</div>
+                <div className="font-medium text-foreground">{cat.label}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{cat.description}</div>
                 {selectedCategory === cat.value && (
                   <CheckCircle className="absolute top-2 right-2 h-5 w-5 text-primary" />
                 )}
@@ -170,7 +170,7 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
 
         {/* Priority */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label className="block text-sm font-medium text-muted-foreground mb-1.5">
             Priority <span className="text-red-500">*</span>
           </label>
           <div className="grid gap-2 sm:grid-cols-4">
@@ -183,14 +183,14 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
                   "relative p-4 border-2 rounded-lg text-center transition-all",
                   selectedPriority === p.value
                     ? "border-primary bg-primary/5"
-                    : "border-gray-200 hover:border-primary/50 hover:bg-gray-50"
+                    : "border-border hover:border-primary/50 hover:bg-muted"
                 )}
                 aria-pressed={selectedPriority === p.value}
               >
                 <span className={cn("inline-flex px-3 py-1 rounded-full text-xs font-medium", p.color)}>
                   {p.label}
                 </span>
-                <p className="mt-1 text-xs text-gray-500">{p.description}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{p.description}</p>
                 {selectedPriority === p.value && (
                   <CheckCircle className="absolute top-2 right-2 h-5 w-5 text-primary" />
                 )}
@@ -201,7 +201,7 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
 
         {/* Description */}
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="description" className="block text-sm font-medium text-muted-foreground mb-1.5">
             Description <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -210,9 +210,9 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
               id="description"
               rows={6}
               className={cn(
-                "w-full px-4 py-2.5 border rounded-lg text-gray-900 placeholder-gray-400",
+                "w-full px-4 py-2.5 border rounded-lg text-foreground placeholder-gray-400",
                 "focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-                errors.description ? "border-red-300 bg-red-50" : "border-gray-300 hover:border-gray-400"
+                errors.description ? "border-red-300 bg-red-50" : "border-border hover:border-gray-400"
               )}
               placeholder="Describe the issue in detail:\n- What happened?\n- When did it start?\n- What have you tried?\n- Any error messages?"
               disabled={isSubmitting}
@@ -225,13 +225,13 @@ export function NewTicketClient({ initialData }: { initialData: { clientId: stri
               {errors.description.message}
             </p>
           )}
-          <p id="description-hint" className="mt-1.5 text-sm text-gray-500">
+          <p id="description-hint" className="mt-1.5 text-sm text-muted-foreground">
             Include steps to reproduce, error messages, and any troubleshooting you&apos;ve already done.
           </p>
         </div>
 
         {/* Submit */}
-        <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
+        <div className="flex items-center justify-end gap-3 pt-4 border-t border-border">
           <Link href="/portal/tickets" className="btn-secondary">
             Cancel
           </Link>

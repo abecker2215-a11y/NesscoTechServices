@@ -56,11 +56,11 @@ const statusConfig: Record<string, { label: string; class: string; icon: React.C
   WAITING_CLIENT: { label: "Waiting on You", class: "bg-orange-100 text-orange-800", icon: AlertTriangle },
   WAITING_VENDOR: { label: "Waiting on Vendor", class: "bg-purple-100 text-purple-800", icon: Clock },
   RESOLVED: { label: "Resolved", class: "bg-green-100 text-green-800", icon: CheckCircle },
-  CLOSED: { label: "Closed", class: "bg-gray-100 text-gray-800", icon: CheckCircle },
+  CLOSED: { label: "Closed", class: "bg-muted text-gray-800", icon: CheckCircle },
 };
 
 const priorityConfig: Record<string, { label: string; class: string }> = {
-  LOW: { label: "Low", class: "bg-gray-100 text-gray-800" },
+  LOW: { label: "Low", class: "bg-muted text-gray-800" },
   MEDIUM: { label: "Medium", class: "bg-blue-100 text-blue-800" },
   HIGH: { label: "High", class: "bg-orange-100 text-orange-800" },
   URGENT: { label: "Urgent", class: "bg-red-100 text-red-800" },
@@ -93,7 +93,7 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
   };
 
   const getStatusBadge = (status: string) => {
-    const config = statusConfig[status] || { label: status, class: "bg-gray-100 text-gray-800", icon: Clock };
+    const config = statusConfig[status] || { label: status, class: "bg-muted text-gray-800", icon: Clock };
     const Icon = config.icon;
     return (
       <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium", config.class)}>
@@ -104,7 +104,7 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
   };
 
   const getPriorityBadge = (priority: string) => {
-    const config = priorityConfig[priority] || { label: priority, class: "bg-gray-100 text-gray-800" };
+    const config = priorityConfig[priority] || { label: priority, class: "bg-muted text-gray-800" };
     return <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium", config.class)}>{config.label}</span>;
   };
 
@@ -113,8 +113,8 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Tickets</h1>
-          <p className="text-gray-500 mt-1">Track and manage all your support requests</p>
+          <h1 className="text-2xl font-bold text-foreground">Tickets</h1>
+          <p className="text-muted-foreground mt-1">Track and manage all your support requests</p>
         </div>
         <Link href="/portal/tickets/new" className="btn-primary">
           <Plus className="h-4 w-4" />
@@ -123,7 +123,7 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
       </div>
 
       {/* Status Filter Tabs */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div className="bg-background rounded-lg border border-border p-4">
         <div className="flex flex-wrap gap-2">
           {statusOptions.map((opt) => {
             const count = statusCounts[opt.value] || 0;
@@ -136,12 +136,12 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
                   "flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
                   isActive
                     ? "bg-primary text-primary-foreground"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
                 aria-pressed={isActive}
               >
                 {opt.label}
-                <span className={cn("px-2 py-0.5 text-xs rounded-full", isActive ? "bg-primary-foreground/20" : "bg-gray-200 text-gray-600")}>
+                <span className={cn("px-2 py-0.5 text-xs rounded-full", isActive ? "bg-primary-foreground/20" : "bg-muted text-muted-foreground")}>
                   {count}
                 </span>
               </button>
@@ -151,17 +151,17 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
       </div>
 
       {/* Search and Table */}
-      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+      <div className="bg-background rounded-lg border border-border overflow-hidden">
         {/* Search */}
-        <div className="p-4 border-b border-gray-200">
+        <div className="p-4 border-b border-border">
           <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <input
               type="search"
               placeholder="Search tickets by title, ID, or category…"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               aria-label="Search tickets"
             />
           </div>
@@ -170,21 +170,21 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
         {/* Table */}
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-muted border-b border-border">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ticket</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignee</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Updated</th>
-                <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider pr-4">Actions</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Ticket</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Category</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Priority</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Assignee</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Updated</th>
+                <th className="px-4 py-3 text-right text-xs font-medium text-muted-foreground uppercase tracking-wider pr-4">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {tickets.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-4 py-12 text-center text-gray-500">
+                  <td colSpan={7} className="px-4 py-12 text-center text-muted-foreground">
                     {searchQuery ? "No tickets match your search" : "No tickets yet. Create your first ticket to get started."}
                     {!searchQuery && (
                       <Link href="/portal/tickets/new" className="ml-2 text-primary hover:underline font-medium">
@@ -195,24 +195,24 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
                 </tr>
               ) : (
                 tickets.map((ticket) => (
-                  <tr key={ticket.id} className="hover:bg-gray-50">
+                  <tr key={ticket.id} className="hover:bg-muted">
                     <td className="px-4 py-4">
-                      <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-gray-900 hover:text-primary">
+                      <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-foreground hover:text-primary">
                         #{ticket.id.slice(-6)} {ticket.title}
                       </Link>
                     </td>
-                    <td className="px-4 py-4 text-sm text-gray-500 capitalize">{ticket.category.toLowerCase().replace("_", " ")}</td>
+                    <td className="px-4 py-4 text-sm text-muted-foreground capitalize">{ticket.category.toLowerCase().replace("_", " ")}</td>
                     <td className="px-4 py-4">{getStatusBadge(ticket.status)}</td>
                     <td className="px-4 py-4">{getPriorityBadge(ticket.priority)}</td>
-                    <td className="px-4 py-4 text-sm text-gray-500">
+                    <td className="px-4 py-4 text-sm text-muted-foreground">
                       {ticket.assignee?.name ?? "Unassigned"}
                     </td>
-                    <td className="px-4 py-4 text-sm text-gray-500">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
+                    <td className="px-4 py-4 text-sm text-muted-foreground">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
                     <td className="px-4 py-4 text-right pr-4">
                       <div className="flex items-center justify-end gap-2">
                         <Link
                           href={`/portal/tickets/${ticket.id}`}
-                          className="p-1.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                          className="p-1.5 text-muted-foreground hover:text-muted-foreground hover:bg-muted rounded-lg transition-colors"
                           aria-label="View ticket details"
                         >
                           <ExternalLink className="h-4 w-4" />
@@ -228,24 +228,24 @@ export function TicketsClient({ initialData }: { initialData: TicketsData }) {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="px-4 py-3 border-t border-gray-200 flex items-center justify-between">
-            <p className="text-sm text-gray-500">
+          <div className="px-4 py-3 border-t border-border flex items-center justify-between">
+            <p className="text-sm text-muted-foreground">
               Showing {(page - 1) * limit + 1} to {Math.min(page * limit, total)} of {total} tickets
             </p>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handlePageChange(page - 1)}
                 disabled={page === 1}
-                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg text-muted-foreground hover:text-muted-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Previous page"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
-              <span className="text-sm text-gray-600">Page {page} of {totalPages}</span>
+              <span className="text-sm text-muted-foreground">Page {page} of {totalPages}</span>
               <button
                 onClick={() => handlePageChange(page + 1)}
                 disabled={page === totalPages}
-                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg text-muted-foreground hover:text-muted-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Next page"
               >
                 <ChevronRight className="h-5 w-5" />

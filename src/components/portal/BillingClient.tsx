@@ -55,7 +55,7 @@ const statusConfig: Record<string, { label: string; class: string; icon: React.C
   PENDING: { label: "Pending", class: "bg-yellow-100 text-yellow-800", icon: Clock },
   PAID: { label: "Paid", class: "bg-green-100 text-green-800", icon: CheckCircle },
   OVERDUE: { label: "Overdue", class: "bg-red-100 text-red-800", icon: AlertTriangle },
-  CANCELLED: { label: "Cancelled", class: "bg-gray-100 text-gray-800", icon: Clock },
+  CANCELLED: { label: "Cancelled", class: "bg-muted text-gray-800", icon: Clock },
 };
 
 const billingTypeLabels: Record<string, string> = {
@@ -93,7 +93,7 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
   };
 
   const getStatusBadge = (status: string) => {
-    const config = statusConfig[status] || { label: status, class: "bg-gray-100 text-gray-800", icon: Clock };
+    const config = statusConfig[status] || { label: status, class: "bg-muted text-gray-800", icon: Clock };
     const Icon = config.icon;
     return (
       <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium", config.class)}>
@@ -117,8 +117,8 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Billing</h1>
-          <p className="text-gray-500 mt-1">View invoices, track payments, and monitor usage</p>
+          <h1 className="text-2xl font-bold text-foreground">Billing</h1>
+          <p className="text-muted-foreground mt-1">View invoices, track payments, and monitor usage</p>
         </div>
         <div className="flex gap-2">
           <button className="btn-secondary">
@@ -162,7 +162,7 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
       </div>
 
       {/* Status Filter Tabs */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div className="bg-background rounded-lg border border-border p-4">
         <div className="flex flex-wrap gap-2">
           {statusOptions.map((opt) => {
             const countData = statusCounts[opt.value] || { count: 0, amount: "0" };
@@ -175,12 +175,12 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
                   "flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
                   isActive
                     ? "bg-primary text-primary-foreground"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
                 aria-pressed={isActive}
               >
                 {opt.label}
-                <span className={cn("px-2 py-0.5 text-xs rounded-full", isActive ? "bg-primary-foreground/20" : "bg-gray-200 text-gray-600")}>
+                <span className={cn("px-2 py-0.5 text-xs rounded-full", isActive ? "bg-primary-foreground/20" : "border-border text-muted-foreground")}>
                   {countData.count} (${parseFloat(countData.amount).toLocaleString()})
                 </span>
               </button>
@@ -190,8 +190,8 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
       </div>
 
       {/* Usage Summary */}
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+<div className="bg-background rounded-lg border border-border p-6">
+        <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-green-600" />
           30-Day Usage Summary
         </h2>
@@ -204,16 +204,16 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
             { key: "ENDPOINTS_PROTECTED", label: "Endpoints", unit: "", icon: CheckCircle },
             { key: "M365_LICENSES", label: "M365 Licenses", unit: "", icon: CreditCard },
           ].map((item) => (
-            <div key={item.key} className="p-4 bg-gray-50 rounded-lg">
-              <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div key={item.key} className="p-4 bg-muted rounded-lg">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <item.icon className="h-4 w-4" />
                 <span>{item.label}</span>
               </div>
               <div className="mt-1 flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-gray-900">
+                <span className="text-2xl font-bold text-foreground">
                   {parseFloat(usageSummary[item.key] || "0").toLocaleString()}
                 </span>
-                <span className="text-gray-500">{item.unit}</span>
+                <span className="text-muted-foreground">{item.unit}</span>
               </div>
             </div>
           ))}
@@ -221,16 +221,16 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
       </div>
 
       {/* Invoices Table */}
-      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="p-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="bg-background rounded-lg border border-border overflow-hidden">
+        <div className="p-4 border-b border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="relative max-w-md w-full">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <input
               type="search"
               placeholder="Search invoices by description, amount, date…"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               aria-label="Search invoices"
             />
           </div>
@@ -238,44 +238,44 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
 
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-muted border-b border-border">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Period</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Due Date</th>
-                <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider pr-4">Actions</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Invoice</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Type</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Period</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Description</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Amount</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Due Date</th>
+                <th className="px-4 py-3 text-right text-xs font-medium text-muted-foreground uppercase tracking-wider pr-4">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-border">
               {billings.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="px-4 py-12 text-center text-gray-500">
+                  <td colSpan={8} className="px-4 py-12 text-center text-muted-foreground">
                     {searchQuery ? "No invoices match your search" : "No invoices found"}
                   </td>
                 </tr>
               ) : (
                 billings.map((billing) => (
-                  <tr key={billing.id} className="hover:bg-gray-50">
+                  <tr key={billing.id} className="hover:bg-muted">
                     <td className="px-4 py-4">
-                      <div className="font-mono text-sm text-gray-500">#{billing.id.slice(-8)}</div>
-                      <div className="text-xs text-gray-400">{format(new Date(billing.createdAt), "MMM d, yyyy")}</div>
+                      <div className="font-mono text-sm text-muted-foreground">#{billing.id.slice(-8)}</div>
+                      <div className="text-xs text-muted-foreground">{format(new Date(billing.createdAt), "MMM d, yyyy")}</div>
                     </td>
                     <td className="px-4 py-4">
-                      <span className="px-2 py-0.5 text-xs bg-gray-100 text-gray-700 rounded-full capitalize">
+                      <span className="px-2 py-0.5 text-xs bg-muted text-foreground rounded-full capitalize">
                         {billingTypeLabels[billing.type] || billing.type.toLowerCase()}
                       </span>
                     </td>
-                    <td className="px-4 py-4 text-sm text-gray-700">
+                    <td className="px-4 py-4 text-sm text-muted-foreground">
                       {format(new Date(billing.periodStart), "MMM d")} – {format(new Date(billing.periodEnd), "MMM d, yyyy")}
                     </td>
-                    <td className="px-4 py-4 text-sm text-gray-700 max-w-xs truncate">{billing.description}</td>
-                    <td className="px-4 py-4 font-medium text-gray-900 tabular-nums">${parseFloat(billing.amount.toString()).toLocaleString()}</td>
+                    <td className="px-4 py-4 text-sm text-muted-foreground max-w-xs truncate">{billing.description}</td>
+                    <td className="px-4 py-4 font-medium text-foreground tabular-nums">${parseFloat(billing.amount.toString()).toLocaleString()}</td>
                     <td className="px-4 py-4">{getStatusBadge(billing.status)}</td>
-                    <td className="px-4 py-4 text-sm text-gray-700">
+                    <td className="px-4 py-4 text-sm text-muted-foreground">
                       {billing.dueDate ? (
                         <>
                           {format(new Date(billing.dueDate), "MMM d, yyyy")}
@@ -284,7 +284,7 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
                           )}
                         </>
                       ) : (
-                        <span className="text-gray-400">—</span>
+                        <span className="text-muted-foreground">—</span>
                       )}
                     </td>
                     <td className="px-4 py-4 text-right pr-4">
@@ -294,7 +294,7 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
                             href={billing.invoiceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                            className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                             aria-label="View invoice PDF"
                           >
                             <FileText className="h-4 w-4" />
@@ -304,7 +304,7 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
                           href={billing.invoiceUrl || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                          className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                           aria-label="Download invoice"
                         >
                           <Download className="h-4 w-4" />
@@ -320,24 +320,24 @@ export function BillingClient({ initialData }: { initialData: BillingData }) {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="px-4 py-3 border-t border-gray-200 flex items-center justify-between">
-            <p className="text-sm text-gray-500">
+          <div className="px-4 py-3 border-t border-border flex items-center justify-between">
+            <p className="text-sm text-muted-foreground">
               Showing {(page - 1) * limit + 1} to {Math.min(page * limit, total)} of {total} invoices
             </p>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handlePageChange(page - 1)}
                 disabled={page === 1}
-                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Previous page"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
-              <span className="text-sm text-gray-600">Page {page} of {totalPages}</span>
+              <span className="text-sm text-muted-foreground">Page {page} of {totalPages}</span>
               <button
                 onClick={() => handlePageChange(page + 1)}
                 disabled={page === totalPages}
-                className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Next page"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -368,15 +368,15 @@ function SummaryCard({
   trendIcon?: React.ComponentType<{ className?: string }>;
 }) {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
+    <div className="bg-background rounded-lg border border-border p-6">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-500">{title}</p>
-          <p className="mt-1 text-3xl font-bold text-gray-900 tabular-nums">
+          <p className="text-sm font-medium text-muted-foreground">{title}</p>
+          <p className="mt-1 text-3xl font-bold text-foreground tabular-nums">
             {prefix}{value.toLocaleString(undefined, { maximumFractionDigits: value % 1 === 0 ? 0 : 2 })}
           </p>
           {trend && TrendIcon && (
-            <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+            <p className="mt-2 text-sm text-muted-foreground flex items-center gap-1">
               <TrendIcon className="h-4 w-4 text-green-600" />
               <span className="font-medium text-green-600">{trend.prefix ?? ""}{trend.value.toLocaleString(undefined, { maximumFractionDigits: trend.value % 1 === 0 ? 0 : 2 })}</span>
               <span>{trend.label}</span>

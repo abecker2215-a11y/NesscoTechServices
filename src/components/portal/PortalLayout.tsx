@@ -50,7 +50,7 @@ export function PortalLayout({
     .slice(0, 2) ?? "U";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -63,12 +63,12 @@ export function PortalLayout({
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 w-64 bg-background border-r border-border transform transition-transform duration-200 lg:translate-x-0",
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
         aria-label="Portal navigation"
       >
-        <div className="flex h-16 items-center justify-between border-b border-gray-200 px-4">
+<div className="flex h-16 items-center justify-between border-b border-gray-200 px-4">
           <Link href="/portal" className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <Shield className="h-5 w-5 text-primary-foreground" />
@@ -125,18 +125,10 @@ export function PortalLayout({
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Top bar */}
-        <header className="sticky top-0 z-30 bg-white border-b border-gray-200">
+        <header className="sticky top-0 z-30 bg-background border-b border-border">
           <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-4">
-              <button
-                className="lg:hidden p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100"
-                onClick={() => setSidebarOpen(true)}
-                aria-label="Open sidebar"
-                aria-expanded={sidebarOpen}
-              >
-                <Menu className="h-6 w-6" />
-              </button>
-              <h1 className="text-lg font-semibold text-gray-900 hidden sm:block">
+<div className="flex items-center gap-4">
+              <h1 className="text-lg font-semibold text-foreground hidden sm:block">
                 {navigation.find((n) => pathname === n.href || pathname.startsWith(n.href + "/"))?.name ?? "Portal"}
               </h1>
             </div>
@@ -164,7 +156,7 @@ export function PortalLayout({
                 {userMenuOpen && (
                   <>
                     <div className="fixed inset-0 z-40" onClick={() => setUserMenuOpen(false)} aria-hidden="true" />
-                    <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-gray-200 focus:outline-none animate-fade-in">
+                    <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-background py-1 shadow-lg ring-1 ring-border focus:outline-none animate-fade-in">
                       <div className="px-4 py-3 border-b border-gray-100">
                         <p className="text-sm font-medium text-gray-900">{session?.user?.name}</p>
                         <p className="text-xs text-gray-500 truncate">{session?.user?.email}</p>
@@ -173,7 +165,7 @@ export function PortalLayout({
                       <hr className="my-1 border-gray-100" />
                       <button
                         onClick={() => signOut({ callbackUrl: "/" })}
-                        className="flex w-full items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                        className="flex w-full items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-500/10"
                       >
                         <LogOut className="h-4 w-4" />
                         Sign out

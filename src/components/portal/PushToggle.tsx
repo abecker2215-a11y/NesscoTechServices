@@ -91,7 +91,7 @@ export function PushToggle() {
       type="button"
       onClick={enabled ? disable : enable}
       disabled={working}
-      className="relative p-2 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+      className="relative p-2 rounded-full text-muted-foreground hover:text-muted-foreground hover:bg-muted disabled:opacity-50"
       aria-label={enabled ? "Disable push notifications" : "Enable push notifications"}
       aria-pressed={enabled}
       title={enabled ? "Push on — ticket updates come to this device" : "Turn on push for ticket updates"}
@@ -103,3 +103,4 @@ export function PushToggle() {
     </button>
   );
 }
+

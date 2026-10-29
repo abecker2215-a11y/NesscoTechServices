@@ -62,11 +62,11 @@ const statusConfig: Record<string, { label: string; class: string; icon: React.C
   WAITING_CLIENT: { label: "Waiting on You", class: "bg-orange-100 text-orange-800", icon: AlertTriangle },
   WAITING_VENDOR: { label: "Waiting on Vendor", class: "bg-purple-100 text-purple-800", icon: Clock },
   RESOLVED: { label: "Resolved", class: "bg-green-100 text-green-800", icon: CheckCircle },
-  CLOSED: { label: "Closed", class: "bg-gray-100 text-gray-800", icon: CheckCircle },
+  CLOSED: { label: "Closed", class: "bg-muted text-gray-800", icon: CheckCircle },
 };
 
 const priorityConfig: Record<string, { label: string; class: string }> = {
-  LOW: { label: "Low", class: "bg-gray-100 text-gray-800" },
+  LOW: { label: "Low", class: "bg-muted text-gray-800" },
   MEDIUM: { label: "Medium", class: "bg-blue-100 text-blue-800" },
   HIGH: { label: "High", class: "bg-orange-100 text-orange-800" },
   URGENT: { label: "Urgent", class: "bg-red-100 text-red-800" },
@@ -114,7 +114,7 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
   };
 
   const getStatusBadge = (status: string) => {
-    const config = statusConfig[status] || { label: status, class: "bg-gray-100 text-gray-800", icon: Clock };
+    const config = statusConfig[status] || { label: status, class: "bg-muted text-gray-800", icon: Clock };
     const Icon = config.icon;
     return (
       <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium", config.class)}>
@@ -125,7 +125,7 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
   };
 
   const getPriorityBadge = (priority: string) => {
-    const config = priorityConfig[priority] || { label: priority, class: "bg-gray-100 text-gray-800" };
+    const config = priorityConfig[priority] || { label: priority, class: "bg-muted text-gray-800" };
     return <span className={cn("inline-flex rounded-full px-3 py-1 text-sm font-medium", config.class)}>{config.label}</span>;
   };
 
@@ -136,19 +136,19 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <Link href="/portal/tickets" className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Back to tickets">
+        <Link href="/portal/tickets" className="p-2 rounded-lg text-muted-foreground hover:text-muted-foreground hover:bg-muted transition-colors" aria-label="Back to tickets">
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <span className="text-sm font-mono text-gray-500">#{ticket.id.slice(-6)}</span>
-            <h1 className="text-2xl font-bold text-gray-900">{ticket.title}</h1>
+            <span className="text-sm font-mono text-muted-foreground">#{ticket.id.slice(-6)}</span>
+            <h1 className="text-2xl font-bold text-foreground">{ticket.title}</h1>
           </div>
           <div className="mt-2 flex flex-wrap items-center gap-3">
             {getStatusBadge(ticket.status)}
             {getPriorityBadge(ticket.priority)}
-            <span className="text-sm text-gray-500 capitalize">{ticket.category.toLowerCase().replace("_", " ")}</span>
-            <span className="text-sm text-gray-500">{ticket.source.toLowerCase().replace("_", " ")}</span>
+            <span className="text-sm text-muted-foreground capitalize">{ticket.category.toLowerCase().replace("_", " ")}</span>
+            <span className="text-sm text-muted-foreground">{ticket.source.toLowerCase().replace("_", " ")}</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -163,20 +163,20 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
         {/* Main content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Description */}
-          <section className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Description</h2>
-            <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap">
+          <section className="bg-background rounded-lg border border-border p-6">
+            <h2 className="text-lg font-semibold text-foreground mb-4">Description</h2>
+            <div className="prose prose-sm max-w-none text-muted-foreground whitespace-pre-wrap">
               {ticket.description}
             </div>
           </section>
 
           {/* Comments / Activity */}
-          <section className="bg-white rounded-lg border border-gray-200">
-            <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+          <section className="bg-background rounded-lg border border-border">
+            <div className="p-4 border-b border-border flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
                 <MessageSquare className="h-5 w-5" />
                 Activity & Comments
-                <span className="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 rounded-full">
+                <span className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
                   {ticket.comments.length}
                 </span>
               </h2>
@@ -203,9 +203,9 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
                       {...register("content")}
                       rows={3}
                       className={cn(
-                        "w-full px-4 py-2.5 border rounded-lg text-gray-900 placeholder-gray-400",
+                        "w-full px-4 py-2.5 border rounded-lg text-foreground placeholder-gray-400",
                         "focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-                        errors.content ? "border-red-300 bg-red-50" : "border-gray-300"
+                        errors.content ? "border-red-300 bg-red-50" : "border-border"
                       )}
                       placeholder="Add a comment…"
                       disabled={isSubmitting}
@@ -215,11 +215,11 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
                       <p className="mt-1 text-sm text-red-600">{errors.content.message}</p>
                     )}
                     {!isClient && (
-                      <label className="mt-2 flex items-center gap-2 text-sm text-gray-600">
+                      <label className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
                         <input
                           {...register("internal")}
                           type="checkbox"
-                          className="rounded border-gray-300 text-primary focus:ring-primary"
+                          className="rounded border-border text-primary focus:ring-primary"
                         />
                         Internal note (not visible to client)
                       </label>
@@ -258,39 +258,39 @@ export function TicketDetailClient({ initialData }: { initialData: TicketData })
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Ticket Info */}
-          <section className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Ticket Info</h2>
+          <section className="bg-background rounded-lg border border-border p-6">
+            <h2 className="text-lg font-semibold text-foreground mb-4">Ticket Info</h2>
             <dl className="space-y-4 text-sm">
               <div>
-                <dt className="text-gray-500">Created</dt>
-                <dd className="font-medium text-gray-900">{format(new Date(ticket.createdAt), "MMM d, yyyy h:mm a")}</dd>
+                <dt className="text-muted-foreground">Created</dt>
+                <dd className="font-medium text-foreground">{format(new Date(ticket.createdAt), "MMM d, yyyy h:mm a")}</dd>
               </div>
               <div>
-                <dt className="text-gray-500">Last Updated</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-muted-foreground">Last Updated</dt>
+                <dd className="font-medium text-foreground">
                   {formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}
                 </dd>
               </div>
               {ticket.resolvedAt && (
                 <div>
-                  <dt className="text-gray-500">Resolved</dt>
-                  <dd className="font-medium text-gray-900">{format(new Date(ticket.resolvedAt), "MMM d, yyyy h:mm a")}</dd>
+                  <dt className="text-muted-foreground">Resolved</dt>
+                  <dd className="font-medium text-foreground">{format(new Date(ticket.resolvedAt), "MMM d, yyyy h:mm a")}</dd>
                 </div>
               )}
               <div>
-                <dt className="text-gray-500">Created By</dt>
-                <dd className="font-medium text-gray-900">{ticket.createdBy.name ?? ticket.createdBy.email}</dd>
+                <dt className="text-muted-foreground">Created By</dt>
+                <dd className="font-medium text-foreground">{ticket.createdBy.name ?? ticket.createdBy.email}</dd>
               </div>
               <div>
-                <dt className="text-gray-500">Assigned To</dt>
-                <dd className="font-medium text-gray-900">{ticket.assignee?.name ?? "Unassigned"}</dd>
+                <dt className="text-muted-foreground">Assigned To</dt>
+                <dd className="font-medium text-foreground">{ticket.assignee?.name ?? "Unassigned"}</dd>
               </div>
             </dl>
           </section>
 
           {/* Quick Actions */}
-          <section className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+          <section className="bg-background rounded-lg border border-border p-6">
+            <h2 className="text-lg font-semibold text-foreground mb-4">Quick Actions</h2>
             <div className="space-y-2">
               <button className="w-full btn-secondary justify-start">
                 <ExternalLink className="h-4 w-4" />
@@ -329,22 +329,22 @@ function CommentItem({
   if (comment.internal && !canSeeInternal) return null;
 
   return (
-    <article className="p-4 hover:bg-gray-50" data-comment-id={comment.id}>
+    <article className="p-4 hover:bg-muted" data-comment-id={comment.id}>
       <div className="flex gap-3">
         <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-medium text-sm shrink-0">
           {comment.author.name?.[0]?.toUpperCase() ?? comment.author.email[0].toUpperCase()}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-medium text-gray-900">{comment.author.name ?? comment.author.email}</span>
+            <span className="font-medium text-foreground">{comment.author.name ?? comment.author.email}</span>
             {comment.internal && canSeeInternal && (
               <span className="px-1.5 py-0.5 text-xs bg-amber-100 text-amber-800 rounded-full">Internal</span>
             )}
-            <time className="text-xs text-gray-500" dateTime={comment.createdAt}>
+            <time className="text-xs text-muted-foreground" dateTime={comment.createdAt}>
               {formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })}
             </time>
           </div>
-          <div className="mt-1 text-gray-700 whitespace-pre-wrap">{comment.content}</div>
+          <div className="mt-1 text-muted-foreground whitespace-pre-wrap">{comment.content}</div>
         </div>
       </div>
     </article>

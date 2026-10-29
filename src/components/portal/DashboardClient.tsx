@@ -89,7 +89,7 @@ const statusConfig: Record<string, { label: string; class: string; icon: React.C
   WAITING_CLIENT: { label: "Waiting on You", class: "bg-orange-100 text-orange-800", icon: AlertTriangle },
   WAITING_VENDOR: { label: "Waiting on Vendor", class: "bg-purple-100 text-purple-800", icon: Clock },
   RESOLVED: { label: "Resolved", class: "bg-green-100 text-green-800", icon: CheckCircle },
-  CLOSED: { label: "Closed", class: "bg-gray-100 text-gray-800", icon: CheckCircle },
+  CLOSED: { label: "Closed", class: "bg-muted text-gray-800", icon: CheckCircle },
   PENDING: { label: "Pending", class: "bg-yellow-100 text-yellow-800", icon: Clock },
   PAID: { label: "Paid", class: "bg-green-100 text-green-800", icon: CheckCircle },
   OVERDUE: { label: "Overdue", class: "bg-red-100 text-red-800", icon: AlertTriangle },
@@ -99,7 +99,7 @@ const statusConfig: Record<string, { label: string; class: string; icon: React.C
 };
 
 const priorityConfig: Record<string, { label: string; class: string }> = {
-  LOW: { label: "Low", class: "bg-gray-100 text-gray-800" },
+  LOW: { label: "Low", class: "bg-muted text-gray-800" },
   MEDIUM: { label: "Medium", class: "bg-blue-100 text-blue-800" },
   HIGH: { label: "High", class: "bg-orange-100 text-orange-800" },
   URGENT: { label: "Urgent", class: "bg-red-100 text-red-800" },
@@ -129,7 +129,7 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
   const activeAssets = assets.filter(a => a.status === "ACTIVE").length;
 
   const getStatusBadge = (status: string) => {
-    const config = statusConfig[status] || { label: status, class: "bg-gray-100 text-gray-800", icon: Activity };
+    const config = statusConfig[status] || { label: status, class: "bg-muted text-gray-800", icon: Activity };
     const Icon = config.icon;
     return (
       <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium", config.class)}>
@@ -140,7 +140,7 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
   };
 
   const getPriorityBadge = (priority: string) => {
-    const config = priorityConfig[priority] || { label: priority, class: "bg-gray-100 text-gray-800" };
+    const config = priorityConfig[priority] || { label: priority, class: "bg-muted text-gray-800" };
     return <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium", config.class)}>{config.label}</span>;
   };
 
@@ -151,8 +151,8 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Welcome back, {user.name?.split(" ")[0] ?? "there"}</h1>
-          <p className="text-gray-500 mt-1">Here&apos;s what&apos;s happening with your IT services</p>
+          <h1 className="text-2xl font-bold text-foreground">Welcome back, {user.name?.split(" ")[0] ?? "there"}</h1>
+          <p className="text-muted-foreground mt-1">Here&apos;s what&apos;s happening with your IT services</p>
         </div>
         <div className="flex gap-2">
           <Link href="/portal/tickets/new" className="btn-primary">
@@ -170,15 +170,15 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
       {health && (
         <Link
           href="/portal/insights"
-          className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 rounded-xl border border-border bg-white p-4 hover:border-primary/50 transition-colors"
+          className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 rounded-xl border border-border bg-background p-4 hover:border-primary/50 transition-colors"
         >
           <div className="flex items-center gap-3">
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-lg">
               {health.grade}
             </span>
             <div>
-              <p className="font-semibold text-gray-900">IT Health: {health.score}/100</p>
-              <p className="text-sm text-gray-500">
+              <p className="font-semibold text-foreground">IT Health: {health.score}/100</p>
+              <p className="text-sm text-muted-foreground">
                 {health.openUrgent > 0
                   ? `${health.openUrgent} urgent ticket${health.openUrgent === 1 ? "" : "s"} need attention`
                   : "All quiet — see what makes up the score"}
@@ -228,7 +228,7 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
       </div>
 
       {/* Tab Navigation */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-border">
         <nav className="flex gap-1 px-1" aria-label="Dashboard sections">
           {([
             { id: "overview", label: "Overview", icon: Activity },
@@ -241,8 +241,8 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
               className={cn(
                 "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-t-lg transition-colors",
                 activeTab === tab.id
-                  ? "bg-white border-b-2 border-primary text-primary"
-                  : "text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                  ? "bg-background border-b-2 border-primary text-primary"
+                  : "text-muted-foreground hover:text-muted-foreground hover:bg-muted"
               )}
               role="tab"
               aria-selected={activeTab === tab.id}
@@ -260,42 +260,42 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
           {/* Recent Tickets */}
           <section>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Recent Tickets</h2>
+              <h2 className="text-lg font-semibold text-foreground">Recent Tickets</h2>
               <Link href="/portal/tickets" className="text-sm text-primary hover:underline flex items-center gap-1">
                 View all <ExternalLink className="h-3.5 w-3.5" />
               </Link>
             </div>
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div className="bg-background rounded-lg border border-border overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+                <thead className="bg-muted border-b border-border">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ticket</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Updated</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignee</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Ticket</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Priority</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Updated</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Assignee</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {tickets.length === 0 ? (
                     <tr>
-                      <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
+                      <td colSpan={5} className="px-4 py-8 text-center text-muted-foreground">
                         No tickets yet. <Link href="/portal/tickets/new" className="text-primary hover:underline">Create one</Link>
                       </td>
                     </tr>
                   ) : (
                     tickets.map((ticket) => (
-                      <tr key={ticket.id} className="hover:bg-gray-50">
+                      <tr key={ticket.id} className="hover:bg-muted">
                         <td className="px-4 py-3">
-                          <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-gray-900 hover:text-primary">
+                          <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-foreground hover:text-primary">
                             #{ticket.id.slice(-6)} {ticket.title}
                           </Link>
-                          <p className="text-xs text-gray-500 mt-0.5 capitalize">{ticket.category.toLowerCase().replace("_", " ")}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5 capitalize">{ticket.category.toLowerCase().replace("_", " ")}</p>
                         </td>
                         <td className="px-4 py-3">{getStatusBadge(ticket.status)}</td>
                         <td className="px-4 py-3">{getPriorityBadge(ticket.priority)}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
-                        <td className="px-4 py-3 text-sm text-gray-500">
+                        <td className="px-4 py-3 text-sm text-muted-foreground">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
+                        <td className="px-4 py-3 text-sm text-muted-foreground">
                           {ticket.assignee?.name ?? "Unassigned"}
                         </td>
                       </tr>
@@ -309,25 +309,25 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
           {/* Upcoming Maintenance & Service Requests */}
           <div className="grid gap-6 lg:grid-cols-2">
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-purple-600" />
                 Upcoming Maintenance
               </h2>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div className="bg-background rounded-lg border border-border overflow-hidden">
                 {maintenanceWindows.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">No maintenance scheduled</div>
+                  <div className="p-8 text-center text-muted-foreground">No maintenance scheduled</div>
                 ) : (
                   <div className="divide-y divide-gray-200">
                     {maintenanceWindows.map((mw) => (
-                      <div key={mw.id} className="p-4 hover:bg-gray-50">
+                      <div key={mw.id} className="p-4 hover:bg-muted">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <h3 className="font-medium text-gray-900">{mw.title}</h3>
-                            <p className="text-sm text-gray-500 capitalize">{mw.type.toLowerCase().replace("_", " ")}</p>
+                            <h3 className="font-medium text-foreground">{mw.title}</h3>
+                            <p className="text-sm text-muted-foreground capitalize">{mw.type.toLowerCase().replace("_", " ")}</p>
                           </div>
                           {getStatusBadge(mw.status)}
                         </div>
-                        <div className="mt-2 text-sm text-gray-500">
+                        <div className="mt-2 text-sm text-muted-foreground">
                           {format(new Date(mw.scheduledStart), "MMM d, yyyy h:mm a")} –{" "}
                           {format(new Date(mw.scheduledEnd), "h:mm a")}
                         </div>
@@ -339,27 +339,27 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                 <HelpCircle className="h-5 w-5 text-blue-600" />
                 Recent Service Requests
               </h2>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div className="bg-background rounded-lg border border-border overflow-hidden">
                 {serviceRequests.length === 0 ? (
-                  <div className="p-8 text-center text-gray-500">
+                  <div className="p-8 text-center text-muted-foreground">
                     No service requests yet. <Link href="/portal/tickets/new" className="text-primary hover:underline ml-1">Submit one</Link>
                   </div>
                 ) : (
                   <div className="divide-y divide-gray-200">
                     {serviceRequests.map((sr) => (
-                      <div key={sr.id} className="p-4 hover:bg-gray-50">
+                      <div key={sr.id} className="p-4 hover:bg-muted">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <h3 className="font-medium text-gray-900">{sr.title}</h3>
-                            <p className="text-sm text-gray-500 capitalize">{sr.type.toLowerCase().replace("_", " ")}</p>
+                            <h3 className="font-medium text-foreground">{sr.title}</h3>
+                            <p className="text-sm text-muted-foreground capitalize">{sr.type.toLowerCase().replace("_", " ")}</p>
                           </div>
                           {getStatusBadge(sr.status)}
                         </div>
-                        <div className="mt-1 text-sm text-gray-500">
+                        <div className="mt-1 text-sm text-muted-foreground">
                           Requested {formatDistanceToNow(new Date(sr.createdAt), { addSuffix: true })}
                         </div>
                       </div>
@@ -372,31 +372,31 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
 
           {/* Usage Summary */}
           <section>
-            <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-green-600" />
               30-Day Usage Summary
             </h2>
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div className="bg-background rounded-lg border border-border overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gray-50 border-b border-gray-200">
+                  <thead className="bg-muted border-b border-border">
                     <tr>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Metric</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Period</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Metric</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Current Period</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Unit</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {recentUsage.length === 0 ? (
                       <tr>
-                        <td colSpan={3} className="px-4 py-8 text-center text-gray-500">No usage data available</td>
+                        <td colSpan={3} className="px-4 py-8 text-center text-muted-foreground">No usage data available</td>
                       </tr>
                     ) : (
                       recentUsage.map((u) => (
-                        <tr key={`${u.metric}-${u.periodStart}`} className="hover:bg-gray-50">
-                          <td className="px-4 py-3 font-medium text-gray-900 capitalize">{u.metric.toLowerCase().replace("_", " ")}</td>
-                          <td className="px-4 py-3 text-gray-900 font-mono text-lg">{parseFloat(u.value.toString()).toLocaleString()}</td>
-                          <td className="px-4 py-3 text-gray-500">{u.unit}</td>
+                        <tr key={`${u.metric}-${u.periodStart}`} className="hover:bg-muted">
+                          <td className="px-4 py-3 font-medium text-foreground capitalize">{u.metric.toLowerCase().replace("_", " ")}</td>
+                          <td className="px-4 py-3 text-foreground font-mono text-lg">{parseFloat(u.value.toString()).toLocaleString()}</td>
+                          <td className="px-4 py-3 text-muted-foreground">{u.unit}</td>
                         </tr>
                       ))
                     )}
@@ -411,37 +411,37 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
       {activeTab === "tickets" && (
         <div className="animate-fade-in">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">All Tickets</h2>
+            <h2 className="text-lg font-semibold text-foreground">All Tickets</h2>
             <Link href="/portal/tickets/new" className="btn-primary">
               <Plus className="h-4 w-4" />
               New Ticket
             </Link>
           </div>
-          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <div className="bg-background rounded-lg border border-border overflow-hidden">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-muted border-b border-border">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Updated</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">ID</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Title</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Category</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Priority</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Updated</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {tickets.map((ticket) => (
-                  <tr key={ticket.id} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-mono text-sm text-gray-500">#{ticket.id.slice(-6)}</td>
+                  <tr key={ticket.id} className="hover:bg-muted">
+                    <td className="px-4 py-3 font-mono text-sm text-muted-foreground">#{ticket.id.slice(-6)}</td>
                     <td className="px-4 py-3">
-                      <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-gray-900 hover:text-primary">
+                      <Link href={`/portal/tickets/${ticket.id}`} className="font-medium text-foreground hover:text-primary">
                         {ticket.title}
                       </Link>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-500 capitalize">{ticket.category.toLowerCase().replace("_", " ")}</td>
+                    <td className="px-4 py-3 text-sm text-muted-foreground capitalize">{ticket.category.toLowerCase().replace("_", " ")}</td>
                     <td className="px-4 py-3">{getStatusBadge(ticket.status)}</td>
                     <td className="px-4 py-3">{getPriorityBadge(ticket.priority)}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
+                    <td className="px-4 py-3 text-sm text-muted-foreground">{formatDistanceToNow(new Date(ticket.updatedAt), { addSuffix: true })}</td>
                   </tr>
                 ))}
               </tbody>
@@ -453,33 +453,33 @@ export function DashboardClient({ initialData }: { initialData: DashboardData })
       {activeTab === "assets" && (
         <div className="animate-fade-in">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Managed Assets</h2>
+            <h2 className="text-lg font-semibold text-foreground">Managed Assets</h2>
           </div>
-          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <div className="bg-background rounded-lg border border-border overflow-hidden">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-muted border-b border-border">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Asset</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">OS</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Asset</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Type</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">OS</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {assets.map((asset) => {
                   const Icon = assetTypeIcons[asset.type] || Activity;
                   return (
-                    <tr key={asset.id} className="hover:bg-gray-50">
+                    <tr key={asset.id} className="hover:bg-muted">
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-3">
                           <div className={cn("h-10 w-10 rounded-lg flex items-center justify-center", `bg-${getAssetColor(asset.type)}-100 text-${getAssetColor(asset.type)}-600`)}>
                             <Icon className="h-5 w-5" />
                           </div>
-                          <span className="font-medium text-gray-900">{asset.name}</span>
+                          <span className="font-medium text-foreground">{asset.name}</span>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-sm text-gray-500 capitalize">{asset.type.toLowerCase().replace("_", " ")}</td>
-                      <td className="px-4 py-3 text-sm text-gray-500">{asset.os ?? "—"}</td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground capitalize">{asset.type.toLowerCase().replace("_", " ")}</td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground">{asset.os ?? "—"}</td>
                       <td className="px-4 py-3">{getStatusBadge(asset.status)}</td>
                     </tr>
                   );
@@ -511,13 +511,13 @@ function StatCard({
   href?: string;
 }) {
   return (
-    <Link href={href} className="block bg-white rounded-lg border border-gray-200 p-6 hover:border-primary/50 transition-colors">
+    <Link href={href} className="block bg-background rounded-lg border border-border p-6 hover:border-primary/50 transition-colors">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-500">{title}</p>
-          <p className="mt-1 text-3xl font-bold text-gray-900">{value.toLocaleString()}</p>
+          <p className="text-sm font-medium text-muted-foreground">{title}</p>
+          <p className="mt-1 text-3xl font-bold text-foreground">{value.toLocaleString()}</p>
           {trend && TrendIcon && (
-            <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+            <p className="mt-2 text-sm text-muted-foreground flex items-center gap-1">
               <TrendIcon className="h-4 w-4 text-green-600" />
               <span className="font-medium text-green-600">{trend.prefix ?? ""}{trend.value.toLocaleString()}</span>
               <span>{trend.label}</span>
