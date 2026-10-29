@@ -133,7 +133,7 @@ export default async function LocationPage({ params }: Props) {
     <>
       <section className="relative hero-navy pt-0 sm:pt-0 lg:pt-0 pb-0 overflow-hidden" aria-hidden="true">
         <div className="relative w-full">
-          <HeroBanner />
+          <HeroBanner src={loc.heroImage} />
           <div className="absolute inset-0 bg-navy-950/20" />
           <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
         </div>

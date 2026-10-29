@@ -14,6 +14,8 @@ export interface Location {
    * appointment instead of the standard next-day promise.
    */
   remoteFirst?: boolean;
+  /** City-specific hero banner image, served from public root. */
+  heroImage?: string;
 }
 
 export const locations: Location[] = [
@@ -47,6 +49,7 @@ export const locations: Location[] = [
     ],
     responseNote: "Remote same-day. On-site in St. Pete usually within 1–2 business days.",
     geo: { lat: 27.7676, lon: -82.6403 },
+    heroImage: "/cities/st-petersburg-fl/managed-it-hero.png",
   },
   {
     slug: "it-support-clearwater",
@@ -61,6 +64,7 @@ export const locations: Location[] = [
     ],
     responseNote: "Remote same-day. Beach-area on-site visits scheduled around access/parking.",
     geo: { lat: 27.9659, lon: -82.8001 },
+    heroImage: "/cities/clearwater-fl/managed-it-hero.png",
   },
   {
     slug: "it-support-brandon",
@@ -75,6 +79,7 @@ export const locations: Location[] = [
     ],
     responseNote: "Remote same-day. Brandon on-site typically next business day.",
     geo: { lat: 27.9378, lon: -82.2859 },
+    heroImage: "/cities/brandon-fl/managed-it-hero.png",
   },
   {
     slug: "it-support-riverview",
@@ -89,6 +94,7 @@ export const locations: Location[] = [
     ],
     responseNote: "Remote same-day. Riverview new-build Wi-Fi surveys booked 1–2 days out.",
     geo: { lat: 27.8661, lon: -82.3265 },
+    heroImage: "/cities/riverview-fl/managed-it-hero.png",
   },
   {
     slug: "it-support-lakeland",
