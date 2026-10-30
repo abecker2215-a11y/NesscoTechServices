@@ -73,7 +73,7 @@ export function ServiceQuoteSidebar({ service }: Props) {
         <ul className="space-y-3 text-sm text-muted-foreground" role="list">
           <li className="flex items-start gap-2.5">
             <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-            <span>Replies within 2 hrs, Mon–Fri 8am–6pm. Same-day remote in most cases.</span>
+            <span>Replies within 2 hrs. Same-day remote in most cases.</span>
           </li>
           <li className="flex items-start gap-2.5">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />

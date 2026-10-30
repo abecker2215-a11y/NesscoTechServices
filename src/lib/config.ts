@@ -3,7 +3,7 @@ import { NavItem, SiteConfig } from "./types";
 export const siteConfig: SiteConfig = {
   name: "Nessco Tech Services",
   description: "Managed IT, cybersecurity, cloud, network, and backup services for Tampa Bay businesses — proactive support without the jargon.",
-  phone: "813-900-2387",
+  phone: "(813) 702-3155",
   email: "info@nesscotech.com",
   address: "Tampa, FL",
   addressCity: "Tampa",

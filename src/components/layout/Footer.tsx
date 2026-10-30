@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { locations } from "@/lib/locations";
-import { Monitor, MapPin, Mail, Clock } from "lucide-react";
+import { Monitor, MapPin, Mail, Clock, Phone } from "lucide-react";
 import { CopyrightYear } from "./CopyrightYear";
 
 export function Footer() {
@@ -77,6 +77,10 @@ export function Footer() {
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                 <span>{siteConfig.address}</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+                <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`} className="hover:text-foreground transition-colors">{siteConfig.phone}</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />

@@ -101,7 +101,7 @@ export function TimeSlotPicker({ value, onChange }: TimeSlotPickerProps) {
       </div>
       <p className="mt-2 text-xs text-muted-foreground">
         Pick a window that suits you, or describe another time below. We confirm the exact time
-        when we reply (within 2 business hours, Mon–Fri 8am–6pm ET). Real-time booking coming
+        when we reply (within 2 business hours). Real-time booking coming
         soon — for now this reserves your preference, not a locked slot.
       </p>
     </div>

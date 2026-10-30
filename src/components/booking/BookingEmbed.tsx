@@ -108,7 +108,7 @@ export function BookingEmbed({
       )}
 
       <p className="mt-4 text-center text-xs text-muted-foreground">
-        Urgent? Skip booking — call <a href={telHref} className="font-medium text-primary hover:underline">{siteConfig.phone}</a> (Mon–Fri 8am–6pm).
+        Urgent? Skip booking — call <a href={telHref} className="font-medium text-primary hover:underline">{siteConfig.phone}</a>.
       </p>
     </section>
   );

@@ -220,7 +220,7 @@ export function ExitIntentPopup({
           </div>
 
           <p className="mt-4 text-center text-xs text-muted-foreground">
-            We&apos;ll reply within 2 business hours. Mon–Fri 8am–6pm ET.
+            We&apos;ll reply within 2 business hours.
           </p>
         </div>
       </div>
