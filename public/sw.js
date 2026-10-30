@@ -8,8 +8,8 @@ const DYNAMIC_CACHE = 'nessco-dynamic-v1';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
+  '/branding/icon-192.svg',
+  '/branding/icon-512.svg',
 ];
 
 // Install event - cache static assets
@@ -179,8 +179,8 @@ self.addEventListener('push', (event) => {
   const data = event.data.json();
   const options = {
     body: data.body,
-    icon: '/icon-192.png',
-    badge: '/icon-192.png',
+    icon: '/branding/icon-192.svg',
+    badge: '/branding/icon-192.svg',
     vibrate: [100, 50, 100],
     data: {
       url: data.url || '/',
