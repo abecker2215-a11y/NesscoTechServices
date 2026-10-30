@@ -74,7 +74,7 @@ export function ReviewsWall() {
             <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
               {t.photoUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={t.photoUrl} alt={t.name} className="h-10 w-10 rounded-full object-cover" loading="lazy" />
+                <img src={t.photoUrl} alt={t.name} width={40} height={40} className="h-10 w-10 rounded-full object-cover" loading="lazy" />
               ) : (
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-sky-600 text-sm font-bold text-primary-foreground" aria-hidden="true">
                   {initials(t.name)}

@@ -116,6 +116,7 @@ export function PhotoUpload({ photos, photoNames, onChange, maxFiles = MAX_FILES
         )}
       </div>
       <input
+        id="photo-upload"
         ref={inputRef}
         type="file"
         accept="image/jpeg,image/png,image/webp"

@@ -34,49 +34,49 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    image: "/images/XpIX5nrxT7yNAcdetvPKAdEoV-0hVs9Am_vzS_Jjw12wD5wYvwskMUp30-kIaZwib_GUtlZgjIUNfbKG0LcMrX3bxL2sIiIH8-sdw1PZoUCeEfn7hjdJUWea8JnTQSHFjbS2yRlFlQmYvwUO5.jpg",
+    image: "/images/Em4E7v_p2ssUBEL.jpg",
     title: "Managed IT Services (MSP)",
     description:
       "Proactive management of business technology, including 24/7 monitoring, maintenance, patch management, helpdesk support, IT administration, vendor management, and strategic technology planning.",
   },
   {
-    image: "/images/WNglxIqd4PZBoI4wuv-FwU1cO5Sh3fI8-pE_dWMlg1lvJ6gOrcfV5sk5O2rpbI4lPweD7vS5eU3RVntbPW0NtZHCckEM_47c88P3yE5LTyXadwMhUwASiWy1N_IemcoJa_lpzGP5IfGRqck4K.jpg",
+    image: "/images/F9fcFk-VN187X.jpg",
     title: "Cybersecurity and IT Security",
     description:
       "Business security assessments, endpoint protection, email security, firewall management, vulnerability assessments, malware prevention, ransomware protection, security monitoring, and compliance-related technical controls.",
   },
   {
-    image: "/images/Qxgg4ztr8ib8qb2ctgxcIeeCQM96r5KByY0KxhWVXGQeitaXHkHtXac6ywGNOws3aNNY21JpVsF4rZ876xWjdGVYpFgbyTth0gXbGijLxiVZnzB0i0tjbcois9ib7gmAxH8FTFqX5PixMdrOO.jpg",
+    image: "/images/WNglxIqd4PZBoI4.jpg",
     title: "Cloud Computing and Migration",
     description:
       "Microsoft 365, Google Workspace, Microsoft Azure, Amazon AWS, cloud migrations, business email, hosted applications, cloud storage, virtualization, and remote-work infrastructure.",
   },
   {
-    image: "/images/PB06kpNBwjQ7rjFKDU4yajveYr5v4YaIyIAUeDM5K2L17qpL91pJyAr-ow-iXRGZ_F5ClvhJqE6ygKXpN5AMVRZ8_cs4Mt45HrEUkgNRzpHEFb7KJWMY2tMhKWduffazFr3pZvsevVojvMevp.jpg",
+    image: "/images/Qxgg4ztr8ib8qb2ct.jpg",
     title: "Network and Server Infrastructure",
     description:
       "Business network design, installation, configuration, structured cabling, CAT6 and fiber, enterprise wireless networks, Wi-Fi optimization, routers, switches, firewalls, Windows and Linux servers, virtualization, and infrastructure upgrades.",
   },
   {
-    image: "/images/F9fcFk-VN187X-QDYSKCPEkvI1QUmSAaJR7_hIWPh__7SvjYSyYMghsVfVAN05Oy-9MtVIxEXT5QOuA6JyNYp2lozm44nqBDKiQsSGY45sYIL6st_hQFjWJUHMZKoTbJrWHeesTaK5Y9n.jpg",
+    image: "/images/9aP-sP2Ip5kUQopWsls.jpg",
     title: "IT Support and Helpdesk",
     description:
       "Remote and on-site troubleshooting, workstation support, computer repair, hardware installation, software configuration, printer support, email troubleshooting, operating system support, and employee technical assistance.",
   },
   {
-    image: "/images/Em4E7v_p2ssUBELV5DySVZmq5ZRXxlnRyAiQ5HHgqswSuX6KFKuU3HJyfYryiLEafC5qYe7HbCXiU1lmP7Ywctwjb4boaBjCK2UQfx_rtkeU2aLtz192vU6Gp7nxWtr-Q4Qay1C8nWuVGtDXe.jpg",
+    image: "/images/cAZK4rsONbncHw.jpg",
     title: "Backup and Disaster Recovery",
     description:
       "Automated backups, encrypted off-site storage, data recovery, business continuity planning, disaster recovery strategies, high availability, and recovery testing.",
   },
   {
-    image: "/images/cAZK4rsONbncHw7RLllXZ5hhGXUaWYGCGGLudK9IwmT7S10djMsknmPQhdGnXUXgpsUvUrNlHSTk8pcZPlhj4wEFqrn_1YIWtgotn1hWvSgJypYAOGcqHy7e7UwFh9jtKJGP3uJnf_9n4xU6H.jpg",
+    image: "/images/XpIX5nrxT7yNAcd.jpg",
     title: "Business Applications and Software",
     description:
       "Business application hosting, software migrations, Microsoft 365 administration, QuickBooks and ERP hosting, remote desktop solutions, application integration, and workflow optimization.",
   },
   {
-    image: "/images/9aP-sP2Ip5kUQopWsls7co2gFGxW372nklyOATOPyCnKql-6KCM39X7_Oh-X5rJMEvHswIGxCUuw6JkUNJtyIxixxJGi2R4LzIvP4ffoRelONXBvBiJu08boyXUMJlopuaxxQlY3-Vai_BFaM.jpg",
+    image: "/images/PB06kpNBwjQ7rjF.jpg",
     title: "Business Communications",
     description:
       "VoIP phone systems, cloud PBX, business email, Microsoft Teams, video conferencing, messaging, collaboration platforms, and unified communications.",
@@ -247,32 +247,32 @@ export default function AboutPage() {
                 businesses throughout their entire IT lifecycle.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="flex flex-col gap-6 max-w-6xl mx-auto">
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="flex flex-col md:flex-row gap-4 items-center rounded-xl border border-border bg-background p-6 hover:border-primary/50 transition-colors"
+                  className="flex flex-row gap-4 items-center rounded-xl border border-border bg-background p-6 hover:border-primary/50 transition-colors"
                 >
-                  <div className="shrink-0 rounded-full overflow-hidden border border-border bg-muted">
-                    <img
+                  <div className="shrink-0 h-64 w-64 aspect-square rounded-xl overflow-hidden border border-border bg-muted">
+                      <img
                       src={service.image}
                       alt={service.title}
-                      width={160}
-                      height={160}
+                      width={256}
+                      height={256}
                       loading="lazy"
-                      className="h-20 w-20 object-cover"
+                      className="h-64 w-64 object-cover"
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">{service.description}</p>
                   </div>
                 </article>
               ))}
             </div>
           </section>
 
-          <section className="mb-16 bg-muted/30" aria-labelledby="customers-heading">
+          <section className="mb-20 bg-muted/30 py-20" aria-labelledby="customers-heading">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-12">
                 <h2 id="customers-heading" className="text-3xl font-bold text-foreground mb-4">
@@ -286,7 +286,7 @@ export default function AboutPage() {
               </div>
               <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto" role="list">
                 {customers.map((customer) => (
-                  <li key={customer} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <li key={customer} className="flex items-center gap-3 text-base text-muted-foreground">
                     <span className="flex shrink-0 items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] font-bold">
                       •
                     </span>
@@ -297,7 +297,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section className="mb-16" aria-labelledby="values-heading">
+          <section className="pt-20 mb-16" aria-labelledby="values-heading">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 id="values-heading" className="text-3xl font-bold text-foreground mb-4">
                 What Makes Nessco Different
@@ -338,7 +338,7 @@ export default function AboutPage() {
                 </div>
                 <div className="space-y-3">
                   {expertise.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <div key={index} className="flex items-start gap-3 text-base text-muted-foreground">
                       <span className="flex shrink-0 items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] font-bold mt-0.5">
                         +
                       </span>
@@ -397,7 +397,9 @@ export default function AboutPage() {
                       <img
                         src={member.photoUrl}
                         alt={member.name}
-                        className="mx-auto mb-4 h-28 w-28 rounded-full object-cover shadow-md"
+                        width={128}
+                        height={128}
+                        className="mx-auto mb-4 h-32 w-32 rounded-full object-cover shadow-md"
                         loading="lazy"
                       />
                     ) : (

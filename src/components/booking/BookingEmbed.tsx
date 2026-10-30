@@ -69,6 +69,8 @@ export function BookingEmbed({
           <iframe
             src={embedSrc}
             title="Schedule a call"
+            width={560}
+            height={315}
             className="h-[640px] w-full"
             loading="lazy"
           />

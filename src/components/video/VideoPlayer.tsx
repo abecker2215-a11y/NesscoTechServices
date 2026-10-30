@@ -219,6 +219,8 @@ export function VideoPlayer({
             <div className="flex-1 flex items-center gap-2">
               <span className="text-xs text-white font-mono">{formatTime(currentTime)}</span>
               <input
+                id="video-seek"
+                name="seek"
                 type="range"
                 min="0"
                 max="100"

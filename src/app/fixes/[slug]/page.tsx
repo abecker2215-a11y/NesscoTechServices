@@ -85,6 +85,8 @@ export default async function FixPage({ params }: Props) {
                 <iframe
                   src={fix.videoUrl}
                   title={`${fix.title} — video walkthrough`}
+                  width={560}
+                  height={315}
                   className="aspect-video w-full"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

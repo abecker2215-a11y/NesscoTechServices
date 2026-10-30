@@ -408,6 +408,8 @@ export function ChatWidget() {
               <div className="space-y-2" aria-label="File a ticket">
                 <p className="text-xs font-semibold text-foreground">File a ticket — we&apos;ll call you back</p>
                 <input
+                  id="ticket-name"
+                  name="ticketName"
                   value={ticketName}
                   onChange={(e) => setTicketName(e.target.value)}
                   placeholder="Your name"
@@ -416,6 +418,8 @@ export function ChatWidget() {
                 />
                 <div className="grid grid-cols-2 gap-2">
                   <input
+                    id="ticket-email"
+                    name="ticketEmail"
                     value={ticketEmail}
                     onChange={(e) => setTicketEmail(e.target.value)}
                     placeholder="Email"
@@ -425,6 +429,8 @@ export function ChatWidget() {
                     className="min-w-0 rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   />
                   <input
+                    id="ticket-phone"
+                    name="ticketPhone"
                     value={ticketPhone}
                     onChange={(e) => setTicketPhone(e.target.value)}
                     placeholder="Phone"
@@ -435,6 +441,8 @@ export function ChatWidget() {
                   />
                 </div>
                 <textarea
+                  id="ticket-summary"
+                  name="ticketSummary"
                   value={ticketSummary}
                   onChange={(e) => setTicketSummary(e.target.value)}
                   placeholder="What's happening?"

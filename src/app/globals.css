@@ -8,7 +8,6 @@
 }
 
 img {
-  content-visibility: auto;
 }
 
 :root {
@@ -1039,10 +1038,8 @@ pre, code, pre code {
 
 /* Prevent layout shift on images */
 img[loading="lazy"] { 
-  opacity: 0; 
-  transition: opacity 0.3s ease; 
+  opacity: 1; 
 }
-img[loading="lazy"].loaded { opacity: 1; }
 
 /* Better form field sizing */
 @media (pointer: coarse) {

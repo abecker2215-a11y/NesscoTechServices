@@ -94,6 +94,8 @@ export default async function GuidePage({ params }: Props) {
                 <iframe
                   src={guide.videoUrl}
                   title={`${guide.title} — video walkthrough`}
+                  width={560}
+                  height={315}
                   className="aspect-video w-full"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

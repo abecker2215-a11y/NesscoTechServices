@@ -67,13 +67,15 @@ export function BusinessPlanCalculator() {
             </div>
           </div>
 
-          <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-muted/40 p-4">
-            <input
-              type="checkbox"
-              checked={nonprofit}
-              onChange={(e) => setNonprofit(e.target.checked)}
-              className="mt-1 h-4 w-4 accent-[var(--primary)]"
-            />
+            <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-muted/40 p-4">
+              <input
+                id="plan-nonprofit"
+                name="nonprofit"
+                type="checkbox"
+                checked={nonprofit}
+                onChange={(e) => setNonprofit(e.target.checked)}
+                className="mt-1 h-4 w-4 accent-[var(--primary)]"
+              />
             <span className="text-sm">
               <span className="font-medium text-foreground">Registered 501(c)(3) non-profit</span>
               <span className="block text-muted-foreground">10% off all monthly plans, applied below.</span>

@@ -116,6 +116,8 @@ export function EmergencyForm() {
 
       <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-muted/30 p-3">
         <input
+          id="emergency-terms"
+          name="emergencyTerms"
           type="checkbox"
           checked={agreed}
           onChange={(e) => setAgreed(e.target.checked)}
