@@ -257,8 +257,10 @@ export default function AboutPage() {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="h-20 w-20 object-cover"
+                      width={160}
+                      height={160}
                       loading="lazy"
+                      className="h-20 w-20 object-cover"
                     />
                   </div>
                   <div className="flex-1">
