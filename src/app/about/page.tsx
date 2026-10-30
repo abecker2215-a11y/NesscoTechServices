@@ -4,61 +4,160 @@ import { siteConfig } from "@/lib/config";
 import { locations } from "@/lib/locations";
 import { businessStats } from "@/lib/testimonials";
 import { JsonLd } from "@/components/layout/JsonLd";
-import { breadcrumbSchema } from "@/lib/schemas";
-import { Monitor, Shield, Truck, Users, Target, Zap, BadgeCheck, MapPin } from "lucide-react";
+import { breadcrumbSchema, organizationSchema } from "@/lib/schemas";
 import { pageTitle, metaDescription } from "@/lib/meta";
+import {
+  Monitor,
+  Shield,
+  Truck,
+  Users,
+  Target,
+  Zap,
+  BadgeCheck,
+  MapPin,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: pageTitle("About Us"),
-  description: metaDescription("Learn about Nessco Tech Services - local IT support for Tampa Bay businesses. Our mission, values, and approach to honest IT help."),
+  description: metaDescription(
+    "Nessco Tech Services provides secure, managed, reliable IT support for Tampa Bay businesses — managed IT, cybersecurity, cloud, network, and backup services.",
+  ),
   alternates: { canonical: "/about" },
   openGraph: {
     title: pageTitle("About Us"),
-    description: metaDescription("Learn about Nessco Tech Services - local IT support for Tampa Bay businesses. Our mission, values, and approach to honest IT help."),
+    description: metaDescription(
+      "Nessco Tech Services provides secure, managed, reliable IT support for Tampa Bay businesses — managed IT, cybersecurity, cloud, network, and backup services.",
+    ),
     url: "https://nesscotech.com/about",
   },
 };
 
+const services = [
+  {
+    image: "/images/XpIX5nrxT7yNAcdetvPKAdEoV-0hVs9Am_vzS_Jjw12wD5wYvwskMUp30-kIaZwib_GUtlZgjIUNfbKG0LcMrX3bxL2sIiIH8-sdw1PZoUCeEfn7hjdJUWea8JnTQSHFjbS2yRlFlQmYvwUO5.jpg",
+    title: "Managed IT Services (MSP)",
+    description:
+      "Proactive management of business technology, including 24/7 monitoring, maintenance, patch management, helpdesk support, IT administration, vendor management, and strategic technology planning.",
+  },
+  {
+    image: "/images/WNglxIqd4PZBoI4wuv-FwU1cO5Sh3fI8-pE_dWMlg1lvJ6gOrcfV5sk5O2rpbI4lPweD7vS5eU3RVntbPW0NtZHCckEM_47c88P3yE5LTyXadwMhUwASiWy1N_IemcoJa_lpzGP5IfGRqck4K.jpg",
+    title: "Cybersecurity and IT Security",
+    description:
+      "Business security assessments, endpoint protection, email security, firewall management, vulnerability assessments, malware prevention, ransomware protection, security monitoring, and compliance-related technical controls.",
+  },
+  {
+    image: "/images/Qxgg4ztr8ib8qb2ctgxcIeeCQM96r5KByY0KxhWVXGQeitaXHkHtXac6ywGNOws3aNNY21JpVsF4rZ876xWjdGVYpFgbyTth0gXbGijLxiVZnzB0i0tjbcois9ib7gmAxH8FTFqX5PixMdrOO.jpg",
+    title: "Cloud Computing and Migration",
+    description:
+      "Microsoft 365, Google Workspace, Microsoft Azure, Amazon AWS, cloud migrations, business email, hosted applications, cloud storage, virtualization, and remote-work infrastructure.",
+  },
+  {
+    image: "/images/PB06kpNBwjQ7rjFKDU4yajveYr5v4YaIyIAUeDM5K2L17qpL91pJyAr-ow-iXRGZ_F5ClvhJqE6ygKXpN5AMVRZ8_cs4Mt45HrEUkgNRzpHEFb7KJWMY2tMhKWduffazFr3pZvsevVojvMevp.jpg",
+    title: "Network and Server Infrastructure",
+    description:
+      "Business network design, installation, configuration, structured cabling, CAT6 and fiber, enterprise wireless networks, Wi-Fi optimization, routers, switches, firewalls, Windows and Linux servers, virtualization, and infrastructure upgrades.",
+  },
+  {
+    image: "/images/F9fcFk-VN187X-QDYSKCPEkvI1QUmSAaJR7_hIWPh__7SvjYSyYMghsVfVAN05Oy-9MtVIxEXT5QOuA6JyNYp2lozm44nqBDKiQsSGY45sYIL6st_hQFjWJUHMZKoTbJrWHeesTaK5Y9n.jpg",
+    title: "IT Support and Helpdesk",
+    description:
+      "Remote and on-site troubleshooting, workstation support, computer repair, hardware installation, software configuration, printer support, email troubleshooting, operating system support, and employee technical assistance.",
+  },
+  {
+    image: "/images/Em4E7v_p2ssUBELV5DySVZmq5ZRXxlnRyAiQ5HHgqswSuX6KFKuU3HJyfYryiLEafC5qYe7HbCXiU1lmP7Ywctwjb4boaBjCK2UQfx_rtkeU2aLtz192vU6Gp7nxWtr-Q4Qay1C8nWuVGtDXe.jpg",
+    title: "Backup and Disaster Recovery",
+    description:
+      "Automated backups, encrypted off-site storage, data recovery, business continuity planning, disaster recovery strategies, high availability, and recovery testing.",
+  },
+  {
+    image: "/images/cAZK4rsONbncHw7RLllXZ5hhGXUaWYGCGGLudK9IwmT7S10djMsknmPQhdGnXUXgpsUvUrNlHSTk8pcZPlhj4wEFqrn_1YIWtgotn1hWvSgJypYAOGcqHy7e7UwFh9jtKJGP3uJnf_9n4xU6H.jpg",
+    title: "Business Applications and Software",
+    description:
+      "Business application hosting, software migrations, Microsoft 365 administration, QuickBooks and ERP hosting, remote desktop solutions, application integration, and workflow optimization.",
+  },
+  {
+    image: "/images/9aP-sP2Ip5kUQopWsls7co2gFGxW372nklyOATOPyCnKql-6KCM39X7_Oh-X5rJMEvHswIGxCUuw6JkUNJtyIxixxJGi2R4LzIvP4ffoRelONXBvBiJu08boyXUMJlopuaxxQlY3-Vai_BFaM.jpg",
+    title: "Business Communications",
+    description:
+      "VoIP phone systems, cloud PBX, business email, Microsoft Teams, video conferencing, messaging, collaboration platforms, and unified communications.",
+  },
+];
+
 const values = [
   {
     icon: Target,
-    title: "Honest Communication",
-    description: "We explain problems in plain English. No jargon, no upsells. You approve the work before we start.",
-  },
-  {
-    icon: Shield,
-    title: "Security First",
-    description: "Every service includes basic security hygiene. Encrypted connections, data-handling best practices, and proactive protection.",
-  },
-  {
-    icon: Truck,
-    title: "Local & Responsive",
-    description: "Based in Tampa Bay. We understand local infrastructure and can be on-site when remote isn't enough.",
-  },
-  {
-    icon: Users,
-    title: "Small Business Focus",
-    description: "We specialize in businesses with 5–100 employees. Microsoft 365, networking, security, backups, and strategy.",
+    title: "Experience over salesmanship",
+    description:
+      "Customers receive knowledgeable technical assistance and practical recommendations rather than pressure to purchase unnecessary products or services.",
   },
   {
     icon: Zap,
-    title: "Fast Turnaround",
-    description: "During business hours, we typically respond within 2 hours. Emergency after-hours support for managed clients.",
+    title: "Prevention over reaction",
+    description:
+      "Monitoring, maintenance, security, and backup strategies help identify problems before they become expensive business interruptions.",
+  },
+  {
+    icon: Shield,
+    title: "Security as a foundation",
+    description:
+      "Cybersecurity is part of everyday IT management, not something businesses consider only after an attack.",
+  },
+  {
+    icon: Users,
+    title: "Plain-English communication",
+    description:
+      "Business owners should not need to understand complicated technical terminology to make good technology decisions.",
   },
   {
     icon: Monitor,
-    title: "Transparent Pricing",
-    description: "Hourly rates published online. Monthly plans with fixed pricing. No hidden fees or surprise charges.",
+    title: "Personalized support",
+    description:
+      "Every business has different infrastructure, budgets, security requirements, and operational needs. Solutions reflect those differences.",
   },
+  {
+    icon: Truck,
+    title: "Accountability and transparency",
+    description:
+      "Customers understand what is being done, why it is necessary, and what it costs before work begins.",
+  },
+];
+
+const expertise = [
+  "Microsoft Windows environments and administration",
+  "Microsoft 365 and Exchange technologies",
+  "Active Directory and identity management",
+  "Windows and Linux server administration",
+  "Business networking and infrastructure",
+  "Email systems and enterprise communications",
+  "Cloud computing and infrastructure migrations",
+  "AWS and Azure environments",
+  "Virtualization and server consolidation",
+  "Cybersecurity and endpoint protection",
+  "Backup and disaster recovery",
+  "IT consulting and infrastructure modernization",
+];
+
+const customers = [
+  "Small businesses and professional offices",
+  "Law firms and accounting firms",
+  "Construction and roofing companies",
+  "Medical and healthcare-related offices",
+  "Real estate and property management companies",
+  "Retail stores and restaurants",
+  "Manufacturing and distribution businesses",
+  "Companies with remote or hybrid employees",
+  "Organizations needing better cybersecurity and network infrastructure",
+  "Businesses preparing for growth, expansion, or technology modernization",
 ];
 
 const team = [
   {
     initials: "NT",
     name: "Owner / Lead Technician",
-    role: "15+ years IT experience",
+    role: "25+ years IT experience",
     certs: ["CompTIA A+", "Network+", "Security+", "Microsoft 365 Certified"],
-    bio: "Founded Nessco Tech Services to bring honest, competent IT support to Tampa Bay businesses. Specializes in network infrastructure, cloud migrations, and cybersecurity for small businesses.",
+    bio:
+      "Built on approximately 25 years of hands-on IT experience across the evolution of business computing, from traditional desktop and server environments to modern cloud infrastructure. Specializes in network infrastructure, cloud migrations, and cybersecurity for small businesses.",
     photoUrl: undefined as string | undefined,
     specialties: ["Network Design", "Cloud Migration", "Cybersecurity", "Microsoft 365"],
     quote: "Technology should work for you, not against you.",
@@ -69,6 +168,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }])} />
+      <JsonLd data={organizationSchema()} />
       <section className="py-20 lg:py-32" aria-labelledby="about-heading">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -76,24 +176,30 @@ export default function AboutPage() {
               About Nessco Tech Services
             </h1>
             <p className="text-lg text-muted-foreground">
-              Local IT help without the IT-speak. We fix technology problems for businesses across the Tampa Bay area.
+              Nessco Tech Services is a Tampa Bay–area information technology services provider specializing in
+              managed IT services, business technology support, network infrastructure, cybersecurity, cloud
+              solutions, and technology consulting for small and medium-sized businesses.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">Our Approach</h2>
               <p className="text-muted-foreground text-lg mb-4">
-                To provide honest, competent IT support that empowers people to use technology confidently — 
-                without the jargon, upsells, or frustration that plagues the industry.
+                Built on approximately 25 years of hands-on IT experience, Nessco Tech Services helps businesses
+                simplify technology, protect critical systems, minimize downtime, improve productivity, and maintain
+                reliable IT environments without the expense and complexity of managing a full internal IT department.
               </p>
               <p className="text-muted-foreground mb-6">
-                We believe technology should work for you, not against you. When it breaks, you deserve a clear explanation, 
-                a fair price, and a lasting fix.
+                The company&apos;s approach combines experienced technical support, proactive system management, practical
+                cybersecurity, and personalized customer service. Rather than simply responding when something breaks,
+                Nessco focuses on preventing problems, identifying vulnerabilities, maintaining systems, and helping
+                businesses make smarter technology decisions.
               </p>
               <p className="text-muted-foreground">
-                Founded in 2024, Nessco Tech Services serves the Tampa Bay area including Tampa, St. Petersburg, 
-                Clearwater, Brandon, Riverview, and Lakeland.
+                Serving businesses throughout the Tampa Bay region, Nessco Tech Services aims to be more than an IT
+                repair company. It is a technology partner businesses can depend on for day-to-day support, long-term
+                infrastructure planning, security, and continued growth.
               </p>
             </div>
             <div className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-8">
@@ -111,13 +217,93 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </dl>
-                {/* TODO: Swap this panel for a real team / van / office photo when available. */}
               </div>
             </div>
           </div>
 
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-12">Our Values</h2>
+          <section className="mb-16" aria-labelledby="description-heading">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 id="description-heading" className="text-3xl font-bold text-foreground mb-4">
+                About the Company
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Nessco Tech Services is a Tampa Bay–area information technology services provider specializing in
+                managed IT services, business technology support, network infrastructure, cybersecurity, cloud
+                solutions, and technology consulting for small and medium-sized businesses. Built on approximately
+                25 years of hands-on IT experience, Nessco helps businesses simplify technology, protect critical
+                systems, minimize downtime, improve productivity, and maintain reliable IT environments without the
+                expense and complexity of managing a full internal IT department.
+              </p>
+            </div>
+          </section>
+
+          <section className="mb-16" aria-labelledby="services-heading">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 id="services-heading" className="text-3xl font-bold text-foreground mb-4">
+                Core Services and Capabilities
+              </h2>
+              <p className="text-muted-foreground">
+                Nessco Tech Services offers a comprehensive range of technology services designed to support
+                businesses throughout their entire IT lifecycle.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {services.map((service) => (
+                <article
+                  key={service.title}
+                  className="flex flex-col md:flex-row gap-4 items-center rounded-xl border border-border bg-background p-6 hover:border-primary/50 transition-colors"
+                >
+                  <div className="shrink-0 rounded-full overflow-hidden border border-border bg-muted">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-20 w-20 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-16 bg-muted/30" aria-labelledby="customers-heading">
+            <div className="container">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 id="customers-heading" className="text-3xl font-bold text-foreground mb-4">
+                  Who Nessco Serves
+                </h2>
+                <p className="text-muted-foreground">
+                  Nessco is positioned to serve a wide range of customers, with a particular focus on small and
+                  medium-sized businesses that need professional IT expertise without maintaining an expensive
+                  in-house IT department.
+                </p>
+              </div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto" role="list">
+                {customers.map((customer) => (
+                  <li key={customer} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <span className="flex shrink-0 items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] font-bold">
+                      •
+                    </span>
+                    {customer}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <section className="mb-16" aria-labelledby="values-heading">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 id="values-heading" className="text-3xl font-bold text-foreground mb-4">
+                What Makes Nessco Different
+              </h2>
+              <p className="text-muted-foreground">
+                Nessco&apos;s business philosophy is built around several important principles.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {values.map((value, index) => (
                 <article key={index} className="p-6 rounded-lg border border-border bg-background">
@@ -125,11 +311,71 @@ export default function AboutPage() {
                     <value.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2 text-center">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground text-center">{value.description}</p>
+                  <p className="text-sm text-muted-foreground text-center leading-relaxed">{value.description}</p>
                 </article>
               ))}
             </div>
-          </div>
+          </section>
+
+          <section className="mb-16" aria-labelledby="expertise-heading">
+            <div className="container">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 id="expertise-heading" className="text-3xl font-bold text-foreground mb-6">
+                    Technology Expertise
+                  </h2>
+                  <p className="text-muted-foreground text-lg mb-6">
+                    A significant part of Nessco&apos;s value proposition is its breadth of IT experience. The business
+                    draws on approximately 25 years of hands-on experience across the evolution of business computing,
+                    from traditional desktop and server environments to modern cloud infrastructure.
+                  </p>
+                  <p className="text-muted-foreground mb-6">
+                    The company&apos;s objective is to combine traditional IT knowledge with modern cloud, automation, and
+                    cybersecurity technologies.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  {expertise.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <span className="flex shrink-0 items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] font-bold mt-0.5">
+                        +
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-16 lg:py-24" aria-labelledby="service-area-heading">
+            <div className="container">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 id="service-area-heading" className="text-3xl font-bold text-foreground mb-4">
+                  Service Area
+                </h2>
+                <p className="text-muted-foreground">
+                  Nessco Tech Services is based in the Tampa Bay region of Florida. Remote technical support can also
+                  be provided to customers outside the immediate Tampa Bay area.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                {siteConfig.serviceArea.map((city, index) => {
+                  const loc = locations.find((l) => l.name === city);
+                  const cls = "px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors";
+                  return loc ? (
+                    <Link key={index} href={`/${loc.slug}`} className={cls}>
+                      {city}
+                    </Link>
+                  ) : (
+                    <span key={index} className={cls}>
+                      {city}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
 
           <section className="py-16 bg-muted/30" aria-labelledby="team-heading">
             <div className="container">
@@ -163,7 +409,7 @@ export default function AboutPage() {
                     )}
                     <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
                     <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                    
+
                     {member.specialties && (
                       <div className="mb-4">
                         <p className="text-xs font-medium text-muted-foreground mb-2">Specialties</p>
@@ -179,7 +425,7 @@ export default function AboutPage() {
                         </ul>
                       </div>
                     )}
-                    
+
                     <ul className="mb-4 flex flex-wrap justify-center gap-1.5" role="list" aria-label="Certifications">
                       {member.certs.map((cert) => (
                         <li
@@ -192,13 +438,13 @@ export default function AboutPage() {
                       ))}
                     </ul>
                     <p className="text-muted-foreground mb-4">{member.bio}</p>
-                    
+
                     {member.quote && (
                       <blockquote className="mb-4 p-4 rounded-lg bg-muted/50 border-l-4 border-primary">
                         <p className="text-sm italic text-foreground">&ldquo;{member.quote}&rdquo;</p>
                       </blockquote>
                     )}
-                    
+
                     <p className="text-sm">
                       <Link href="/contact" className="font-medium text-primary hover:underline">
                         Work with us →
@@ -206,34 +452,6 @@ export default function AboutPage() {
                     </p>
                   </article>
                 ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 lg:py-24" aria-labelledby="service-area-heading">
-            <div className="container">
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <h2 id="service-area-heading" className="text-3xl font-bold text-foreground mb-4">
-                  Service Area
-                </h2>
-                <p className="text-muted-foreground">
-                  We serve the greater Tampa Bay area. Remote support available anywhere.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-                {siteConfig.serviceArea.map((city, index) => {
-                  const loc = locations.find((l) => l.name === city);
-                  const cls = "px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors";
-                  return loc ? (
-                    <Link key={index} href={`/${loc.slug}`} className={cls}>
-                      {city}
-                    </Link>
-                  ) : (
-                    <span key={index} className={cls}>
-                      {city}
-                    </span>
-                  );
-                })}
               </div>
             </div>
           </section>
