@@ -201,7 +201,7 @@ export function Header() {
                         <Lock className="h-4 w-4" aria-hidden="true" />
                         <span>Portal</span>
                       </Link>
-                      <Button size="sm" className="whitespace-nowrap hero-secondary-outline">
+                      <Button size="sm" href="/get-help" className="whitespace-nowrap hero-secondary-outline">
                         Get Help
                       </Button>
                     </React.Fragment>
