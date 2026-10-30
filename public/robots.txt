@@ -1,14 +1,126 @@
-# *
+# NESSCO TECH SERVICES
+# robots.txt — search engines and AI crawlers
+# Site: https://nesscotech.com
+#
+# IMPORTANT:
+# - This file allows public search/discovery crawlers where listed.
+# - It blocks selected model-training crawlers.
+# - Robots.txt is voluntary crawler guidance, NOT access control.
+# - There is no universal list of every AI model or crawler.
+# - Keep private data protected by authentication and server-side controls.
+#
+# GENERAL SEARCH ENGINES
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /api/
-Disallow: /get-help/step-*
+Disallow: /get-help/step-
 
-# Host
-Host: https://nesscotech.com
+# GOOGLE SEARCH / GOOGLE AI SEARCH
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
 
-# Sitemaps
+# BING SEARCH (also supports discovery for some other search services)
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# OPENAI / CHATGPT SEARCH
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# OpenAI model-training crawler — blocked by choice
+User-agent: GPTBot
+Disallow: /
+
+# ANTHROPIC / CLAUDE
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# Claude user-requested fetches/browsing
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# Anthropic model-training/general crawler — blocked by choice
+User-agent: ClaudeBot
+Disallow: /
+
+# PERPLEXITY
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# Perplexity user-requested fetches
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# META AI
+# Meta-ExternalAgent may be used for search and AI-related discovery.
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# META model-training crawler — blocked by choice
+User-agent: FacebookBot
+Disallow: /
+
+# APPLE
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# APPLE AI / SEARCH-RELATED CRAWLING
+User-agent: Applebot-Extended
+Disallow: /
+
+# COMMON CRAWL (used by many research and AI datasets) — blocked by choice
+User-agent: CCBot
+Disallow: /
+
+# BYTEDANCE / TIKTOK
+User-agent: Bytespider
+Disallow: /
+
+# COHERE
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# YOU.COM
+User-agent: YouBot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# AMAZON
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# MISTRAL
+User-agent: MistralAI-User
+Allow: /
+Disallow: /api/
+Disallow: /get-help/step-
+
+# AI2 / ALLEN INSTITUTE
+User-agent: AI2Bot
+Disallow: /
+
+# SITEMAP
 Sitemap: https://nesscotech.com/sitemap.xml
