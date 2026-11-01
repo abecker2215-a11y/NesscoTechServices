@@ -45,11 +45,11 @@ const categories = [
   "Business IT",
   "Security",
   "Data Protection",
-  "Guides",
-  "Quick fixes",
   "Cloud",
   "Communications",
   "Network",
+  "Backup",
+  "Applications",
 ];
 
 interface PageProps {

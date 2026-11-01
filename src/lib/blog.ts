@@ -878,6 +878,588 @@ If you're not sure how your staff accesses the office from home, start there —
 `,
     serviceSlug: "applications/remote-access",
   },
+  {
+    slug: "new-article-01",
+    title: "Immutable Backup Storage for Ransomware Protection",
+    excerpt: "Immutable backups cannot be altered or deleted by ransomware, giving you a clean copy to restore from after an attack.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Backup",
+    readTime: "5 min read",
+    body: `
+Ransomware often targets backups directly. Attackers know that if they can encrypt or delete your backup files, you have no clean copy to restore from — which makes paying the ransom your only option. Immutable backup storage removes that leverage.
+
+What immutability means:
+
+- Write-once, read-many (WORM) storage prevents backup files from being modified or deleted for a set retention period.
+- Even an administrator with full access cannot alter an immutable backup during its retention window.
+- Ransomware running under a compromised admin account cannot encrypt or destroy the immutable copy.
+
+Common ways to implement immutable backups:
+
+- Object storage with object lock enabled (for example, S3 Object Lock or Azure Blob immutability policies).
+- Tape air-gapped backups, which are physically offline and cannot be reached over the network.
+- Dedicated backup appliances with built-in immutability and retention lock features.
+
+Immutable backups work best as part of a layered strategy. Pair them with offline or air-gapped copies, regular test restores, and MFA on backup admin accounts. The goal is simple: if ransomware reaches your primary data, you still have a tamper-proof copy you can trust.
+`,
+    serviceSlug: "backup-disaster-recovery/backup",
+  },
+  {
+    slug: "new-article-02",
+    title: "Backup Encryption for Small Businesses",
+    excerpt: "Encrypting backups protects your data both in transit and at rest, so a stolen backup drive or compromised account does not expose your business information.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Backup",
+    readTime: "5 min read",
+    body: `
+Backup files contain everything a business needs to operate — financial records, customer data, employee files, and email. If that backup falls into the wrong hands, the damage can be as severe as a primary data breach. Encryption makes backup files unreadable without the decryption key.
+
+Encryption should cover two states:
+
+- At rest. Backup files stored on disks, tapes, or cloud object storage should be encrypted so physical theft or unauthorized storage access does not expose data.
+- In transit. Data moving from your office to an offsite or cloud backup destination should be encrypted over TLS or a VPN so it cannot be intercepted.
+
+Key management matters as much as encryption:
+
+- Store encryption keys separately from the backup data they protect.
+- Rotate keys on a defined schedule.
+- Document who can access keys and under what circumstances.
+- Never store backup keys on the same system being backed up.
+
+Losing an encryption key is as bad as losing the data. Have a documented recovery process for keys, and test it before you need it.
+`,
+    serviceSlug: "backup-disaster-recovery/backup",
+  },
+  {
+    slug: "new-article-03",
+    title: "Setting Backup Retention Policies",
+    excerpt: "Backup retention policies decide how long you keep daily, weekly, and monthly backups — balancing storage cost against how far back you might need to recover.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Backup",
+    readTime: "5 min read",
+    body: `
+Keeping every backup forever is expensive and unnecessary. Deleting backups too soon leaves you without recovery options. A retention policy defines how long each backup copy stays available.
+
+A common tiered approach:
+
+- Daily backups kept for 7–14 days for quick recovery from recent mistakes or corruption.
+- Weekly backups kept for 4–8 weeks to recover issues not noticed immediately.
+- Monthly backups kept for 3–12 months for longer-term recovery needs.
+- Annual backups kept for several years for compliance or tax purposes, depending on your industry.
+
+Retention should be driven by two factors:
+
+- Recovery needs. How far back might you realistically need to go? A corrupted file might go unnoticed for weeks.
+- Compliance. Some industries (healthcare, legal, financial) have regulatory retention requirements that override storage cost considerations.
+
+Review your retention policy annually or whenever your business changes. A policy set at launch may no longer fit after adding new applications, employees, or regulatory obligations.
+`,
+    serviceSlug: "backup-disaster-recovery/dr-planning",
+  },
+  {
+    slug: "new-article-04",
+    title: "Backing Up Microsoft 365 Data",
+    excerpt: "Microsoft 365 does not back up your email, OneDrive, or SharePoint for long-term recovery. A dedicated M365 backup closes that gap.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Backup",
+    readTime: "5 min read",
+    body: `
+Many small businesses assume Microsoft 365 includes backup. It does not — not in the way most businesses need. Microsoft retains deleted email and files for a limited window, but that is not a substitute for a dedicated backup with point-in-time recovery.
+
+Gaps in native Microsoft 365 retention:
+
+- Deleted items are recoverable for a limited period, then permanently removed.
+- Accidental deletion by a user or malicious actor can propagate before anyone notices.
+- Ransomware can encrypt files synced to OneDrive or SharePoint, syncing the damage to the cloud.
+- Retention policies and legal hold preserve data for compliance, but are not designed for simple file or mailbox recovery.
+
+A dedicated Microsoft 365 backup should cover:
+
+- Exchange Online mailboxes, including email, contacts, and calendar items.
+- OneDrive accounts for all users.
+- SharePoint sites and document libraries.
+- Microsoft Teams chat, channels, and files.
+
+Look for a solution that offers point-in-time recovery, granular restore (individual emails or files), and regular automated backups independent of Microsoft's native retention.
+`,
+    serviceSlug: "cloud-solutions/microsoft-365",
+  },
+  {
+    slug: "new-article-05",
+    title: "Understanding RPO and RTO for Backup Planning",
+    excerpt: "RPO defines how much data loss you can tolerate; RTO defines how quickly you must be back up. Both shape your backup strategy.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Backup",
+    readTime: "5 min read",
+    body: `
+Two metrics drive every backup and disaster recovery decision: Recovery Point Objective (RPO) and Recovery Time Objective (RTO). They answer different questions, and confusing them leads to gaps.
+
+RPO — how much data loss is acceptable?
+
+- RPO is measured in time. If you back up nightly at midnight, your RPO is up to 24 hours of work.
+- A business that cannot lose more than an hour of data needs more frequent backups or continuous data protection.
+- RPO is set by the business, not the IT team. Finance and operations leaders should define what loss is tolerable.
+
+RTO — how quickly must you be back up?
+
+- RTO is the maximum acceptable downtime before business operations resume.
+- Restoring terabytes from a slow connection can take days; restoring from a local appliance might take hours.
+- RTO drives infrastructure choices, including backup location, restore hardware, and network bandwidth.
+
+RPO and RTO work together. A short RPO (frequent backups) does not help if your RTO (restore speed) is too slow to keep the business running. Test restores measure your real RTO — not what you hope it is.
+`,
+    serviceSlug: "backup-disaster-recovery/dr-planning",
+  },
+  {
+    slug: "new-article-06",
+    title: "Hosted Sage and ERP Solutions for Small Business",
+    excerpt: "Hosted ERP solutions run your accounting and business management software on secure servers, giving your team remote access without maintaining on-prem hardware.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Applications",
+    readTime: "5 min read",
+    body: `
+Enterprise resource planning (ERP) and accounting platforms like Sage are often the backbone of small business operations — handling accounting, inventory, purchasing, and reporting. Traditionally these systems ran on an office server, which meant hardware to maintain, backups to manage, and limited remote access.
+
+Hosted ERP moves the application and database to a secure data center:
+
+- Your team accesses Sage or other ERP software through a secure connection from anywhere.
+- No server to purchase, power, cool, or replace in the office.
+- Automatic backups and patching handled by the hosting provider.
+- Better physical and network security than a server under someone's desk.
+
+Considerations before moving:
+
+- Internet quality matters. ERP over a slow connection is frustrating for daily users.
+- Multi-user licensing should cover all simultaneous users.
+- Test integration with payroll, CRM, and other tools before committing.
+
+Hosted ERP removes the office server bottleneck while keeping your critical business application available to the people who need it.
+`,
+    serviceSlug: "applications/quickbooks-hosting",
+  },
+  {
+    slug: "new-article-07",
+    title: "CRM Integration for Small Businesses",
+    excerpt: "Connecting your customer relationship management system with email, calendar, and accounting gives teams a single view of customers without double data entry.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Applications",
+    readTime: "5 min read",
+    body: `
+Customer relationship management (CRM) software works best when it is connected to the rest of your business tools. A standalone CRM becomes another silo where data goes stale because no one has time to keep it updated manually.
+
+Common CRM integration points:
+
+- Email and calendar integration so client meetings and correspondence are logged automatically.
+- Accounting integration so invoices and payment status appear alongside customer records.
+- Helpdesk integration so support tickets are visible in the customer timeline.
+- Marketing automation integration so campaign responses feed back into lead scores.
+
+Integration failures usually come from poor planning, not bad software:
+
+- Map data fields between systems before connecting them.
+- Decide which system is the source of truth for each piece of data.
+- Clean up duplicate records before syncing.
+- Test with a small group of users before rolling out company-wide.
+
+When integration works, sales and support teams spend less time on data entry and more time with customers.
+`,
+    serviceSlug: "applications/hosting",
+  },
+  {
+    slug: "new-article-08",
+    title: "Modernizing Legacy Line-of-Business Applications",
+    excerpt: "Legacy line-of-business applications keep running, but they get harder to maintain, secure, and integrate. Modernization options range from rehosting to replacement.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Applications",
+    readTime: "6 min read",
+    body: `
+Every small business has at least one application that everyone depends on but no one wants to touch — the aging accounting system, the custom inventory tool, or the industry-specific platform from the 2000s. These line-of-business applications keep running, but they carry growing risk.
+
+Signs it is time to modernize:
+
+- The application runs on an unsupported operating system or database.
+- Only one employee knows how to administer it.
+- It does not integrate with modern email, cloud storage, or mobile devices.
+- Security patches are no longer available.
+- Hardware failures are becoming more frequent.
+
+Modernization options:
+
+- Rehost. Move the application to a modern server or cloud virtual machine with minimal changes.
+- Refactor. Update parts of the application to work better on current infrastructure.
+- Replace. Move to a modern SaaS or cloud-native alternative that does the same job.
+
+Start with an inventory: what the application does, who uses it, what data it holds, and what breaks if it goes down. Then choose the option that balances cost, risk, and business continuity.
+`,
+    serviceSlug: "applications/migrations",
+  },
+  {
+    slug: "new-article-09",
+    title: "Choosing an ERP for Your Small Business",
+    excerpt: "Selecting an ERP means matching the software to your industry, size, and growth plans — not buying the most feature-rich option you can find.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Applications",
+    readTime: "6 min read",
+    body: `
+An ERP touches accounting, inventory, purchasing, sales, and reporting. Choosing the wrong one means paying for features you will not use, or outgrowing the system within two years.
+
+Start with your actual processes:
+
+- Document how orders, invoices, inventory, and payments flow today.
+- Identify where manual spreadsheets and duplicate entry happen.
+- List must-have features versus nice-to-have ones.
+- Decide whether you need industry-specific functionality (manufacturing, distribution, professional services).
+
+Deployment options:
+
+- Cloud ERP. Lower upfront cost, automatic updates, remote access, recurring subscription.
+- On-prem ERP. Higher upfront cost, more control, your team handles hardware and backups.
+- Hosted ERP. Middle ground — software runs in a data center, accessed remotely.
+
+Involve the people who will use the system daily during selection. A feature that looks good in a demo may not fit real workflows. Plan for data migration, training, and a period of parallel running before retiring the old system.
+`,
+    serviceSlug: "applications/hosting",
+  },
+  {
+    slug: "new-article-10",
+    title: "Azure vs AWS for Small Business Workloads",
+    excerpt: "Azure and AWS both offer cloud compute, storage, and networking. The right choice depends on your existing Microsoft investment, workload type, and support needs.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Cloud",
+    readTime: "6 min read",
+    body: `
+Microsoft Azure and Amazon Web Services are the two largest public cloud platforms. For most small businesses, the differences matter less than how well each fits your current environment.
+
+Azure strengths:
+
+- Deep integration with Microsoft 365, Active Directory, and Windows Server.
+- Familiar tools for businesses already using Microsoft environments.
+- Strong hybrid cloud options for keeping some workloads on-prem.
+
+AWS strengths:
+
+- Broadest range of services and global regions.
+- Mature ecosystem for startups and developer-first teams.
+- Extensive third-party tooling and marketplace options.
+
+Questions to ask before choosing:
+
+- How much of your environment is already Microsoft-based?
+- Do you need Windows virtual machines, Linux containers, or both?
+- What level of support can you afford during migration and after go-live?
+- Which platform offers better pricing for your expected storage and compute usage?
+
+Many small businesses start with one provider and add the other later for specific workloads. The decision is not permanent, but switching later costs time and money.
+`,
+    serviceSlug: "cloud-solutions/managed-cloud",
+  },
+  {
+    slug: "new-article-11",
+    title: "Hybrid Cloud Strategy for Growing Businesses",
+    excerpt: "Hybrid cloud keeps some workloads on-premises while moving others to the cloud — giving you control where you need it and scale where you want it.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Cloud",
+    readTime: "6 min read",
+    body: `
+Hybrid cloud means running some workloads on your own servers and others in a public cloud, with the two environments connected. It is not about going all-in on one model — it is about placing each workload where it fits best.
+
+Workloads that often stay on-prem:
+
+- Legacy applications that are difficult or expensive to move.
+- Hardware-dependent systems (specialized scanners, industrial equipment).
+- Data with strict residency or latency requirements.
+
+Workloads that often move to the cloud:
+
+- Email, file shares, and collaboration (Microsoft 365, Google Workspace).
+- Development and test environments that need to scale up and down.
+- Customer-facing websites and applications with variable traffic.
+
+Key challenges in hybrid cloud:
+
+- Network connectivity between on-prem and cloud must be reliable and secure.
+- Identity and access management should work across both environments.
+- Backup and disaster recovery need to cover both locations.
+- Cost tracking gets harder when spending is split between capital expenses and operational expenses.
+
+Start with one or two workloads, prove the model, then expand. Hybrid cloud is a strategy, not a single project.
+`,
+    serviceSlug: "cloud-solutions/infrastructure-migration",
+  },
+  {
+    slug: "new-article-12",
+    title: "Cloud Cost Optimization Best Practices",
+    excerpt: "Cloud spending can creep up quickly. These practices help small businesses control costs without sacrificing performance or reliability.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Cloud",
+    readTime: "5 min read",
+    body: `
+Cloud billing is usage-based, which means costs scale with your business — but they can also surprise you if no one is watching. Small businesses often overspend on resources they do not fully use.
+
+Quick wins for cost control:
+
+- Right-size virtual machines. Do not pay for 16 cores when 4 will do.
+- Shut down development and test environments outside business hours.
+- Use reserved instances or savings plans for predictable, steady workloads.
+- Delete unattached storage volumes and old snapshots.
+- Move infrequently accessed data to cooler storage tiers.
+
+Ongoing habits:
+
+- Review cloud bills monthly, not just when they spike.
+- Tag resources by department or project so you know who is spending what.
+- Set up billing alerts so you are notified before costs get out of hand.
+- Reassess architecture annually — what was cost-effective last year may not be this year.
+
+Cloud cost optimization is not a one-time exercise. It is a regular review habit.
+`,
+    serviceSlug: "cloud-solutions/managed-cloud",
+  },
+  {
+    slug: "new-article-13",
+    title: "Disaster Recovery as a Service for Small Business",
+    excerpt: "DRaaS lets small businesses replicate systems to the cloud and fail over during an outage — without building a second data center.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Cloud",
+    readTime: "6 min read",
+    body: `
+Disaster recovery used to mean buying a second office or data center with duplicate hardware. For most small businesses, that was never affordable. Disaster Recovery as a Service (DRaaS) changes that by replicating your critical systems to a cloud provider.
+
+How DRaaS works:
+
+- Your servers, applications, and data are replicated continuously or on a schedule to a cloud environment.
+- If your primary site goes down (fire, flood, hardware failure, cyberattack), you fail over to the cloud copy.
+- Users connect to the cloud environment while you recover the primary site.
+- Once the primary site is stable, you fail back.
+
+What to evaluate in a DRaaS provider:
+
+- Recovery point objective (how recent the replicated data is).
+- Recovery time objective (how fast systems come up after failover).
+- Testing — can you run a disaster recovery test without disrupting production?
+- Support during an actual event — who manages the failover?
+
+DRaaS does not replace backups. Backups recover files; DRaaS recovers systems and keeps the business running during downtime. Use both.
+`,
+    serviceSlug: "backup-disaster-recovery/offsite-dr",
+  },
+  {
+    slug: "new-article-14",
+    title: "Unified Communications for Small Business",
+    excerpt: "Unified communications brings phone, video, chat, and file sharing into one platform — reducing the number of tools your team switches between daily.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Communications",
+    readTime: "6 min read",
+    body: `
+Small businesses often buy communication tools piecemeal: a phone system, a video app, a chat tool, and a file-sharing service. The result is context switching, missed messages, and employees unsure where a conversation lives.
+
+Unified communications (UC) combines voice, video, messaging, and presence into a single platform:
+
+- One app for calls, chats, and video meetings on desktop and mobile.
+- Presence status shows who is available, busy, or away.
+- Voicemail, call recording, and call forwarding managed centrally.
+- Integration with email and calendar reduces scheduling friction.
+
+Before choosing a UC platform:
+
+- Decide whether you need a cloud PBX, a full UCaaS suite, or something lighter.
+- Check E911 support and address registration for emergency calling.
+- Assess your internet bandwidth — UC adds voice and video traffic to your network.
+- Plan for number porting so you do not lose existing business phone numbers.
+
+UC works best when it replaces multiple tools rather than adding another one.
+`,
+    serviceSlug: "communications/phone-systems",
+  },
+  {
+    slug: "new-article-15",
+    title: "Contact Center as a Service (CCaaS) Explained",
+    excerpt: "CCaaS gives small businesses call center features — queues, routing, reporting — without installing on-premises call center hardware.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Communications",
+    readTime: "6 min read",
+    body: `
+Contact Center as a Service (CCaaS) delivers call center functionality through the cloud. Small businesses that take customer calls, schedule appointments, or run support lines can get enterprise features without a phone room.
+
+Typical CCaaS capabilities:
+
+- Automatic call distribution routes callers to the right agent or department.
+- Interactive voice response (IVR) lets callers self-service common requests.
+- Call queues with hold music and estimated wait times.
+- Supervisor dashboards showing call volume, wait times, and agent status.
+- Call recording and reporting for quality and compliance.
+
+Because CCaaS is cloud-based:
+
+- Agents can work from home or multiple offices without extra hardware.
+- Capacity scales up or down seasonally.
+- Updates and security patches are handled by the provider.
+- You pay for seats or usage rather than buying and maintaining a switch.
+
+CCaaS makes sense when phone support is a core part of your customer experience, not just an afterthought.
+`,
+    serviceSlug: "communications/meetings",
+  },
+  {
+    slug: "new-article-16",
+    title: "SIP Trunking Modernization for Small Business",
+    excerpt: "SIP trunking replaces traditional phone lines with internet-based voice, lowering monthly phone costs and adding flexibility.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Communications",
+    readTime: "5 min read",
+    body: `
+Many small businesses still pay for traditional analog or PRI phone lines. SIP trunking replaces those physical lines with a virtual connection over your internet service.
+
+Benefits of SIP trunking:
+
+- Lower monthly cost, especially for long-distance and toll-free calls.
+- Add or remove phone lines quickly without waiting for a technician.
+- Keep existing phone numbers when moving offices.
+- Failover options — calls can reroute to mobile devices if the office internet goes down.
+
+Requirements:
+
+- Your phone system or PBX must support SIP.
+- Your internet connection needs enough bandwidth and stability for voice traffic.
+- Use QoS (quality of service) on your network so voice calls are not choppy when the network is busy.
+- Secure SIP endpoints with strong passwords and firewalls — open SIP ports are a common attack target.
+
+SIP trunking is a practical first step toward modern phone service without replacing every desk phone at once.
+`,
+    serviceSlug: "communications/phone-systems",
+  },
+  {
+    slug: "new-article-17",
+    title: "SD-WAN for Small Businesses",
+    excerpt: "SD-WAN uses software to manage network traffic across multiple connections, improving reliability and performance for branch and remote sites.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Network",
+    readTime: "6 min read",
+    body: `
+Software-defined wide area networking (SD-WAN) separates network control from hardware. Instead of routing all traffic through a single MPLS circuit or internet connection, SD-WAN dynamically chooses the best path for each application.
+
+Why small businesses consider SD-WAN:
+
+- Combine multiple connections (fiber, cable, cellular) for redundancy.
+- Prioritize business-critical traffic like VoIP and video over less critical traffic.
+- Fail over automatically if one connection goes down.
+- Manage branch and remote site networks from a central dashboard.
+
+Trade-offs to consider:
+
+- SD-WAN adds appliances or software at each site.
+- You still need underlying internet connections — SD-WAN manages them, it does not replace them.
+- Configuration complexity is higher than a simple router setup.
+
+SD-WAN fits businesses with multiple locations, remote workers, or applications sensitive to downtime. A single-office business with one internet connection may not see enough benefit to justify it.
+`,
+    serviceSlug: "network-server/internet-fiber",
+  },
+  {
+    slug: "new-article-18",
+    title: "Managed Firewall Services for Small Business",
+    excerpt: "A managed firewall is monitored and maintained by a security provider, so your perimeter protection stays current without adding in-house expertise.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Network",
+    readTime: "5 min read",
+    body: `
+A firewall is only effective if it is configured correctly, kept updated, and watched. Many small businesses install a firewall and never touch it again — which means outdated rules, missing patches, and blind spots.
+
+Managed firewall services handle:
+
+- Initial configuration based on your business needs.
+- Ongoing rule updates as applications and users change.
+- Firmware and security patching.
+- 24/7 monitoring for intrusion attempts and suspicious traffic.
+- Alerting and response when something looks wrong.
+
+Benefits for small businesses:
+
+- No need to hire a dedicated network security engineer.
+- Protection stays current even when your internal team is busy.
+- Expertise on tap for rule changes, VPN setup, and incident response.
+
+A managed firewall is not a set-it-and-forget-it appliance. It is an ongoing service that keeps your network perimeter current as threats evolve.
+`,
+    serviceSlug: "network-server/infrastructure",
+  },
+  {
+    slug: "new-article-19",
+    title: "HIPAA Compliance for Healthcare IT",
+    excerpt: "HIPAA requires healthcare businesses to protect patient data through access controls, encryption, audit logs, and documented policies — IT plays a central role.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Data Protection",
+    readTime: "6 min read",
+    body: `
+The Health Insurance Portability and Accountability Act (HIPAA) sets national standards for protecting patient health information. For IT, compliance means technical safeguards plus documented processes — not just software.
+
+IT-related HIPAA requirements include:
+
+- Access controls so only authorized staff can view patient records.
+- Unique user IDs and audit logs showing who accessed what and when.
+- Encryption of data at rest and in transit, especially for email and file storage.
+- Automatic logoff and workstation security controls.
+- Business associate agreements with vendors who handle patient data.
+
+Common pitfalls:
+
+- Sending patient information through unencrypted personal email.
+- Storing records on unsecured personal devices or consumer cloud accounts.
+- Failing to conduct a documented risk analysis.
+- Not having a breach response plan.
+
+HIPAA compliance is not a product you buy. It is an ongoing program of policies, training, technical controls, and regular review. Small healthcare practices should treat it as a continuous obligation, not a one-time checklist.
+`,
+    serviceSlug: "it-security/audit-compliance",
+  },
+  {
+    slug: "new-article-20",
+    title: "PCI DSS Compliance for Small Businesses",
+    excerpt: "PCI DSS applies to any business that accepts, processes, or stores credit card payments. IT controls protect cardholder data and reduce the scope of compliance.",
+    date: "Nov 2026",
+    author: "Nessco Tech Services",
+    category: "Data Protection",
+    readTime: "6 min read",
+    body: `
+The Payment Card Industry Data Security Standard (PCI DSS) applies to any organization that handles credit card transactions — regardless of size. A single-person business taking cards is subject to the same standard as a large retailer.
+
+IT-focused PCI requirements:
+
+- Firewalls protecting systems that store or transmit cardholder data.
+- Unique IDs for every person with system access.
+- Encryption of cardholder data in transit over public networks.
+- Antivirus and regular patching on systems connected to cardholder data.
+- Restricted physical access to servers and payment terminals.
+
+Ways to reduce compliance scope:
+
+- Use a validated third-party payment processor that handles card data so your systems never see it.
+- Do not store card numbers, CVV codes, or magnetic stripe data unless you have a documented business need.
+- Segment your network so payment systems are isolated from guest Wi-Fi and general office computers.
+
+PCI compliance is validated annually (or more often for larger transaction volumes). Non-compliance can result in fines, higher transaction fees, and loss of the ability to accept cards.
+`,
+    serviceSlug: "it-security/audit-compliance",
+  },
 ];
 
 export function getArticle(slug: string): BlogArticle | undefined {
