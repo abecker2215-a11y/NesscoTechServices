@@ -8,7 +8,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Spinning beach ball constantly", "Slow startup on Mac", "Fans loud during basic tasks"],
+    "symptoms": [
+      "Spinning beach ball constantly",
+      "Slow startup on Mac",
+      "Fans loud during basic tasks"
+    ],
     "steps": [
       {
         "heading": "1. Free up disk space (macOS needs 15% free)",
@@ -48,7 +52,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Laptop very hot to touch", "Random shutdowns under load", "Fans always at full speed"],
+    "symptoms": [
+      "Laptop very hot to touch",
+      "Random shutdowns under load",
+      "Fans always at full speed"
+    ],
     "steps": [
       {
         "heading": "1. Give it air and clean the vents",
@@ -88,7 +96,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Monitor says no signal", "Windows doesn't see second display", "Wrong resolution on external monitor"],
+    "symptoms": [
+      "Monitor says no signal",
+      "Windows doesn't see second display",
+      "Wrong resolution on external monitor"
+    ],
     "steps": [
       {
         "heading": "1. Check input source and cable seating first",
@@ -128,7 +140,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Black screen instead of video", "Mic not picking up voice", "Works in one app but not another"],
+    "symptoms": [
+      "Black screen instead of video",
+      "Mic not picking up voice",
+      "Works in one app but not another"
+    ],
     "steps": [
       {
         "heading": "1. Check the physical shutter and mute switches",
@@ -168,7 +184,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Device won't appear in pairing list", "Pairs but immediately disconnects", "Worked before an update"],
+    "symptoms": [
+      "Device won't appear in pairing list",
+      "Pairs but immediately disconnects",
+      "Worked before an update"
+    ],
     "steps": [
       {
         "heading": "1. Remove, restart, re-pair cleanly",
@@ -208,7 +228,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Can't send email — storage full error", "Google One upgrade nag screens", "Drive won't sync new files"],
+    "symptoms": [
+      "Can't send email — storage full error",
+      "Google One upgrade nag screens",
+      "Drive won't sync new files"
+    ],
     "steps": [
       {
         "heading": "1. See what's actually eating the space",
@@ -248,7 +272,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Password prompt every day", "Correct password rejected repeatedly", "Started after a password change"],
+    "symptoms": [
+      "Password prompt every day",
+      "Correct password rejected repeatedly",
+      "Started after a password change"
+    ],
     "steps": [
       {
         "heading": "1. Clear stale credentials",
@@ -288,7 +316,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Frozen video on calls", "Robotic or dropping audio", "Fine for browsing, bad for meetings"],
+    "symptoms": [
+      "Frozen video on calls",
+      "Robotic or dropping audio",
+      "Fine for browsing, bad for meetings"
+    ],
     "steps": [
       {
         "heading": "1. Figure out which leg is broken",
@@ -328,7 +360,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Apps say no network connection", "Constant buffering on one TV", "TV can't find the Wi-Fi network"],
+    "symptoms": [
+      "Apps say no network connection",
+      "Constant buffering on one TV",
+      "TV can't find the Wi-Fi network"
+    ],
     "steps": [
       {
         "heading": "1. Cold-boot the TV (not standby)",
@@ -368,7 +404,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Can't log in with your password", "Friends report scam messages from you", "Unknown devices in login history"],
+    "symptoms": [
+      "Can't log in with your password",
+      "Friends report scam messages from you",
+      "Unknown devices in login history"
+    ],
     "steps": [
       {
         "heading": "1. Start recovery from a device you've used before",
@@ -390,7 +430,7 @@
     ],
     "faqs": [
       {
-          "q": "My friends sent money to the scammer. Can it be recovered?",
+        "q": "My friends sent money to the scammer. Can it be recovered?",
         "a": "Sometimes via the bank or card issuer if reported within days — gift cards and crypto are usually gone. File a police report regardless; platforms and banks ask for it."
       },
       {
@@ -408,7 +448,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Text about a package you didn't order", "Link to pay a small redelivery fee", "Toll-road payment demand by text"],
+    "symptoms": [
+      "Text about a package you didn't order",
+      "Link to pay a small redelivery fee",
+      "Toll-road payment demand by text"
+    ],
     "steps": [
       {
         "heading": "1. Apply the 5-second test",
@@ -448,7 +492,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Working from cafes or airports", "Hotel Wi-Fi login pages", "Banking or work on public networks"],
+    "symptoms": [
+      "Working from cafes or airports",
+      "Hotel Wi-Fi login pages",
+      "Banking or work on public networks"
+    ],
     "steps": [
       {
         "heading": "1. Use your phone hotspot instead whenever you can",
@@ -488,7 +536,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Got a 'your info was breached' email", "Reusing one password everywhere", "Unknown login alerts"],
+    "symptoms": [
+      "Got a 'your info was breached' email",
+      "Reusing one password everywhere",
+      "Unknown login alerts"
+    ],
     "steps": [
       {
         "heading": "1. Check your email on Have I Been Pwned",
@@ -528,7 +580,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["OneDrive stopped syncing", "Red X on files", "Outlook also complaining about quota"],
+    "symptoms": [
+      "OneDrive stopped syncing",
+      "Red X on files",
+      "Outlook also complaining about quota"
+    ],
     "steps": [
       {
         "heading": "1. Check which bucket is full",
@@ -568,7 +624,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Locked for editing by another user", "Ghost lock from someone who left", "Conflicting copies multiplying"],
+    "symptoms": [
+      "Locked for editing by another user",
+      "Ghost lock from someone who left",
+      "Conflicting copies multiplying"
+    ],
     "steps": [
       {
         "heading": "1. Check for the ghost session first",
@@ -608,7 +668,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Monthly 365 bill keeps growing", "Ex-employees still licensed", "Nobody knows what each plan includes"],
+    "symptoms": [
+      "Monthly 365 bill keeps growing",
+      "Ex-employees still licensed",
+      "Nobody knows what each plan includes"
+    ],
     "steps": [
       {
         "heading": "1. Export the license list and flag the dead weight",
@@ -648,7 +712,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Drive not in File Explorer", "Spinning but invisible", "Worked on another computer"],
+    "symptoms": [
+      "Drive not in File Explorer",
+      "Spinning but invisible",
+      "Worked on another computer"
+    ],
     "steps": [
       {
         "heading": "1. Rule out power and ports",
@@ -688,7 +756,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Photos stopped backing up", "Storage full warnings", "Paying for storage full of screenshots"],
+    "symptoms": [
+      "Photos stopped backing up",
+      "Storage full warnings",
+      "Paying for storage full of screenshots"
+    ],
     "steps": [
       {
         "heading": "1. Let Google find the junk first",
@@ -728,7 +800,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["iPhone hasn't backed up in weeks", "Not enough iCloud storage error", "Backup stuck or never finishes"],
+    "symptoms": [
+      "iPhone hasn't backed up in weeks",
+      "Not enough iCloud storage error",
+      "Backup stuck or never finishes"
+    ],
     "steps": [
       {
         "heading": "1. Make room: it's almost always storage",
@@ -768,7 +844,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Customers asking for Wi-Fi daily", "Guests on the same network as payments", "No idea who uses the network"],
+    "symptoms": [
+      "Customers asking for Wi-Fi daily",
+      "Guests on the same network as payments",
+      "No idea who uses the network"
+    ],
     "steps": [
       {
         "heading": "1. Never share the office network — isolate guests",
@@ -808,7 +888,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Browser slow with many tabs", "Fans spin up in Chrome", "Pages freeze or crash"],
+    "symptoms": [
+      "Browser slow with many tabs",
+      "Fans spin up in Chrome",
+      "Pages freeze or crash"
+    ],
     "steps": [
       {
         "heading": "1. Turn on Memory Saver and close the tab hoard",
@@ -848,7 +932,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Search returns no results", "Files exist but aren't found", "Indexing stuck at 0%"],
+    "symptoms": [
+      "Search returns no results",
+      "Files exist but aren't found",
+      "Indexing stuck at 0%"
+    ],
     "steps": [
       {
         "heading": "1. Restart Windows Search service",
@@ -888,7 +976,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["PC broken beyond step-by-step fixes", "Selling or giving away the PC", "Years of rot, want a fresh start"],
+    "symptoms": [
+      "PC broken beyond step-by-step fixes",
+      "Selling or giving away the PC",
+      "Years of rot, want a fresh start"
+    ],
     "steps": [
       {
         "heading": "1. Back up first — reset is not a backup",
@@ -928,7 +1020,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Password changed but weirdness continues", "Missing emails you expected", "Sent items you didn't send"],
+    "symptoms": [
+      "Password changed but weirdness continues",
+      "Missing emails you expected",
+      "Sent items you didn't send"
+    ],
     "steps": [
       {
         "heading": "1. Check forwarding addresses",
@@ -968,7 +1064,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Hundreds of unread emails", "Important mail buried under newsletters", "CC'd on everything"],
+    "symptoms": [
+      "Hundreds of unread emails",
+      "Important mail buried under newsletters",
+      "CC'd on everything"
+    ],
     "steps": [
       {
         "heading": "1. Auto-file newsletters and receipts",
@@ -1008,7 +1108,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["New router or new password", "Half the house offline", "Smart devices all dropped at once"],
+    "symptoms": [
+      "New router or new password",
+      "Half the house offline",
+      "Smart devices all dropped at once"
+    ],
     "steps": [
       {
         "heading": "1. Change it at the router, keep the same network name",
@@ -1048,7 +1152,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Unrestricted access to risky sites", "Unauthorized app downloads", "Bandwidth wasted on non-business content"],
+    "symptoms": [
+      "Unrestricted access to risky sites",
+      "Unauthorized app downloads",
+      "Bandwidth wasted on non-business content"
+    ],
     "steps": [
       {
         "heading": "1. Use managed profiles for company devices",
@@ -1088,7 +1196,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Banking on shared or public devices", "No alerts on transactions", "Same password as email"],
+    "symptoms": [
+      "Banking on shared or public devices",
+      "No alerts on transactions",
+      "Same password as email"
+    ],
     "steps": [
       {
         "heading": "1. Give banking its own browser profile",
@@ -1128,7 +1240,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Assuming Microsoft backs everything up", "Need email from 6 months ago", "Ransomware hit synced OneDrive files"],
+    "symptoms": [
+      "Assuming Microsoft backs everything up",
+      "Need email from 6 months ago",
+      "Ransomware hit synced OneDrive files"
+    ],
     "steps": [
       {
         "heading": "1. Learn what Microsoft actually keeps",
@@ -1168,7 +1284,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Trading in or selling a phone", "Giving a phone to a kid", "Photos only exist on the old device"],
+    "symptoms": [
+      "Trading in or selling a phone",
+      "Giving a phone to a kid",
+      "Photos only exist on the old device"
+    ],
     "steps": [
       {
         "heading": "1. Back up everything two ways",
@@ -1208,7 +1328,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["USB device not recognized error", "Works on another PC", "Intermittent disconnects"],
+    "symptoms": [
+      "USB device not recognized error",
+      "Works on another PC",
+      "Intermittent disconnects"
+    ],
     "steps": [
       {
         "heading": "1. Isolate the link: port, cable, hub",
@@ -1248,7 +1372,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Specific keys don't type", "Sticky or repeating keys", "Whole keyboard dead"],
+    "symptoms": [
+      "Specific keys don't type",
+      "Sticky or repeating keys",
+      "Whole keyboard dead"
+    ],
     "steps": [
       {
         "heading": "1. Rule out software with an external keyboard",
@@ -1288,7 +1416,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Need to show someone an error", "Recording a quick how-to", "Can't find saved screenshots"],
+    "symptoms": [
+      "Need to show someone an error",
+      "Recording a quick how-to",
+      "Can't find saved screenshots"
+    ],
     "steps": [
       {
         "heading": "1. Learn the three captures",
@@ -1328,7 +1460,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Using Gmail for business", "Want info@ or quotes@ addresses", "Emails landing in spam"],
+    "symptoms": [
+      "Using Gmail for business",
+      "Want info@ or quotes@ addresses",
+      "Emails landing in spam"
+    ],
     "steps": [
       {
         "heading": "1. Get the domain and pick the platform",
@@ -1368,7 +1504,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["IoT devices go offline randomly", "Camera misses events", "Devices need constant re-setup"],
+    "symptoms": [
+      "IoT devices go offline randomly",
+      "Camera misses events",
+      "Devices need constant re-setup"
+    ],
     "steps": [
       {
         "heading": "1. Pin IoT devices to 2.4GHz permanently",
@@ -1408,7 +1548,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Slow only 7–11pm", "Fine on some evenings", "Streaming buffers nightly"],
+    "symptoms": [
+      "Slow only 7–11pm",
+      "Fine on some evenings",
+      "Streaming buffers nightly"
+    ],
     "steps": [
       {
         "heading": "1. Test wired at peak and off-peak",
@@ -1448,7 +1592,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["QR sticker looks added-on", "Payment page URL looks wrong", "Charged but no valid parking session"],
+    "symptoms": [
+      "QR sticker looks added-on",
+      "Payment page URL looks wrong",
+      "Charged but no valid parking session"
+    ],
     "steps": [
       {
         "heading": "1. Inspect before you scan",
@@ -1488,7 +1636,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["SMS code you didn't request", "Friend asking for a code 'by mistake'", "Logged out of WhatsApp suddenly"],
+    "symptoms": [
+      "SMS code you didn't request",
+      "Friend asking for a code 'by mistake'",
+      "Logged out of WhatsApp suddenly"
+    ],
     "steps": [
       {
         "heading": "1. Never share the code — with anyone, for any reason",
@@ -1528,7 +1680,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Links work for people who shouldn't see files", "No idea what's shared externally", "Ex-employees still opening docs"],
+    "symptoms": [
+      "Links work for people who shouldn't see files",
+      "No idea what's shared externally",
+      "Ex-employees still opening docs"
+    ],
     "steps": [
       {
         "heading": "1. Change the default link type",
@@ -1568,7 +1724,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Storm season approaching", "Single internet connection", "No plan if the office goes dark"],
+    "symptoms": [
+      "Storm season approaching",
+      "Single internet connection",
+      "No plan if the office goes dark"
+    ],
     "steps": [
       {
         "heading": "1. Get a second path to the internet",
@@ -1612,7 +1772,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["No lights or fans at all", "Clicks once then dies", "Worked yesterday after a storm"],
+    "symptoms": [
+      "No lights or fans at all",
+      "Clicks once then dies",
+      "Worked yesterday after a storm"
+    ],
     "steps": [
       {
         "heading": "1. Verify the wall power chain",
@@ -1652,7 +1816,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Dock charges but no monitors", "Worked until an update", "Some ports work, others don't"],
+    "symptoms": [
+      "Dock charges but no monitors",
+      "Worked until an update",
+      "Some ports work, others don't"
+    ],
     "steps": [
       {
         "heading": "1. Confirm the port does what you assume",
@@ -1692,7 +1860,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Two-finger scroll stopped", "Taps don't click", "Touchpad settings page missing"],
+    "symptoms": [
+      "Two-finger scroll stopped",
+      "Taps don't click",
+      "Touchpad settings page missing"
+    ],
     "steps": [
       {
         "heading": "1. Check the hardware kill switch first",
@@ -1732,7 +1904,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Green bar crawls on every folder", "Downloads folder takes forever", "Network folders hang"],
+    "symptoms": [
+      "Green bar crawls on every folder",
+      "Downloads folder takes forever",
+      "Network folders hang"
+    ],
     "steps": [
       {
         "heading": "1. Clear Quick Access and File Explorer history",
@@ -1772,7 +1948,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Desktop completely empty", "Happened after an update", "Files gone but disk still full"],
+    "symptoms": [
+      "Desktop completely empty",
+      "Happened after an update",
+      "Files gone but disk still full"
+    ],
     "steps": [
       {
         "heading": "1. Toggle icon visibility back on",
@@ -1812,7 +1992,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Taskbar completely gone", "Taskbar frozen, clock stuck", "Taskbar on the wrong monitor"],
+    "symptoms": [
+      "Taskbar completely gone",
+      "Taskbar frozen, clock stuck",
+      "Taskbar on the wrong monitor"
+    ],
     "steps": [
       {
         "heading": "1. Restart Windows Explorer",
@@ -1852,7 +2036,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Colors look washed out", "Started after enabling HDR", "YouTube looks fine, desktop doesn't"],
+    "symptoms": [
+      "Colors look washed out",
+      "Started after enabling HDR",
+      "YouTube looks fine, desktop doesn't"
+    ],
     "steps": [
       {
         "heading": "1. Match HDR to content, not always-on",
@@ -1892,7 +2080,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Crackling or popping audio", "Worse on calls than music", "Started after an update"],
+    "symptoms": [
+      "Crackling or popping audio",
+      "Worse on calls than music",
+      "Started after an update"
+    ],
     "steps": [
       {
         "heading": "1. Switch Bluetooth to stable mode for calls",
@@ -1932,7 +2124,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Fans loud since an update", "PC hot at idle", "Battery draining fast"],
+    "symptoms": [
+      "Fans loud since an update",
+      "PC hot at idle",
+      "Battery draining fast"
+    ],
     "steps": [
       {
         "heading": "1. Give post-update tasks 48 hours",
@@ -1972,7 +2168,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Screen flickers at angles", "Hinge wobbly or cracking", "Wi-Fi drops when lid moves"],
+    "symptoms": [
+      "Screen flickers at angles",
+      "Hinge wobbly or cracking",
+      "Wi-Fi drops when lid moves"
+    ],
     "steps": [
       {
         "heading": "1. Confirm it's the hinge, not software",
@@ -2012,7 +2212,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Thousands of unread emails", "Important mail buried", "Promotions overwhelming inbox"],
+    "symptoms": [
+      "Thousands of unread emails",
+      "Important mail buried",
+      "Promotions overwhelming inbox"
+    ],
     "steps": [
       {
         "heading": "1. Auto-file promotions and receipts",
@@ -2052,7 +2256,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Team sharing one login (bad)", "Replies coming from wrong address", "Sent mail invisible to others"],
+    "symptoms": [
+      "Team sharing one login (bad)",
+      "Replies coming from wrong address",
+      "Sent mail invisible to others"
+    ],
     "steps": [
       {
         "heading": "1. Convert to a real shared mailbox (free)",
@@ -2092,7 +2300,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Can't see coworker availability", "Meeting scheduling ping-pong", "Shared calendar stopped updating"],
+    "symptoms": [
+      "Can't see coworker availability",
+      "Meeting scheduling ping-pong",
+      "Shared calendar stopped updating"
+    ],
     "steps": [
       {
         "heading": "1. Share with the right permission level",
@@ -2132,7 +2344,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Moving to a new address or provider", "Missing mail during transition", "Old address on business cards everywhere"],
+    "symptoms": [
+      "Moving to a new address or provider",
+      "Missing mail during transition",
+      "Old address on business cards everywhere"
+    ],
     "steps": [
       {
         "heading": "1. Forward, don't just abandon",
@@ -2172,7 +2388,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Unsubscribing increased spam", "Can't find unsubscribe links", "Graymail overwhelming inbox"],
+    "symptoms": [
+      "Unsubscribing increased spam",
+      "Can't find unsubscribe links",
+      "Graymail overwhelming inbox"
+    ],
     "steps": [
       {
         "heading": "1. Only unsubscribe from senders you recognize",
@@ -2212,7 +2432,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Unknown devices on network", "Internet slower with no explanation", "Suspect an unauthorized device is connected"],
+    "symptoms": [
+      "Unknown devices on network",
+      "Internet slower with no explanation",
+      "Suspect an unauthorized device is connected"
+    ],
     "steps": [
       {
         "heading": "1. Check the router's client list",
@@ -2252,7 +2476,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Extender didn't help", "Dead zone persists", "Extender network slower than main"],
+    "symptoms": [
+      "Extender didn't help",
+      "Dead zone persists",
+      "Extender network slower than main"
+    ],
     "steps": [
       {
         "heading": "1. Place it halfway with a strong signal",
@@ -2292,7 +2520,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Weekly mystery slowdowns", "Reboot always fixes it temporarily", "Smart devices drop until reboot"],
+    "symptoms": [
+      "Weekly mystery slowdowns",
+      "Reboot always fixes it temporarily",
+      "Smart devices drop until reboot"
+    ],
     "steps": [
       {
         "heading": "1. Enable the scheduled reboot",
@@ -2332,7 +2564,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["New service, nothing works yet", "Activation stuck or looping", "Speeds far below the plan"],
+    "symptoms": [
+      "New service, nothing works yet",
+      "Activation stuck or looping",
+      "Speeds far below the plan"
+    ],
     "steps": [
       {
         "heading": "1. Activate over the right connection",
@@ -2372,7 +2608,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Arguing with ISP about speeds", "Unsure if plan matches reality", "Wi-Fi vs internet blame game"],
+    "symptoms": [
+      "Arguing with ISP about speeds",
+      "Unsure if plan matches reality",
+      "Wi-Fi vs internet blame game"
+    ],
     "steps": [
       {
         "heading": "1. Test wired first, three times",
@@ -2412,7 +2652,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Motion alerts arrive late", "Live view freezes", "Doorbell goes offline randomly"],
+    "symptoms": [
+      "Motion alerts arrive late",
+      "Live view freezes",
+      "Doorbell goes offline randomly"
+    ],
     "steps": [
       {
         "heading": "1. Check signal strength at the door",
@@ -2452,7 +2696,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Blue BitLocker recovery screen", "Happened after BIOS/update", "Key never saved anywhere obvious"],
+    "symptoms": [
+      "Blue BitLocker recovery screen",
+      "Happened after BIOS/update",
+      "Key never saved anywhere obvious"
+    ],
     "steps": [
       {
         "heading": "1. Check your Microsoft account first",
@@ -2492,7 +2740,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Phone suddenly shows No Service", "Bank codes arriving you didn't request", "High-value accounts targeted"],
+    "symptoms": [
+      "Phone suddenly shows No Service",
+      "Bank codes arriving you didn't request",
+      "High-value accounts targeted"
+    ],
     "steps": [
       {
         "heading": "1. Set carrier port-out protection now",
@@ -2532,7 +2784,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Targeted phishing attempts", "High-risk profession or profile", "Want maximum account security"],
+    "symptoms": [
+      "Targeted phishing attempts",
+      "High-risk profession or profile",
+      "Want maximum account security"
+    ],
     "steps": [
       {
         "heading": "1. Buy two hardware security keys",
@@ -2572,7 +2828,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Password doesn't work suddenly", "Email on account changed", "Followers report scam DMs from you"],
+    "symptoms": [
+      "Password doesn't work suddenly",
+      "Email on account changed",
+      "Followers report scam DMs from you"
+    ],
     "steps": [
       {
         "heading": "1. Use the login-help flow from your own phone",
@@ -2612,7 +2872,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Found drive in parking lot or lobby", "Unsolicited drive by mail", "Curiosity about contents"],
+    "symptoms": [
+      "Found drive in parking lot or lobby",
+      "Unsolicited drive by mail",
+      "Curiosity about contents"
+    ],
     "steps": [
       {
         "heading": "1. Don't plug it into anything you care about",
@@ -2652,7 +2916,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["NAS holds business data", "No snapshots enabled", "Admin password is still default"],
+    "symptoms": [
+      "NAS holds business data",
+      "No snapshots enabled",
+      "Admin password is still default"
+    ],
     "steps": [
       {
         "heading": "1. Enable snapshots with real retention",
@@ -2692,7 +2960,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Urgent gift card request by text/email", "Instructions to scratch and photograph codes", "Threats if you don't pay now"],
+    "symptoms": [
+      "Urgent gift card request by text/email",
+      "Instructions to scratch and photograph codes",
+      "Threats if you don't pay now"
+    ],
     "steps": [
       {
         "heading": "1. Memorize the rule: gift cards equal scam",
@@ -2732,7 +3004,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Full-screen warning with phone number", "Loud beeping or voice", "Browser won't close normally"],
+    "symptoms": [
+      "Full-screen warning with phone number",
+      "Loud beeping or voice",
+      "Browser won't close normally"
+    ],
     "steps": [
       {
         "heading": "1. Don't call, don't click — kill the browser",
@@ -2772,7 +3048,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Only copy lives on one device", "External drive plugged in 24/7", "No idea what 3-2-1 means"],
+    "symptoms": [
+      "Only copy lives on one device",
+      "External drive plugged in 24/7",
+      "No idea what 3-2-1 means"
+    ],
     "steps": [
       {
         "heading": "1. Count your real copies (most people have one)",
@@ -2812,7 +3092,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["No backup running at all", "Overwrote an important file", "Want free automatic backup"],
+    "symptoms": [
+      "No backup running at all",
+      "Overwrote an important file",
+      "Want free automatic backup"
+    ],
     "steps": [
       {
         "heading": "1. Plug in a dedicated external drive",
@@ -2852,7 +3136,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Saved over important work", "Someone else's edit wrecked the file", "Need last week's version"],
+    "symptoms": [
+      "Saved over important work",
+      "Someone else's edit wrecked the file",
+      "Need last week's version"
+    ],
     "steps": [
       {
         "heading": "1. Open version history where the file lives",
@@ -2892,7 +3180,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Everything lives only in Google", "Leaving Google or closing an account", "Want an offline archive"],
+    "symptoms": [
+      "Everything lives only in Google",
+      "Leaving Google or closing an account",
+      "Want an offline archive"
+    ],
     "steps": [
       {
         "heading": "1. Run a Takeout export",
@@ -2932,7 +3224,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Card not readable / needs formatting", "Photos vanished", "Camera reports card error"],
+    "symptoms": [
+      "Card not readable / needs formatting",
+      "Photos vanished",
+      "Camera reports card error"
+    ],
     "steps": [
       {
         "heading": "1. Stop using the card immediately",
@@ -2972,7 +3268,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Laptop stolen or lost", "Unsure what's on it", "Need to protect accounts fast"],
+    "symptoms": [
+      "Laptop stolen or lost",
+      "Unsure what's on it",
+      "Need to protect accounts fast"
+    ],
     "steps": [
       {
         "heading": "1. Lock and locate immediately",
@@ -3012,7 +3312,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["No Mac backup running", "Time Machine errors", "Unsure backups actually work"],
+    "symptoms": [
+      "No Mac backup running",
+      "Time Machine errors",
+      "Unsure backups actually work"
+    ],
     "steps": [
       {
         "heading": "1. Dedicate a drive twice your used space",
@@ -3052,7 +3356,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Nobody remembers decisions", "Note-taking eats attention", "Need records of client calls"],
+    "symptoms": [
+      "Nobody remembers decisions",
+      "Note-taking eats attention",
+      "Need records of client calls"
+    ],
     "steps": [
       {
         "heading": "1. Start recording with transcription, not just recording",
@@ -3092,7 +3400,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Repetitive email filing", "Flagging then forgetting", "Meetings born from email threads"],
+    "symptoms": [
+      "Repetitive email filing",
+      "Flagging then forgetting",
+      "Meetings born from email threads"
+    ],
     "steps": [
       {
         "heading": "1. Build the Done step first",
@@ -3132,7 +3444,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Shared file corrupted or overwritten", "Need last month's version", "Version history looks empty"],
+    "symptoms": [
+      "Shared file corrupted or overwritten",
+      "Need last month's version",
+      "Version history looks empty"
+    ],
     "steps": [
       {
         "heading": "1. Open the version timeline",
@@ -3172,7 +3488,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Paying for SurveyMonkey", "Need customer feedback fast", "RSVPs scattered across email"],
+    "symptoms": [
+      "Paying for SurveyMonkey",
+      "Need customer feedback fast",
+      "RSVPs scattered across email"
+    ],
     "steps": [
       {
         "heading": "1. Start from a template, keep it short",
@@ -3212,7 +3532,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Tasks lost in email threads", "Nobody knows who's doing what", "Paying for Trello/Asana unnecessarily"],
+    "symptoms": [
+      "Tasks lost in email threads",
+      "Nobody knows who's doing what",
+      "Paying for Trello/Asana unnecessarily"
+    ],
     "steps": [
       {
         "heading": "1. One plan per workflow, buckets per stage",
@@ -3252,7 +3576,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Sent emails with typos instantly regretted", "Late-night emails to staff", "Want messages to land at 8am"],
+    "symptoms": [
+      "Sent emails with typos instantly regretted",
+      "Late-night emails to staff",
+      "Want messages to land at 8am"
+    ],
     "steps": [
       {
         "heading": "1. Delay all sends by 2 minutes",
@@ -3292,7 +3620,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Internet outages stop business", "Single connection, no backup", "Storm season exposure"],
+    "symptoms": [
+      "Internet outages stop business",
+      "Single connection, no backup",
+      "Storm season exposure"
+    ],
     "steps": [
       {
         "heading": "1. Size the backup to essentials",
@@ -3332,7 +3664,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Aging phone system", "Paying per-line copper prices", "No mobile/remote calling"],
+    "symptoms": [
+      "Aging phone system",
+      "Paying per-line copper prices",
+      "No mobile/remote calling"
+    ],
     "steps": [
       {
         "heading": "1. Audit lines and pick the platform",
@@ -3372,7 +3708,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Staff click everything", "No idea who'd fall for it", "Compliance requires awareness training"],
+    "symptoms": [
+      "Staff click everything",
+      "No idea who'd fall for it",
+      "Compliance requires awareness training"
+    ],
     "steps": [
       {
         "heading": "1. Baseline with a gentle fake phish",
@@ -3412,7 +3752,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Vendor bank details changed by email", "Urgent wire requests from the boss", "Lookalike domains in correspondence"],
+    "symptoms": [
+      "Vendor bank details changed by email",
+      "Urgent wire requests from the boss",
+      "Lookalike domains in correspondence"
+    ],
     "steps": [
       {
         "heading": "1. Institute callback verification for payment changes",
@@ -3452,7 +3796,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["No IT budget, surprise spending", "Aging hardware everywhere", "December tax-planning window closing"],
+    "symptoms": [
+      "No IT budget, surprise spending",
+      "Aging hardware everywhere",
+      "December tax-planning window closing"
+    ],
     "steps": [
       {
         "heading": "1. Inventory everything with ages",
@@ -3492,7 +3840,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Typing passwords constantly", "Compatible camera or reader unused", "Want faster secure login"],
+    "symptoms": [
+      "Typing passwords constantly",
+      "Compatible camera or reader unused",
+      "Want faster secure login"
+    ],
     "steps": [
       {
         "heading": "1. Check what your hardware supports",
@@ -3532,7 +3884,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Wrong device grabs audio", "Mouse stutters near headset", "Car connects when parked nearby"],
+    "symptoms": [
+      "Wrong device grabs audio",
+      "Mouse stutters near headset",
+      "Car connects when parked nearby"
+    ],
     "steps": [
       {
         "heading": "1. Give every device one primary job",
@@ -3572,7 +3928,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Case is inverted", "Beeping when pressing Shift", "Started after mashing keys"],
+    "symptoms": [
+      "Case is inverted",
+      "Beeping when pressing Shift",
+      "Started after mashing keys"
+    ],
     "steps": [
       {
         "heading": "1. Turn off Sticky Keys and Filter Keys",
@@ -3612,7 +3972,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Numpad dead at login", "PIN fails first try daily", "Setting never sticks"],
+    "symptoms": [
+      "Numpad dead at login",
+      "PIN fails first try daily",
+      "Setting never sticks"
+    ],
     "steps": [
       {
         "heading": "1. Enable NumLock in BIOS/UEFI",
@@ -3652,7 +4016,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Sent email with mistakes", "Emailed wrong person", "Want a safety net"],
+    "symptoms": [
+      "Sent email with mistakes",
+      "Emailed wrong person",
+      "Want a safety net"
+    ],
     "steps": [
       {
         "heading": "1. Set cancellation to 30 seconds",
@@ -3692,7 +4060,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Need email without internet", "Sync errors constantly", "Huge OST file slowing Outlook"],
+    "symptoms": [
+      "Need email without internet",
+      "Sync errors constantly",
+      "Huge OST file slowing Outlook"
+    ],
     "steps": [
       {
         "heading": "1. Use Cached mode with a 1-year slider daily",
@@ -3732,7 +4104,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Attachment too large errors", "Videos arrive blurry", "Bounced messages"],
+    "symptoms": [
+      "Attachment too large errors",
+      "Videos arrive blurry",
+      "Bounced messages"
+    ],
     "steps": [
       {
         "heading": "1. Upload, link, never attach",
@@ -3772,7 +4148,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Need proof they saw it", "Receipts never arrive", "Unsure read vs delivery"],
+    "symptoms": [
+      "Need proof they saw it",
+      "Receipts never arrive",
+      "Unsure read vs delivery"
+    ],
     "steps": [
       {
         "heading": "1. Request per message, not globally",
@@ -3812,7 +4192,11 @@
     "helpCategoryLabel": "Email",
     "serviceSlug": "communications/business-email",
     "serviceLabel": "Business Email & Security",
-    "symptoms": ["Vacation coming up", "Worried about security", "Team needs coverage info"],
+    "symptoms": [
+      "Vacation coming up",
+      "Worried about security",
+      "Team needs coverage info"
+    ],
     "steps": [
       {
         "heading": "1. Write two versions: inside and outside",
@@ -3852,7 +4236,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Slow in apartments/condos", "Speed varies wildly", "Dozens of networks visible"],
+    "symptoms": [
+      "Slow in apartments/condos",
+      "Speed varies wildly",
+      "Dozens of networks visible"
+    ],
     "steps": [
       {
         "heading": "1. Scan with a free analyzer",
@@ -3892,7 +4280,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Calls suffer when guests stream", "Work VPN drops randomly", "Need separation for compliance"],
+    "symptoms": [
+      "Calls suffer when guests stream",
+      "Work VPN drops randomly",
+      "Need separation for compliance"
+    ],
     "steps": [
       {
         "heading": "1. Create a work-only SSID",
@@ -3932,7 +4324,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["No signal past the sliding door", "Screen glare plus buffering", "Pool speaker keeps dropping"],
+    "symptoms": [
+      "No signal past the sliding door",
+      "Screen glare plus buffering",
+      "Pool speaker keeps dropping"
+    ],
     "steps": [
       {
         "heading": "1. Start with a node in the nearest window",
@@ -3972,7 +4368,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["VoIP calls cutting out", "Cloud apps freezing during peak hours", "Video meetings lagging when network is busy"],
+    "symptoms": [
+      "VoIP calls cutting out",
+      "Cloud apps freezing during peak hours",
+      "Video meetings lagging when network is busy"
+    ],
     "steps": [
       {
         "heading": "1. Prioritize critical business devices in QoS",
@@ -4012,7 +4412,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Strangers finding your profile", "Old posts embarrassingly public", "Apps with Facebook login everywhere"],
+    "symptoms": [
+      "Strangers finding your profile",
+      "Old posts embarrassingly public",
+      "Apps with Facebook login everywhere"
+    ],
     "steps": [
       {
         "heading": "1. Run Privacy Checkup first",
@@ -4052,7 +4456,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Apple ID locked message", "Can't reset without old number", "Recovery taking days"],
+    "symptoms": [
+      "Apple ID locked message",
+      "Can't reset without old number",
+      "Recovery taking days"
+    ],
     "steps": [
       {
         "heading": "1. Start at iforgot.apple.com from a trusted device",
@@ -4092,7 +4500,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Friendly wrong-number text that won't end", "New friend pushing crypto investing", "Small profits you're urged to grow"],
+    "symptoms": [
+      "Friendly wrong-number text that won't end",
+      "New friend pushing crypto investing",
+      "Small profits you're urged to grow"
+    ],
     "steps": [
       {
         "heading": "1. Recognize the script",
@@ -4132,7 +4544,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Unsolicited job offer by text/WhatsApp", "Pay described as per-task with deposits", "Interview over chat only"],
+    "symptoms": [
+      "Unsolicited job offer by text/WhatsApp",
+      "Pay described as per-task with deposits",
+      "Interview over chat only"
+    ],
     "steps": [
       {
         "heading": "1. Apply the legitimacy test",
@@ -4172,7 +4588,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Check larger than expected arrived", "Asked to wire back the difference", "Mystery shopper or nanny job setup"],
+    "symptoms": [
+      "Check larger than expected arrived",
+      "Asked to wire back the difference",
+      "Mystery shopper or nanny job setup"
+    ],
     "steps": [
       {
         "heading": "1. Understand the float trick",
@@ -4212,7 +4632,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Entering PINs in public constantly", "Phone unlock visible to strangers", "No privacy habits yet"],
+    "symptoms": [
+      "Entering PINs in public constantly",
+      "Phone unlock visible to strangers",
+      "No privacy habits yet"
+    ],
     "steps": [
       {
         "heading": "1. Shield every entry physically",
@@ -4252,7 +4676,11 @@
     "helpCategoryLabel": "Security",
     "serviceSlug": "it-security",
     "serviceLabel": "IT Security & Cybersecurity",
-    "symptoms": ["Searches redirect to odd pages", "Unknown devices connected", "Router settings changed alone"],
+    "symptoms": [
+      "Searches redirect to odd pages",
+      "Unknown devices connected",
+      "Router settings changed alone"
+    ],
     "steps": [
       {
         "heading": "1. Confirm the symptoms point at the router",
@@ -4292,7 +4720,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Deleted file needed back", "Overwrote important document", "Need last week's version"],
+    "symptoms": [
+      "Deleted file needed back",
+      "Overwrote important document",
+      "Need last week's version"
+    ],
     "steps": [
       {
         "heading": "1. Open the folder, then enter Time Machine",
@@ -4332,7 +4764,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Boxes of prints and discs", "Fading or sticky photos", "No digital copies exist"],
+    "symptoms": [
+      "Boxes of prints and discs",
+      "Fading or sticky photos",
+      "No digital copies exist"
+    ],
     "steps": [
       {
         "heading": "1. Sort before you scan a single thing",
@@ -4372,7 +4808,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Need access to their accounts", "Photos locked in their phone", "Bills on autopay everywhere"],
+    "symptoms": [
+      "Need access to their accounts",
+      "Photos locked in their phone",
+      "Bills on autopay everywhere"
+    ],
     "steps": [
       {
         "heading": "1. Secure the devices first, change nothing yet",
@@ -4412,7 +4852,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["All photos in one cloud", "Worried about lockouts", "iPhone plus Google account"],
+    "symptoms": [
+      "All photos in one cloud",
+      "Worried about lockouts",
+      "iPhone plus Google account"
+    ],
     "steps": [
       {
         "heading": "1. Let each cloud do what it's best at",
@@ -4452,7 +4896,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Background noise on your calls", "Others complain about your audio", "Tampa yard crews mid-meeting"],
+    "symptoms": [
+      "Background noise on your calls",
+      "Others complain about your audio",
+      "Tampa yard crews mid-meeting"
+    ],
     "steps": [
       {
         "heading": "1. Set noise suppression to High",
@@ -4492,7 +4940,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Meetings that decide nothing", "Quiet attendees never heard", "Whiteboard photos nobody reads"],
+    "symptoms": [
+      "Meetings that decide nothing",
+      "Quiet attendees never heard",
+      "Whiteboard photos nobody reads"
+    ],
     "steps": [
       {
         "heading": "1. Poll instead of debating",
@@ -4532,7 +4984,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Shared With Me is unusable", "Can't find shared files", "Ex-employee shares lingering"],
+    "symptoms": [
+      "Shared With Me is unusable",
+      "Can't find shared files",
+      "Ex-employee shares lingering"
+    ],
     "steps": [
       {
         "heading": "1. Add shortcuts for keepers, ignore the rest",
@@ -4572,7 +5028,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Documents full of red markup", "Can't tell final version", "Reviewers editing instead of suggesting"],
+    "symptoms": [
+      "Documents full of red markup",
+      "Can't tell final version",
+      "Reviewers editing instead of suggesting"
+    ],
     "steps": [
       {
         "heading": "1. Review in Simple Markup view",
@@ -4612,7 +5072,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Duplicate rows everywhere", "Mailing list bloated", "Counts don't reconcile"],
+    "symptoms": [
+      "Duplicate rows everywhere",
+      "Mailing list bloated",
+      "Counts don't reconcile"
+    ],
     "steps": [
       {
         "heading": "1. Copy the sheet first",
@@ -4652,7 +5116,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Reading slides verbatim", "Losing track of time", "Notes visible to audience"],
+    "symptoms": [
+      "Reading slides verbatim",
+      "Losing track of time",
+      "Notes visible to audience"
+    ],
     "steps": [
       {
         "heading": "1. Enable Presenter View with two displays",
@@ -4692,7 +5160,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Paying for Calendly/acuity", "Phone-tag scheduling", "No-shows constantly"],
+    "symptoms": [
+      "Paying for Calendly/acuity",
+      "Phone-tag scheduling",
+      "No-shows constantly"
+    ],
     "steps": [
       {
         "heading": "1. Create the booking page",
@@ -4732,7 +5204,11 @@
     "helpCategoryLabel": "Microsoft 365",
     "serviceSlug": "cloud-solutions/microsoft-365",
     "serviceLabel": "Microsoft 365 for Business",
-    "symptoms": ["Training videos emailed as attachments", "Nobody can find recordings", "Version chaos on shared drives"],
+    "symptoms": [
+      "Training videos emailed as attachments",
+      "Nobody can find recordings",
+      "Version chaos on shared drives"
+    ],
     "steps": [
       {
         "heading": "1. Upload to Stream via SharePoint",
@@ -4772,7 +5248,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Scan to email fails", "Authentication errors on printer", "Need paperless workflows"],
+    "symptoms": [
+      "Scan to email fails",
+      "Authentication errors on printer",
+      "Need paperless workflows"
+    ],
     "steps": [
       {
         "heading": "1. Use an app password, never the real one",
@@ -4812,7 +5292,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Want to halve paper use", "Duplex option missing", "Settings never stick"],
+    "symptoms": [
+      "Want to halve paper use",
+      "Duplex option missing",
+      "Settings never stick"
+    ],
     "steps": [
       {
         "heading": "1. Set duplex as the driver default",
@@ -4852,7 +5336,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Ink costs feel criminal", "Considering a subscription", "Printing very little or a lot"],
+    "symptoms": [
+      "Ink costs feel criminal",
+      "Considering a subscription",
+      "Printing very little or a lot"
+    ],
     "steps": [
       {
         "heading": "1. Count your real monthly pages",
@@ -4892,7 +5380,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["No network available", "Guest needs one print", "Router down but printer fine"],
+    "symptoms": [
+      "No network available",
+      "Guest needs one print",
+      "Router down but printer fine"
+    ],
     "steps": [
       {
         "heading": "1. Enable Wi-Fi Direct on the printer",
@@ -4932,7 +5424,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["New label printer", "Labels print tiny or cropped", "Marketplace integration confusion"],
+    "symptoms": [
+      "New label printer",
+      "Labels print tiny or cropped",
+      "Marketplace integration confusion"
+    ],
     "steps": [
       {
         "heading": "1. Install the maker software, not just the driver",
@@ -4972,7 +5468,11 @@
     "helpCategoryLabel": "Printer",
     "serviceSlug": "it-support",
     "serviceLabel": "IT Support & Helpdesk",
-    "symptoms": ["Receipts stop mid-rush", "Cash drawer won't pop", "Kitchen printer misses tickets"],
+    "symptoms": [
+      "Receipts stop mid-rush",
+      "Cash drawer won't pop",
+      "Kitchen printer misses tickets"
+    ],
     "steps": [
       {
         "heading": "1. Switch critical printers to network, not USB",
@@ -5012,7 +5512,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Paying per-print at repro shops", "Need plans on demand", "Considering a plotter purchase"],
+    "symptoms": [
+      "Paying per-print at repro shops",
+      "Need plans on demand",
+      "Considering a plotter purchase"
+    ],
     "steps": [
       {
         "heading": "1. Do the per-print math first",
@@ -5052,7 +5556,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["New office or move", "Starting from bare walls", "Need it working day one"],
+    "symptoms": [
+      "New office or move",
+      "Starting from bare walls",
+      "Need it working day one"
+    ],
     "steps": [
       {
         "heading": "1. Order internet 30+ days out",
@@ -5096,7 +5604,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Paying per-camera monthly", "Footage gone when needed", "Blind spots everywhere"],
+    "symptoms": [
+      "Paying per-camera monthly",
+      "Footage gone when needed",
+      "Blind spots everywhere"
+    ],
     "steps": [
       {
         "heading": "1. Do the 3-year math before buying",
@@ -5136,7 +5648,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Internet outage means closed sign", "Never tested offline mode", "Storm season exposure"],
+    "symptoms": [
+      "Internet outage means closed sign",
+      "Never tested offline mode",
+      "Storm season exposure"
+    ],
     "steps": [
       {
         "heading": "1. Enable offline payments now, not during the outage",
@@ -5176,7 +5692,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Free Wi-Fi with zero return", "No customer emails collected", "Reviews trickling in"],
+    "symptoms": [
+      "Free Wi-Fi with zero return",
+      "No customer emails collected",
+      "Reviews trickling in"
+    ],
     "steps": [
       {
         "heading": "1. Portal with email capture (not social login)",
@@ -5216,7 +5736,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Ex-staff still have access", "No offboarding process", "Devices never returned"],
+    "symptoms": [
+      "Ex-staff still have access",
+      "No offboarding process",
+      "Devices never returned"
+    ],
     "steps": [
       {
         "heading": "1. Kill access first, within hours",
@@ -5256,7 +5780,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Sticky notes with passwords", "Same password everywhere", "Nobody uses MFA"],
+    "symptoms": [
+      "Sticky notes with passwords",
+      "Same password everywhere",
+      "Nobody uses MFA"
+    ],
     "steps": [
       {
         "heading": "1. Mandate managers, ban memory",
@@ -5296,7 +5824,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Backups 'probably' running", "Never tested a restore", "Audit or insurance asking for proof"],
+    "symptoms": [
+      "Backups 'probably' running",
+      "Never tested a restore",
+      "Audit or insurance asking for proof"
+    ],
     "steps": [
       {
         "heading": "1. Restore one file, one mailbox, one folder monthly",
@@ -5336,7 +5868,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Closet uncomfortably hot", "Random hardware failures", "No temperature monitoring"],
+    "symptoms": [
+      "Closet uncomfortably hot",
+      "Random hardware failures",
+      "No temperature monitoring"
+    ],
     "steps": [
       {
         "heading": "1. Measure first: 64–80°F is the band",
@@ -5376,7 +5912,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["No UPS on critical gear", "UPS dies in 2 minutes", "Storm season exposure"],
+    "symptoms": [
+      "No UPS on critical gear",
+      "UPS dies in 2 minutes",
+      "Storm season exposure"
+    ],
     "steps": [
       {
         "heading": "1. Add up the watts that matter",
@@ -5416,7 +5956,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Two offices, zero connection", "Emailing files between sites", "Separate phone systems"],
+    "symptoms": [
+      "Two offices, zero connection",
+      "Emailing files between sites",
+      "Separate phone systems"
+    ],
     "steps": [
       {
         "heading": "1. Use matching business firewalls at both ends",
@@ -5456,7 +6000,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["No idea where you stand", "Audit or partner asking questions", "PHI on random devices"],
+    "symptoms": [
+      "No idea where you stand",
+      "Audit or partner asking questions",
+      "PHI on random devices"
+    ],
     "steps": [
       {
         "heading": "1. Encrypt everything holding PHI",
@@ -5496,7 +6044,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Processor asking about compliance", "Card data near office network", "No idea what SAQ applies"],
+    "symptoms": [
+      "Processor asking about compliance",
+      "Card data near office network",
+      "No idea what SAQ applies"
+    ],
     "steps": [
       {
         "heading": "1. Shrink scope: segment card traffic",
@@ -5536,7 +6088,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Renewal questionnaire staring you down", "Answering 'no' everywhere", "Premiums spiking or denied"],
+    "symptoms": [
+      "Renewal questionnaire staring you down",
+      "Answering 'no' everywhere",
+      "Premiums spiking or denied"
+    ],
     "steps": [
       {
         "heading": "1. Score yourself honestly first",
@@ -5576,7 +6132,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Vendor bank details changed", "Invoice tone slightly off", "Pressure to pay new account fast"],
+    "symptoms": [
+      "Vendor bank details changed",
+      "Invoice tone slightly off",
+      "Pressure to pay new account fast"
+    ],
     "steps": [
       {
         "heading": "1. Treat every bank change as hostile until proven",
@@ -5616,7 +6176,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Tight hardware budget", "Need 5+ workstations", "Wondering if refurb is professional"],
+    "symptoms": [
+      "Tight hardware budget",
+      "Need 5+ workstations",
+      "Wondering if refurb is professional"
+    ],
     "steps": [
       {
         "heading": "1. Buy from authorized refurbishers only",
@@ -5656,7 +6220,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceLabel": "Managed IT Services",
     "serviceSlug": "managed-it-services",
-    "symptoms": ["Closet full of old PCs", "Want the tax deduction", "Worried about data on drives"],
+    "symptoms": [
+      "Closet full of old PCs",
+      "Want the tax deduction",
+      "Worried about data on drives"
+    ],
     "steps": [
       {
         "heading": "1. Wipe to the right standard",
@@ -5696,7 +6264,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Garage full of dead electronics", "Unknown disposal rules", "Business e-waste pile"],
+    "symptoms": [
+      "Garage full of dead electronics",
+      "Unknown disposal rules",
+      "Business e-waste pile"
+    ],
     "steps": [
       {
         "heading": "1. Sort into three piles first",
@@ -5736,7 +6308,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Storm approaching", "No generator", "Team needs comms for days"],
+    "symptoms": [
+      "Storm approaching",
+      "No generator",
+      "Team needs comms for days"
+    ],
     "steps": [
       {
         "heading": "1. Pre-charge everything to 100 percent",
@@ -5776,7 +6352,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Liquid in or on laptop", "Won't turn on after water", "Keyboard acting crazy when wet"],
+    "symptoms": [
+      "Liquid in or on laptop",
+      "Won't turn on after water",
+      "Keyboard acting crazy when wet"
+    ],
     "steps": [
       {
         "heading": "1. Power off and disconnect everything NOW",
@@ -5816,7 +6396,11 @@
     "helpCategoryLabel": "Hardware / On-Site",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Strike nearby, things acting odd", "Some devices dead, others fine", "Internet out after storm"],
+    "symptoms": [
+      "Strike nearby, things acting odd",
+      "Some devices dead, others fine",
+      "Internet out after storm"
+    ],
     "steps": [
       {
         "heading": "1. Test everything on every path",
@@ -5856,7 +6440,11 @@
     "helpCategoryLabel": "Computer",
     "serviceSlug": "it-support/pc-mac",
     "serviceLabel": "PC & Mac Support",
-    "symptoms": ["Gear stored in hot garage", "Swollen batteries", "Equipment failing young"],
+    "symptoms": [
+      "Gear stored in hot garage",
+      "Swollen batteries",
+      "Equipment failing young"
+    ],
     "steps": [
       {
         "heading": "1. Know the casualties: batteries first",
@@ -5896,7 +6484,11 @@
     "helpCategoryLabel": "Backup & Recovery",
     "serviceSlug": "backup-disaster-recovery",
     "serviceLabel": "Backup & Disaster Recovery",
-    "symptoms": ["Multiple locations causing tech headaches", "Unmonitored locations after hours", "Files and data scattered across sites"],
+    "symptoms": [
+      "Multiple locations causing tech headaches",
+      "Unmonitored locations after hours",
+      "Files and data scattered across sites"
+    ],
     "steps": [
       {
         "heading": "1. Cloud-sync everything that matters",
@@ -5936,7 +6528,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Guest complaints about Wi-Fi", "No separation from owner devices", "Driving over to reboot routers"],
+    "symptoms": [
+      "Guest complaints about Wi-Fi",
+      "No separation from owner devices",
+      "Driving over to reboot routers"
+    ],
     "steps": [
       {
         "heading": "1. Separate owner and guest networks permanently",
@@ -5976,7 +6572,11 @@
     "helpCategoryLabel": "Business IT",
     "serviceSlug": "managed-it-services",
     "serviceLabel": "Managed IT Services",
-    "symptoms": ["Meetings start 20 minutes late", "Nobody remote can hear", "Different laptop every month"],
+    "symptoms": [
+      "Meetings start 20 minutes late",
+      "Nobody remote can hear",
+      "Different laptop every month"
+    ],
     "steps": [
       {
         "heading": "1. Standardize on one meeting laptop",
@@ -6016,7 +6616,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["No signal in garage", "Detached garage or shop", "Smart opener offline"],
+    "symptoms": [
+      "No signal in garage",
+      "Detached garage or shop",
+      "Smart opener offline"
+    ],
     "steps": [
       {
         "heading": "1. Run Ethernet if the trench is open for anything",
@@ -6056,7 +6660,11 @@
     "helpCategoryLabel": "Wi-Fi / Networking",
     "serviceSlug": "network-server/wireless",
     "serviceLabel": "Wireless Design & Implementation",
-    "symptoms": ["Marina Wi-Fi unusable", "Need connectivity aboard", "Working remotely from the boat"],
+    "symptoms": [
+      "Marina Wi-Fi unusable",
+      "Need connectivity aboard",
+      "Working remotely from the boat"
+    ],
     "steps": [
       {
         "heading": "1. Accept marina Wi-Fi limits",
@@ -6084,6 +6692,2206 @@
       {
         "q": "What about Starlink on the boat?",
         "a": "Excellent where cellular fails (offshore, remote anchorages). In-town Tampa Bay, cellular is cheaper and simpler."
+      }
+    ]
+  },
+  {
+    "slug": "outlook-calendar-declined-meetings",
+    "title": "Outlook Calendar Shows Declined Meetings You Never Sent",
+    "excerpt": "Declined meetings appear on calendar that you never sent or clicked. Often a sync cache issue.",
+    "readMinutes": 4,
+    "helpCategory": "email",
+    "helpCategoryLabel": "Email",
+    "serviceSlug": "communications/business-email",
+    "serviceLabel": "Email Problems",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "teams-echo-audio-fix",
+    "title": "Microsoft Teams Echo or Feedback During Calls",
+    "excerpt": "Hear yourself or feedback during Teams calls usually means mic and speakers are picking each other up.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "iphone-battery-drain-fast",
+    "title": "iPhone Battery Draining Faster Than Normal",
+    "excerpt": "Battery drops quickly due to background apps, settings, or aging battery health.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "ethernet-no-internet-connection",
+    "title": "Ethernet Connected But No Internet",
+    "excerpt": "Wired connection shows connected but no internet access from IP or routing issues.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "blue-screen-stop-code-help",
+    "title": "Blue Screen Stop Codes Explained and Fixed",
+    "excerpt": "Understand common BSOD stop codes and safe troubleshooting steps.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "dual-monitor-setup",
+    "title": "Dual Monitor Setup on Windows 11",
+    "excerpt": "Connect and configure two monitors for better productivity.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "keyboard-shortcuts-windows",
+    "title": "Essential Windows Keyboard Shortcuts",
+    "excerpt": "Time-saving keyboard shortcuts for Windows tasks.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "mouse-touchpad-troubleshoot",
+    "title": "Mouse or Touchpad Not Working",
+    "excerpt": "Troubleshoot wireless/corded mouse and laptop touchpad issues.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "audio-no-sound-windows",
+    "title": "No Sound on Windows PC Troubleshooting",
+    "excerpt": "Fix speakers, headphones, or no audio output issues.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "microphone-not-working",
+    "title": "Microphone Not Working on PC or Mac",
+    "excerpt": "Fix mic detection and permission issues for calls and recordings.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "webcam-not-working",
+    "title": "Webcam Not Working in Zoom or Teams",
+    "excerpt": "Troubleshoot webcam detection and app permissions.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "bluetooth-audio-connect",
+    "title": "Bluetooth Headphones Won't Connect",
+    "excerpt": "Pair and reconnect Bluetooth audio devices properly.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "modem-lights-meaning",
+    "title": "Cable Modem Router Lights Explained",
+    "excerpt": "Understand what modem/router lights mean and when to reboot.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "port-forwarding-basics",
+    "title": "Port Forwarding Basics for Small Business",
+    "excerpt": "When and how to use port forwarding safely.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "static-ip-setup",
+    "title": "Set a Static IP Address on Windows or Mac",
+    "excerpt": "Configure a static IP for printers, servers, or devices.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "dns-flush-cache",
+    "title": "Flush DNS Cache to Fix Website Loading Issues",
+    "excerpt": "Clear DNS cache on Windows, Mac, and mobile devices.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "ipconfig-renew-release",
+    "title": "Release and Renew IP Address",
+    "excerpt": "Fix IP conflicts with release/renew commands.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "ping-traceroute-guide",
+    "title": "Use Ping and Traceroute to Diagnose Network Issues",
+    "excerpt": "Basic network diagnostics for connection problems.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "ethernet-cable-test",
+    "title": "Test Ethernet Cable and Network Connections",
+    "excerpt": "Check cables, jacks, and link status.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "two-factor-authenticator-app",
+    "title": "Set Up an Authenticator App for 2FA",
+    "excerpt": "Use authenticator apps like Microsoft Authenticator for stronger security.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "yubikey-setup-guide",
+    "title": "Hardware Security Key (YubiKey) Setup Guide",
+    "excerpt": "Set up and use hardware security keys for passwordless login.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "software-update-importance",
+    "title": "Why Keeping Software Updated Matters",
+    "excerpt": "Updates patch security holes and fix bugs.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "admin-vs-standard-account",
+    "title": "Admin vs Standard User Accounts",
+    "excerpt": "Use least privilege for better security.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "lock-computer-away",
+    "title": "Always Lock Your Computer When You Step Away",
+    "excerpt": "Prevent unauthorized access with quick lock shortcuts.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "usb-drive-suspicious",
+    "title": "Found a USB Drive? Don't Plug It In",
+    "excerpt": "USB drops are a common attack vector.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "tech-support-scam-call",
+    "title": "Tech Support Scam Phone Call Response",
+    "excerpt": "How to spot and handle fake tech support calls.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "lock-screen-contact-info",
+    "title": "Add Emergency Contact Info to Lock Screen",
+    "excerpt": "Help recover lost devices with contact info.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "onedrive-share-externally",
+    "title": "Share OneDrive Files Externally Securely",
+    "excerpt": "Control sharing permissions for external recipients.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "outlook-read-receipts",
+    "title": "Outlook Read Receipts and Delivery Confirmation",
+    "excerpt": "Request and manage read receipts in Outlook.",
+    "readMinutes": 4,
+    "helpCategory": "email",
+    "helpCategoryLabel": "Email",
+    "serviceSlug": "communications/business-email",
+    "serviceLabel": "Email Problems",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "outlook-distribution-list",
+    "title": "Create and Manage Outlook Distribution Lists",
+    "excerpt": "Create contact groups for sending to multiple people.",
+    "readMinutes": 4,
+    "helpCategory": "email",
+    "helpCategoryLabel": "Email",
+    "serviceSlug": "communications/business-email",
+    "serviceLabel": "Email Problems",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "teams-channels-organize",
+    "title": "Organize Microsoft Teams Channels Effectively",
+    "excerpt": "Best practices for Teams channel structure.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "sharepoint-permissions-guide",
+    "title": "SharePoint Permissions Basics",
+    "excerpt": "Understand sharing and permission levels in SharePoint.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "onedrive-files-on-demand",
+    "title": "OneDrive Files On-Demand Explained",
+    "excerpt": "Save disk space with cloud-only files.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "power-automate-basics",
+    "title": "Power Automate Basics for Small Business",
+    "excerpt": "Automate simple repetitive tasks.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "microsoft-forms-poll",
+    "title": "Create Polls with Microsoft Forms",
+    "excerpt": "Quick surveys and polls for teams.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "printer-paper-jam-clear",
+    "title": "Clear Printer Paper Jam Safely",
+    "excerpt": "Remove jammed paper without damaging printer.",
+    "readMinutes": 4,
+    "helpCategory": "printer",
+    "helpCategoryLabel": "Printer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "printer-offline-windows-fix",
+    "title": "Fix Printer Shows Offline in Windows",
+    "excerpt": "Get your printer back online quickly.",
+    "readMinutes": 4,
+    "helpCategory": "printer",
+    "helpCategoryLabel": "Printer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "scan-document-pdf",
+    "title": "Scan Documents to PDF",
+    "excerpt": "Scan using scanner or phone app to PDF.",
+    "readMinutes": 4,
+    "helpCategory": "printer",
+    "helpCategoryLabel": "Printer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "printer-duplex-printing",
+    "title": "Enable Double-Sided Printing",
+    "excerpt": "Save paper with duplex printing.",
+    "readMinutes": 4,
+    "helpCategory": "printer",
+    "helpCategoryLabel": "Printer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "phone-battery-drain",
+    "title": "Smartphone Battery Draining Too Fast",
+    "excerpt": "Identify and fix battery drain issues.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "phone-storage-full",
+    "title": "Free Up Space on a Full Phone",
+    "excerpt": "Clear space on iPhone or Android.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "phone-screen-cracked",
+    "title": "Cracked Phone Screen What To Do",
+    "excerpt": "Protect data and arrange repair for cracked screen.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "phone-wont-charge",
+    "title": "Phone Won't Charge Troubleshooting",
+    "excerpt": "Fix charging cable, port, and battery issues.",
+    "readMinutes": 4,
+    "helpCategory": "computer",
+    "helpCategoryLabel": "Computer",
+    "serviceSlug": "it-support/pc-mac",
+    "serviceLabel": "PC & Mac Support",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "acceptable-use-policy-write",
+    "title": "Write a Simple Acceptable Use Policy",
+    "excerpt": "Create a basic policy for employees.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "incident-response-plan-small",
+    "title": "Small Business IT Incident Response Plan",
+    "excerpt": "Prepare for security incidents with a simple plan.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "vendor-access-management",
+    "title": "Manage Vendor and Contractor Access Securely",
+    "excerpt": "Control third-party access to systems.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "document-retention-policy",
+    "title": "Document Retention and Deletion Policy",
+    "excerpt": "Manage records retention for compliance.",
+    "readMinutes": 4,
+    "helpCategory": "security",
+    "helpCategoryLabel": "Security",
+    "serviceSlug": "it-security",
+    "serviceLabel": "Virus & Security Cleanup",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "domain-dns-records-explained",
+    "title": "Domain DNS Records Explained Simply",
+    "excerpt": "Understand A, CNAME, MX, TXT records.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "ssl-certificate-not-secure",
+    "title": "Fix Website Not Secure SSL Warning",
+    "excerpt": "Resolve HTTPS and certificate issues.",
+    "readMinutes": 4,
+    "helpCategory": "wifi",
+    "helpCategoryLabel": "Wi-Fi / Networking",
+    "serviceSlug": "network-server/wireless",
+    "serviceLabel": "Wi-Fi & Networking",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
+      }
+    ]
+  },
+  {
+    "slug": "cloud-storage-cost-compare",
+    "title": "Compare Cloud Storage Costs",
+    "excerpt": "Choose the right cloud storage for your needs.",
+    "readMinutes": 4,
+    "helpCategory": "m365",
+    "helpCategoryLabel": "Microsoft 365",
+    "serviceSlug": "cloud-solutions/microsoft-365",
+    "serviceLabel": "Microsoft 365",
+    "symptoms": [
+      "Issue needs troubleshooting",
+      "Something not working as expected",
+      "Looking for a fix"
+    ],
+    "steps": [
+      {
+        "heading": "1. Check the basics",
+        "body": "Start with the simplest possible causes first. Restart devices, check cables, verify power and connections."
+      },
+      {
+        "heading": "2. Try common fixes",
+        "body": "Apply the most common solutions for this issue. Make one change at a time and test after each change."
+      },
+      {
+        "heading": "3. Test and verify",
+        "body": "Test thoroughly after making changes. If it still doesn't work, document what you tried before calling for help."
+      }
+    ],
+    "whenToCall": [
+      "Issue persists after trying these steps",
+      "You suspect hardware failure or damage",
+      "The problem affects critical business operations"
+    ],
+    "faqs": [
+      {
+        "q": "Is this safe to try myself?",
+        "a": "These steps are designed to be safe for most users. Stop if you see physical damage or are unsure."
+      },
+      {
+        "q": "When should I get professional help?",
+        "a": "Call if the issue is urgent, affects your whole business, or involves complex hardware repairs."
       }
     ]
   }

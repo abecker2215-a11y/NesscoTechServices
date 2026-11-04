@@ -1,0 +1,15 @@
+D:\PROJECTS\msp-website\add_fixes50.js:23
+  {slug:'usb-not-recognized',title:'USB Device Not Recognized',excerpt:'Flash drive, external drive, or device not detected by computer.',readMinutes:3,helpCategory:'computer',serviceSlug:'it-support/pc-mac',serviceLabel:'Computer Repair',symptoms:['Device not showing','Windows says unrecognized','No drive letter'],steps:[{heading:'1. Try different port/cable',body:'Test with different USB port and cable.'},{heading:'2. Check Disk Management',body:'See if device appears in Disk Management (may need drive letter).'}],[{heading:'3. Update USB drivers',body:'Update drivers or try on different computer to isolate issue.'}],whenToCall:['Drive has hardware failure','Data recovery needed','Multiple USB ports failing']},
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+
+SyntaxError: Unexpected token '['
+    at wrapSafe (node:internal/modules/cjs/loader:1763:18)
+    at Module._compile (node:internal/modules/cjs/loader:1804:20)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.15.0
