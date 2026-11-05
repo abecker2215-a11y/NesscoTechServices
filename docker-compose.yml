@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-G-Q4XQPV4FH7}
+        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-}
     container_name: msp-website
     environment:
       - NODE_ENV=production
@@ -38,7 +38,7 @@ services:
       - RESEND_API_KEY=${RESEND_API_KEY:-}
       - NOTIFY_TO=${NOTIFY_TO:-info@nesscotech.com}
       - EMAIL_FROM=${EMAIL_FROM:-"Nessco Tech Services <onboarding@resend.dev>"}
-      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID:-G-Q4XQPV4FH7}
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID:-}
       - NEXT_PUBLIC_BOOKING_URL=${NEXT_PUBLIC_BOOKING_URL:-}
       - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
       - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}
