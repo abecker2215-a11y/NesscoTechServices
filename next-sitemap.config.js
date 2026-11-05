@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: 'https://nesscotech.com',
   generateRobotsTxt: false,
   generateIndexSitemap: true,
-  exclude: ['/api/*', '/get-help/step-*'],
+  exclude: ['/api/*', '/get-help/step-*', '/apple-icon', '/icon.svg', '/opengraph-image'],
   changefreq: 'weekly',
   priority: 0.7,
   transform: async (config, path) => ({
