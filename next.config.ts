@@ -51,6 +51,16 @@ const nextConfig: NextConfig = {
       { source: "/blog/hurricane-it-prep", destination: "/guides/outage-continuity-small-business", permanent: true },
       { source: "/blog/microsoft-copilot-guide", destination: "/services/cloud-solutions/microsoft-365", permanent: true },
       { source: "/blog/phishing-red-flags", destination: "/guides/spot-stop-phishing-emails", permanent: true },
+      { source: "/services/offsite-dr", destination: "/services/backup-disaster-recovery/offsite-dr", permanent: true },
+      { source: "/services/consulting", destination: "/services/managed-it-services/consulting", permanent: true },
+      { source: "/services/virtual-desktops", destination: "/services/cloud-solutions/virtual-desktops", permanent: true },
+      { source: "/services/infrastructure-migration", destination: "/services/cloud-solutions/infrastructure-migration", permanent: true },
+      { source: "/services/cybersecurity-suite", destination: "/services/it-security/cybersecurity-suite", permanent: true },
+      { source: "/services/server-admin", destination: "/services/network-server/server-admin", permanent: true },
+      { source: "/services/communications/remote-access", destination: "/services/applications/remote-access", permanent: true },
+      { source: "/services/pc-mac", destination: "/services/it-support/pc-mac", permanent: true },
+      { source: "/services/vcio", destination: "/services/managed-it-services/vcio", permanent: true },
+      { source: "/fixes/new-home-wifi-dead-zones", destination: "/fixes/new-office-wifi-dead-zones", permanent: true },
     ];
   },
   async headers() {

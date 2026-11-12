@@ -44,6 +44,14 @@ export const metadata: Metadata = {
     siteName: "Nessco Tech Services",
     title: "Nessco Tech Services | Tampa Bay IT Support",
     description: "Managed IT, cybersecurity, cloud, and network services for Tampa Bay businesses.",
+    images: [
+      {
+        url: "https://nesscotech.com/hero/homepage-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Nessco Tech Services — Tampa Bay IT Support",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

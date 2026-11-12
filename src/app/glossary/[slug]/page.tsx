@@ -29,11 +29,12 @@ export async function generateMetadata({ params }: GlossaryTermPageProps): Promi
   return {
     title: pageTitle(`${term.term} — IT Glossary`),
     description: metaDescription(term.plain),
-    alternates: { canonical: `/glossary/${slug}` },
+    alternates: { canonical: `https://${siteConfig.domain}/glossary/${slug}` },
     openGraph: {
       title: pageTitle(`${term.term} — IT Glossary`),
       description: metaDescription(term.plain),
       type: "article",
+      url: `https://${siteConfig.domain}/glossary/${slug}`,
     },
     twitter: {
       card: "summary",

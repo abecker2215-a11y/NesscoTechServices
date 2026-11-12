@@ -25,10 +25,18 @@ export const metadata: Metadata = {
     description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support."),
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://nesscotech.com/hero/homepage-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Nessco Tech Services — Tampa Bay IT Support",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitle("Nessco Tech Services | Managed IT & Cybersecurity"),
+    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
     description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses."),
   },
   robots: { index: true, follow: true },

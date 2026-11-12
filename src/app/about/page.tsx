@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: metaDescription(
     "Nessco Tech Services provides secure, managed, reliable IT support for Tampa Bay businesses — managed IT, cybersecurity, cloud, network, and backup services.",
   ),
-  alternates: { canonical: "/about" },
+    alternates: { canonical: "https://nesscotech.com/about" },
   openGraph: {
     title: pageTitle("About Us"),
     description: metaDescription(

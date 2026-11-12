@@ -13,7 +13,7 @@ import { pageTitle, metaDescription } from "@/lib/meta";
 export const metadata: Metadata = {
   title: pageTitle("Pricing"),
     description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),
-  alternates: { canonical: "/pricing" },
+    alternates: { canonical: "https://nesscotech.com/pricing" },
   openGraph: {
     title: pageTitle("Simple, Transparent Pricing"),
   description: metaDescription("Simple, transparent IT pricing. Remote $75/hr, on-site $125/hr. Business IT plans, fixed monthly pricing."),

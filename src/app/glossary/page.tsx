@@ -10,12 +10,12 @@ import { getCategoryCounts, getPopularTerms, glossaryTerms } from "@/lib/glossar
 
 export const metadata: Metadata = {
   title: pageTitle("IT Glossary — Plain-English Tech Terms"),
-  description:
-    metaDescription("Confused by IT jargon? Our glossary explains 36+ tech terms in plain English, from networking to Microsoft 365."),
-  alternates: { canonical: "/glossary" },
+    description:
+      metaDescription("Confused by IT jargon? Our glossary explains 115 tech terms in plain English, from networking to Microsoft 365."),
+    alternates: { canonical: "https://nesscotech.com/glossary" },
   openGraph: {
     title: pageTitle("IT Glossary — Plain-English Tech Terms"),
-    description: metaDescription("36+ tech terms explained simply. Search, filter by category, and find related guides."),
+    description: metaDescription("115 tech terms explained simply. Search, filter by category, and find related guides."),
     type: "website",
   },
 };

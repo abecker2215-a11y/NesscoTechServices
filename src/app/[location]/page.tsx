@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: pageTitle(titleBase),
     description: metaDescription(descriptionText),
-    alternates: { canonical: `/${location}` },
+    alternates: { canonical: `https://nesscotech.com/${location}` },
     openGraph: {
       title: pageTitle(titleBase),
       description: metaDescription(isTampa ? "Business IT support in Tampa, FL. Managed IT services, helpdesk, cybersecurity, Microsoft 365, and backups for companies with 5-500 employees. Remote from $75/hr, on-site from $125/hr." : `Professional IT support in ${loc.name}, ${loc.county} County. Remote help starting at $75/hr, on-site at $125/hr. Computers, Wi-Fi, Microsoft 365, security. Serving Tampa Bay.`),
