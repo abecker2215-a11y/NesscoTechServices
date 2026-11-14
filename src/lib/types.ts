@@ -103,6 +103,11 @@ export interface NavItem {
   hideOnMobile?: boolean;
 }
 
+export interface BusinessListing {
+  name: string;
+  href: string;
+}
+
 export interface SiteConfig {
   name: string;
   description: string;
@@ -116,4 +121,5 @@ export interface SiteConfig {
   domain: string;
   bookingUrl?: string;
   googleReviewUrl?: string;
-}
+  businessListings?: BusinessListing[];
+};

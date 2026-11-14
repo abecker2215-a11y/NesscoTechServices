@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { services } from "@/lib/services";
@@ -9,7 +10,7 @@ import { OpenStatus } from "@/components/layout/OpenStatus";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { faqPageSchema } from "@/lib/schemas";
 import { pageTitle, metaDescription } from "@/lib/meta";
-import { Monitor, Shield, Database, Briefcase, Check, Truck, MousePointer, CloudLightning, ArrowRight, Mail, Cable, Star, BadgeCheck, Users, Award, Headset, HardDrive, LayoutDashboard, Phone } from "lucide-react";
+import { CloudLightning, ArrowRight, Star, BadgeCheck, Users, Award, Shield, Monitor, Briefcase, DollarSign, Lock } from "lucide-react";
 
 export const metadata: Metadata = {
     title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
@@ -43,14 +44,54 @@ export const metadata: Metadata = {
 };
 
 const serviceCategories = [
-  { id: "managed-it-services", label: "Managed IT Services", icon: Briefcase, description: "Complete IT management, monitoring, and strategy." },
-  { id: "it-security", label: "IT Security", icon: Shield, description: "Protect your business from cyber threats." },
-  { id: "cloud-solutions", label: "Cloud Solutions", icon: CloudLightning, description: "Migrate and manage workloads in the cloud." },
-  { id: "network-server", label: "Network & Server", icon: Cable, description: "Design, build, and manage your infrastructure." },
-  { id: "it-support", label: "IT Support & Helpdesk", icon: Headset, description: "Responsive helpdesk and on-site support." },
-  { id: "backup-disaster-recovery", label: "Backup & Disaster Recovery", icon: HardDrive, description: "Protect data and keep the business running." },
-  { id: "applications", label: "Applications", icon: LayoutDashboard, description: "Host, migrate, and manage business applications." },
-  { id: "communications", label: "Communications", icon: Mail, description: "Unified voice, video, and team messaging." },
+  {
+    id: "managed-it-services",
+    label: "Managed IT Services",
+    image: "/services-images/managed-it-services.png",
+    description: "Complete IT management, monitoring, and strategy.",
+  },
+  {
+    id: "it-security",
+    label: "IT Security",
+    image: "/services-images/it-security.png",
+    description: "Protect your business from cyber threats.",
+  },
+  {
+    id: "cloud-solutions",
+    label: "Cloud Solutions",
+    image: "/services-images/cloud-solutions.png",
+    description: "Migrate and manage workloads in the cloud.",
+  },
+  {
+    id: "network-server",
+    label: "Network & Server",
+    image: "/services-images/network-server.png",
+    description: "Design, build, and manage your infrastructure.",
+  },
+  {
+    id: "it-support",
+    label: "IT Support & Helpdesk",
+    image: "/services-images/it-support.png",
+    description: "Responsive helpdesk and on-site support.",
+  },
+  {
+    id: "backup-disaster-recovery",
+    label: "Backup & Disaster Recovery",
+    image: "/services-images/backup-disaster-recovery.png",
+    description: "Protect data and keep the business running.",
+  },
+  {
+    id: "applications",
+    label: "Applications",
+    image: "/services-images/applications.png",
+    description: "Host, migrate, and manage business applications.",
+  },
+  {
+    id: "communications",
+    label: "Communications",
+    image: "/services-images/communications.png",
+    description: "Unified voice, video, and team messaging.",
+  },
 ].map((c) => ({
   ...c,
   count: services.filter((s) => s.slug === c.id || s.slug.startsWith(`${c.id}/`)).length,
@@ -58,22 +99,27 @@ const serviceCategories = [
 
 const whyChooseUs = [
   {
+    icon: Shield,
     title: "No Jargon, No Upsells",
     description: "We explain problems in plain English. You approve the work before we start. No surprise charges.",
   },
   {
+    icon: Monitor,
     title: "Remote & On-Site Options",
       description: "Software issues? Remote from $75/hr. Hardware or cabling? We come to you from $125/hr.",
   },
   {
+    icon: Briefcase,
     title: "Business IT Expertise",
     description: "We support companies with 5-100 employees. Microsoft 365, networking, security, backups, and strategy.",
   },
   {
+    icon: DollarSign,
     title: "Transparent Pricing",
     description: "Hourly rates published online. Business plans with fixed monthly pricing. No long-term contracts required.",
   },
   {
+    icon: Lock,
     title: "Security-First Approach",
     description: "Every service includes basic security hygiene. We use encrypted connections and follow data-handling best practices.",
   },
@@ -196,46 +242,58 @@ export default function HomePage() {
             </span>
           </div>
 
-      <section className="py-16 lg:py-24" aria-labelledby="how-it-works-heading">
+       <section className="py-12 sm:py-16 lg:py-24">
+        <Reveal>
+        <div className="mx-auto max-w-none px-2 sm:px-4">
+          <div className="sr-only">
+            <h2>Need IT Support for Your Business?</h2>
+            <p>We manage technology for small businesses across Tampa Bay — so you can focus on your work.</p>
+            <ul>
+              <li>Pay As You Go: Occasional help when something breaks. Hourly rates, no commitment.</li>
+              <li>Essentials: Basic monitoring, patching, and help desk for small teams.</li>
+              <li>Managed (Most Popular): Full IT management: monitoring, security, backups, strategy.</li>
+              <li>Complete: Managed IT + advanced security, compliance, and vCIO guidance.</li>
+            </ul>
+          </div>
+          <Link
+            href="/services/managed-it-services"
+            className="block relative aspect-[1672/941] w-full overflow-hidden rounded-lg bg-background ring-1 ring-border transition-[box-shadow,border-color] duration-300 hover:ring-4 hover:ring-primary/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
+            aria-label="Learn About Business IT Plans"
+          >
+            <Image
+              src="/services-images/tampa-bay-it-support-plans.png"
+              alt="Need IT Support for Your Business? Pay As You Go, Essentials, Managed (Most Popular), Complete plans with Learn About Business IT Plans button"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              unoptimized
+            />
+          </Link>
+        </div>
+        </Reveal>
+      </section>
+
+       <section className="py-16 lg:py-24">
         <Reveal>
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 id="how-it-works-heading" className="text-3xl font-bold text-foreground mb-4">
-              How It Works: Get Help in 3 Steps
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Three simple steps to get your technology working again.
-            </p>
+          <div className="sr-only">
+            <h2>How It Works: Get Help in 3 Steps</h2>
+            <p>Three simple steps to get your technology working again.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center p-6">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <MousePointer className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">1. Tell Us the Problem</h3>
-              <p className="text-muted-foreground">
-                Select a category, answer a few questions, and share your contact info. Takes under 2 minutes.
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Truck className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">2. We Diagnose & Quote</h3>
-              <p className="text-muted-foreground">
-                We contact you within 2 business hours, confirm the issue, and provide a clear estimate before any work.
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Check className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">3. Fixed & Follow Up</h3>
-              <p className="text-muted-foreground">
-                We resolve the issue remotely or on-site. You approve the final invoice. We follow up to ensure everything works.
-              </p>
-            </div>
-          </div>
+          <Link
+            href="/get-help/step-1"
+            className="block relative aspect-[8/3] w-full overflow-hidden rounded-lg bg-background ring-1 ring-border transition-[box-shadow,border-color] duration-300 hover:ring-4 hover:ring-primary/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
+            aria-label="Get Help - Step 1: Tell Us the Problem"
+          >
+            <Image
+              src="/services-images/how-it-works.png"
+              alt="How It Works: Get Help in 3 Steps — Three simple steps: Tell Us the Problem, We Diagnose & Quote, Fixed & Follow Up"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              unoptimized
+            />
+          </Link>
         </div>
         </Reveal>
       </section>
@@ -251,25 +309,34 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8" role="list">
-            {serviceCategories.map((cat) => {
-              const Icon = cat.icon;
-              return (
-                <article key={cat.id} className="group">
-                  <a
-                    href={`/services/category/${cat.id}`}
-                    className="block p-4 rounded-lg lift-hover border border-border bg-background hover:border-primary/50 hover:bg-muted/50 transition-colors h-full"
-                  >
-                    <div className="text-center">
-                      <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                        <Icon className="h-6 w-6" aria-hidden="true" />
-                      </div>
-                      <h3 className="font-medium text-foreground mb-1">{cat.label}</h3>
-                      <p className="text-sm text-muted-foreground">{cat.description}</p>
+            {serviceCategories.map((cat) => (
+              <article key={cat.id} className="group overflow-hidden rounded-lg border border-border bg-background lift-hover transition-all hover:border-primary/50">
+                <a
+                  href={`/services/category/${cat.id}`}
+                  className="block h-full"
+                >
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={cat.image}
+                      alt={cat.label}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-white font-semibold text-sm">{cat.label}</span>
                     </div>
-                  </a>
-                </article>
-              );
-            })}
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-medium text-foreground mb-1">{cat.label}</h3>
+                    <p className="text-sm text-muted-foreground">{cat.description}</p>
+                    {cat.count > 0 && (
+                      <p className="text-xs text-primary font-medium mt-2">{cat.count} service{cat.count !== 1 ? "s" : ""}</p>
+                    )}
+                  </div>
+                </a>
+              </article>
+            ))}
           </div>
           <div className="text-center">
             <Button variant="outline" href="/services">
@@ -291,106 +358,49 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <article className="p-6 rounded-lg lift-hover border border-border bg-background">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                  <MousePointer className="h-6 w-6" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">Remote Support</h3>
+            <article className="relative group rounded-lg">
+              <div className="sr-only">
+                <h3>Remote IT Support</h3>
+                <p>Secure remote desktop sessions starting at $75/hr for software issues, configuration, and quick fixes.</p>
               </div>
-              <div className="text-3xl font-bold text-foreground mb-2">Starting at $75/hr</div>
-              <p className="text-muted-foreground mb-6">
-                Secure remote desktop session. Ideal for software issues, configuration, and quick fixes.
-              </p>
-              <ul className="space-y-3 text-sm text-muted-foreground mb-6" role="list">
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> No travel time or trip charge</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Available same day in most cases</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> You watch everything we do</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Works anywhere with internet</li>
-              </ul>
-              <p className="text-sm text-muted-foreground mb-4">Best for: email issues, software errors, browser problems, tune-ups, Microsoft 365 config, printer setup</p>
-              <Button variant="outline" className="w-full" href="/get-help">
-                Request Remote Help
-              </Button>
+              <div className="relative aspect-square overflow-hidden rounded-lg bg-background">
+                <Image
+                  src="/services-images/remote-support.png"
+                  alt="Remote Support — secure remote desktop sessions starting at $75/hr for software issues, configuration, and quick fixes"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <a
+                  href="/get-help"
+                  className="absolute left-[24%] right-[24%] bottom-[2.5%] h-[8%] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  aria-label="Request Remote Help"
+                />
+              </div>
             </article>
-            <article className="p-6 rounded-lg lift-hover border border-border bg-background relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+            <article className="relative group rounded-lg">
+              <div className="sr-only">
+                <h3>On-Site IT Support</h3>
+                <p>Hardware repair, network cabling, and device setup starting at $125/hr in the Tampa Bay area.</p>
+              </div>
+              <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
                 Most Popular
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                  <Truck className="h-6 w-6" aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">On-Site Support</h3>
+              <div className="relative aspect-square overflow-hidden rounded-lg bg-background">
+                <Image
+                  src="/services-images/on-site-support.png"
+                  alt="On-Site Support — hardware repair, network cabling, and device setup starting at $125/hr in the Tampa Bay area"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <a
+                  href="/get-help"
+                  className="absolute left-[24%] right-[24%] bottom-[2.5%] h-[8%] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  aria-label="Schedule On-Site Visit"
+                />
               </div>
-              <div className="text-3xl font-bold text-foreground mb-2">Starting at $125/hr</div>
-              <p className="text-muted-foreground mb-6">
-                We come to your business in the Tampa Bay area. Required for hardware and cabling work.
-              </p>
-              <ul className="space-y-3 text-sm text-muted-foreground mb-6" role="list">
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Hardware repair & replacement</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Network cabling & Wi-Fi installation</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Device setup & data migration</li>
-                <li className="flex items-center gap-2"><Check className="h-5 w-5 text-success flex-shrink-0" aria-hidden="true" /> Server & rack work</li>
-              </ul>
-              <p className="text-sm text-muted-foreground mb-4">Best for: broken screens, dead computers, network installs, new office setup, hardware upgrades</p>
-              <Button className="w-full" href="/get-help">
-                Schedule On-Site Visit
-              </Button>
             </article>
-          </div>
-        </div>
-        </Reveal>
-      </section>
-
-      <section className="py-12 sm:py-16 lg:py-24" aria-labelledby="business-it-heading">
-        <Reveal>
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 id="business-it-heading" className="fluid-3xl font-bold text-foreground mb-4">
-              Need IT Support for Your Business?
-            </h2>
-            <p className="fluid-lg text-muted-foreground">
-              We manage technology for small businesses across Tampa Bay — so you can focus on your work.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background text-center">
-              <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                <Briefcase className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Pay As You Go</h3>
-              <p className="text-sm text-muted-foreground">Occasional help when something breaks. Hourly rates, no commitment.</p>
-            </div>
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background text-center">
-              <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                <Shield className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Essentials</h3>
-              <p className="text-sm text-muted-foreground">Basic monitoring, patching, and help desk for small teams.</p>
-            </div>
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background text-center relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                Most Popular
-              </div>
-              <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                <Monitor className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Managed</h3>
-              <p className="text-sm text-muted-foreground">Full IT management: monitoring, security, backups, strategy.</p>
-            </div>
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background text-center">
-              <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
-                <Database className="h-7 w-7" aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Complete</h3>
-              <p className="text-sm text-muted-foreground">Managed IT + advanced security, compliance, and vCIO guidance.</p>
-            </div>
-          </div>
-          <div className="text-center">
-            <Button variant="outline" href="/services/managed-it-services">
-              Learn About Business IT Plans
-            </Button>
           </div>
         </div>
         </Reveal>
@@ -410,6 +420,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyChooseUs.map((item, index) => (
               <article key={index} className="p-6 rounded-lg lift-hover border border-border bg-background">
+                <div className="mx-auto mb-3 p-3 rounded-lg bg-primary/10 text-primary w-fit">
+                  <item.icon className="h-7 w-7" aria-hidden="true" />
+                </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </article>

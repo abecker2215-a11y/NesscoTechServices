@@ -14,6 +14,31 @@ export const siteConfig: SiteConfig = {
   bookingUrl:
     process.env.NEXT_PUBLIC_BOOKING_URL || "https://calendly.com/nesscotech/intro",
   googleReviewUrl: "https://www.google.com/maps/search/Nessco+Tech+Services+Tampa+Bay",
+  businessListings: [
+    { name: "Google Business Profile", href: "https://www.google.com/maps/search/Nessco+Tech+Services+Tampa+Bay" },
+    { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61595812709472" },
+    { name: "Yelp", href: "https://biz.yelp.com/biz_info/iy5evYIGizqcjs9GAAmB2w" },
+    { name: "Merchant Circle", href: "https://www.merchantcircle.com/nessco-tech-services-tampa-fl" },
+    { name: "Better Business Bureau", href: "https://www.bbb.org/us/fl/tampa/profile/computer-repair/nessco-tech-services-0653-90466707" },
+    { name: "NextDoor", href: "https://nextdoor.com/page/nessco-tech-services-tampa-fl/" },
+    { name: "Tech Directory", href: "https://www.techdirectory.io/search_results?q=Nessco+Tech+Services" },
+    { name: "Tech Behemoths", href: "https://techbehemoths.com/company/nessco-tech-services" },
+    { name: "Managed IT USA", href: "https://manageditusa.com/florida/tampa/nessco-tech-services/?m=eyJjdHgiOnsiZmlsdGVyc192MSI6eyJjaXR5X3NsdWciOiIiLCJjb21tdW5pdGllcyI6IiIsImRlc2lnbmF0aW9ucyI6IiIsImludGVudF9zbHVnIjoiIiwibGFuZ3MiOiIiLCJtZXRyb19zbHVnIjoiIiwicGFydG5lcnMiOiIiLCJwbGFjZW1lbnQiOiJpbnRyb2R1Y3RvcnkiLCJwcm92aW5jZV9zbHVnIjoiIiwicSI6IiIsInNjb3BlIjoibmF0aW9uYWwifSwicGFnZV90eXBlIjoiYnJvd3NlX2xpc3RpbmdzIn0sImVudHJ5X2lkIjowLCJldmVudCI6ImJyb3dzZV9jb250ZXh0IiwiZXhwIjoxNzk0NjYxODQ0fQ.uh4GxuNgQsna34Be1Bqw9KvTci5IKAnk4klzFEbPfCY" },
+    { name: "Clutch", href: "https://clutch.co/profile/nessco-tech-services?_gl=1*sp149l*_gcl_au*MTExODAyODMwLjE3OTQxMDEzMDA.*FPAU*MTExODAyODMwLjE3OTQxMDEzMDA.*_ga*ODM1MzY2ODMzLjE3OTQxMDEzMDA.*_ga_D0WFGX8X3V*czE3OTQ2NDAzNzMkbzMkZzEkdDE3OTQ2NDA2NjEkajE5JGwwJGg1OTM4NzEzODg.*_fplc*d1NITWV6UlU4NlNLbzQzT01mNkVPb20xdXdaS1BzcGNud2NlTkU2U0hYMmlaV1JPNDdqbkxCQkZRamN3ZmRmMGxlZzlORnVxeTZpQzAwQ1VheWNhUFIlMkZUQW5YamZMU2hVNDZpYVFJU1NROUR2YkliQko0VkZ5JTJCQnhISWdlUSUzRCUzRA.." },
+    { name: "8Msp", href: "https://8msp.com/listings/united-states/tampa/helpdesk-noc/nessco-tech-services/" },
+    { name: "Great Influx", href: "https://greatinflux.com/business-listing/business/nessco-tech-services?_gl=1*37xv6q*_up*MQ..*_ga*NTY2NDkxMDM1LjE3OTQ2NDEwMjg.*_ga_9WSV5TZWP4*czE3OTQ2NDEwMjckbzEkZzEkdDE3OTQ2NDEwMzgkajQ5JGwwJGgw" },
+    { name: "Bing Places", href: "https://www.bing.com/forbusiness/singleEntity?bizid=05fb17c7-0546-4589-a5a4-e7197d084097" },
+    { name: "Biz Web Directory", href: "https://www.bizwebdirectory.com/business/1020/nessco-tech-services" },
+    { name: "Me Web Link", href: "https://meweblink.com/site/4897-nesscotech-com/" },
+    { name: "S&R", href: "https://www.submitandrank.com/tools/nessco-tech-services" },
+    { name: "Find Open", href: "https://find-open.com/tampa/nessco-tech-services-17070378" },
+    { name: "Hotfrog", href: "https://www.hotfrog.com/company/AaGNVaKtc7mKKqdOqpNdug/nessco-tech-services/tampa/computer-it-services" },
+    { name: "Firmania", href: "https://firmania.com/tampa/nessco-tech-services-19900905" },
+    { name: "Cylex", href: "https://www.cylex.us.com/company/nessco-tech-services-40768521.html" },
+    { name: "BrownBook", href: "https://www.brownbook.net/business/56096427/nessco-tech-services" },
+    { name: "EzLocal", href: "https://ezlocal.com/fl/tampa/computer-repair-service/0919929723" },
+    { name: "Chamber Of Commerce", href: "https://www.chamberofcommerce.com/business-directory/florida/tampa/computer-support-and-services/2034583430-nessco-tech-services" },
+  ],
 };
 
 export const navItems: NavItem[] = [

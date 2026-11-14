@@ -61,6 +61,8 @@ services:
       postgres:
         condition: service_healthy
     restart: unless-stopped
+    volumes:
+      - ./public:/app/public
 
 volumes:
   postgres_data:

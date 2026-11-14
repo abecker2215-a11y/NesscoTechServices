@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { locations } from "@/lib/locations";
-import { Monitor, MapPin, Mail, Clock, Phone } from "lucide-react";
+import { MapPin, Mail, Clock, Phone } from "lucide-react";
 import { CopyrightYear } from "./CopyrightYear";
+
+const directoryBadges = siteConfig.businessListings ?? [];
 
 export function Footer() {
 
@@ -11,23 +13,18 @@ export function Footer() {
       <div className="container py-12 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-semibold text-xl text-foreground" aria-label={`${siteConfig.name} - Home`}>
-              <Monitor className="h-6 w-6 text-primary" aria-hidden="true" />
-              <span>{siteConfig.name}</span>
-            </Link>
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-              Local IT help without the IT-speak. Computer, Wi-Fi, Microsoft 365, networking, security and small-business IT support.
-            </p>
-            <h3 className="mt-6 font-semibold text-foreground text-sm">Service Areas</h3>
-            <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1" role="list">
-              {locations.map((loc) => (
-                <li key={loc.slug}>
-                  <Link href={`/${loc.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {loc.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <nav aria-label="Service Areas">
+              <h3 className="font-semibold text-foreground">Service Areas</h3>
+              <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1" role="list">
+                {locations.map((loc) => (
+                  <li key={loc.slug}>
+                    <Link href={`/${loc.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {loc.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <nav aria-label="Quick links">
@@ -48,6 +45,9 @@ export function Footer() {
               <li><Link href="/offers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Seasonal Offers</Link></li>
               <li><Link href="/reviews" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Reviews</Link></li>
               <li><Link href="/refer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Refer a Friend ($25)</Link></li>
+              <li><Link href="/free-consultation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Free IT Consultation</Link></li>
+              <li><Link href="/security-checklist" className="text-sm text-muted-foreground hover:text-foreground transition-colors">IT Security Checklist</Link></li>
+              <li><Link href="/partner-referral" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Partner Referral Program</Link></li>
             </ul>
           </nav>
 
@@ -92,6 +92,20 @@ export function Footer() {
               </li>
             </ul>
           </address>
+
+          <div>
+            <h3 className="font-semibold text-foreground">Business Listings</h3>
+            <ul className="mt-4 space-y-3" role="list">
+              {directoryBadges.map((badge) => (
+                <li key={badge.name}>
+                  <a href={badge.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <span className="text-muted-foreground/50">&#9679;</span>
+                    {badge.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-10 border-t border-border pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">

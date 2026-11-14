@@ -53,6 +53,7 @@ export type FunnelEvent =
   | "guide_request"
   | "newsletter_subscribe"
   | "contact_submit"
+  | "consultation_request"
   | "emergency_flagged"
   | "exit_intent_triggered"
   | "exit_intent_dismissed"
