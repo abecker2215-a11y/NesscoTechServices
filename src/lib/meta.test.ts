@@ -21,8 +21,18 @@ describe("pageTitle", () => {
 });
 
 describe("metaDescription", () => {
-  it("returns text unchanged when within max length", () => {
-    expect(metaDescription("Short description")).toBe("Short description");
+  it("returns text unchanged when within the recommended range", () => {
+    const inRange = "x".repeat(155);
+    expect(inRange.length).toBeGreaterThanOrEqual(150);
+    expect(inRange.length).toBeLessThanOrEqual(160);
+    expect(metaDescription(inRange)).toBe(inRange);
+  });
+
+  it("pads short excerpts into the recommended range", () => {
+    const result = metaDescription("Mail stuck.");
+    expect(result.length).toBeGreaterThanOrEqual(150);
+    expect(result.length).toBeLessThanOrEqual(160);
+    expect(result.startsWith("Mail stuck.")).toBe(true);
   });
 
   it("clamps to max length on word boundary", () => {
@@ -31,9 +41,9 @@ describe("metaDescription", () => {
     expect(result.endsWith("…")).toBe(true);
   });
 
-  it("uses default max of 155", () => {
+  it("uses default max of 160", () => {
     const longText = "x".repeat(200);
-    expect(metaDescription(longText).length).toBeLessThanOrEqual(155);
+    expect(metaDescription(longText).length).toBeLessThanOrEqual(160);
   });
 
   it("handles empty string", () => {
