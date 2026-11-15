@@ -140,7 +140,7 @@ export function FuseSearch({ className, placeholder = "Search services, guides, 
           }}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full pl-10 pr-10 h-10 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="w-full pl-10 pr-10 h-8 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           aria-label="Search"
           role="combobox"
           aria-expanded={isOpen}
@@ -162,7 +162,7 @@ export function FuseSearch({ className, placeholder = "Search services, guides, 
         <div
           ref={resultsRef}
           id="search-results"
-          className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-lg max-h-96 overflow-y-auto z-50"
+          className="absolute top-full left-0 mt-2 min-w-[420px] bg-background border border-border rounded-lg shadow-lg max-h-96 overflow-y-auto z-50"
           role="listbox"
         >
           {results.length === 0 ? (

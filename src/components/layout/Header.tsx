@@ -51,7 +51,7 @@ import {
   Video,
   Server,
 } from "lucide-react";
-import { navItems, siteConfig } from "@/lib/config";
+import { navItems } from "@/lib/config";
 import type { NavChild, NavItem } from "@/lib/types";
 import { ThemeToggle } from "./ThemeToggle";
 import { OpenStatus } from "./OpenStatus";
@@ -164,55 +164,38 @@ export function Header() {
           )}
         >
           <div className="flex items-center gap-4 flex-shrink-0">
-            <Link
-              href="/"
-              className="flex items-center gap-2 font-semibold tracking-tight text-navy-50 hover:opacity-80 transition-opacity"
-              aria-label={`${siteConfig.name} - Home`}
-            >
-              <Monitor className="h-6 w-6 text-cyan-400" aria-hidden="true" />
-              <span>
-                <span className="tracking-tighter text-white">NESSCO</span>{" "}
-                <span className="text-cyan-400 text-[12px] tracking-[2px] font-medium">TECH SERVICES</span>
-              </span>
-            </Link>
             <div className="hidden lg:flex items-center">
               <OpenStatus />
             </div>
           </div>
 
-          <div className="hidden lg:flex lg:items-center lg:gap-4 flex-1 min-w-0">
-            <div className="relative flex-shrink-0">
-              <FuseSearch placeholder="Search..." className="w-40 lg:w-48 xl:w-56" />
-            </div>
-            <div className="hidden lg:flex lg:items-center lg:gap-3 flex-1 min-w-0">
-              {navItems.map((item) => {
-                if (item.hideOnMobile) return null;
-                if (item.children) {
-                  return <DropdownMenu key={item.href} item={item} />;
-                }
-                if (item.label === "Contact") {
-                  return (
-                    <React.Fragment key={item.href}>
-                      <NavLink key={`${item.href}-nav`} item={item} />
-                      <Link
-                        href="/portal"
-                        className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors whitespace-nowrap flex-shrink-0"
-                      >
-                        <Lock className="h-4 w-4" aria-hidden="true" />
-                        <span>Portal</span>
-                      </Link>
-                      <Button size="sm" href="/get-help" className="whitespace-nowrap hero-secondary-outline">
-                        Get Help
-                      </Button>
-                    </React.Fragment>
-                  );
-                }
+          <div className="hidden lg:flex lg:items-center lg:gap-4 flex-1 min-w-0 justify-center">
+            {navItems.map((item) => {
+              if (item.hideOnMobile) return null;
+              if (item.children) {
+                return <DropdownMenu key={item.href} item={item} />;
+              }
+              if (item.label === "Contact") {
                 return <NavLink key={item.href} item={item} />;
-              })}
+              }
+              return <NavLink key={item.href} item={item} />;
+            })}
+            <div className="relative flex-shrink-0 ml-4">
+              <FuseSearch placeholder="Search..." className="w-32 lg:w-40 xl:w-48" />
             </div>
           </div>
 
           <div className="hidden lg:flex lg:items-center lg:gap-2 flex-shrink-0">
+            <Link
+              href="/portal"
+              className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white hover:text-cyan-300 hover:bg-navy-800/50 transition-colors whitespace-nowrap flex-shrink-0"
+            >
+              <Lock className="h-4 w-4" aria-hidden="true" />
+              <span>Portal</span>
+            </Link>
+            <Button size="sm" href="/get-help" className="whitespace-nowrap hero-secondary-outline">
+              Get Help
+            </Button>
             <ThemeToggle />
           </div>
         </div>
@@ -587,11 +570,9 @@ function MobileNav({ onClose }: { onClose: () => void }) {
     <div className="fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-label="Mobile menu">
       <div className="fixed inset-0 bg-black/90 animate-fade-in" onClick={onClose} aria-hidden="true" />
       <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-navy-950 shadow-xl animate-slide-in-right border-l border-navy-700">
-        <div className="flex h-full flex-col">
-          <div className="flex h-16 items-center justify-between border-b border-navy-700 p-4">
-            <span className="font-semibold text-lg text-white">
-              <span className="tracking-tighter">NESSCO</span>
-            </span>
+            <div className="flex h-full flex-col">
+              <div className="flex h-16 items-center justify-between border-b border-navy-700 p-4">
+                <span className="font-semibold text-lg text-white"></span>
           <div className="flex flex-1 items-center justify-end gap-1">
             <ThemeToggle />
             <button
