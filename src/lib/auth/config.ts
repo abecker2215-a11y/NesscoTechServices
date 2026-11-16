@@ -39,7 +39,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const valid = await bcrypt.compare(parsed.data.password, user.passwordHash);
         if (!valid) return null;
 
-        if (user.client?.status !== "ACTIVE" || user.client?.portalEnabled === false) {
+        // Internal staff roles are not tied to a client and bypass the
+        // client-status gate. Client users must belong to an active portal.
+        const isStaff =
+          user.role === "SUPER_ADMIN" ||
+          user.role === "ADMIN" ||
+          user.role === "TECHNICIAN";
+        if (
+          !isStaff &&
+          (user.client?.status !== "ACTIVE" || user.client?.portalEnabled === false)
+        ) {
           return null;
         }
 

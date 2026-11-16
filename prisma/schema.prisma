@@ -587,6 +587,53 @@ enum IncidentStatus {
   RESOLVED
 }
 
+// Blog content, moved out of the former static src/lib/blog.ts array so the
+// editorial team can publish without a code deploy. Bodies are markdown.
+enum PostStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  posts       Post[]
+
+  @@index([slug])
+}
+
+model Post {
+  id             String     @id @default(cuid())
+  slug           String     @unique
+  title          String
+  excerpt        String
+  body           String     @db.Text
+  categoryId     String?
+  authorName     String     @default("Nessco Tech Services")
+  readTime       String?
+  image          String?
+  serviceSlug    String?
+  status         PostStatus @default(DRAFT)
+  publishedAt    DateTime?
+  seoTitle       String?
+  seoDescription String?
+  // Original URL from the legacy blog, used to build additive 301 redirects.
+  legacyPath     String?    @unique
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  category       Category?  @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  @@index([status, publishedAt])
+  @@index([categoryId])
+}
+
 // Public status page incidents (staff-managed via API).
 model Incident {
   id        String         @id @default(cuid())

@@ -3,17 +3,17 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: msp-portal-db
+    container_name: msp-website-db
     environment:
       POSTGRES_USER: msp
       POSTGRES_PASSWORD: ${DB_PASSWORD:-msp_local_dev}
-      POSTGRES_DB: msp_portal
+      POSTGRES_DB: msp_website
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "15433:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U msp -d msp_portal"]
+      test: ["CMD-SHELL", "pg_isready -U msp -d msp_website"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -28,7 +28,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - DATABASE_URL=postgresql://msp:${DB_PASSWORD:-msp_local_dev}@postgres:5432/msp_portal?schema=public
+      - DATABASE_URL=postgresql://msp:${DB_PASSWORD:-msp_local_dev}@postgres:5432/msp_website?schema=public
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
       - NEXTAUTH_URL=http://localhost:3000
       - AUTH_TRUST_HOST=true

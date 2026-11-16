@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getArticle, getAllArticles, getRelatedArticles, getRecentArticles, isoDate, type BlogArticle } from "@/lib/blog";
+import { getRelatedArticles, getRecentArticles, isoDate, type BlogArticle } from "@/lib/blog";
+import { getPublishedPost, getPublishedPosts } from "@/lib/blog-db";
+import { MarkdownBody } from "@/components/blog/MarkdownBody";
 import { siteConfig } from "@/lib/config";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
@@ -12,14 +14,13 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const articles = getAllArticles();
-  return articles.map((article) => ({ slug: article.slug }));
-}
+// Rendered per request: the Docker build has no database, so post content is
+// read at runtime and cached across requests via unstable_cache in blog-db.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getPublishedPost(slug);
   if (!article) return { title: "Article Not Found" };
 
   const baseUrl = `https://${siteConfig.domain}`;
@@ -84,10 +85,12 @@ function articleSchema(article: BlogArticle, baseUrl: string) {
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getPublishedPost(slug);
   if (!article) notFound();
 
   const baseUrl = `https://${siteConfig.domain}`;
+  const allArticles = await getPublishedPosts();
+  const relatedArticles = getRelatedArticles(article, allArticles);
 
   return (
     <>
@@ -133,13 +136,7 @@ export default async function BlogArticlePage({ params }: Props) {
             </div>
           </header>
 
-          <div className="max-w-3xl prose prose-lg prose-neutral dark:prose-invert">
-            {article.body.split('\n').map((paragraph, i) => (
-              <p key={i} className="mb-6 text-muted-foreground leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <MarkdownBody content={article.body} />
 
           {article.slug.includes("tampa") && (
             <div className="mt-12 max-w-3xl rounded-xl border border-border bg-background p-6">
@@ -157,11 +154,11 @@ export default async function BlogArticlePage({ params }: Props) {
             </div>
           )}
 
-          {getRelatedArticles(article, getAllArticles()).length > 0 && (
+          {relatedArticles.length > 0 && (
             <div className="mt-12 max-w-3xl">
               <h2 className="mb-6 text-xl font-bold text-foreground">Related articles</h2>
               <div className="grid gap-4 sm:grid-cols-3">
-                {getRelatedArticles(article, getAllArticles()).map((related) => (
+                {relatedArticles.map((related) => (
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
@@ -201,7 +198,7 @@ export default async function BlogArticlePage({ params }: Props) {
           <section className="mt-16 max-w-3xl">
             <h2 className="mb-6 text-xl font-bold text-foreground">Recent posts</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {getRecentArticles(getAllArticles(), 5).map((recent) => (
+              {getRecentArticles(allArticles, 5).map((recent) => (
                 <article
                   key={recent.slug}
                   className="rounded-lg border border-border bg-background p-5"

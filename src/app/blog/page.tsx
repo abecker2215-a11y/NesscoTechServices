@@ -1,31 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  getAllArticles,
-  getArticlesByCategory,
   searchArticles,
   groupArticlesByDate,
   getRecentArticles,
 } from "@/lib/blog";
+import {
+  getPublishedPosts,
+  getPublishedByCategory,
+  getBlogCategories,
+} from "@/lib/blog-db";
 import { siteConfig } from "@/lib/config";
 import { ArrowLeft, ArrowRight, Clock, Search, Tag } from "lucide-react";
 import { pageTitle, metaDescription } from "@/lib/meta";
 
 const PAGE_SIZE = 12;
 
-export const categoryFilters = [
-  "All",
-  "Business IT",
-  "IT Strategy",
-  "Industries",
-  "Security",
-  "Data Protection",
-  "Cloud",
-  "Communications",
-  "Network",
-  "Backup",
-  "Applications",
-];
+// Rendered per request: the Docker build has no database, so blog content is
+// read at runtime and cached across requests via unstable_cache in blog-db.
+export const dynamic = "force-dynamic";
 
 const baseMetadata: Metadata = {
   title: pageTitle("IT Resources & Blog"),
@@ -69,11 +62,13 @@ function parsePage(value?: string): number {
  * Filter, sort, and slice the article list for one page of the index.
  * Sorting is newest-first so page 1 holds the most recent posts.
  */
-function getPageState(category: string, q: string, rawPage?: string) {
-  const matched = searchArticles(getArticlesByCategory(category), q).sort((a, b) => {
-    const diff = new Date(b.date).getTime() - new Date(a.date).getTime();
-    return diff !== 0 ? diff : 0;
-  });
+async function getPageState(category: string, q: string, rawPage?: string) {
+  const matched = searchArticles(await getPublishedByCategory(category), q).sort(
+    (a, b) => {
+      const diff = new Date(b.date).getTime() - new Date(a.date).getTime();
+      return diff !== 0 ? diff : 0;
+    }
+  );
 
   const totalPages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
   const currentPage = Math.min(parsePage(rawPage), totalPages);
@@ -104,7 +99,7 @@ function buildHref(paramsToSet: {
 
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const { category = "All", q = "" } = await searchParams;
-  const { currentPage } = getPageState(category, q, (await searchParams).page);
+  const { currentPage } = await getPageState(category, q, (await searchParams).page);
 
   return {
     ...baseMetadata,
@@ -142,14 +137,16 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const { category = "All", q = "" } = await searchParams;
   const requestedPage = (await searchParams).page;
 
-  const { matched, totalPages, currentPage, articles } = getPageState(
+  const { matched, totalPages, currentPage, articles } = await getPageState(
     category,
     q,
     requestedPage
   );
 
   const dateGroups = groupArticlesByDate(articles);
-  const recentArticles = getRecentArticles(getAllArticles(), 5);
+  const recentArticles = getRecentArticles(await getPublishedPosts(), 5);
+  const categories = await getBlogCategories();
+  const chipCategories = ["All", ...categories.map((c) => c.name)];
 
   const paginationBase = { category, q };
   const prevHref =
@@ -203,7 +200,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
             role="list"
             aria-label="Categories"
           >
-            {categoryFilters.map((cat) => (
+            {chipCategories.map((cat) => (
               <Link
                 key={cat}
                 href={buildHref({ category: cat, q })}

@@ -13,6 +13,7 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
+    "db:migrate-blog": "tsx prisma/migrate-blog-from-ts.ts",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "indexnow:all": "node scripts/submit-indexnow.mjs --all",
     "deploy": "docker compose build app && docker compose up -d app && npm run indexnow"
@@ -36,6 +37,9 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-hook-form": "^7.89.0",
+    "react-markdown": "^10.1.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.7.0",
     "web-push": "^3.6.7",
     "web-vitals": "^6.2.3",

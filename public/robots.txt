@@ -9,3 +9,4 @@ Disallow: /api/
 Disallow: /get-help/step-
 
 Sitemap: https://nesscotech.com/sitemap.xml
+Sitemap: https://nesscotech.com/blog-sitemap.xml
