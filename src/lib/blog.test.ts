@@ -128,6 +128,18 @@ describe("category coverage", () => {
     expect(comm.every((a) => a.category === "Communications")).toBe(true);
   });
 
+  it("returns IT Strategy articles", () => {
+    const strategy = getArticlesByCategory("IT Strategy");
+    expect(strategy.length).toBeGreaterThan(0);
+    expect(strategy.every((a) => a.category === "IT Strategy")).toBe(true);
+  });
+
+  it("returns Industries articles", () => {
+    const industries = getArticlesByCategory("Industries");
+    expect(industries.length).toBeGreaterThan(0);
+    expect(industries.every((a) => a.category === "Industries")).toBe(true);
+  });
+
   it("returns empty for Guides and Quick fixes (removed chips)", () => {
     expect(getArticlesByCategory("Guides")).toEqual([]);
     expect(getArticlesByCategory("Quick fixes")).toEqual([]);

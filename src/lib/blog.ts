@@ -1653,7 +1653,7 @@ Segmentation is mostly configuration, not hardware. If you already own managed s
     excerpt: "Funders increasingly ask how client data is protected. Documented IT practices turn a last-minute scramble into a five-minute answer. Here is the minimal set.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Nonprofits rarely think of IT as a grant deliverable. Then a funder's reporting package asks how client data is protected, who has access, and what happens after a breach — and the answer is "let me check with whoever handles that."
@@ -1767,7 +1767,7 @@ Training matters more here than tooling. Agents are independent, mobile, and bus
     excerpt: "CapEx or OpEx changes your tax treatment, your cash flow, and your refresh cycle. The answer depends on what you are actually buying and how long you keep it.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 The same server can be a capital expense or an operating expense depending on how you acquire it. The distinction affects cash flow, tax treatment, and how you plan refresh cycles.
@@ -1803,7 +1803,7 @@ The practical approach: decide what the workload needs, then choose the acquisit
     excerpt: "National IT spend benchmarks average companies that look nothing like yours. Here is what to measure instead, and how to build a number you can defend.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 IT benchmarks are everywhere, and they are mostly useless for a 15-person business. The national averages blend law firms with warehouses, and a company running a private server costs very differently from one fully in the cloud.
@@ -1888,7 +1888,7 @@ The test of whether your inventory is working is simple: if a laptop is stolen, 
     excerpt: "Leasing looks cheaper monthly and costs more over three years. Buying looks expensive and usually wins. Run the numbers both ways before you sign anything.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 Leasing is presented as the cash-flow-friendly option, and sometimes it is. But the monthly number is not the cost — the total commitment is.
@@ -1931,7 +1931,7 @@ The rule of thumb: lease things you refresh on a schedule and return cleanly. Bu
     excerpt: "A five-year-old laptop does not just run slow. It carries downtime, security gaps, and support hours that never appear on any invoice. Here is the real math.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 The purchase price of a laptop is the smallest part of its cost. The rest is what happens over its life — and old hardware is expensive in ways that do not show up on any invoice.
@@ -1964,7 +1964,7 @@ The practical fix is a refresh schedule rather than a run-to-failure approach. T
     excerpt: "Most small businesses pay for three tools that do the same job. Mapping your stack usually finds a month of savings, plus fewer places for data to hide.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Software accumulates. A tool gets added to solve a specific problem, then another, then someone notices two of them overlap. Eighteen months later nobody is sure which one is the real system of record.
@@ -2006,7 +2006,7 @@ Approach it as a sequence: audit, choose one winner per function, migrate delibe
       "A risk register is one page, not a framework. Here is the format leadership actually reads, the columns that matter, and the review habit that keeps it true.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 Risk registers have a reputation for being heavyweight. For a small business, that reputation is the problem — the document gets written once, nobody opens it again, and it stops reflecting reality within a quarter.
@@ -2308,7 +2308,7 @@ The second highest-value control is multi-factor authentication on email, becaus
     excerpt: "Auto-renewal clauses and per-click overages quietly drain budgets. Read these four terms before your next renewal date, and set a reminder a hundred days out.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Telecom and copier agreements are where small businesses most often overpay, because the charges are recurring, small enough not to trigger scrutiny, and structured to be hard to leave.
@@ -2625,7 +2625,7 @@ One caution: a poorly tested conditional access rollout can lock users out of th
     excerpt: "IT is rarely the headline in an acquisition, but it is where deals stall. Here is what buyers find, and what sellers should fix before going to market.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 Information technology is rarely the headline in a business acquisition. It is, however, one of the most common places where due diligence surfaces problems that change valuation or delay closing.
@@ -5455,7 +5455,7 @@ The plan fits on one page, which is the point — a design nobody documented wil
       "An IT roadmap is not a wish list. It is a sequenced plan that ties technology spending to business goals and makes the next three years easy to budget.",
     date: "Nov 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 A technology roadmap is a document that answers three questions: what are we trying to achieve, what has to change to achieve it, and when will each piece happen. Most businesses have never written one down.
@@ -5540,7 +5540,7 @@ The rule: treat the internet circuit as the critical path, because it almost alw
       "Most IT and telecom contracts are signed without reading the renewal terms. Auto-renewal, overage charges, and exit fees are where the money quietly goes.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Most IT and telecom contracts are signed without reading the renewal clause. The money leaks through a handful of predictable terms.
@@ -5579,7 +5579,7 @@ The cheapest negotiation is the one you do before the deadline, not after it.
       "Buying technology without a process produces duplicate tools and shelfware. A simple procurement checklist costs an hour and saves a year of wasted spend.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Buying technology without a process produces three tools that do the same job. A procurement checklist costs an hour and prevents a year of waste.
@@ -5769,7 +5769,7 @@ The honest point: a two-person rotation has no depth. Document everything, becau
       "The first IT hire and the outsourced option solve different problems. The right answer depends on headcount, systems, and how much you want to manage.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 The first IT hire and the outsourced option solve different problems. The right answer depends on headcount, systems, and how much you want to manage.
@@ -5809,7 +5809,7 @@ The real question: do you have enough work to keep one person busy, and do you h
       "An IT steering committee sounds like enterprise bureaucracy. For a small business it is a standing meeting where tech decisions stop being made in hallways.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 An IT steering committee sounds like enterprise bureaucracy. For a small business it is a standing meeting where technology decisions stop being made in hallways.
@@ -6667,7 +6667,7 @@ The rule: own your numbers, and keep them when you change providers.
       "Independent insurance agencies handle client financial data all day. That makes them a persistent target, and it makes certain safeguards non-negotiable.",
     date: "Sep 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Independent insurance agencies handle client financial data all day. That makes them a persistent target, and it makes certain safeguards non-negotiable for them.
@@ -6711,7 +6711,7 @@ The practical first step: an inventory of where client data lives, which is usua
       "An IT audit usually arrives with a deadline and a request list. Most of the work is assembling evidence you already have, if you kept it in one place.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 An IT audit usually arrives with a deadline and a request list. Most of the work is assembling evidence you already have, if you kept it in one place.
@@ -6753,7 +6753,7 @@ The habit that makes the next one easy: keep an evidence folder, updated quarter
       "Most businesses assess IT vendors on whether things break. A simple scorecard measures responsiveness, resolution quality, and whether issues stay fixed.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Most businesses assess IT vendors on whether things break. A simple scorecard measures responsiveness, resolution quality, and whether issues stay fixed.
@@ -6796,7 +6796,7 @@ The honest caveat: a scorecard measures what you asked it to measure. If the num
       "Most IT service level agreements are copied from a template and never reviewed. A useful one defines severity, response, and what happens when it is missed.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 Most IT service level agreements are copied from a template and never reviewed. A useful one defines severity, response, and what happens when it is missed.
@@ -6840,7 +6840,7 @@ The practical test: if a target is missed, does anything happen? If not, it is a
       "A business impact analysis answers one question: if this system stopped, what would it cost? It is the foundation of any credible recovery plan you write.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 A business impact analysis answers one question: if this system stopped, what would it cost? It is the foundation of any credible recovery plan.
@@ -7018,7 +7018,7 @@ The measure of success: fewer repeat incidents, and people reporting suspicious 
       "IT requests fail when they are justified in technical terms. A business case translates request into cost, risk, and operational impact for a director to weigh.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 IT requests fail when they are justified in technical terms. A business case translates the request into cost, risk, and operational impact a director can weigh.
@@ -7060,7 +7060,7 @@ The practical advice: write the recommendation first, then the evidence to suppo
       "Manufacturing IT looks nothing like office IT. Machine uptime, dust, vibration, and production schedules change every standard assumption about support.",
     date: "Jan 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Manufacturing IT looks nothing like office IT. Machine uptime, dust, vibration, and production schedules change every standard assumption about support.
@@ -8099,7 +8099,7 @@ The honest point: most businesses can move to cloud fax and save the line rental
       "Online retail puts the website at the centre of the business. That changes what downtime costs, what security means, and how support has to work differently.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Online retail puts the website at the centre of the business. That changes what downtime costs, what security means, and how support has to work.
@@ -8141,7 +8141,7 @@ The honest point: for e-commerce, the website is the business. Support prioritie
       "Staffing agencies hold candidate identity documents and client contracts together. That combination makes them a target and raises the stakes on access control.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Staffing agencies hold candidate identity documents and client contracts in equal measure. That combination makes them a target and raises the stakes on access control.
@@ -8184,7 +8184,7 @@ Consolidating that is the single highest-value change.
       "Distribution runs on connectivity between the cab, the warehouse, and the customer. When any one of those drops, the schedule breaks rather than the email.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Distribution runs on connectivity between the cab, the warehouse, and the customer. When any one of those drops, the schedule breaks rather than the email.
@@ -8226,7 +8226,7 @@ The honest point: in distribution, an application that works offline is worth mo
       "Veterinary practices combine medical records, imaging, and a busy phone line. The IT requirements look like healthcare, with a different set of constraints.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Veterinary practices combine medical records, imaging, and a busy phone line. The IT requirements look like healthcare, with a different set of constraints.
@@ -8269,7 +8269,7 @@ The practical first step: confirm when the practice management database was last
       "Design firms move large files constantly and work across offices and sites. Bandwidth, storage, and collaboration tools decide whether the practice runs well.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Design firms move large files constantly and work across offices and sites. Bandwidth, storage, and collaboration tools decide whether the practice runs smoothly.
@@ -8310,7 +8310,7 @@ The practical point: in a design practice, storage performance and file discipli
       "Agencies juggle many clients, many tools, and constant file exchange. The IT challenge is keeping client work separated and making collaboration painless.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Agencies juggle many clients, many tools, and constant file exchange. The IT challenge is keeping client work separated and making collaboration painless.
@@ -8347,7 +8347,7 @@ The practical first step: build an access register listing every client platform
       "Mortgage and title firms handle identity documents, financial records, and wire instructions. That puts them directly in the path of business email compromise.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Mortgage and title firms handle identity documents, financial records, and wire instructions. That combination places them squarely in the path of business email compromise.
@@ -8390,7 +8390,7 @@ Documenting that rule and training to it is the highest-value work in this secto
       "Private schools carry a dual obligation: student data that must be protected, and a network that has to stay usable for hundreds of devices at any one time.",
     date: "Feb 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Private schools carry a dual obligation: student data that must be protected, and a network that has to stay usable for hundreds of devices at once.
@@ -9356,7 +9356,7 @@ The honest point: these systems are low-cost and low-visibility, and they are ex
       "Farms run on connectivity across large areas, often with poor coverage and sharp seasonal peaks. IT needs look more like a distributed network than an office.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Farms run on connectivity across large areas, often with poor coverage and sharp seasonal peaks. The IT needs look more like a distributed network than an office.
@@ -9399,7 +9399,7 @@ Start with the connectivity, because everything else depends on it.
       "Gyms run on booking systems, card payments, and always-on member Wi-Fi. When any one of those fails, the front desk absorbs the impact within a few minutes.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Gyms run on booking systems, card payments, and always-on member Wi-Fi. When any one of those fails, the front desk absorbs the impact within a few minutes.
@@ -9441,7 +9441,7 @@ Availability is the feature.
       "Salons live on appointments, card payments, and a booking system that simply cannot go down. The IT needs are small, specific, and unusually easy to get wrong.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Salons live on appointments, card payments, and a booking system that simply cannot go down. The IT needs are small, specific, and unusually easy to get wrong.
@@ -9485,7 +9485,7 @@ The investment should follow that reality.
       "Auto repair shops combine workshop software, diagnostic tools, and a busy phone line. The technology has to survive grease, dust, and impatient customers.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Auto repair shops combine workshop software, diagnostic tools, and a busy phone line. The technology has to survive grease, dust, and rather impatient customers.
@@ -9527,7 +9527,7 @@ Design for dust, heat, and a busy phone.
       "Churches run on volunteer effort and donated hardware. That combination makes planning more important than budget, and documentation more valuable than tools.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Churches run on volunteer effort and donated hardware. That combination makes planning more important than budget, and documentation more valuable than tools.
@@ -9568,7 +9568,7 @@ The honest point: volunteer-run organisations need less technology and more resi
       "Financial advisors hold client financial data under regulatory obligations. Compliance requirements are specific, and technical controls are mostly standard.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Financial advisors hold client financial data under regulatory obligations. The compliance requirements are specific, and the technical controls are largely standard.
@@ -10799,7 +10799,7 @@ Start with the devices that would hurt most if they failed.
       "Software asset management is the practice of knowing what you own, what you use, and what you are licensed for. Audits punish the gap between those three.",
     date: "Mar 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "5 min read",
     body: `
 Software asset management is the practice of knowing what you own, what you use, and what you are licensed for. Audits punish the gap between those three.
@@ -10852,7 +10852,7 @@ A single register, reviewed annually, prevents both the audit surprise and the m
       "Childcare centres hold children's personal data and run a tight schedule. The IT needs are modest, but the consequences of getting them wrong are not.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Childcare centres hold children's personal data and run a tight operational schedule. The IT needs are modest, but the consequences of getting them wrong are not.
@@ -10897,7 +10897,7 @@ Treat the data accordingly.
       "Funeral homes handle sensitive family data at the hardest moments. Reliability and discretion matter more than features, and downtime is not an option.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Funeral homes handle sensitive family data at the worst moment of people's lives. Reliability and discretion matter more than features, and downtime is not acceptable.
@@ -10943,7 +10943,7 @@ The honest point: in this sector, availability is the product.
       "Studios generate enormous files and depend on fast storage. Capacity planning, backup, and delivery bandwidth matter more than almost any other business type.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Studios generate enormous files and depend on fast storage. Capacity planning, backup, and delivery bandwidth matter more than almost any other business type.
@@ -10987,7 +10987,7 @@ The honest point: in a studio, storage strategy is the IT strategy.
       "Print shops run networked and software-driven production equipment. The IT and operational technology boundaries blur more here than in most businesses.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Print shops run production equipment that is network-connected and software-driven. The IT and operational technology boundaries blur more here than in most businesses.
@@ -11030,7 +11030,7 @@ Treating the print server as part of the IT estate, rather than as a peripheral,
       "Dealerships run on dealer management systems that touch sales, service, finance, and compliance. The dependency is deep, and the downtime cost is immediate.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Dealerships run on dealer management systems that touch sales, service, finance, and compliance. The dependency is deep, and the downtime cost is immediate.
@@ -11077,7 +11077,7 @@ The honest point: dealership IT is operationally critical infrastructure, not of
       "Travel agencies run on global distribution systems and hold payment data. The booking dependency is external, and the compliance exposure is significant.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Travel agencies run on global distribution systems and hold payment data. The booking dependency is external, and the compliance exposure is significant.
@@ -12032,7 +12032,7 @@ Treating the room is the cheapest and most effective fix, and it is the one most
       "IT governance sounds like a board-level concern. At small scale it is much simpler: who decides, who is told, and how each decision actually gets recorded.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 IT governance sounds like a board-level concern. At small scale it is simpler: who decides, who is told, and how decisions get recorded.
@@ -12080,7 +12080,7 @@ The value is in the clarity, not the formality.
       "Compliance deadlines arrive whether or not anyone is watching them. A single calendar of obligations turns a recurring scramble into a scheduled task.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Compliance deadlines arrive whether or not anyone is watching. A single calendar of obligations turns a recurring scramble into a scheduled task.
@@ -12128,7 +12128,7 @@ One page, with dates and owners, prevents the majority of them.
       "Risk appetite is a statement of how much uncertainty the business will accept. Without it, every risk decision is argued from a different starting point.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Risk appetite is a statement of how much uncertainty the business will accept. Without it, every risk decision is argued from a different starting point.
@@ -12225,7 +12225,7 @@ The first time someone else follows it successfully, the effort has paid for its
       "Telecom invoices are complex, recurring, and rarely checked properly. A quarterly review usually finds several lines you are paying for and no longer using.",
     date: "Apr 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Telecom invoices are complex, recurring, and rarely checked. A quarterly review usually finds lines you are paying for and no longer using.
@@ -12273,7 +12273,7 @@ Start by matching the invoice to your site list.
       "Trade businesses live on scheduling, dispatch, and a phone that gets answered every time. The IT is simple, and the operational dependency is absolute.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Trade businesses live on scheduling, dispatch, and a phone that gets answered. The IT is simple, and the operational dependency is absolute.
@@ -12318,7 +12318,7 @@ Design for the field, not for the office.
       "Landscaping runs on seasonal scheduling and crews spread across properties. The technology needs look agricultural and the customer service looks retail.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Landscaping runs on seasonal scheduling and crews spread across properties. The technology needs look agricultural and the customer service looks retail.
@@ -12365,7 +12365,7 @@ Crews that can see the job history arrive prepared.
       "Cleaning companies run on contracts, schedules, and proof of work. The IT is modest, but the audit trail it produces is what actually retains clients.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Cleaning companies run on contracts, schedules, and proof of work. The IT is modest, but the audit trail it produces is what retains clients.
@@ -12412,7 +12412,7 @@ That is worth more than any other IT investment in this sector.
       "Guard companies handle incident reports, patrol verification, and client reporting. The data is sensitive, retention is long, and access needs are narrow.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Guard companies handle incident reports, patrol verification, and client reporting. The data is sensitive, the retention is long, and the access needs are narrow.
@@ -12459,7 +12459,7 @@ Treat access and retention as the primary controls.
       "Independent pharmacies run on regulated dispensing systems. Uptime, backup, and access control are not conveniences; they are conditions of operating.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Independent pharmacies run on dispensing systems that are heavily regulated. Uptime, backup, and access control are not conveniences; they are conditions of operating.
@@ -12508,7 +12508,7 @@ The technology is available and well understood. The gap is usually documentatio
       "Credit unions carry banking obligations at a smaller scale. The compliance requirements are identical, and the IT team is usually a good deal smaller.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Credit unions carry banking obligations at a smaller scale. The compliance requirements are the same, and the IT team is usually smaller.
@@ -12557,7 +12557,7 @@ The controls are mostly about evidence and access discipline.
       "Home builders manage drawings, selections, schedules, and subcontractors across multiple sites. The document control problem is the one that hurts most.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Home builders manage drawings, selections, schedules, and subcontractors across multiple sites. The document control problem is the one that hurts most.
@@ -12604,7 +12604,7 @@ Agree the naming and the location, then enforce it.
       "Waste firms run route scheduling, on-board weighing, and weighbridge systems. The operational technology and IT boundaries overlap heavily in this sector.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Waste firms run route scheduling, on-board weighing, and scale systems. The operational technology and IT boundaries overlap heavily.
@@ -13578,7 +13578,7 @@ Set the retention and the access rules before you start using it for clients.
       "An IT strategy is usually a long document nobody ever reads. For a small business, one page that connects technology to business goals is worth far more.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 An IT strategy is usually a long document nobody reads. For a small business, one page that connects technology to business goals is worth more.
@@ -13628,7 +13628,7 @@ Write it together, keep it short, and read it before the next budget cycle.
       "Digital maturity is not about having the latest tools. It is about how well technology supports the business, and most assessments start from the wrong end.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Digital maturity is not about having the latest tools. It is about how well technology supports the business, and most assessments start from the wrong end.
@@ -13675,7 +13675,7 @@ Assess annually, and track the weakest dimension rather than the average.
       "IT budgets fail because they are built from last year's spend plus a guess. A forecast built from the asset register and the contract calendar is defensible.",
     date: "May 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 IT budgets fail because they are built from last year's spend plus a guess. A forecast built from the asset register and the contract calendar is defensible.
@@ -13777,7 +13777,7 @@ The test is simple: can a new team member follow it without asking anyone?
       "Chiropractic clinics run on scheduling, treatment notes, and card payments. The IT is small, and the patient record dependency is absolute in practice.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Chiropractic clinics run on scheduling, treatment notes, and card payments. The IT is small, and the patient record dependency is absolute.
@@ -13824,7 +13824,7 @@ Treat it with the same care as any healthcare IT.
       "Optometry practices run on electronic health records, diagnostic imaging, and a busy phone. The device fleet is unusual and the data is highly sensitive.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Optometry practices run on electronic health records, diagnostic imaging, and a busy phone. The device fleet is unusual and the data is sensitive.
@@ -13921,7 +13921,7 @@ That shift, more than any technology decision, determines whether IT feels like 
       "Marinas combine hospitality, security, and harsh environmental conditions. The technology must survive salt, moisture, and sun while serving transient guests.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Marinas combine hospitality, security, and harsh environmental conditions. The technology has to survive salt, moisture, and sun while serving transient customers.
@@ -13968,7 +13968,7 @@ Buy equipment rated for the environment, and it will outlast anything bought on 
       "Labs run on instruments, results systems, and strict data integrity. The IT requirements come from the science and the regulation, not from an office template.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Labs run on instruments, results systems, and strict data integrity. The IT requirements come from the science and the regulation, not from an office template.
@@ -14017,7 +14017,7 @@ Treat the results data as the primary asset.
       "Public sector IT carries procurement rules, accessibility obligations, and transparency requirements. The technology is familiar; the constraints are not.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "5 min read",
     body: `
 Public sector IT carries procurement rules, accessibility obligations, and transparency requirements. The technology is familiar; the constraints are not.
@@ -14064,7 +14064,7 @@ Plan around the procurement and budget cycles rather than fighting them.
       "Utilities run on field connectivity, outage management, and regulatory reporting. The technology supports physical infrastructure that cannot go offline.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Utilities run on field connectivity, outage management, and regulatory reporting. The technology supports physical infrastructure that cannot go offline.
@@ -15035,7 +15035,7 @@ Agents improve when the feedback is specific and consistent.
       "ITIL is a framework for IT service management. A small team needs a small subset of it, and attempting the whole framework produces process without benefit.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 ITIL is a framework for IT service management. A small team needs a small subset of it, and attempting the whole framework produces process without benefit.
@@ -15183,7 +15183,7 @@ The one rule worth enforcing: nothing reaches production without a tested way ba
       "Most businesses accumulate IT vendors faster than they retire them. Consolidation cuts cost and, more importantly, the people to coordinate during an incident.",
     date: "Jun 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Most businesses accumulate IT vendors faster than they retire them. Consolidation reduces cost and, more importantly, reduces the number of people to coordinate during an incident.
@@ -15233,7 +15233,7 @@ That reduction in coordination overhead is worth more than the invoice savings.
       "Dental practices run on imaging, charting, and a schedule that fills weeks ahead. The technology has to be reliable, and the imaging data has to survive.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Dental practices run on imaging, charting, and a schedule that fills weeks ahead. The technology has to be reliable, and the imaging data has to survive.
@@ -15282,7 +15282,7 @@ Everything else is ordinary business IT.
       "Physical therapy clinics run on scheduling, outcome tracking, and high patient throughput. The IT has to keep up with a busy floor and a tight schedule.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Physical therapy clinics run on scheduling, outcome tracking, and high patient throughput. The IT has to keep up with a busy floor and a tight schedule.
@@ -15331,7 +15331,7 @@ Buy for that, not for features.
       "Mental health records are among the most sensitive data a business holds. Confidentiality expectations run higher than HIPAA, and disclosure risk is grave.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Mental health records are among the most sensitive data a business can hold. The confidentiality expectations are higher than HIPAA alone, and the risk of disclosure is severe.
@@ -15380,7 +15380,7 @@ The failure mode is usually a convenient shortcut rather than a sophisticated at
       "Pest control runs on route density, recurring service, and mobile technicians. The scheduling and the customer record are the two things that cannot fail.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Pest control runs on route density, recurring service, and mobile technicians. The scheduling and the customer record are the two things that cannot fail.
@@ -15429,7 +15429,7 @@ That is the whole IT requirement.
       "Pool service runs on weekly recurring routes and chemical logs. Route density is high, margins are thin, and mobile data capture is the differentiator.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Pool service runs on weekly recurring routes and chemical logs. The route density is high, the margins are thin, and the mobile data capture is the differentiator.
@@ -15478,7 +15478,7 @@ Mobile capture and route density are the whole game.
       "Locksmiths hold keys, codes, and access credentials for client premises. That is a concentration of physical security information needing protection like data.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Locksmiths hold keys, codes, and access credentials for client premises. That is a concentration of physical security information that needs protecting like data.
@@ -15527,7 +15527,7 @@ Treat the credential database as the most sensitive system you own.
       "Auto glass and towing run on dispatch speed and mobile payment. The call comes in, the driver goes out, and the transaction happens wherever the vehicle is.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Auto glass and towing run on dispatch speed and mobile payment. The call comes in, the driver goes out, and the transaction happens wherever the vehicle is.
@@ -15576,7 +15576,7 @@ Design for the driver.
       "Florists handle seasonal spikes, online orders, and perishable inventory. The IT has to absorb Valentine's Day and Mother's Day without ever falling over.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Florists handle seasonal spikes, online orders, and perishable inventory. The IT has to absorb Valentine's Day and Mother's Day without falling over.
@@ -15625,7 +15625,7 @@ Plan for the spike.
       "Caterers and food trucks operate entirely away from a fixed location. Connectivity, payment, and menu management all have to work in a car park or a field.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Caterers and food trucks operate entirely away from a fixed location. Connectivity, payment, and menu management all have to work in a car park or a field.
@@ -15674,7 +15674,7 @@ It is the product requirement.
       "HOAs and condo associations hold owner data, financial records, and vendor access for shared property. Governance is volunteer-run and the data is sensitive.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 HOAs and condo associations hold owner data, financial records, and vendor access for shared property. The governance is volunteer-run and the data is sensitive.
@@ -16712,7 +16712,7 @@ Track that, and the rest follows.
       "Most businesses cannot say what IT costs each department. Showback makes it visible; chargeback makes it a real cost. Both change behaviour noticeably.",
     date: "Jul 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 Most businesses cannot say what IT costs each department. Showback makes it visible; chargeback makes it a real cost. Both change behaviour.
@@ -16760,7 +16760,7 @@ The visibility alone changes most requests.
       "Billing services handle protected health information at scale. The IT has to be fast, accurate, and audit-ready, because every single record is a claim.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Billing services handle protected health information at scale. The IT has to be fast, accurate, and audit-ready, because every record is a claim.
@@ -16807,7 +16807,7 @@ Get those right and the business runs.
       "Home care runs on mobile documentation at the point of care. The record is created in a living room, not an office, and the connection may be unreliable.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Home care runs on mobile documentation at the point of care. The record is created in a living room, not an office, and the connection may be unreliable.
@@ -16856,7 +16856,7 @@ Design for that, and the office side becomes straightforward.
       "Care homes run on clinical records, medication administration, and a 24-hour operational cycle. Downtime affects residents directly, not merely the staff.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Care homes run on clinical records, medication administration, and a 24-hour operational cycle. Downtime affects residents directly, not just staff.
@@ -16905,7 +16905,7 @@ Document the fallback and test it.
       "Pet care combines clinical records, boarding reservations, and retail. Data is less regulated than human healthcare, but the operational dependency is similar.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Pet care businesses combine clinical records, boarding reservations, and retail. The data is less regulated than human healthcare, but the operational dependency is similar.
@@ -16952,7 +16952,7 @@ Treat the clinical data as sensitive, and the rest is ordinary business IT.
       "Tree and irrigation work happens outdoors, at height, and in bad weather. The mobile technology has to survive conditions that destroy office equipment.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Tree and irrigation work happens outdoors, at height, and in bad weather. The mobile technology has to survive conditions that destroy office equipment.
@@ -16999,7 +16999,7 @@ That single decision determines whether the technology helps or hinders.
       "Roofing and remodelling run on estimates, change orders, and photo documentation. The project record is what protects the business when a dispute arises.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Roofing and remodelling run on estimates, change orders, and photo documentation. The project record is what protects the business when a dispute arises.
@@ -17048,7 +17048,7 @@ Everything else is secondary.
       "Car washes run on throughput and unattended payments. The technology has to handle a queue of cars and a card reader that sits out in a wet environment.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Car washes run on throughput and unattended payments. The technology has to handle a queue of cars and a card reader in a wet environment.
@@ -17095,7 +17095,7 @@ Protect the terminals, segment the network, and make sure payments survive a dro
       "Dry cleaners run on ticket tracking and recurring routes. The barcode on the ticket is the whole system, and losing it often means losing the garment.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Dry cleaners run on ticket tracking and recurring routes. The barcode on the ticket is the whole system, and losing it means losing the garment.
@@ -17144,7 +17144,7 @@ That is the whole IT requirement.
       "Tutoring and lesson businesses run on scheduling and recurring billing. Most of the work is coordinating people, and the software should not be the hard part.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Tutoring and lesson businesses run on scheduling and recurring billing. Most of the work is coordinating people, and the software should not be the hard part.
@@ -17193,7 +17193,7 @@ Everything else is a distraction from teaching.
       "Inspectors produce detailed reports with photographs, often from a crawl space. The mobile workflow and the report archive are the two things that must work.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "Industries",
     readTime: "4 min read",
     body: `
 Inspectors produce detailed reports with photographs, often from a crawl space. The mobile workflow and the report archive are the two things that must work.
@@ -18151,7 +18151,7 @@ That review is where the definitions improve.
       "A small IT function is usually one or two people covering everything. Knowing what skills are needed, and where the gaps are, prevents single points of failure.",
     date: "Aug 2026",
     author: "Nessco Tech Services",
-    category: "Business IT",
+    category: "IT Strategy",
     readTime: "4 min read",
     body: `
 A small IT function is usually one or two people covering everything. Understanding what skills are needed, and where the gaps are, prevents single points of failure.
