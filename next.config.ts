@@ -77,6 +77,15 @@ const nextConfig: NextConfig = {
           { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://plausible.io; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://plausible.io; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http: https:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://plausible.io wss: ws:; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" },
         ],
       },
+      {
+        // Auto-generated Next.js metadata routes: never indexable page content.
+        source: "/opengraph-image",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/apple-icon",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
     ];
   },
   turbopack: {

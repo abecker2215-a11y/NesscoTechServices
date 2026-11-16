@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getArticle, getAllArticles, getRelatedArticles, getRecentArticles, type BlogArticle } from "@/lib/blog";
+import { getArticle, getAllArticles, getRelatedArticles, getRecentArticles, isoDate, type BlogArticle } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: metaDescription(article.excerpt),
       url: pageUrl,
       type: "article",
-      publishedTime: article.date,
+      publishedTime: isoDate(article.date),
       authors: [article.author],
       tags: [article.category],
       images: [
@@ -55,20 +55,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function articleSchema(article: BlogArticle) {
+function articleSchema(article: BlogArticle, baseUrl: string) {
+  const published = isoDate(article.date);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
     description: article.excerpt,
-    datePublished: article.date,
+    datePublished: published,
+    dateModified: published,
+    image: [article.image ?? `${baseUrl}/og-image.png`],
     author: {
       "@type": "Organization",
       name: article.author,
+      url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
+      url: baseUrl,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blog/${article.slug}`,
     },
   };
 }
@@ -78,6 +87,8 @@ export default async function BlogArticlePage({ params }: Props) {
   const article = getArticle(slug);
   if (!article) notFound();
 
+  const baseUrl = `https://${siteConfig.domain}`;
+
   return (
     <>
       <JsonLd data={breadcrumbSchema([
@@ -85,7 +96,7 @@ export default async function BlogArticlePage({ params }: Props) {
         { name: "Blog", path: "/blog" },
         { name: article.title, path: `/blog/${slug}` },
       ])} />
-      <JsonLd data={articleSchema(article)} />
+      <JsonLd data={articleSchema(article, baseUrl)} />
       <article className="py-16 lg:py-24">
         <div className="container">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">

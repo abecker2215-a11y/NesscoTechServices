@@ -5,7 +5,7 @@ import { blogArticles } from "@/lib/blog";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { OpenStatus } from "@/components/layout/OpenStatus";
-import { CloudLightning, ArrowRight, Star, BadgeCheck, Users, Award } from "lucide-react";
+import { Star, BadgeCheck, Users, Award } from "lucide-react";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { Briefcase, Shield, Database, Cable, Headset, HardDrive, Monitor, Mail } from "lucide-react";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -62,26 +62,6 @@ export default function ManagedItServicesTampaPage() {
           <HeroBanner />
           <div className="absolute inset-0 bg-navy-950/20" />
           <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-primary/5" aria-label="Storm readiness check">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-            <p className="flex items-center gap-3 text-sm text-foreground">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <CloudLightning className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Hurricane season doesn&apos;t negotiate.</strong>{" "}
-                <span className="text-muted-foreground">60-second check: would your files survive an outage?</span>
-              </span>
-            </p>
-            <Button variant="outline" size="sm" href="/storm-ready" className="shrink-0">
-              Check my score
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-          </div>
         </div>
       </section>
 

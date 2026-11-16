@@ -4,14 +4,18 @@ import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { CheckCircle, Shield, AlertTriangle, FileText, ArrowRight } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
+
+const healthCheckTitle = "Free IT Health Check | Tampa Bay MSP";
+const healthCheckDescription = "Get a free IT health check for your Tampa Bay business. We review security risks, backup gaps, and network weak spots, then send a prioritized report with no obligation.";
 
 export const metadata: Metadata = {
-  title: "Free IT Health Check | Tampa Bay MSP",
-    description: "Free IT health check for Tampa Bay businesses. Identify security risks, backup gaps, and IT issues early.",
+  title: healthCheckTitle,
+  description: metaDescription(healthCheckDescription),
   alternates: { canonical: "https://nesscotech.com/it-health-check" },
   openGraph: {
     title: "Free IT Health Check | Nessco Tech Services",
-  description: "Free IT health check for Tampa Bay businesses. Identify security risks, backup gaps, and IT issues early.",
+    description: metaDescription(healthCheckDescription),
     url: "https://nesscotech.com/it-health-check",
     type: "website",
   },

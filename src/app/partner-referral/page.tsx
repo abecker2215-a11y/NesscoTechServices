@@ -8,11 +8,11 @@ import { Users, DollarSign, Handshake, Shield } from "lucide-react";
 export const metadata: Metadata = {
   title: pageTitle("Partner Referral Program"),
   description: metaDescription("Partner with Nessco Tech Services. Earn referral commissions by referring small businesses that need managed IT services, cybersecurity, and Microsoft 365 management."),
-  alternates: { canonical: "https://nesscotech.com/partner-referral/" },
+  alternates: { canonical: "https://nesscotech.com/partner-referral" },
   openGraph: {
     title: pageTitle("Partner Referral Program"),
     description: metaDescription("Partner with Nessco Tech Services. Earn referral commissions by referring small businesses that need managed IT services."),
-    url: "https://nesscotech.com/partner-referral/",
+    url: "https://nesscotech.com/partner-referral",
     type: "website",
     images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Partner Referral Program" }],
   },
@@ -65,7 +65,7 @@ const faqs = [
 export default function PartnerReferralPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Partner Referral", path: "/partner-referral/" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Partner Referral", path: "/partner-referral" }])} />
       <JsonLd data={faqPageSchema(faqs)} />
 
       <section className="py-20 lg:py-32" aria-labelledby="hero-heading">

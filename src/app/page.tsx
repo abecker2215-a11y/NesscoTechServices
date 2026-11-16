@@ -6,11 +6,10 @@ import { HeroBanner } from "@/components/home/HeroBanner";
 import { services } from "@/lib/services";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { Testimonials } from "@/components/home/SocialProof";
-import { OpenStatus } from "@/components/layout/OpenStatus";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { faqPageSchema } from "@/lib/schemas";
 import { pageTitle, metaDescription } from "@/lib/meta";
-import { CloudLightning, ArrowRight, Star, BadgeCheck, Users, Award, Shield, Monitor, Briefcase, DollarSign, Lock } from "lucide-react";
+import { Shield, Monitor, Briefcase, DollarSign, Lock } from "lucide-react";
 
 export const metadata: Metadata = {
     title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
@@ -187,93 +186,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-primary/5" aria-label="Storm readiness check">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-            <p className="flex items-center gap-3 text-sm text-foreground">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <CloudLightning className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Hurricane season doesn&apos;t negotiate.</strong>{" "}
-                <span className="text-muted-foreground">60-second check: would your files survive an outage?</span>
-              </span>
-            </p>
-            <Button variant="outline" size="sm" href="/storm-ready" className="shrink-0">
-              Check my score
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <LiveStatsClient />
 
         <TrustSignalBarClient />
 
-          <p className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-            <OpenStatus variant="inline" />
-            <span aria-hidden="true">•</span>
-            <span>Starting at $75</span>
-            <span aria-hidden="true">•</span>
-            <span>Remote & On-Site</span>
-            <span aria-hidden="true">•</span>
-            <span>Tampa Bay Area</span>
-          </p>
-
-          {/* Trust badges below stats */}
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
-              <span className="font-medium text-foreground">5.0★</span>
-              <span>Google</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <BadgeCheck className="h-4 w-4 text-success" aria-hidden="true" />
-              <span>Licensed & Insured</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Users className="h-4 w-4" aria-hidden="true" />
-              <span>500+ Clients</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Award className="h-4 w-4 text-warning" aria-hidden="true" />
-              <span>Top Rated Tampa Bay</span>
-            </span>
-          </div>
-
-       <section className="py-12 sm:py-16 lg:py-24">
-        <Reveal>
-        <div className="mx-auto max-w-none px-2 sm:px-4">
-          <div className="sr-only">
-            <h2>Need IT Support for Your Business?</h2>
-            <p>We manage technology for small businesses across Tampa Bay — so you can focus on your work.</p>
-            <ul>
-              <li>Pay As You Go: Occasional help when something breaks. Hourly rates, no commitment.</li>
-              <li>Essentials: Basic monitoring, patching, and help desk for small teams.</li>
-              <li>Managed (Most Popular): Full IT management: monitoring, security, backups, strategy.</li>
-              <li>Complete: Managed IT + advanced security, compliance, and vCIO guidance.</li>
-            </ul>
-          </div>
-          <Link
-            href="/services/managed-it-services"
-            className="block relative aspect-[1672/941] w-full overflow-hidden rounded-lg bg-background ring-1 ring-border transition-[box-shadow,border-color] duration-300 hover:ring-4 hover:ring-primary/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
-            aria-label="Learn About Business IT Plans"
-          >
-            <Image
-              src="/services-images/tampa-bay-it-support-plans.png"
-              alt="Need IT Support for Your Business? Pay As You Go, Essentials, Managed (Most Popular), Complete plans with Learn About Business IT Plans button"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-              unoptimized
-            />
-          </Link>
-        </div>
-        </Reveal>
-      </section>
-
-       <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24">
         <Reveal>
         <div className="container">
           <div className="sr-only">
@@ -433,59 +350,6 @@ export default function HomePage() {
       </section>
 
       <Testimonials />
-
-      <section className="py-12 sm:py-16 lg:py-24" aria-labelledby="pricing-heading">
-        <Reveal>
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 id="pricing-heading" className="fluid-3xl font-bold text-foreground mb-4">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="fluid-base text-muted-foreground">
-              No hidden fees. No long-term contracts unless you want one.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Remote IT Help</h3>
-              <div className="text-4xl font-bold text-foreground mb-2">$75</div>
-              <p className="text-muted-foreground mb-4">/ hour</p>
-              <ul className="space-y-2 text-sm text-muted-foreground mb-6" role="list">
-                <li>• Secure remote desktop session</li>
-                <li>• Software troubleshooting</li>
-                <li>• Email & browser issues</li>
-                <li>• Quick fixes & tune-ups</li>
-              </ul>
-              <Button variant="outline" className="w-full" href="/get-help">
-                Request Remote Help
-              </Button>
-            </div>
-            <div className="p-6 rounded-lg lift-hover border border-border bg-background relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                Most Popular
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">On-Site IT Help</h3>
-              <div className="text-4xl font-bold text-foreground mb-2">$125</div>
-              <p className="text-muted-foreground mb-4">/ hour</p>
-              <ul className="space-y-2 text-sm text-muted-foreground mb-6" role="list">
-                <li>• We come to your business or office</li>
-                <li>• Hardware repair & installation</li>
-                <li>• Network cabling & Wi-Fi setup</li>
-                <li>• Device setup & configuration</li>
-              </ul>
-              <Button className="w-full" href="/get-help">
-                Schedule On-Site
-              </Button>
-            </div>
-          </div>
-          <div className="text-center">
-            <Button variant="outline" href="/pricing">
-              View Business Plans
-            </Button>
-          </div>
-        </div>
-        </Reveal>
-      </section>
 
       <section className="py-12 sm:py-16 lg:py-24 bg-muted/30" aria-labelledby="faq-heading">
         <Reveal>
