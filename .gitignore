@@ -41,3 +41,7 @@ lint-report.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IndexNow submission state (machine-local, not shared)
+.indexnow-state.json
+scripts/.indexnow-state.json

@@ -12,7 +12,10 @@
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "indexnow:all": "node scripts/submit-indexnow.mjs --all",
+    "deploy": "docker compose build app && docker compose up -d app && npm run indexnow"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.3",
