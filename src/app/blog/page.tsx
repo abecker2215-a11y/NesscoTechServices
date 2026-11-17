@@ -147,6 +147,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const recentArticles = getRecentArticles(await getPublishedPosts(), 5);
   const categories = await getBlogCategories();
   const chipCategories = ["All", ...categories.map((c) => c.name)];
+  const categorySlugByName = new Map(categories.map((c) => [c.name, c.slug]));
 
   const paginationBase = { category, q };
   const prevHref =
@@ -200,16 +201,21 @@ export default async function BlogPage({ searchParams }: PageProps) {
             role="list"
             aria-label="Categories"
           >
-            {chipCategories.map((cat) => (
-              <Link
-                key={cat}
-                href={buildHref({ category: cat, q })}
-                className={chipClassName(cat)}
-                aria-current={category === cat ? "page" : undefined}
-              >
-                {cat}
-              </Link>
-            ))}
+            {chipCategories.map((cat) => {
+              const slug = categorySlugByName.get(cat);
+              const href =
+                !slug || slug === "all" ? "/blog" : `/blog/category/${slug}`;
+              return (
+                <Link
+                  key={cat}
+                  href={href}
+                  className={chipClassName(cat)}
+                  aria-current={category === cat ? "page" : undefined}
+                >
+                  {cat}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

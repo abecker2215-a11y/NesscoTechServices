@@ -45,3 +45,6 @@ next-env.d.ts
 # IndexNow submission state (machine-local, not shared)
 .indexnow-state.json
 scripts/.indexnow-state.json
+
+# Local staging area for generated blog content (not committed)
+/tmp
