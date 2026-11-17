@@ -56,6 +56,20 @@ describe("getRelatedArticles", () => {
     const related = getRelatedArticles(cloud!, articles);
     expect(related).toEqual([]);
   });
+
+  it("spreads picks across the category instead of taking the newest", () => {
+    const pool: BlogArticle[] = Array.from({ length: 9 }, (_, i) => ({
+      ...articles[0]!,
+      slug: `s${i}`,
+      title: `Post ${i}`,
+      category: "Security",
+    }));
+    const current = { ...articles[0]!, slug: "current" };
+    const related = getRelatedArticles(current, [current, ...pool], 3);
+    expect(related).toHaveLength(3);
+    // first, middle and last of the pool rather than the first three
+    expect(related.map((a) => a.slug)).toEqual(["s0", "s3", "s6"]);
+  });
 });
 
 describe("getRecentArticles", () => {

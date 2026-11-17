@@ -4,6 +4,7 @@ import { updateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { purgePublishedPosts } from "@/lib/blog-db";
 
 const postSchema = z.object({
   id: z.string().optional(),
@@ -52,6 +53,7 @@ export async function savePost(formData: FormData): Promise<void> {
     await prisma.post.create({ data: values });
   }
 
+  purgePublishedPosts();
   updateTag("posts");
   redirect("/admin/blog");
 }
@@ -60,6 +62,7 @@ export async function deletePost(formData: FormData): Promise<void> {
   const id = String(formData.get("id") ?? "");
   if (!id) return;
   await prisma.post.delete({ where: { id } });
+  purgePublishedPosts();
   updateTag("posts");
   redirect("/admin/blog");
 }

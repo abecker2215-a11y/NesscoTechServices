@@ -1,23 +1,18 @@
 import { cache } from "react";
-import { unstable_cache } from "next/cache";
 import { format } from "date-fns";
 import type { Category, Post } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import type { BlogArticle } from "@/lib/blog";
+import { readTimeLabel } from "@/lib/read-time";
 
 type PostWithCategory = Post & { category: Category | null };
 
 /**
- * Derive a "N min read" string from body length (~200 wpm), matching the
- * hand-authored values on the original articles.
+ * Map a DB row to the BlogArticle shape the pages already consume.
+ *
+ * `readTime` is derived from the body rather than read from the column: the
+ * stored value is a legacy import and goes stale whenever a post is edited.
  */
-function readTimeFor(body: string): string {
-  const words = body.trim().split(/\s+/).filter(Boolean).length;
-  const mins = Math.max(1, Math.round(words / 200));
-  return `${mins} min read`;
-}
-
-/** Map a DB row to the BlogArticle shape the pages already consume. */
 function toArticle(row: PostWithCategory): BlogArticle {
   return {
     slug: row.slug,
@@ -26,7 +21,7 @@ function toArticle(row: PostWithCategory): BlogArticle {
     date: row.publishedAt ? format(row.publishedAt, "MMM yyyy") : "",
     author: row.authorName,
     category: row.category?.name ?? "Uncategorized",
-    readTime: row.readTime ?? readTimeFor(row.body),
+    readTime: readTimeLabel(row.body),
     body: row.body,
     image: row.image ?? undefined,
     serviceSlug: row.serviceSlug ?? undefined,
@@ -34,30 +29,42 @@ function toArticle(row: PostWithCategory): BlogArticle {
 }
 
 /**
- * All published posts, cached across requests and tagged so the editorial
- * admin can purge with revalidateTag("posts") after publishing. This keeps
- * build-time free of any DB access (the Docker build has no database) while
- * still serving cached content at runtime.
+ * The published-post list is read on every blog request and includes every
+ * body, which is several megabytes. Next's data cache caps a single entry at
+ * 2 MB, so an `unstable_cache` over this payload never stores anything and
+ * every request falls through to Postgres. Cache it in-process instead: the
+ * app runs as a single container, and a short TTL keeps it fresh.
  */
-const fetchPublishedRows = unstable_cache(
-  async (): Promise<PostWithCategory[]> =>
-    prisma.post.findMany({
-      where: { status: "PUBLISHED" },
-      include: { category: true },
-      orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
-    }),
-  ["published-posts"],
-  { tags: ["posts"], revalidate: 60 }
-);
+const CACHE_TTL_MS = 60_000;
+
+let listCache: { at: number; rows: PostWithCategory[] } | null = null;
+
+/** Drop the memoised list. Called by the admin after a save or delete. */
+export function purgePublishedPosts(): void {
+  listCache = null;
+}
+
+async function loadPublishedRows(): Promise<PostWithCategory[]> {
+  if (listCache && Date.now() - listCache.at < CACHE_TTL_MS) {
+    return listCache.rows;
+  }
+  const rows = await prisma.post.findMany({
+    where: { status: "PUBLISHED" },
+    include: { category: true },
+    orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
+  });
+  listCache = { at: Date.now(), rows };
+  return rows;
+}
 
 export const getPublishedPosts = cache(async (): Promise<BlogArticle[]> => {
-  const rows = await fetchPublishedRows();
+  const rows = await loadPublishedRows();
   return rows.map(toArticle);
 });
 
 export const getPublishedPost = cache(
   async (slug: string): Promise<BlogArticle | undefined> => {
-    const rows = await fetchPublishedRows();
+    const rows = await loadPublishedRows();
     const row = rows.find((r) => r.slug === slug);
     return row ? toArticle(row) : undefined;
   }

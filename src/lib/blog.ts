@@ -40,14 +40,27 @@ export function searchArticles(articles: BlogArticle[], query: string): BlogArti
   );
 }
 
+/**
+ * Pick related posts from the same category, spread across the list rather
+ * than always taking the newest few. Taking the head of the list every time
+ * leaves older posts with no inbound links from their peers.
+ */
 export function getRelatedArticles(
   article: BlogArticle,
   all: BlogArticle[],
   limit = 3
 ): BlogArticle[] {
-  return all
-    .filter((a) => a.slug !== article.slug && a.category === article.category)
-    .slice(0, limit);
+  const pool = all.filter(
+    (a) => a.slug !== article.slug && a.category === article.category
+  );
+  if (pool.length <= limit) return pool;
+  const step = pool.length / limit;
+  const picked: BlogArticle[] = [];
+  for (let i = 0; i < limit; i++) {
+    const item = pool[Math.floor(i * step)];
+    if (item && !picked.includes(item)) picked.push(item);
+  }
+  return picked;
 }
 
 export function getRecentArticles(all: BlogArticle[], limit = 5): BlogArticle[] {
