@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/lib/services";
-import { blogArticles } from "@/lib/blog";
+import { getPublishedBySlugs } from "@/lib/blog-db";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSignalsClient";
 import { OpenStatus } from "@/components/layout/OpenStatus";
@@ -44,16 +44,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ManagedItServicesTampaPage() {
-  const tampaPosts = blogArticles.filter((a) =>
-    [
-      "it-support-tampa-bay-small-business",
-      "it-helpdesk-tampa-bay",
-      "it-consulting-tampa-bay",
-      "microsoft-365-security-tampa",
-      "cybersecurity-audit-tampa-bay",
-    ].includes(a.slug)
-  );
+// Rendered per request: the page reads published posts from Postgres, which is
+// not reachable during the Docker build.
+export const dynamic = "force-dynamic";
+
+export default async function ManagedItServicesTampaPage() {
+  const tampaPosts = await getPublishedBySlugs([
+    "it-support-tampa-bay-small-business",
+    "it-helpdesk-tampa-bay",
+    "it-consulting-tampa-bay",
+    "microsoft-365-security-tampa",
+    "cybersecurity-audit-tampa-bay",
+  ]);
 
   return (
     <>

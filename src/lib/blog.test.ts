@@ -1,30 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { getArticle, getAllArticles, getArticlesByCategory, searchArticles, getRelatedArticles, getRecentArticles, groupArticlesByDate, type BlogArticle } from "./blog";
+import {
+  searchArticles,
+  getRelatedArticles,
+  getRecentArticles,
+  groupArticlesByDate,
+  type BlogArticle,
+} from "./blog";
 
 const articles: BlogArticle[] = [
   { slug: "a", title: "Alpha", excerpt: "excerpt alpha", date: "Oct 2026", author: "Nessco", category: "Security", readTime: "5 min", body: "body alpha" },
   { slug: "b", title: "Beta Security", excerpt: "beta security excerpt", date: "Sep 2026", author: "Nessco", category: "Security", readTime: "4 min", body: "body beta" },
   { slug: "c", title: "Cloud Guide", excerpt: "cloud stuff", date: "Oct 2026", author: "Nessco", category: "Cloud", readTime: "6 min", body: "body cloud" },
 ];
-
-describe("getArticlesByCategory", () => {
-  it("returns all articles when category is All or empty", () => {
-    const all = getArticlesByCategory("All");
-    const empty = getArticlesByCategory("");
-    expect(all).toHaveLength(empty.length);
-    expect(all.length).toBeGreaterThan(0);
-  });
-
-  it("filters by category", () => {
-    const security = getArticlesByCategory("Security");
-    expect(security.length).toBeGreaterThan(0);
-    expect(security.every((a) => a.category === "Security")).toBe(true);
-  });
-
-  it("returns empty array for unknown category", () => {
-    expect(getArticlesByCategory("Nonexistent")).toEqual([]);
-  });
-});
 
 describe("searchArticles", () => {
   it("returns all articles for empty query", () => {
@@ -100,70 +87,5 @@ describe("groupArticlesByDate", () => {
 
   it("returns empty array for no articles", () => {
     expect(groupArticlesByDate([])).toEqual([]);
-  });
-});
-
-describe("category coverage", () => {
-  it("returns Backup articles", () => {
-    const backup = getArticlesByCategory("Backup");
-    expect(backup.length).toBeGreaterThan(0);
-    expect(backup.every((a) => a.category === "Backup")).toBe(true);
-  });
-
-  it("returns Applications articles", () => {
-    const apps = getArticlesByCategory("Applications");
-    expect(apps.length).toBeGreaterThan(0);
-    expect(apps.every((a) => a.category === "Applications")).toBe(true);
-  });
-
-  it("returns Cloud articles", () => {
-    const cloud = getArticlesByCategory("Cloud");
-    expect(cloud.length).toBeGreaterThan(0);
-    expect(cloud.every((a) => a.category === "Cloud")).toBe(true);
-  });
-
-  it("returns Communications articles", () => {
-    const comm = getArticlesByCategory("Communications");
-    expect(comm.length).toBeGreaterThan(0);
-    expect(comm.every((a) => a.category === "Communications")).toBe(true);
-  });
-
-  it("returns IT Strategy articles", () => {
-    const strategy = getArticlesByCategory("IT Strategy");
-    expect(strategy.length).toBeGreaterThan(0);
-    expect(strategy.every((a) => a.category === "IT Strategy")).toBe(true);
-  });
-
-  it("returns Industries articles", () => {
-    const industries = getArticlesByCategory("Industries");
-    expect(industries.length).toBeGreaterThan(0);
-    expect(industries.every((a) => a.category === "Industries")).toBe(true);
-  });
-
-  it("returns empty for Guides and Quick fixes (removed chips)", () => {
-    expect(getArticlesByCategory("Guides")).toEqual([]);
-    expect(getArticlesByCategory("Quick fixes")).toEqual([]);
-  });
-});
-
-describe("new articles", () => {
-  it("each slug is retrievable and unique", () => {
-    const slugs = Array.from({ length: 20 }, (_, i) => `new-article-${String(i + 1).padStart(2, "0")}`);
-    expect(slugs).toHaveLength(new Set(slugs).size); // unique
-    for (const slug of slugs) {
-      const article = getArticle(slug);
-      expect(article).toBeDefined();
-      expect(article?.slug).toBe(slug);
-      expect(article?.body?.trim().length).toBeGreaterThan(0);
-      expect(article?.body).not.toContain("TODO");
-    }
-  });
-
-  it("getRelatedArticles excludes itself for new articles", () => {
-    const article = getArticle("new-article-01");
-    expect(article).toBeDefined();
-    const related = getRelatedArticles(article!, getAllArticles());
-    expect(related.every((a) => a.slug !== "new-article-01")).toBe(true);
-    expect(related.every((a) => a.category === article!.category)).toBe(true);
   });
 });

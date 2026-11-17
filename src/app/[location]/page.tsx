@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locations, getLocation } from "@/lib/locations";
 import { services } from "@/lib/services";
-import { blogArticles } from "@/lib/blog";
+import { getPublishedBySlugs } from "@/lib/blog-db";
 import { Briefcase, Shield, Database, Cable, Headset, HardDrive, Monitor, Mail } from "lucide-react";
 import { guides } from "@/lib/guides";
 import { fixes } from "@/lib/fixes";
@@ -52,6 +52,10 @@ const locationFaqs = (name: string, remoteFirst?: boolean): FAQItem[] => {
   }
   return base;
 };
+
+// Rendered per request: the page reads published posts from Postgres, which is
+// not reachable during the Docker build.
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return locations.map((l) => ({ location: l.slug }));
@@ -128,6 +132,13 @@ export default async function LocationPage({ params }: Props) {
     .slice(0, 12);
   const cityGuides = rotate(guides, loc.slug, 3);
   const cityFixes = rotate(fixes, `${loc.slug}-fix`, 3);
+  const tampaPosts = await getPublishedBySlugs([
+    "it-support-tampa-bay-small-business",
+    "it-helpdesk-tampa-bay",
+    "it-consulting-tampa-bay",
+    "microsoft-365-security-tampa",
+    "cybersecurity-audit-tampa-bay",
+  ]);
 
   return (
     <>
@@ -305,16 +316,7 @@ export default async function LocationPage({ params }: Props) {
                 <div className="mt-8">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tampa IT resources</p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
-                    {blogArticles
-                      .filter((a) =>
-                        [
-                          "it-support-tampa-bay-small-business",
-                          "it-helpdesk-tampa-bay",
-                          "it-consulting-tampa-bay",
-                          "microsoft-365-security-tampa",
-                          "cybersecurity-audit-tampa-bay",
-                        ].includes(a.slug)
-                      )
+                    {tampaPosts
                       .map((a) => (
                         <li key={a.slug}>
                           <a href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">

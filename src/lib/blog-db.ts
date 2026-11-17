@@ -47,7 +47,7 @@ const fetchPublishedRows = unstable_cache(
       orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
     }),
   ["published-posts"],
-  { tags: ["posts"] }
+  { tags: ["posts"], revalidate: 60 }
 );
 
 export const getPublishedPosts = cache(async (): Promise<BlogArticle[]> => {
@@ -69,6 +69,18 @@ export async function getPublishedByCategory(
   const all = await getPublishedPosts();
   if (!category || category === "All") return all;
   return all.filter((a) => a.category === category);
+}
+
+/**
+ * Published posts for a specific set of slugs, preserving the order the
+ * caller asked for. Used by landing pages that curate a short list.
+ */
+export async function getPublishedBySlugs(slugs: string[]): Promise<BlogArticle[]> {
+  if (slugs.length === 0) return [];
+  const wanted = new Set(slugs);
+  const rows = (await getPublishedPosts()).filter((a) => wanted.has(a.slug));
+  const bySlug = new Map(rows.map((a) => [a.slug, a]));
+  return slugs.map((s) => bySlug.get(s)).filter((a): a is BlogArticle => Boolean(a));
 }
 
 export interface CategorySummary {

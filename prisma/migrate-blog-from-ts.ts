@@ -4,7 +4,13 @@
  *
  *   npx tsx prisma/migrate-blog-from-ts.ts
  */
-import { blogArticles } from "../src/lib/blog";
+import legacyArticles from "./legacy-blog-articles.json";
+
+const blogArticles = legacyArticles as Array<{
+  slug: string; title: string; excerpt: string; body: string; date: string;
+  author: string; category: string; readTime: string; image?: string;
+  serviceSlug?: string;
+}>;
 import { prisma } from "../src/lib/prisma";
 
 const MONTHS = [
