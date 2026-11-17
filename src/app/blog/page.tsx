@@ -11,8 +11,9 @@ import {
   getBlogCategories,
 } from "@/lib/blog-db";
 import { siteConfig } from "@/lib/config";
-import { ArrowLeft, ArrowRight, Clock, Search, Tag } from "lucide-react";
+import { ArrowRight, Clock, Search, Tag } from "lucide-react";
 import { pageTitle, metaDescription } from "@/lib/meta";
+import { BlogPagination } from "@/components/blog-pagination";
 
 const PAGE_SIZE = 12;
 
@@ -109,30 +110,6 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   };
 }
 
-function pageWindow(current: number, total: number): Array<number | "gap"> {
-  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
-
-  const pages = new Set<number>([1, total, current, current - 1, current + 1]);
-  if (current <= 3) {
-    pages.add(2);
-    pages.add(3);
-    pages.add(4);
-  }
-  if (current >= total - 2) {
-    pages.add(total - 1);
-    pages.add(total - 2);
-    pages.add(total - 3);
-  }
-
-  const sorted = [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
-  const out: Array<number | "gap"> = [];
-  for (let i = 0; i < sorted.length; i++) {
-    if (i > 0 && sorted[i] - sorted[i - 1] > 1) out.push("gap");
-    out.push(sorted[i]);
-  }
-  return out;
-}
-
 export default async function BlogPage({ searchParams }: PageProps) {
   const { category = "All", q = "" } = await searchParams;
   const requestedPage = (await searchParams).page;
@@ -150,10 +127,6 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const categorySlugByName = new Map(categories.map((c) => [c.name, c.slug]));
 
   const paginationBase = { category, q };
-  const prevHref =
-    currentPage > 1 ? buildHref({ ...paginationBase, page: currentPage - 1 }) : null;
-  const nextHref =
-    currentPage < totalPages ? buildHref({ ...paginationBase, page: currentPage + 1 }) : null;
 
   const chipClassName = (cat: string) =>
     category === cat
@@ -317,78 +290,12 @@ export default async function BlogPage({ searchParams }: PageProps) {
             ))}
 
             {totalPages > 1 && (
-              <nav
-                aria-label="Pagination"
-                className="max-w-5xl mx-auto mt-4 flex flex-col items-center gap-4"
-              >
-                <p className="text-sm text-muted-foreground">
-                  Page {currentPage} of {totalPages} · {matched.length} articles
-                </p>
-                <div className="flex flex-wrap items-center justify-center gap-2">
-                  {prevHref ? (
-                    <Link
-                      href={prevHref}
-                      rel="prev"
-                      className="inline-flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors"
-                    >
-                      <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-                      Previous
-                    </Link>
-                  ) : (
-                    <span
-                      aria-disabled="true"
-                      className="inline-flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm font-medium text-muted-foreground/50"
-                    >
-                      <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-                      Previous
-                    </span>
-                  )}
-
-                  {pageWindow(currentPage, totalPages).map((p, i) =>
-                    p === "gap" ? (
-                      <span
-                        key={`gap-${i}`}
-                        aria-hidden="true"
-                        className="px-1 text-sm text-muted-foreground"
-                      >
-                        …
-                      </span>
-                    ) : (
-                      <Link
-                        key={p}
-                        href={buildHref({ ...paginationBase, page: p })}
-                        aria-current={p === currentPage ? "page" : undefined}
-                        className={
-                          p === currentPage
-                            ? "rounded-lg border border-primary bg-primary text-primary-foreground px-3 py-2 text-sm font-medium"
-                            : "rounded-lg border border-border px-3 py-2 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors"
-                        }
-                      >
-                        {p}
-                      </Link>
-                    )
-                  )}
-
-                  {nextHref ? (
-                    <Link
-                      href={nextHref}
-                      rel="next"
-                      className="inline-flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors"
-                    >
-                      Next
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
-                  ) : (
-                    <span
-                      aria-disabled="true"
-                      className="inline-flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm font-medium text-muted-foreground/50"
-                    >
-                      Next
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                  )}
-                </div>
-              </nav>
+              <BlogPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                totalItems={matched.length}
+                hrefForPage={(page) => buildHref({ ...paginationBase, page })}
+              />
             )}
           </>
         )}

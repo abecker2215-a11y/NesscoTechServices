@@ -48,3 +48,6 @@ scripts/.indexnow-state.json
 
 # Local staging area for generated blog content (not committed)
 /tmp
+
+# Local database snapshots (large data dumps, not committed)
+/backups

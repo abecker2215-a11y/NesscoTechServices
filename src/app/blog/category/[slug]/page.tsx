@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Clock, Tag } from "lucide-react";
 import { JsonLd } from "@/components/layout/JsonLd";
+import { BlogPagination } from "@/components/blog-pagination";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
 import { pageTitle, metaDescription } from "@/lib/meta";
@@ -132,32 +133,16 @@ export default async function CategoryPage({ params, searchParams }: Props) {
           ))}
         </div>
 
-        {totalPages > 1 && (
-          <nav
-            aria-label="Category pages"
-            className="mt-12 flex items-center justify-center gap-4 text-sm"
-          >
-            {currentPage > 1 && (
-              <Link
-                href={`/blog/category/${category.slug}?page=${currentPage - 1}`}
-                className="font-medium text-primary hover:underline"
-              >
-                Previous
-              </Link>
-            )}
-            <span className="text-muted-foreground">
-              Page {currentPage} of {totalPages}
-            </span>
-            {currentPage < totalPages && (
-              <Link
-                href={`/blog/category/${category.slug}?page=${currentPage + 1}`}
-                className="font-medium text-primary hover:underline"
-              >
-                Next
-              </Link>
-            )}
-          </nav>
-        )}
+        <BlogPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          totalItems={all.length}
+          hrefForPage={(page) =>
+            page <= 1
+              ? `/blog/category/${category.slug}`
+              : `/blog/category/${category.slug}?page=${page}`
+          }
+        />
 
         {others.length > 0 && (
           <div className="max-w-5xl mx-auto mt-16">
