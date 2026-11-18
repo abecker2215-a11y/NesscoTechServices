@@ -35,7 +35,7 @@ export const businessPlans: BusinessPlan[] = [
     id: "essentials",
     name: "Essentials",
     description: "Basic monitoring, patching, and help desk for small teams.",
-    price: 499,
+    price: 89,
     period: "month",
     features: [
       "Remote monitoring & alerts",
@@ -54,7 +54,7 @@ export const businessPlans: BusinessPlan[] = [
     id: "managed",
     name: "Managed",
     description: "Full IT management: monitoring, security, backups, strategy.",
-    price: 899,
+    price: 139,
     period: "month",
     features: [
       "Everything in Essentials",
@@ -76,7 +76,7 @@ export const businessPlans: BusinessPlan[] = [
     id: "complete",
     name: "Complete",
     description: "Managed IT + advanced security, compliance, and vCIO guidance.",
-    price: 1399,
+    price: 189,
     period: "month",
     features: [
       "Everything in Managed",

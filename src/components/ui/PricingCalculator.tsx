@@ -42,20 +42,30 @@ const SERVICES: ServiceItem[] = [
     name: "Managed IT - Essentials",
     description: "Basic monitoring, patching, and help desk for small teams",
     category: "managed",
-    basePrice: 99,
+    basePrice: 89,
     unit: "month",
     icon: Shield,
-    features: ["24/7 monitoring", "Automated patching", "Basic help desk", "Monthly reporting"],
+    features: ["Remote help desk", "Endpoint monitoring", "OS and application patching", "Antivirus / endpoint protection", "Microsoft 365 basic administration", "Standard business-hours support"],
+  },
+  {
+    id: "managed-managed",
+    name: "Managed IT - Managed",
+    description: "Full IT management: monitoring, security, backups, strategy",
+    category: "managed",
+    basePrice: 139,
+    unit: "month",
+    icon: Shield,
+    features: ["Everything in Essentials", "Managed EDR / advanced endpoint security", "Email security and phishing protection", "Microsoft 365 security management", "Managed backup", "Priority support", "Security monitoring and reporting"],
   },
   {
     id: "managed-complete",
     name: "Managed IT - Complete",
     description: "Full IT management: monitoring, security, backups, strategy, vCIO",
     category: "managed",
-    basePrice: 299,
+    basePrice: 189,
     unit: "month",
     icon: Shield,
-    features: ["Everything in Essentials", "Advanced security", "Automated backups", "vCIO guidance", "Compliance support"],
+    features: ["Everything in Managed", "Advanced cybersecurity management", "Managed firewall and network infrastructure", "Vulnerability management", "Security awareness training", "Disaster recovery planning", "Quarterly technology reviews", "Strategic IT planning", "Highest support priority"],
   },
   {
     id: "network-install",
@@ -166,7 +176,7 @@ export function PricingCalculator() {
                     <p className="text-sm text-muted-foreground mt-0.5 line-clamp-2">{service.description}</p>
                     <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
                       <span className="font-medium text-foreground">
-                        ${service.basePrice}/{service.unit}
+                        ${service.basePrice}/{service.unit === "month" ? "user/mo" : service.unit}
                       </span>
                     </div>
                     <ul className="mt-2 space-y-1 text-xs text-muted-foreground">

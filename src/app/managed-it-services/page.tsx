@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Essentials",
-    price: "$499",
+    price: "$89/user/mo",
     period: "/month",
     description: "Basic monitoring, patching, and help desk for small teams.",
     features: ["Remote monitoring & alerts", "Automated patch management", "Help desk (email/phone)", "Monthly health report", "Up to 10 devices"],
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: "Managed",
-    price: "$899",
+    price: "$139/user/mo",
     period: "/month",
     description: "Full IT management: monitoring, security, backups, strategy.",
     features: ["Everything in Essentials", "Managed antivirus/EDR", "Automated cloud backups", "Microsoft 365 management", "Network monitoring", "Quarterly business review", "Up to 25 devices"],
@@ -46,7 +46,7 @@ const plans = [
   },
   {
     name: "Complete",
-    price: "$1,399",
+    price: "$189/user/mo",
     period: "/month",
     description: "Managed IT + advanced security, compliance, and vCIO guidance.",
     features: ["Everything in Managed", "Advanced threat protection", "Compliance documentation", "vCIO strategic planning", "Vendor management", "Unlimited devices", "Priority response (1hr)"],

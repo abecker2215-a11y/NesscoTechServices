@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "What does migration cost?",
-    a: "The audit and migration plan are free. The switch itself is included when you start any monthly plan — Essentials $149/mo, Managed $349/mo, Complete $599/mo, all month-to-month.",
+    a: "The audit and migration plan are free. The switch itself is included when you start any monthly plan — Essentials $89/user/mo, Managed $139/user/mo, Complete $189/user/mo, all month-to-month.",
   },
   {
     q: "What if we're not happier?",

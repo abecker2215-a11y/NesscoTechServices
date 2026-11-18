@@ -111,9 +111,9 @@ export default function SmallBusinessITSupportPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { name: "Essentials", price: "$499/mo", features: ["Up to 10 devices", "Monitoring & alerts", "Patch management", "Help desk", "Monthly report"] },
-              { name: "Managed", price: "$899/mo", features: ["Up to 25 devices", "Everything in Essentials", "Managed EDR/antivirus", "Cloud backups", "M365 management", "Quarterly review"], popular: true },
-              { name: "Complete", price: "$1,399/mo", features: ["Unlimited devices", "Everything in Managed", "Advanced threat protection", "Compliance docs", "vCIO planning", "1hr priority response"] },
+              { name: "Essentials", price: "$89/user/mo", features: ["Up to 10 devices", "Monitoring & alerts", "Patch management", "Help desk", "Monthly report"] },
+              { name: "Managed", price: "$139/user/mo", features: ["Up to 25 devices", "Everything in Essentials", "Managed EDR/antivirus", "Cloud backups", "M365 management", "Quarterly review"], popular: true },
+              { name: "Complete", price: "$189/user/mo", features: ["Unlimited devices", "Everything in Managed", "Advanced threat protection", "Compliance docs", "vCIO planning", "1hr priority response"] },
             ].map((plan) => (
               <div key={plan.name} className={`relative p-6 rounded-xl border bg-background ${plan.popular ? "border-primary shadow-lg" : "border-border"}`}>
                 {plan.popular && (

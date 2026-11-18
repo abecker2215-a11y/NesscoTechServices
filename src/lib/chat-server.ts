@@ -38,7 +38,7 @@ RULES:
 PRICING:
 - Remote support: $75/hour
 - On-site support: $125/hour
-- Business plans: Essentials $149/mo, Managed $349/mo, Complete $599/mo
+- Business plans: Essentials $89/user/mo, Managed $139/user/mo, Complete $189/user/mo
 - Hours: Mon-Fri 8am-6pm ET
 
 KNOWLEDGE BASE:

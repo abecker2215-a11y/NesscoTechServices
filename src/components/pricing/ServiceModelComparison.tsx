@@ -28,8 +28,8 @@ const models: Model[] = [
   {
     name: "Fully Managed",
     tagline: "End-to-end IT",
-    price: "$149–$599",
-    period: "/mo",
+    price: "$89–$189",
+    period: "/user/mo",
     bestFor: "Businesses that want us to be their IT department.",
     features: [true, true, true, true, true, true],
     ctaText: "View Business Plans",

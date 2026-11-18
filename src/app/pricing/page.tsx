@@ -104,21 +104,21 @@ export default function PricingPage() {
                   <Wrench className="h-7 w-7 text-primary mb-3" aria-hidden="true" />
                   <p className="text-lg font-bold text-foreground">2 on-site hours = $250</p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    More than a month of Essentials ($149/mo) — with none of the monitoring, patching, or help desk.
+                    Essentials prevention at $89/user/mo — with none of the monitoring, patching, or help desk included in a reactive repair.
                   </p>
                 </div>
                 <div className="rounded-xl border border-border bg-background p-6">
                   <CalendarX className="h-7 w-7 text-primary mb-3" aria-hidden="true" />
                   <p className="text-lg font-bold text-foreground">4 on-site hours = $500</p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Roughly a month and a half of Managed ($349/mo) — our most popular all-inclusive plan.
+                    Managed prevention at $139/user/mo — our most popular all-inclusive plan.
                   </p>
                 </div>
                 <div className="rounded-xl border border-border bg-background p-6">
                   <ShieldAlert className="h-7 w-7 text-primary mb-3" aria-hidden="true" />
                   <p className="text-lg font-bold text-foreground">A full day = $1,000</p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    About 6.7 months of Essentials covering monitoring, patching, help desk, and backup oversight.
+                    Essentials prevention at $89/user/mo — covering monitoring, patching, help desk, and backup oversight.
                   </p>
                 </div>
               </div>

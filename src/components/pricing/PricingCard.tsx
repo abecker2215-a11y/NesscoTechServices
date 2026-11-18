@@ -21,7 +21,9 @@ export function PricingCard({ plan }: PricingCardProps) {
         <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
         <div className="mb-6">
           <span className="text-4xl font-bold text-foreground">${plan.price}</span>
-          <span className="text-muted-foreground">/{plan.period}</span>
+          <span className="text-muted-foreground">
+            {plan.period === "month" ? "/user/mo" : `/${plan.period}`}
+          </span>
         </div>
         <ul className="space-y-3 mb-6 flex-1" role="list">
           {plan.features.map((feature, index) => (

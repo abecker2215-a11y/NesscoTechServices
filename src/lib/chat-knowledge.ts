@@ -93,7 +93,7 @@ export const chatEntries: ChatEntry[] = [
     keywords: ["business", "office", "managed", "monthly", "plan", "plans", "help desk", "helpdesk", "employees", "company", "msp", "contract", "vcio", "compliance", "msp", "managed services", "it support", "it management", "it strategy"],
     title: "Business IT & Managed Services",
     answer:
-      "We run IT for companies with 5-100 staff: 24/7 monitoring, patching, help desk, EDR, cloud backups, M365 admin, vCIO strategy, and compliance (HIPAA, PCI, SOC 2, CMMC). Plans: Essentials $149/mo, Managed $349/mo, Complete $599/mo. Month-to-month, 30-day cancellation, 10% non-profit discount.",
+      "We run IT for companies with 5-100 staff: 24/7 monitoring, patching, help desk, EDR, cloud backups, M365 admin, vCIO strategy, and compliance (HIPAA, PCI, SOC 2, CMMC). Plans: Essentials $89/user/mo, Managed $139/user/mo, Complete $189/user/mo. Month-to-month, 30-day cancellation, 10% non-profit discount.",
     links: [
       { label: "Compare plans with calculator", href: "/pricing" },
       { label: "Business IT service", href: "/services/managed-it-services" },
@@ -138,7 +138,7 @@ export const chatEntries: ChatEntry[] = [
     keywords: ["price", "pricing", "cost", "how much", "charge", "rate", "rates", "$", "expensive", "quote", "estimate"],
     title: "Pricing",
     answer:
-      "Remote $75/hr, on-site $125/hr — you approve every estimate before work starts. Business plans: Essentials $149, Managed $349, Complete $599/mo. Use the instant estimator, no email required.",
+      "Remote $75/hr, on-site $125/hr — you approve every estimate before work starts. Business plans: Essentials $89/user/mo, Managed $139/user/mo, Complete $189/user/mo. Use the instant estimator, no email required.",
     links: [
       { label: "Instant price estimate", href: "/pricing" },
       { label: "Start a request", href: "/get-help" },

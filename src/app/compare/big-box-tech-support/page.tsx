@@ -27,7 +27,7 @@ const comparisons = [
       { label: "Hourly rate published", nessco: "Yes — $75 remote / $125 on-site", bigBox: "Hidden until after diagnostic", winner: "nessco" },
       { label: "Diagnostic fee", nessco: "Free (included in first hour)", bigBox: "$50-99 upfront", winner: "nessco" },
       { label: "Upsells during service", nessco: "Never — you approve everything", bigBox: "Common (warranties, software, plans)", winner: "nessco" },
-      { label: "Business plan pricing", nessco: "Published: $149/$349/$599", bigBox: "Quote-only, often 2-3x higher", winner: "nessco" },
+      { label: "Business plan pricing", nessco: "Published: $89/$139/$189 per user/mo", bigBox: "Quote-only, often 2-3x higher", winner: "nessco" },
     ],
   },
   {

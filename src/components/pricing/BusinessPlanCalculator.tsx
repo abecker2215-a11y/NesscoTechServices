@@ -107,7 +107,7 @@ export function BusinessPlanCalculator() {
                     </span>
                   </span>
                   <span className="font-semibold">
-                    {money(Math.round(p.price * (1 - discount)))}/mo
+                    {money(Math.round(p.price * (1 - discount)))}/user/mo
                   </span>
                 </div>
               );
@@ -124,7 +124,7 @@ export function BusinessPlanCalculator() {
             <span className="text-xl font-medium text-muted-foreground">/mo</span>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
-            {plan.name} · {money(perDevice)}/device/mo · {money(annual)}/yr
+            {plan.name} · {money(perDevice)}/user/mo · {money(annual)}/yr
             {nonprofit && " (non-profit rate)"}
           </p>
 
