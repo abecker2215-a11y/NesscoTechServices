@@ -130,6 +130,7 @@ const nextConfig: NextConfig = {
       { source: "/services/pc-mac", destination: "/services/it-support/pc-mac", permanent: true },
       { source: "/services/vcio", destination: "/services/managed-it-services/vcio", permanent: true },
       { source: "/fixes/new-home-wifi-dead-zones", destination: "/fixes/new-office-wifi-dead-zones", permanent: true },
+      { source: "/fixes/printer-shows-offline", destination: "/guides/fix-wireless-printer-not-printing", permanent: true },
     ];
   },
   async headers() {

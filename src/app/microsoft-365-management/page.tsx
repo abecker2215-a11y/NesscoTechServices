@@ -8,11 +8,11 @@ import { Mail, Shield, Users, Target } from "lucide-react";
 export const metadata: Metadata = {
   title: pageTitle("Microsoft 365 Management"),
   description: metaDescription("Microsoft 365 administration, migration, security setup, and ongoing management for businesses nationwide. Secure tenant, email, Teams, SharePoint, and OneDrive."),
-  alternates: { canonical: "https://nesscotech.com/microsoft-365-management/" },
+  alternates: { canonical: "https://nesscotech.com/microsoft-365-management" },
   openGraph: {
     title: pageTitle("Microsoft 365 Management"),
     description: metaDescription("Microsoft 365 administration, migration, security setup, and ongoing management for businesses nationwide."),
-    url: "https://nesscotech.com/microsoft-365-management/",
+    url: "https://nesscotech.com/microsoft-365-management",
     type: "website",
     images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Microsoft 365 Management" }],
   },
@@ -42,7 +42,7 @@ const faqs = [
 export default function M365ManagementPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Microsoft 365 Management", path: "/microsoft-365-management/" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Microsoft 365 Management", path: "/microsoft-365-management" }])} />
       <JsonLd data={faqPageSchema(faqs)} />
 
       <section className="py-20 lg:py-32" aria-labelledby="hero-heading">

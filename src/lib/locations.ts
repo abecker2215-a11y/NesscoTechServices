@@ -499,10 +499,12 @@ export const locations: Location[] = [
     name: "Gibsonton",
     county: "Hillsborough",
     intro:
-      "Showtown roots with growing businesses along the Alafia — small businesses getting responsive local IT.",
+      "Showtown roots with growing businesses along the Alafia — small businesses getting responsive local IT. From the shops along Gibsonton Drive to home offices on the rural edges, we keep Wi-Fi, point-of-sale, and Microsoft 365 running without a long drive or a call-center queue.",
     highlights: [
       "Business networks and access-point installs",
       "Small-shop support for local services and trades",
+      "Point-of-sale and Wi-Fi for retail and food-service spots",
+      "Microsoft 365 and email setup for home-based businesses",
       "Storm-season backup checks for south-county offices",
     ],
     responseNote: "Remote same-day. Gibsonton on-site typically next business day.",

@@ -1,14 +1,15 @@
 import { Metadata } from "next";
 import { NetworkVisualizationClient } from "./NetworkVisualizationClient";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "Network Visualization Tool",
   robots: { index: false, follow: false },
-  description: "See how we monitor and protect your network 24/7 with our interactive 3D network visualization demo. Experience proactive IT monitoring.",
+  description: metaDescription("See how we monitor and protect your network 24/7 with our interactive 3D network visualization demo. Experience proactive IT monitoring."),
   alternates: { canonical: "/network-visualization" },
   openGraph: {
   title: "Network Visualization Tool",
-    description: "See how we monitor and protect your network 24/7 with our interactive 3D network visualization demo.",
+    description: metaDescription("See how we monitor and protect your network 24/7 with our interactive 3D network visualization demo."),
     url: "https://nesscotech.com/network-visualization",
   },
 };

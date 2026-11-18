@@ -1697,6 +1697,10 @@
       {
         "heading": "3. Use expiring, scoped links going forward",
         "body": "Share with Specific people, View-only unless editing is needed, and set expiry dates on external links. 'Anyone, forever, can edit' should require a conscious decision, not be the default."
+      },
+      {
+        "heading": "4. Review guests and external users monthly",
+        "body": "SharePoint admin → Active sites → pick the site → check permissions and the guest list. Remove people who no longer need access and expire any 'Anyone' links left behind. Same day each month turns it into a habit, not a scramble after an audit."
       }
     ],
     "whenToCall": [
@@ -1712,6 +1716,10 @@
       {
         "q": "What's the safest way to share externally?",
         "a": "Specific-people links with View-only and a 30-day expiry. The recipient verifies identity, access dies automatically, and you have an audit trail."
+      },
+      {
+        "q": "Can I see who actually opened a shared link?",
+        "a": "Yes. Microsoft Purview audit records file opens and downloads, and sensitivity labels can block external sharing on classified files outright. If auditing isn't turned on, that's a five-minute fix worth doing."
       }
     ]
   },
@@ -2581,6 +2589,10 @@
       {
         "heading": "3. Prove the speed wired before calling",
         "body": "Ethernet to the gateway, run three speed tests, screenshot all. Below 80% of plan speed wired = ISP problem with evidence. Above that but slow on Wi-Fi = your network, not theirs — different fix entirely."
+      },
+      {
+        "heading": "4. Write down the account and equipment facts",
+        "body": "Record the account number, the modem/gateway model, and the activation confirmation number the app gives you. When you do call support, the first question is always 'what's your account number and what lights are on' — having it ready turns a 40-minute call into five."
       }
     ],
     "whenToCall": [
@@ -2596,6 +2608,10 @@
       {
         "q": "Why is my 1 Gig plan testing at 300 Mbps?",
         "a": "Over Wi-Fi, that's actually normal for many devices. Test wired first — if wired hits 800+, the plan is fine and Wi-Fi is the project."
+      },
+      {
+        "q": "Can I put their gateway in bridge mode myself?",
+        "a": "Often yes, through the gateway's admin page, but some ISPs lock it or push settings that undo it. If you want your own router to do the routing, confirm bridge mode is supported before you buy gear around it."
       }
     ]
   },
@@ -2889,6 +2905,10 @@
       {
         "heading": "3. Hand it to IT or destroy it",
         "body": "At the office: give it to IT untouched and say where you found it — that's a security incident worth logging. Otherwise, physically destroy it (hammer, e-waste) if the data isn't yours to recover."
+      },
+      {
+        "heading": "4. Lock down the USB ports you do own",
+        "body": "Device-control policies (part of Microsoft Defender for Endpoint and most endpoint suites) block unknown USB devices by default and log every mount. That turns 'don't plug it in' from a policy people forget into a control that enforces itself."
       }
     ],
     "whenToCall": [
@@ -2904,6 +2924,10 @@
       {
         "q": "What about charging cables found the same way?",
         "a": "Same rule. Malicious cables with hidden chips exist — use your own cable with unknown chargers, or a USB data blocker."
+      },
+      {
+        "q": "Is plugging it into my own laptop at home any safer?",
+        "a": "Not really. A home PC with saved passwords and a browser session is often a softer target than a managed work machine, and it's the same person-shaped bait. Hand it in or bin it either way."
       }
     ]
   },
@@ -5753,6 +5777,10 @@
       {
         "heading": "3. Recover hardware with a paper trail",
         "body": "Prepaid return label same day, checklist of expected items (laptop, charger, token), and a deposit process. Remote returns fail without logistics — plan the box, not just the policy."
+      },
+      {
+        "heading": "4. Close the loop on shared and third-party access",
+        "body": "Beyond the obvious logins, check shared mailboxes, distribution lists, password-manager vaults, and any vendor or SaaS account the person administered. A departed admin who still owns the password vault or the domain registrar is the expensive loose end nobody checks."
       }
     ],
     "whenToCall": [
@@ -5768,6 +5796,10 @@
       {
         "q": "What about personal devices with work data?",
         "a": "Selective wipe of company data via MDM — if you lack MDM, that's the gap to close before the next departure."
+      },
+      {
+        "q": "How fast is fast enough to cut access?",
+        "a": "The same hour the resignation is final, and immediately on an involuntary exit. Payroll and benefits can wait days; VPN, email, and admin logins cannot."
       }
     ]
   },
@@ -6105,6 +6137,10 @@
       {
         "heading": "3. Document everything as evidence",
         "body": "Screenshots of MFA enforcement, backup test logs, EDR console coverage, training records. Insurers increasingly verify — and claims get denied on misrepresentation, not just gaps."
+      },
+      {
+        "heading": "4. Set the calendar before you submit",
+        "body": "Most questionnaires expire 12 months out and assume continuous coverage, not a one-time fix. Put the renewal date, a quarterly access review, and a restore test on the calendar now — insurers ask for proof you maintained controls, and a binder that quietly lapsed is worse than no policy."
       }
     ],
     "whenToCall": [
@@ -6120,6 +6156,10 @@
       {
         "q": "What raises premiums most?",
         "a": "No MFA, no EDR, untested backups, and prior incidents without remediation proof. Each maps directly to a project we scope fixed-fee."
+      },
+      {
+        "q": "We answered 'yes' last year — do we have to start over?",
+        "a": "No. The questionnaire is a snapshot, not a permanent record. Re-answer honestly this year and attach evidence of what you've maintained since — a short remediation timeline often satisfies an underwriter faster than you'd expect."
       }
     ]
   },

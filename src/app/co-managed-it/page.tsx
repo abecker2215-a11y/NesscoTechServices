@@ -8,11 +8,11 @@ import { Users, Shield, Monitor, Zap } from "lucide-react";
 export const metadata: Metadata = {
   title: pageTitle("Co-Managed IT Services"),
   description: metaDescription("Co-managed IT for businesses with internal IT teams. Supplement your staff with enterprise-level expertise, 24/7 monitoring, and strategic planning — without replacing your team."),
-  alternates: { canonical: "https://nesscotech.com/co-managed-it/" },
+  alternates: { canonical: "https://nesscotech.com/co-managed-it" },
   openGraph: {
     title: pageTitle("Co-Managed IT Services"),
     description: metaDescription("Co-managed IT for businesses with internal IT teams. Supplement your staff with enterprise-level expertise, 24/7 monitoring, and strategic planning."),
-    url: "https://nesscotech.com/co-managed-it/",
+    url: "https://nesscotech.com/co-managed-it",
     type: "website",
     images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Co-Managed IT" }],
   },
@@ -42,7 +42,7 @@ const faqs = [
 export default function CoManagedITPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Co-Managed IT", path: "/co-managed-it/" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Co-Managed IT", path: "/co-managed-it" }])} />
       <JsonLd data={faqPageSchema(faqs)} />
 
       <section className="py-20 lg:py-32" aria-labelledby="hero-heading">

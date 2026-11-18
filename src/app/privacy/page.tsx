@@ -2,14 +2,15 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/lib/config";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Nessco Tech Services collects, uses, and protects information you share through this website.",
+  description: metaDescription("How Nessco Tech Services collects, uses, and protects information you share through this website."),
   alternates: { canonical: "/privacy" },
   openGraph: {
     title: "Privacy Policy",
-    description: "How Nessco Tech Services collects, uses, and protects information you share through this website.",
+    description: metaDescription("How Nessco Tech Services collects, uses, and protects information you share through this website."),
     url: "https://nesscotech.com/privacy",
   },
 };

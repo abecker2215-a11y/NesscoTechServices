@@ -3,10 +3,11 @@ import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { Check, X, Users, Building } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Nessco vs Big-Box Tech Support | Local Comparison",
-  description: "Compare Nessco vs Geek Squad, Asurion, and national remote-only providers. Local expertise, transparent pricing.",
+  description: metaDescription("Compare Nessco vs Geek Squad, Asurion, and national remote-only providers. Local expertise, transparent pricing."),
   alternates: { canonical: "/compare/big-box-tech-support" },
 };
 

@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, TrendingUp, Wifi, Building2, Network } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Retail Chain Wi-Fi Overhaul Case Study",
-  description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime.",
+  description: metaDescription("Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime."),
   alternates: { canonical: "/case-studies/retail-chain-wifi-overhaul" },
   openGraph: {
     title: "Retail Chain Wi-Fi Overhaul Case Study",
-    description: "Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime.",
+    description: metaDescription("Retail chain standardized Wi-Fi across 5 locations, eliminated POS downtime."),
     url: "https://nesscotech.com/case-studies/retail-chain-wifi-overhaul",
   },
 };

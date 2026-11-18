@@ -2,15 +2,16 @@ import { Metadata } from "next";
 import { Button } from "@/components/ui";
 import { siteConfig } from "@/lib/config";
 import { Phone, Mail, RefreshCw, AlertTriangle, Clock } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Scheduled Maintenance",
-  description: "We're currently performing scheduled maintenance. We'll be back shortly.",
+  description: metaDescription("We're currently performing scheduled maintenance. We'll be back shortly."),
   alternates: { canonical: "/maintenance" },
   robots: { index: false, follow: false },
   openGraph: {
     title: "Scheduled Maintenance",
-    description: "We're currently performing scheduled maintenance. We'll be back shortly.",
+    description: metaDescription("We're currently performing scheduled maintenance. We'll be back shortly."),
     url: "https://nesscotech.com/maintenance",
   },
 };

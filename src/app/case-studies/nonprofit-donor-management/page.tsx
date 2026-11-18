@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, TrendingUp, Heart, AlertTriangle } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "Nonprofit: Donor Management & Data Security Case Study",
-  description: "Helped a nonprofit secure donor data, improve grant tracking reliability, and protect volunteer coordination systems.",
+  description: metaDescription("Helped a nonprofit secure donor data, improve grant tracking reliability, and protect volunteer coordination systems."),
   alternates: { canonical: "/case-studies/nonprofit-donor-management" },
   openGraph: {
   title: "Nonprofit: Donor Management & Data Security Case Study",
-    description: "Nonprofit secured donor data and improved grant tracking reliability.",
+    description: metaDescription("Nonprofit secured donor data and improved grant tracking reliability."),
     url: "https://nesscotech.com/case-studies/nonprofit-donor-management",
   },
 };

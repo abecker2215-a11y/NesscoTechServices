@@ -8,11 +8,11 @@ import { Shield, ShieldCheck, Lock, Eye } from "lucide-react";
 export const metadata: Metadata = {
   title: pageTitle("Business Cybersecurity"),
   description: metaDescription("Managed cybersecurity for businesses nationwide. Endpoint protection, email security, threat monitoring, and incident response planning under predictable monthly plans."),
-  alternates: { canonical: "https://nesscotech.com/business-cybersecurity/" },
+  alternates: { canonical: "https://nesscotech.com/business-cybersecurity" },
   openGraph: {
     title: pageTitle("Business Cybersecurity"),
     description: metaDescription("Managed cybersecurity for businesses nationwide. Endpoint protection, email security, threat monitoring, and incident response planning."),
-    url: "https://nesscotech.com/business-cybersecurity/",
+    url: "https://nesscotech.com/business-cybersecurity",
     type: "website",
     images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Business Cybersecurity" }],
   },
@@ -42,7 +42,7 @@ const faqs = [
 export default function BusinessCybersecurityPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Business Cybersecurity", path: "/business-cybersecurity/" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Business Cybersecurity", path: "/business-cybersecurity" }])} />
       <JsonLd data={faqPageSchema(faqs)} />
 
       <section className="py-20 lg:py-32" aria-labelledby="hero-heading">

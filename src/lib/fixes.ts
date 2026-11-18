@@ -21,27 +21,6 @@ export interface QuickFix {
  */
 export const fixes: QuickFix[] = [
   {
-    slug: "printer-shows-offline",
-    title: "Printer Shows Offline (But It's Turned On)",
-    excerpt: "Windows says offline, the printer looks fine. 4 steps that fix it 9 times out of 10 — restart order, re-add, driver.",
-    readMinutes: 3,
-    helpCategory: "printer",
-    serviceSlug: "it-support",
-    serviceLabel: "Remote Support",
-    symptoms: ["Printer status says Offline in Windows Settings", "Worked yesterday, broke after an update", "Other devices print fine"],
-    steps: [
-      { heading: "1. Restart in order: printer, router, computer", body: "Power everything fully off (not sleep). Printer first, then router, then the computer. This clears the stale network registration that causes most phantom-offline states." },
-      { heading: "2. Remove and re-add the printer", body: "Settings → Bluetooth & devices → Printers, remove it, then Add device. Re-adding forces a fresh driver handshake instead of fighting the old one." },
-      { heading: "3. Uncheck 'Use Printer Offline'", body: "Open the print queue, click Printer in the menu, and make sure Use Printer Offline is unchecked. Updates flip this on silently." },
-      { heading: "4. Reinstall the driver from the maker", body: "If it still fails, download the full driver package from HP, Canon, or Brother — not the Windows auto-driver. Takes 10 minutes and fixes the stubborn cases." },
-    ],
-    whenToCall: [
-      "The printer vanishes from every device on the network.",
-      "You need it shared reliably across an office (print server setup).",
-      "It's a hardware fault — grinding, jams on every page, error lights.",
-    ],
-  },
-  {
     slug: "router-red-light-no-internet",
     title: "Router Has a Red Light / No Internet",
     excerpt: "Red globe, no Wi-Fi, everything down. How to tell in 2 minutes whether it's your gear or your provider's outage.",
@@ -194,6 +173,7 @@ export const fixes: QuickFix[] = [
       { heading: "1. Clear stale credentials", body: "Windows Credential Manager → remove old Office/Teams entries, then sign in fresh. A changed password plus a cached token is the classic loop." },
       { heading: "2. Use the Authenticator app, not SMS", body: "Approve sign-ins from Microsoft Authenticator instead of typing SMS codes — faster, and immune to SIM-swap attacks that SMS isn't." },
       { heading: "3. Reset the Teams cache", body: "Fully quit Teams, clear %appdata%\\Microsoft\\Teams, and relaunch. Corrupt caches survive reinstalls if you skip this." },
+      { heading: "4. Check the account's sign-in health", body: "In Entra admin center → Monitoring → Sign-in logs, filter to the affected user. 'Interrupted' or conditional-access failures point to a policy; repeated failures from one location point to a cached credential or a compromised account. That tells you which fix above actually applies instead of guessing." },
     ],
     whenToCall: [
       "The whole team loops at once — likely Conditional Access or license expiry.",

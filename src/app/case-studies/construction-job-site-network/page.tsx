@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, TrendingUp, HardHat, Wifi, AlertTriangle, Network } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "Construction Company: Job-Site Network & Wi-Fi Case Study",
-  description: "Standardized network and Wi-Fi across multiple construction job sites, enabling POS, inventory scanners, and mobile device management.",
+  description: metaDescription("Standardized network and Wi-Fi across multiple construction job sites, enabling POS, inventory scanners, and mobile device management."),
   alternates: { canonical: "/case-studies/construction-job-site-network" },
   openGraph: {
   title: "Construction Company: Job-Site Network & Wi-Fi Case Study",
-    description: "Standardized network and Wi-Fi across construction job sites.",
+    description: metaDescription("Standardized network and Wi-Fi across construction job sites."),
     url: "https://nesscotech.com/case-studies/construction-job-site-network",
   },
 };

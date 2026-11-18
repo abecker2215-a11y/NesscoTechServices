@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, CloudLightning, TrendingUp, Laptop } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "Law Firm Microsoft 365 Migration Case Study",
-  description: "Law firm migrated from GoDaddy to Microsoft 365 with zero downtime, 30% cost savings, and MFA security.",
+  description: metaDescription("Law firm migrated from GoDaddy to Microsoft 365 with zero downtime, 30% cost savings, and MFA security."),
   alternates: { canonical: "/case-studies/law-firm-m365-migration" },
   openGraph: {
   title: "Law Firm Microsoft 365 Migration Case Study",
-    description: "Law firm migrated from GoDaddy to Microsoft 365 with zero downtime.",
+    description: metaDescription("Law firm migrated from GoDaddy to Microsoft 365 with zero downtime."),
     url: "https://nesscotech.com/case-studies/law-firm-m365-migration",
   },
 };

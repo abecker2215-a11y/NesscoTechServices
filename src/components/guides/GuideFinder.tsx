@@ -9,7 +9,7 @@ const symptoms = [
   { label: "Virus warning or scam pop-up", href: "/guides/remove-virus-malware-windows", note: "6 min · Intermediate" },
   { label: "Suspicious email or text", href: "/guides/spot-stop-phishing-emails", note: "5 min · Intermediate" },
   { label: "Email won't sync", href: "/fixes/outlook-stuck-syncing", note: "3 min quick fix" },
-  { label: "Printer won't print", href: "/fixes/printer-shows-offline", note: "3 min quick fix" },
+  { label: "Printer won't print", href: "/guides/fix-wireless-printer-not-printing", note: "4 min quick fix" },
   { label: "Was my password breached?", href: "/guides/check-password-breach", note: "3 min · Beginner" },
   { label: "Selling an old phone?", href: "/guides/wipe-old-phone-before-selling", note: "4 min · Beginner" },
 ];

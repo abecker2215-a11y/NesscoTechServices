@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, TrendingUp, AlertTriangle } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "Medical Practice Ransomware Recovery Case Study",
-  description: "Medical practice recovered from ransomware in 4 hours with zero data loss and no ransom paid.",
+  description: metaDescription("Medical practice recovered from ransomware in 4 hours with zero data loss and no ransom paid."),
   alternates: { canonical: "/case-studies/medical-practice-backup-recovery" },
   openGraph: {
   title: "Medical Practice Ransomware Recovery Case Study",
-    description: "Medical practice recovered from ransomware in 4 hours with zero data loss.",
+    description: metaDescription("Medical practice recovered from ransomware in 4 hours with zero data loss."),
     url: "https://nesscotech.com/case-studies/medical-practice-backup-recovery",
   },
 };

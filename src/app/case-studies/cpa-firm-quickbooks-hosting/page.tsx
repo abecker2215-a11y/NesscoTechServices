@@ -3,14 +3,15 @@ import Link from "next/link";
 import { Button, Reveal, FAQAccordion, Card } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { CheckCircle, Clock, DollarSign, Users, Shield, TrendingUp, Calculator, Lock, AlertTriangle } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
     title: "CPA Firm: QuickBooks Hosting & Data Security Case Study",
-  description: "Migrated a CPA firm to hosted QuickBooks with secure remote access, tax-season uptime, and client data protection.",
+  description: metaDescription("Migrated a CPA firm to hosted QuickBooks with secure remote access, tax-season uptime, and client data protection."),
   alternates: { canonical: "/case-studies/cpa-firm-quickbooks-hosting" },
   openGraph: {
   title: "CPA Firm: QuickBooks Hosting & Data Security Case Study",
-    description: "CPA firm migrated to hosted QuickBooks with secure remote access and client data protection.",
+    description: metaDescription("CPA firm migrated to hosted QuickBooks with secure remote access and client data protection."),
     url: "https://nesscotech.com/case-studies/cpa-firm-quickbooks-hosting",
   },
 };

@@ -11,14 +11,15 @@ import { ServiceQuoteSidebar } from "@/components/services/ServiceQuoteSidebar";
 import { Button } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schemas";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Co-Managed IT Services",
-  description: "Partner with your in-house IT team for enterprise-level expertise, 24/7 monitoring, and strategic planning without replacing your staff.",
+  description: metaDescription("Partner with your in-house IT team for enterprise-level expertise, 24/7 monitoring, and strategic planning without replacing your staff."),
   alternates: { canonical: "https://nesscotech.com/services/managed-it-services/co-managed" },
   openGraph: {
     title: "Co-Managed IT Services | Nessco Tech Services",
-    description: "Partner with your in-house IT team for enterprise-level expertise, 24/7 monitoring, and strategic planning without replacing your staff.",
+    description: metaDescription("Partner with your in-house IT team for enterprise-level expertise, 24/7 monitoring, and strategic planning without replacing your staff."),
     url: "https://nesscotech.com/services/managed-it-services/co-managed",
     type: "website",
   },

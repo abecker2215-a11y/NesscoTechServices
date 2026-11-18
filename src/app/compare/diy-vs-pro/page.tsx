@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { Check, Clock, DollarSign, Shield, Wrench } from "lucide-react";
+import { metaDescription } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "DIY IT vs Professional IT Support",
-  description: "Should you fix it yourself or call a pro? Compare time, cost, risk, and when to DIY vs when to call Nessco Tech Services.",
+  description: metaDescription("Should you fix it yourself or call a pro? Compare time, cost, risk, and when to DIY vs when to call Nessco Tech Services."),
   alternates: { canonical: "/compare/diy-vs-pro" },
 };
 
