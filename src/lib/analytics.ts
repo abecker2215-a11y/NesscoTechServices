@@ -36,6 +36,8 @@ export type FunnelEvent =
   | "guide_print"
   | "chat_open"
   | "chat_ask"
+  | "chat_sales_cta"
+  | "chat_sales_cta_persistent"
   | "chat_ticket_nudge"
   | "chat_ticket_open"
   | "chat_ticket_filed"

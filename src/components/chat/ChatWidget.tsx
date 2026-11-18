@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { MessageCircle, X, Send, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import { chatChips } from "@/lib/chat-knowledge";
+import { contextualSalesCta } from "@/lib/chat-server";
 import { trackEvent } from "@/lib/analytics";
 import { siteConfig } from "@/lib/config";
 import { isBusinessOpen, nextOpeningLabel } from "@/lib/hours";
@@ -20,6 +22,7 @@ interface Msg {
   error?: boolean;
   ticketNudge?: boolean;
   ticketRef?: string;
+  intent?: "support" | "sales" | "general";
 }
 
 const TICKET_INTENT_RE =
@@ -45,6 +48,7 @@ interface StreamingChunk {
   done: boolean;
   links?: { label: string; href: string }[];
   source?: "ai" | "rule" | "fallback";
+  intent?: "support" | "sales" | "general";
 }
 
 export function ChatWidget() {
@@ -70,6 +74,21 @@ export function ChatWidget() {
   const streamTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dialogRef = useFocusTrap<HTMLDivElement>(open);
   const { saveFocus, restoreFocus } = useFocusRestore();
+  const router = useRouter();
+  const [salesCta, setSalesCta] = useState<{ label: string; href: string } | null>(null);
+  const lastSalesIntentRef = useRef<string | null>(null);
+
+  /**
+   * Navigate to a sales CTA destination. External URLs (e.g. Calendly) use
+   * window.location.href; internal Next.js routes use router.push.
+   */
+  const navigateTo = useCallback((href: string) => {
+    if (href.startsWith("http://") || href.startsWith("https://")) {
+      window.location.href = href;
+    } else {
+      router.push(href);
+    }
+  }, [router]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -155,6 +174,7 @@ export function ChatWidget() {
       const decoder = new TextDecoder();
       let fullReply = "";
       let links: { label: string; href: string }[] | undefined;
+      let streamIntent: "support" | "sales" | "general" | undefined;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -173,6 +193,14 @@ export function ChatWidget() {
           }
           if (data.done) {
             links = data.links;
+            streamIntent = data.intent;
+            if (data.intent === "sales" && data.source !== "fallback") {
+              const cta = contextualSalesCta("sales", fullReply);
+              if (cta) {
+                setSalesCta(cta);
+                lastSalesIntentRef.current = fullReply;
+              }
+            }
           }
         }
       }
@@ -180,18 +208,20 @@ export function ChatWidget() {
       setMsgs((m) =>
         m.map((msg) =>
           msg.id === botMsgId
-            ? { ...msg, text: fullReply, streaming: false, links }
+            ? { ...msg, text: fullReply, streaming: false, links, intent: streamIntent }
             : msg
         )
       );
 
-      // Offer in-chat ticket filing when the visitor signals intent, or after
-      // a couple of exchanges so nobody has to hunt for the contact form.
+      // Offer in-chat ticket filing when the visitor signals support intent.
+      // Sales-intent visitors get sales CTAs instead — keep the journeys separate.
       const priorAssistantReplies = msgs.filter(
         (m) => m.from === "bot" && m.text && !m.ticketNudge
-      ).length;
+      ).length + 1; // +1 accounts for the assistant reply just committed above.
+      const isSupportIntent = streamIntent === "support";
       if (
         !nudgeShownRef.current &&
+        isSupportIntent &&
         (TICKET_INTENT_RE.test(text) || priorAssistantReplies >= 1)
       ) {
         nudgeShownRef.current = true;
@@ -371,6 +401,32 @@ export function ChatWidget() {
                       ))}
                     </div>
                   )}
+                  {m.intent === "sales" && salesCta && !m.streaming && (
+                    <div className="mt-3 space-y-1.5 animate-fade-in">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          trackEvent("chat_sales_cta", { cta: salesCta.label });
+                          navigateTo(salesCta.href);
+                        }}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-primary bg-primary px-3 py-2 text-[13px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                      >
+                        {salesCta.label}
+                        <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          trackEvent("chat_sales_cta", { cta: "Request a callback" });
+                          navigateTo("/contact");
+                        }}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted"
+                      >
+                        Request a callback
+                        <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      </button>
+                    </div>
+                  )}
                   {m.error && !m.streaming && (
                     <div className="mt-3 p-3 rounded-lg border border-border bg-muted/50 animate-fade-in-up">
                       <p className="text-xs font-medium text-muted-foreground mb-2">Try asking:</p>
@@ -404,6 +460,33 @@ export function ChatWidget() {
           </div>
 
           <div className="border-t border-border p-3">
+            {salesCta && (
+              <div className="mb-3 p-2 rounded-lg border border-primary bg-primary/5 animate-fade-in">
+                <p className="text-[12px] font-semibold text-primary mb-1">Need a hand with this?</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    trackEvent("chat_sales_cta_persistent", { cta: salesCta.label });
+                    navigateTo(salesCta.href);
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-primary bg-primary px-3 py-2 text-[13px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  {salesCta.label}
+                  <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    trackEvent("chat_sales_cta_persistent", { cta: "Request a callback" });
+                    navigateTo("/contact");
+                  }}
+                  className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted"
+                >
+                  Request a callback
+                  <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                </button>
+              </div>
+            )}
             {ticketOpen ? (
               <div className="space-y-2" aria-label="File a ticket">
                 <p className="text-xs font-semibold text-foreground">File a ticket — we&apos;ll call you back</p>

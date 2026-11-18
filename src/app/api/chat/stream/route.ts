@@ -1,77 +1,51 @@
 import { NextRequest } from "next/server";
-import { chatEntries } from "@/lib/chat-knowledge";
+import { buildSystemPrompt, findRelevantEntry, getDefaultLinks, classifyIntent, isAzureConfigured } from "@/lib/chat-server";
 import { siteConfig } from "@/lib/config";
+import { checkRateLimit, getClientIp, rateLimits } from "@/lib/rate-limit";
 
 interface ChatMessage {
   role: "system" | "user" | "assistant";
   content: string;
 }
 
-function buildSystemPrompt(): string {
-  const knowledgeBase = chatEntries
-    .map((e) => `- ${e.title}: ${e.answer}`)
-    .join("\n");
-
-  return `You are Nessco Tech Services' AI assistant for nesscotech.com. You help Tampa Bay residents and businesses with IT problems.
-
-RULES:
-- Be concise, friendly, and jargon-free
-- Always end with a clear next step (link to service, guide, or get-help form)
-- For emergencies (ransomware, breach, data loss), tell them to call ${siteConfig.phone} immediately
-- Don't make up pricing — only use the rates below
-- If you can't help, direct them to /get-help or ${siteConfig.phone}
-- Keep responses under 100 words when possible
-- If the visitor wants a human, a callback, or to book service, tell them they can file a ticket right here in this chat and get a reference number
-
-PRICING:
-- Remote support: $75/hour
-- On-site support: $125/hour
-- Business plans: Essentials $149/mo, Managed $349/mo, Complete $599/mo
-- Hours: Mon-Fri 8am-6pm ET
-
-KNOWLEDGE BASE:
-${knowledgeBase}
-
-AVAILABLE LINKS:
-- Get Help: /get-help
-- Services: /services
-- Pricing: /pricing
-- Guides: /guides
-- Contact: /contact
-- Computer Repair: /services/computer-repair
-- Wi-Fi & Networking: /services/wifi-networking
-- Microsoft 365: /services/microsoft-365
-- Security: /services/cybersecurity
-- Data Backup: /services/data-backup
-- Business IT: /services/business-it
-- Remote Support: /services/remote-support`;
+interface StreamChunk {
+  delta: string;
+  done: boolean;
+  links?: { label: string; href: string }[];
+  source?: "ai" | "rule" | "fallback";
+  intent?: "support" | "sales" | "general";
 }
 
-function findRelevantEntry(query: string) {
-  const q = query.toLowerCase();
-  let best: (typeof chatEntries)[0] | null = null;
-  let bestScore = 0;
-  for (const entry of chatEntries) {
-    let score = 0;
-    for (const kw of entry.keywords) {
-      if (q.includes(kw)) score += kw.length > 4 ? 2 : 1;
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      best = entry;
-    }
+const MAX_MESSAGES = 50;
+const MAX_MESSAGE_CHARS = 2000;
+const AZURE_TIMEOUT_MS = 15000;
+const MAX_AI_REPLY_CHARS = 1200;
+
+function sendSSE(controller: ReadableStreamDefaultController, data: object): void {
+  const encoder = new TextEncoder();
+  controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
+}
+
+function streamText(
+  controller: ReadableStreamDefaultController,
+  text: string,
+  links: { label: string; href: string }[],
+  source: StreamChunk["source"],
+  intent: StreamChunk["intent"],
+  signal?: AbortSignal
+): void {
+  const words = text.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    if (signal?.aborted) return;
+    const chunk = i === 0 ? "" : " " + words[i];
+    sendSSE(controller, { delta: chunk, done: false, links, source, intent });
   }
-  return bestScore > 0 ? best : null;
-}
-
-function getDefaultLinks() {
-  return [
-    { label: "Start a service request", href: "/get-help" },
-    { label: "Browse services", href: "/services" },
-  ];
 }
 
 export async function POST(req: NextRequest) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), AZURE_TIMEOUT_MS);
+
   try {
     const body = await req.json();
     const messages: ChatMessage[] = body.messages ?? [];
@@ -83,6 +57,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (messages.length > MAX_MESSAGES) {
+      return new Response(
+        JSON.stringify({ error: "Too many messages in conversation" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    for (const m of messages) {
+      if (typeof m.content !== "string" || m.content.length > MAX_MESSAGE_CHARS) {
+        return new Response(
+          JSON.stringify({ error: "Message too long" }),
+          { status: 400, headers: { "Content-Type": "application/json" } }
+        );
+      }
+    }
+
     const lastUserMsg = [...messages].reverse().find((m) => m.role === "user");
     if (!lastUserMsg) {
       return new Response(
@@ -91,7 +81,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Rate limit by IP
+    const ip = getClientIp(req);
+    const limit = checkRateLimit(`chat-stream:${ip}`, rateLimits.form.limit, rateLimits.form.windowMs);
+    if (!limit.ok) {
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Retry-After": String(limit.retryAfterSeconds),
+          },
+        }
+      );
+    }
+
     const relevant = findRelevantEntry(lastUserMsg.content);
+    const intent = classifyIntent(lastUserMsg.content, messages.slice(-5).map((m) => m.content));
 
     const apiMessages: ChatMessage[] = [
       { role: "system", content: buildSystemPrompt() },
@@ -101,45 +108,43 @@ export async function POST(req: NextRequest) {
       })),
     ];
 
-    const hasAzureKey = !!process.env.AZURE_OPENAI_API_KEY;
-    const encoder = new TextEncoder();
+    const azureConfigured = isAzureConfigured();
 
     const stream = new ReadableStream({
-      async start(controller) {
-        const send = (data: object) => {
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
-        };
-
-        const sendDone = (links?: { label: string; href: string }[]) => {
-          send({ delta: "", done: true, links });
-          controller.close();
-        };
+      async start(ctl) {
+        let aiProducedOutput = false;
+        let aiReplyChars = 0;
 
         try {
-          if (hasAzureKey) {
+          if (azureConfigured && !controller.signal.aborted) {
             const endpoint = process.env.AZURE_OPENAI_ENDPOINT!;
             const deployment = process.env.AZURE_OPENAI_DEPLOYMENT || "gpt-4o-mini";
 
-            const res = await fetch(`${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=2024-06-01`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "api-key": process.env.AZURE_OPENAI_API_KEY!,
-              },
-              body: JSON.stringify({
-                messages: apiMessages,
-                max_tokens: 300,
-                temperature: 0.7,
-                stream: true,
-              }),
-            });
+            const res = await fetch(
+              `${endpoint}/openai/deployments/${deployment}/chat/completions?api-version=2024-06-01`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "api-key": process.env.AZURE_OPENAI_API_KEY!,
+                },
+                body: JSON.stringify({
+                  messages: apiMessages,
+                  max_tokens: 300,
+                  temperature: 0.7,
+                  stream: true,
+                }),
+                signal: controller.signal,
+              }
+            );
 
-            if (res.ok && res.body) {
+            if (res.ok && res.body && !controller.signal.aborted) {
               const reader = res.body.getReader();
               const decoder = new TextDecoder();
               let fullReply = "";
 
               while (true) {
+                if (controller.signal.aborted) break;
                 const { done, value } = await reader.read();
                 if (done) break;
                 const chunk = decoder.decode(value, { stream: true });
@@ -149,10 +154,15 @@ export async function POST(req: NextRequest) {
                   if (data === "[DONE]") continue;
                   try {
                     const parsed = JSON.parse(data);
+                    // Validate streamed chunk structure: must have choices[0].delta.content
                     const delta = parsed.choices?.[0]?.delta?.content ?? "";
                     if (delta) {
+                      // Enforce per-reply size cap to prevent runaway responses.
+                      if (aiReplyChars + delta.length > MAX_AI_REPLY_CHARS) break;
                       fullReply += delta;
-                      send({ delta, done: false });
+                      aiReplyChars += delta.length;
+                      aiProducedOutput = true;
+                      sendSSE(ctl, { delta, done: false, links: relevant?.links ?? getDefaultLinks(), source: "ai", intent });
                     }
                   } catch {
                     // ignore parse errors
@@ -160,43 +170,51 @@ export async function POST(req: NextRequest) {
                 }
               }
 
-              if (fullReply.trim()) {
-                sendDone(relevant?.links ?? getDefaultLinks());
+              if (fullReply.trim() && !controller.signal.aborted) {
+                sendSSE(ctl, { delta: "", done: true, links: relevant?.links ?? getDefaultLinks(), source: "ai", intent });
+                ctl.close();
                 return;
               }
             }
           }
 
-          // Fallback to rule-based
-          if (relevant) {
-            const words = relevant.answer.split(" ");
-            for (let i = 0; i < words.length; i++) {
-              const chunk = (i === 0 ? "" : " ") + words[i];
-              send({ delta: chunk, done: false });
-              await new Promise((r) => setTimeout(r, 30));
+          // Rule-based fallback (Azure unavailable, failed, or produced no output)
+          if (!aiProducedOutput && !controller.signal.aborted && relevant) {
+            streamText(
+              ctl,
+              relevant.answer,
+              relevant.links,
+              "rule",
+              intent,
+              controller.signal
+            );
+            if (!controller.signal.aborted) {
+              sendSSE(ctl, { delta: "", done: true, links: relevant.links, source: "rule", intent });
             }
-            sendDone(relevant.links);
+            ctl.close();
             return;
           }
 
           // Ultimate fallback
-          const fallback = `I want to make sure you get the right help. Can you tell me a bit more about what's happening? Or call us at ${siteConfig.phone} — we're happy to talk it through.`;
-          const words = fallback.split(" ");
-          for (let i = 0; i < words.length; i++) {
-            const chunk = (i === 0 ? "" : " ") + words[i];
-            send({ delta: chunk, done: false });
-            await new Promise((r) => setTimeout(r, 30));
+          if (!controller.signal.aborted) {
+            const fallback = `I want to make sure you get the right help. Can you tell me a bit more about what's happening? Or call us at ${siteConfig.phone} — we're happy to talk it through.`;
+            streamText(ctl, fallback, getDefaultLinks(), "fallback", intent, controller.signal);
+            if (!controller.signal.aborted) {
+              sendSSE(ctl, { delta: "", done: true, links: getDefaultLinks(), source: "fallback", intent });
+            }
+            ctl.close();
           }
-          sendDone(getDefaultLinks());
         } catch {
-          const errorMsg = "Something went wrong. Please try again or call us.";
-          const words = errorMsg.split(" ");
-          for (let i = 0; i < words.length; i++) {
-            const chunk = (i === 0 ? "" : " ") + words[i];
-            send({ delta: chunk, done: false });
-            await new Promise((r) => setTimeout(r, 30));
+          if (!controller.signal.aborted && !aiProducedOutput) {
+            const errorMsg = "Something went wrong. Please try again or call us.";
+            streamText(ctl, errorMsg, getDefaultLinks(), "fallback", intent, controller.signal);
+            if (!controller.signal.aborted) {
+              sendSSE(ctl, { delta: "", done: true, links: getDefaultLinks(), source: "fallback", intent });
+            }
           }
-          sendDone(getDefaultLinks());
+          ctl.close();
+        } finally {
+          clearTimeout(timeoutId);
         }
       },
     });
@@ -209,6 +227,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch {
+    clearTimeout(timeoutId);
     return new Response(
       JSON.stringify({ error: "Something went wrong. Please try again or call us." }),
       { status: 500, headers: { "Content-Type": "application/json" } }
