@@ -131,6 +131,27 @@ const nextConfig: NextConfig = {
       { source: "/services/vcio", destination: "/services/managed-it-services/vcio", permanent: true },
       { source: "/fixes/new-home-wifi-dead-zones", destination: "/fixes/new-office-wifi-dead-zones", permanent: true },
       { source: "/fixes/printer-shows-offline", destination: "/guides/fix-wireless-printer-not-printing", permanent: true },
+      // Services removed / renamed -> closest equivalent or services index
+      { source: "/services/mobile-seo", destination: "/services", permanent: true },
+      { source: "/services/social-media-management", destination: "/services", permanent: true },
+      { source: "/services/monthly-seo-reporting", destination: "/services", permanent: true },
+      { source: "/services/testimonial-strategy", destination: "/services", permanent: true },
+      { source: "/services/ai-data-analytics", destination: "/services", permanent: true },
+      { source: "/services/phone-systems", destination: "/services/communications/phone-systems", permanent: true },
+      { source: "/services/green-hosting", destination: "/services", permanent: true },
+      { source: "/services/ai-strategy-consulting", destination: "/services", permanent: true },
+      // Glossary trailing-hyphen / renamed slugs -> canonical clean slugs
+      { source: "/glossary/san-storage-area-network-", destination: "/glossary/san", permanent: true },
+      { source: "/glossary/raid-redundant-array-of-independent-disks-", destination: "/glossary/raid", permanent: true },
+      { source: "/glossary/slo-service-level-objective-", destination: "/glossary/slo", permanent: true },
+      { source: "/glossary/sla-service-level-agreement-", destination: "/glossary/sla", permanent: true },
+      { source: "/glossary/siem-security-information-event-management-", destination: "/glossary/siem", permanent: true },
+      { source: "/glossary/soc-security-operations-center-", destination: "/glossary/soc", permanent: true },
+      { source: "/glossary/rpo-rto-recovery-point-time-objective-", destination: "/glossary/rpo-rto", permanent: true },
+      { source: "/glossary/windows-registry", destination: "/glossary/registry", permanent: true },
+      { source: "/glossary/term-090", destination: "/glossary", permanent: true },
+      { source: "/glossary/term-098", destination: "/glossary", permanent: true },
+      { source: "/glossary/term-093", destination: "/glossary", permanent: true },
     ];
   },
   async headers() {
