@@ -20,7 +20,7 @@ export function BusinessPlanCalculator() {
 
   const plan = useMemo(() => fitPlan(devices), [devices]);
   const discount = nonprofit ? NONPROFIT_DISCOUNT : 0;
-  const monthly = Math.round(plan.price * (1 - discount));
+  const monthly = Math.round(plan.price * devices * (1 - discount));
   const annual = monthly * 12;
   const perDevice = monthly / Math.max(devices, 1);
   const savesVsBreakfix = BREAKFIX_BASELINE - monthly;
