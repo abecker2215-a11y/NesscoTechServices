@@ -11,8 +11,12 @@ const SHORT_DESC_PAD = ` ${siteConfig.name} provides managed IT, cybersecurity, 
  * title exceeds 40 characters, to stay under Google's ~600px limit.
  */
 export function pageTitle(base: string): string {
-  if (base.length > TITLE_MAX) return clampTitle(base, TITLE_MAX);
-  return base.length > 40 ? base : `${base}${SITE_SUFFIX}`;
+  // Strip quote/apostrophe characters that expand to HTML entities
+  // (&quot;, &#x27;) when rendered in <title>, inflating the displayed length
+  // beyond search engines' ~70-character display limit.
+  const clean = base.replace(/["']/g, "");
+  if (clean.length > TITLE_MAX) return clampTitle(clean, TITLE_MAX);
+  return clean.length > 40 ? clean : `${clean}${SITE_SUFFIX}`;
 }
 
 function clampTitle(text: string, max: number): string {
