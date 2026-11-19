@@ -12,8 +12,8 @@ import { pageTitle, metaDescription } from "@/lib/meta";
 import { Shield, Monitor, Briefcase, DollarSign, Lock } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
-  description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring, 24/7 support."),
+    title: pageTitle("Managed IT Services & Cybersecurity for Tampa Bay Businesses"),
+  description: metaDescription("Managed IT services, cybersecurity, Microsoft 365, network support, and helpdesk for Tampa Bay businesses. Proactive monitoring, 24/7 support."),
   metadataBase: new URL("https://nesscotech.com"),
   alternates: {
     canonical: "https://nesscotech.com/",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://nesscotech.com/",
     siteName: "Nessco Tech Services",
-    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
+    title: pageTitle("Managed IT Services & Cybersecurity for Tampa Bay Businesses"),
     description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses. Proactive monitoring and 24/7 support."),
     type: "website",
     locale: "en_US",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: "https://nesscotech.com/hero/homepage-hero.png",
         width: 1200,
         height: 630,
-        alt: "Nessco Tech Services — Tampa Bay IT Support",
+        alt: "Nessco Tech Services — Managed IT Services & Cybersecurity Tampa Bay",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitle("Nessco Tech Services | Tampa Bay IT Support"),
+    title: pageTitle("Managed IT Services & Cybersecurity for Tampa Bay Businesses"),
     description: metaDescription("Managed IT, cybersecurity, cloud, network and backup services for Tampa Bay businesses."),
   },
   robots: { index: true, follow: true },
@@ -163,23 +163,23 @@ export default function HomePage() {
           <div className="absolute inset-0 flex items-end justify-center px-4 z-10" style={{ pointerEvents: 'none' }}>
             <div className="hero-copy px-4 sm:px-8 text-center max-w-3xl mx-auto z-10" style={{ pointerEvents: 'auto' }}>
               <h1 id="hero-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6 sr-only">
-                Nessco Tech Services — Tampa Bay IT Support
+                Managed IT Services & Cybersecurity for Tampa Bay Businesses
               </h1>
               <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-4 mb-8 w-full max-w-xs sm:max-w-none">
-                <a
-                  href="/get-help"
-                  className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
-                  style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
-                >
-                  Get Help
-                </a>
-                <a
+                <Link
                   href="/quote"
                   className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
                   style={{ backgroundColor: 'rgba(10, 21, 48, 0.85)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
                 >
-                  Request a Quote
-                </a>
+                  Get a Managed IT Quote
+                </Link>
+                <Link
+                  href="/get-help"
+                  className="flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-white whitespace-nowrap w-full sm:w-auto sm:flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(10, 21, 48, 0.6)', borderColor: '#123378', borderStyle: 'solid', borderWidth: '1px' }}
+                >
+                  Get Help
+                </Link>
               </div>
             </div>
           </div>
@@ -288,7 +288,7 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <a
+                <Link
                   href="/get-help"
                   className="absolute left-[24%] right-[24%] bottom-[2.5%] h-[8%] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   aria-label="Request Remote Help"
@@ -311,7 +311,7 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <a
+                <Link
                   href="/get-help"
                   className="absolute left-[24%] right-[24%] bottom-[2.5%] h-[8%] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   aria-label="Schedule On-Site Visit"
@@ -380,9 +380,9 @@ export default function HomePage() {
             <h2 id="tampa-bay-services-heading" className="fluid-3xl font-bold text-foreground mb-4">
               IT Services for Tampa Bay Businesses
             </h2>
-            <p className="fluid-lg text-muted-foreground mb-8">
-              Managed IT, cybersecurity, help desk, Microsoft 365, network support, and backup services for companies across Tampa Bay. Remote support from $75/hr, on-site from $125/hr.
-            </p>
+              <p className="fluid-lg text-muted-foreground mb-8">
+                Proactive managed IT, cybersecurity, Microsoft 365, network support, and helpdesk services for Tampa Bay businesses. Remote support from $75/hr, on-site from $125/hr.
+              </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link href="/services" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">All services</Link>
               <Link href="/services/it-support" className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">IT support</Link>
@@ -406,11 +406,11 @@ export default function HomePage() {
               Start a service request in under 2 minutes. We&apos;ll contact you within 2 hours during business hours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto min-h-[48px]" href="/get-help">
-                Get Help Now
+              <Button size="lg" className="w-full sm:w-auto min-h-[48px]" href="/quote">
+                Get a Managed IT Quote
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]" href="/contact">
-                Contact Us
+              <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]" href="/get-help">
+                Get Help
               </Button>
             </div>
           </div>

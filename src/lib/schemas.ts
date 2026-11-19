@@ -1,6 +1,7 @@
 import { FAQItem, ServiceDef } from "./types";
 import { Location } from "./locations";
 import { siteConfig } from "./config";
+import { businessPlans } from "./plans";
 
 const siteUrl = `https://${siteConfig.domain}`;
 
@@ -125,23 +126,23 @@ export function localBusinessSchema() {
           price: "125",
           priceCurrency: "USD",
         },
-        {
+        ...businessPlans.filter((p) => p.period === "month").map((p) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Managed IT Services",
-            description: "Proactive monitoring, security, backups, and strategy",
+            name: `${p.name} Managed IT`,
+            description: `${p.description} Per-user monthly price. Covers up to ${p.deviceLimit === null ? "unlimited" : p.deviceLimit} total devices.`,
           },
-          price: "499",
+          price: String(p.price),
           priceCurrency: "USD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "499",
+            price: String(p.price),
             priceCurrency: "USD",
             billingIncrement: "1",
             unitCode: "MON",
           },
-        },
+        })),
       ],
     },
     knowsAbout: [

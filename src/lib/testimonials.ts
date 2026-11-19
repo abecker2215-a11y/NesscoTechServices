@@ -55,6 +55,5 @@ export interface BusinessStat {
 export const businessStats: BusinessStat[] = [
   { value: "2 hrs", label: "Typical response, Mon–Fri 8am–6pm" },
   { value: "$75", label: "Starting rate for remote fixes" },
-  { value: "56 cities", label: "Served across Tampa Bay + remote anywhere" },
   { value: "No fix, no fee", label: "On remote work we can't resolve" },
 ];

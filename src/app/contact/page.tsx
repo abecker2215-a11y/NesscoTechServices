@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: pageTitle("Contact Us"),
   description: metaDescription("Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm."),
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "https://nesscotech.com/contact" },
   openGraph: {
     title: pageTitle("Contact Us"),
     description: metaDescription("Contact Nessco Tech Services for IT support in Tampa Bay. Email: info@nesscotech.com. Mon-Fri 8am-6pm."),

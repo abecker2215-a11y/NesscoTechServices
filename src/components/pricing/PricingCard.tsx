@@ -1,11 +1,11 @@
-import { PricingPlan } from "@/lib/types";
+import { BusinessPlan } from "@/lib/plans";
 import { Card, CardContent, CardFooter } from "@/components/ui";
 import { Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 
 interface PricingCardProps {
-  plan: PricingPlan;
+  plan: BusinessPlan;
 }
 
 export function PricingCard({ plan }: PricingCardProps) {
@@ -25,6 +25,14 @@ export function PricingCard({ plan }: PricingCardProps) {
             {plan.period === "month" ? "/user/mo" : `/${plan.period}`}
           </span>
         </div>
+        {plan.period === "month" && (
+          <p className="text-sm text-muted-foreground mb-6">
+            Covers up to{" "}
+            {plan.deviceLimit === null ? "unlimited" : plan.deviceLimit}{" "}
+            total device{plan.deviceLimit === 1 || plan.deviceLimit === null ? "" : "s"}{" "}
+            across all users.
+          </p>
+        )}
         <ul className="space-y-3 mb-6 flex-1" role="list">
           {plan.features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">

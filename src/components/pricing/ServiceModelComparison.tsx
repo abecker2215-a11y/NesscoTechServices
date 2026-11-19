@@ -1,5 +1,5 @@
-import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { monthlyPlans } from "@/lib/plans";
 
 interface Model {
   name: string;
@@ -12,6 +12,10 @@ interface Model {
   ctaHref: string;
   color: "primary" | "secondary";
 }
+
+const monthlyPrices = monthlyPlans.map((p) => p.price);
+const minMonthly = Math.min(...monthlyPrices);
+const maxMonthly = Math.max(...monthlyPrices);
 
 const models: Model[] = [
   {
@@ -28,7 +32,7 @@ const models: Model[] = [
   {
     name: "Fully Managed",
     tagline: "End-to-end IT",
-    price: "$89–$189",
+    price: `$${minMonthly}–$${maxMonthly}`,
     period: "/user/mo",
     bestFor: "Businesses that want us to be their IT department.",
     features: [true, true, true, true, true, true],

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import { Shield, CheckCircle, Users, Award, Star, Clock, Lock, BadgeCheck, TrendingUp, DollarSign, MapPin } from "lucide-react";
+import { Shield, Users, Star, TrendingUp, DollarSign } from "lucide-react";
 interface LiveCounterProps {
   label: string;
   start: number;
@@ -103,35 +103,12 @@ export function SecurityBadge({ label, icon: Icon, description }: SecurityBadgeP
 }
 
 export function TrustSignalBar() {
-  const badges = [
-    { label: "Licensed & Insured", icon: BadgeCheck, desc: "Florida State License #EC13005" },
-    { label: "Background Checked", icon: Shield, desc: "All technicians verified" },
-    { label: "Satisfaction Guaranteed", icon: Award, desc: "Or we'll make it right" },
-    { label: "Data Protected", icon: Lock, desc: "SOC 2 compliant practices" },
-  ];
-
-  return (
-    <div className="bg-muted/30 border-y border-border py-6" aria-label="Trust signals">
-      <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {badges.map((badge, i) => (
-            <SecurityBadge key={i} {...badge} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return null;
 }
 
 export function LiveStats() {
   const stats = [
     { label: "Remote fixes from", start: 0, end: 75, icon: DollarSign, prefix: "$", suffix: "" },
-    { label: "Avg Response Time", start: 0, end: 47, icon: Clock, suffix: " min" },
-    { label: "Clients Served", start: 0, end: 500, icon: Users, suffix: "+" },
-    { label: "Tickets Resolved", start: 0, end: 88247, icon: CheckCircle, suffix: "+" },
-    { label: "Across Tampa Bay", start: 0, end: 56, icon: MapPin, suffix: " cities" },
-    { label: "Satisfaction Rate", start: 0, end: 98, icon: Star, suffix: "%" },
-    { label: "Google rating", start: 0, end: 5, icon: Star, suffix: " ★" },
   ];
 
   return (
@@ -149,8 +126,8 @@ export function GoogleReviewsWidget({
   placeId = "ChIJXXXXXXXXXXXX",
   apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""
 }: { placeId?: string; apiKey?: string }) {
-  const [reviews, setReviews] = useState<{ author: string; rating: number; text: string; time: number }[]>([]);
-  const [rating, setRating] = useState(0);
+  const [reviews] = useState<{ author: string; rating: number; text: string; time: number }[]>([]);
+  const [rating] = useState(0);
   const [loading, setLoading] = useState(!!apiKey);
   const error = apiKey ? null : "Google Maps API key not configured";
   const initialized = useRef(false);
@@ -160,20 +137,10 @@ export function GoogleReviewsWidget({
     if (initialized.current) return;
     initialized.current = true;
 
-    const timeout = setTimeout(() => {
-      setReviews([
-        { author: "Sarah M.", rating: 5, text: "Fixed my Wi-Fi in 30 mins. Professional and explained everything.", time: Date.now() - 86400000 * 2 },
-        { author: "James R.", rating: 5, text: "Best IT support in Tampa. Honest pricing, no upsells.", time: Date.now() - 86400000 * 5 },
-        { author: "Lisa K.", rating: 5, text: "Great remote support for my Mac. Fixed email sync issue.", time: Date.now() - 86400000 * 10 },
-      ]);
-      setRating(5.0);
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
+    setLoading(false);
   }, [apiKey, placeId]);
 
-if (loading) {
+  if (loading) {
     return (
       <div className="animate-pulse space-y-4 max-w-md mx-auto">
         <div className="h-8 bg-muted rounded w-1/2 mx-auto" />
@@ -186,7 +153,7 @@ if (loading) {
     );
   }
 
-  if (error) {
+  if (error || reviews.length === 0) {
     return (
       <div className="text-center text-muted-foreground py-8">
         <p>Google reviews unavailable</p>

@@ -5,9 +5,10 @@ import { Button } from "@/components/ui";
 import { Scale, ArrowRight, Check, X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { businessPlans } from "@/lib/plans";
 
 const ONSITE_RATE = 125;
-const MANAGED_MONTHLY = 349;
+const MANAGED_MONTHLY = businessPlans.find((p) => p.id === "managed")?.price ?? 139;
 
 const rows = [
   { label: "Response promise", us: "~2 hrs, Mon–Fri 8am–6pm", them: "Queue + appointment windows" },
@@ -99,7 +100,7 @@ export function CompareCalculator() {
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Managed / year</p>
             <p className="text-3xl font-bold text-foreground">${managedYear.toLocaleString()}</p>
-            <p className="text-xs text-muted-foreground">Managed ${MANAGED_MONTHLY}/mo + prevention</p>
+            <p className="text-xs text-muted-foreground">Managed ${MANAGED_MONTHLY}/user/mo + prevention</p>
           </div>
         </div>
         <p className={cn("mt-4 rounded-lg p-3 text-sm font-medium", diff > 0 ? "bg-success/10 text-foreground" : "bg-muted text-muted-foreground")}>

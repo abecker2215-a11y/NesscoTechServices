@@ -6,20 +6,20 @@ import { pageTitle, metaDescription } from "@/lib/meta";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: pageTitle("Managed IT Services for Business"),
-  description: metaDescription("Proactive managed IT services for businesses nationwide. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning under predictable monthly agreements."),
+  title: pageTitle("Managed IT Services Tampa Bay | Nessco Tech Services"),
+  description: metaDescription("Proactive managed IT services for Tampa Bay businesses. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning under predictable monthly agreements. Remote from $75/hr, on-site from $125/hr."),
   alternates: { canonical: "https://nesscotech.com/managed-it-services/" },
   openGraph: {
-    title: pageTitle("Managed IT Services for Business"),
-    description: metaDescription("Proactive managed IT services for businesses nationwide. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning under predictable monthly agreements."),
+    title: pageTitle("Managed IT Services Tampa Bay"),
+    description: metaDescription("Proactive managed IT services for Tampa Bay businesses. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning under predictable monthly agreements."),
     url: "https://nesscotech.com/managed-it-services/",
     type: "website",
-    images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Managed IT Services" }],
+    images: [{ url: "https://nesscotech.com/og-image.png", width: 1200, height: 630, alt: "Nessco Tech Services — Managed IT Services Tampa Bay" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Managed IT Services for Business",
-    description: "Proactive managed IT services for businesses nationwide. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning.",
+    title: pageTitle("Managed IT Services Tampa Bay"),
+    description: "Proactive managed IT services for Tampa Bay businesses. 24/7 monitoring, cybersecurity, Microsoft 365 management, and strategic IT planning.",
     images: ["https://nesscotech.com/og-image.png"],
   },
 };
@@ -74,13 +74,13 @@ export default function ManagedITServicesPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
-              Serving businesses nationwide
+              Serving Tampa Bay businesses
             </p>
             <h1 id="hero-heading" className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-6">
               Your Business IT Department — Without the Cost of Hiring One
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Nessco Tech Services provides proactive managed IT to businesses across the U.S. We handle monitoring, security, backups, and strategy so you can focus on running your business — not putting out IT fires.
+              Nessco Tech Services provides proactive managed IT to Tampa Bay businesses. We handle monitoring, security, backups, and strategy so you can focus on running your business — not putting out IT fires.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" href="/contact" className="min-h-[48px]">Get a Free Consultation</Button>
@@ -166,6 +166,36 @@ export default function ManagedITServicesPage() {
                 <Check className="h-4 w-4 text-success flex-shrink-0" aria-hidden="true" />
                 {item}
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 bg-muted/30" aria-labelledby="service-area-heading">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 id="service-area-heading" className="text-3xl font-bold text-foreground mb-4">
+              Tampa Bay Service Area
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              We provide managed IT services to businesses across Tampa Bay, with remote support available anywhere.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+            {[
+              { name: "Tampa", href: "/it-support-tampa" },
+              { name: "St. Petersburg", href: "/it-support-st-petersburg" },
+              { name: "Clearwater", href: "/it-support-clearwater" },
+              { name: "Brandon", href: "/it-support-brandon" },
+              { name: "Riverview", href: "/it-support-riverview" },
+            ].map((loc) => (
+              <a
+                key={loc.href}
+                href={loc.href}
+                className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground lift-hover"
+              >
+                Managed IT in {loc.name}
+              </a>
             ))}
           </div>
         </div>

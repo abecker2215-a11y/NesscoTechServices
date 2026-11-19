@@ -226,14 +226,6 @@ export default function AboutPage() {
               <h2 id="description-heading" className="text-3xl font-bold text-foreground mb-4">
                 About the Company
               </h2>
-              <p className="text-muted-foreground text-lg">
-                Nessco Tech Services is a Tampa Bay–area information technology services provider specializing in
-                managed IT services, business technology support, network infrastructure, cybersecurity, cloud
-                solutions, and technology consulting for small and medium-sized businesses. Built on approximately
-                25 years of hands-on IT experience, Nessco helps businesses simplify technology, protect critical
-                systems, minimize downtime, improve productivity, and maintain reliable IT environments without the
-                expense and complexity of managing a full internal IT department.
-              </p>
             </div>
           </section>
 
@@ -346,6 +338,81 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16 bg-muted/30" aria-labelledby="processes-heading">
+            <div className="container">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 id="processes-heading" className="text-3xl font-bold text-foreground mb-4">
+                  Support & Security Processes
+                </h2>
+                <p className="text-muted-foreground">
+                  Our approach to support and security is documented below. Specific processes, SLAs, and
+                  compliance controls are confirmed during onboarding and vary by plan tier.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div className="p-6 rounded-lg border border-border bg-background">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Support process</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Request → triage → diagnosis → resolution → follow-up. All tickets are tracked with
+                    SLA monitoring and escalation paths.
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">
+                    Placeholder: detailed SLA table and response-time commitments pending publication.
+                  </p>
+                </div>
+                <div className="p-6 rounded-lg border border-border bg-background">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Security process</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Asset inventory → vulnerability scan → remediation → monitoring → reporting. Security
+                    controls are reviewed quarterly with managed clients.
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">
+                    Placeholder: control frameworks and audit evidence pending publication.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16" aria-labelledby="case-studies-heading">
+            <div className="container">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 id="case-studies-heading" className="text-3xl font-bold text-foreground mb-4">
+                  Case Studies
+                </h2>
+                <p className="text-muted-foreground">
+                  Real client outcomes are listed below. Identifying details and metrics are
+                  pending client approval and will be published as they become available.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto" role="list">
+                {[
+                  {
+                    title: "Case study pending — medical practice",
+                    summary: "HIPAA-aligned IT support and backup recovery for a Tampa medical office.",
+                    status: "Pending client approval",
+                  },
+                  {
+                    title: "Case study pending — law firm",
+                    summary: "Microsoft 365 migration and email security for a Tampa Bay law firm.",
+                    status: "Pending client approval",
+                  },
+                  {
+                    title: "Case study pending — construction company",
+                    summary: "Network rebuild and managed IT support for a Brandon-area contractor.",
+                    status: "Pending client approval",
+                  },
+                ].map((cs) => (
+                  <article key={cs.title} className="p-6 rounded-lg border border-border bg-background">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{cs.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{cs.summary}</p>
+                    <p className="text-xs text-primary font-medium">{cs.status}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </section>

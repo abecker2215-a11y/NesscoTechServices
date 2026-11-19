@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import { PricingCard, PriceEstimator } from "@/components/pricing";
 import { BusinessPlanCalculator } from "@/components/pricing/BusinessPlanCalculator";
-import { businessPlans } from "@/lib/plans";
+import { businessPlans, BusinessPlan } from "@/lib/plans";
 
 type Tab = "payg" | "business";
 
-const hourlyPlans = [
+const hourlyPlans: BusinessPlan[] = [
   {
     id: "remote",
     name: "Remote IT Help",
@@ -27,6 +27,8 @@ const hourlyPlans = [
     ctaText: "Request Remote Help",
     ctaHref: "/get-help?category=computer",
     type: "remote" as const,
+    deviceLimit: null,
+    fitLabel: "No device limit",
   },
   {
     id: "onsite",
@@ -44,6 +46,8 @@ const hourlyPlans = [
     ctaText: "Schedule On-Site Visit",
     ctaHref: "/get-help?category=hardware",
     type: "onsite" as const,
+    deviceLimit: null,
+    fitLabel: "No device limit",
     popular: true,
   },
 ];
