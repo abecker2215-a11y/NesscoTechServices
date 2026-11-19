@@ -106,6 +106,8 @@ const nextConfig: NextConfig = {
       { source: "/services/voip-phone-systems", destination: "/services/communications/phone-systems", permanent: true },
       { source: "/services/it-consulting", destination: "/services/managed-it-services/consulting", permanent: true },
       { source: "/services/compliance-support", destination: "/services/it-security/audit-compliance", permanent: true },
+      // Managed IT cannibalization: keep /managed-it-services-tampa as the canonical Tampa page
+      { source: "/managed-it-services/", destination: "/managed-it-services-tampa", permanent: true },
       { source: "/services/copilot-deployment", destination: "/services/cloud-solutions/microsoft-365", permanent: true },
       { source: "/services/google-workspace", destination: "/services/cloud-solutions/google-workspace", permanent: true },
       { source: "/guides/lock-down-home-wifi-router", destination: "/guides/lock-down-office-wifi-router", permanent: true },
