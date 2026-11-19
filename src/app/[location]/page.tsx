@@ -5,6 +5,7 @@ import { locations, getLocation } from "@/lib/locations";
 import { services } from "@/lib/services";
 import { getPublishedBySlugs } from "@/lib/blog-db";
 import { Briefcase, Shield, Database, Cable, Headset, HardDrive, Monitor, Mail } from "lucide-react";
+import { Star, BadgeCheck, Users, Award } from "lucide-react";
 import { guides } from "@/lib/guides";
 import { fixes } from "@/lib/fixes";
 import { Button, Reveal, FAQAccordion } from "@/components/ui";
@@ -164,6 +165,23 @@ export default async function LocationPage({ params }: Props) {
       </p>
 
       <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+        <span className="flex items-center gap-1.5">
+          <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
+          <span className="font-medium text-foreground">5.0★</span>
+          <span>Google</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <BadgeCheck className="h-4 w-4 text-success" aria-hidden="true" />
+          <span>Licensed & Insured</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Users className="h-4 w-4" aria-hidden="true" />
+          <span>500+ Clients</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Award className="h-4 w-4 text-warning" aria-hidden="true" />
+          <span>Top Rated Tampa Bay</span>
+        </span>
       </div>
 
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: `${loc.name}, FL`, path: `/${loc.slug}` }])} />

@@ -7,6 +7,7 @@ import { TrustSignalBarClient, LiveStatsClient } from "@/components/ui/TrustSign
 import { OpenStatus } from "@/components/layout/OpenStatus";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { Briefcase, Shield, Database, Cable, Headset, HardDrive, Monitor, Mail } from "lucide-react";
+import { Star, BadgeCheck, Users, Award } from "lucide-react";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, localBusinessSchema, faqPageSchema } from "@/lib/schemas";
 import { pageTitle, metaDescription } from "@/lib/meta";
@@ -81,6 +82,23 @@ export default async function ManagedItServicesTampaPage() {
       </p>
 
       <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+        <span className="flex items-center gap-1.5">
+          <Star className="h-4 w-4 fill-warning text-warning" aria-hidden="true" />
+          <span className="font-medium text-foreground">5.0★</span>
+          <span>Google</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <BadgeCheck className="h-4 w-4 text-success" aria-hidden="true" />
+          <span>Licensed & Insured</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Users className="h-4 w-4" aria-hidden="true" />
+          <span>500+ Clients</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Award className="h-4 w-4 text-warning" aria-hidden="true" />
+          <span>Top Rated Tampa Bay</span>
+        </span>
       </div>
 
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Managed IT Services in Tampa, FL", path: "/managed-it-services-tampa" }])} />
