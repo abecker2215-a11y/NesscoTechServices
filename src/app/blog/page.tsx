@@ -101,11 +101,23 @@ function buildHref(paramsToSet: {
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const { category = "All", q = "" } = await searchParams;
   const { currentPage } = await getPageState(category, q, (await searchParams).page);
+  const categories = await getBlogCategories();
+  const categorySlugByName = new Map(categories.map((c) => [c.name, c.slug]));
+  const slug = categorySlugByName.get(category);
+
+  // Canonical should point to the proper category route, not a query-param filter URL.
+  let canonical: string;
+  if (slug && slug !== "all") {
+    canonical = `/blog/category/${slug}`;
+    if (currentPage > 1) canonical += `?page=${currentPage}`;
+  } else {
+    canonical = buildHref({ category, q, page: currentPage });
+  }
 
   return {
     ...baseMetadata,
     alternates: {
-      canonical: buildHref({ category, q, page: currentPage }),
+      canonical: canonical,
     },
   };
 }
