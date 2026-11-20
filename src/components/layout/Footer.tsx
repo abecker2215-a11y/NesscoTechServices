@@ -98,10 +98,17 @@ export function Footer() {
             <ul className="mt-4 space-y-3" role="list">
               {directoryBadges.map((badge) => (
                 <li key={badge.name}>
-                  <a href={badge.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    <span className="text-muted-foreground/50">&#9679;</span>
-                    {badge.name}
-                  </a>
+                  {badge.html ? (
+                    <span
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      dangerouslySetInnerHTML={{ __html: badge.html }}
+                    />
+                  ) : (
+                    <a href={badge.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      <span className="text-muted-foreground/50">&#9679;</span>
+                      {badge.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

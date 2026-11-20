@@ -106,6 +106,7 @@ export interface NavItem {
 export interface BusinessListing {
   name: string;
   href: string;
+  html?: string;
 }
 
 export interface SiteConfig {
