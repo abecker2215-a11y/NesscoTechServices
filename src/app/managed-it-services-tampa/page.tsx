@@ -20,11 +20,27 @@ const managedFaqs: FAQItem[] = [
   },
   {
     q: "How much do managed IT services cost in Tampa?",
-    a: "Remote support starts at $75/hr and on-site support at $125/hr. Managed IT plans are quoted based on users, devices, and scope.",
+    a: "Remote support starts at $75/hr and on-site support at $125/hr. Monthly managed plans are $89/user/mo (Essentials), $139/user/mo (Managed), and $189/user/mo (Complete), billed per user with device allowances.",
   },
   {
     q: "Do you offer co-managed IT in Tampa?",
     a: "Yes. We partner with in-house IT teams to provide 24/7 coverage, security, and project support.",
+  },
+  {
+    q: "What is the difference between managed IT and break-fix?",
+    a: "Managed IT is a flat monthly fee per user that includes monitoring, patching, security, and help desk support so problems are caught before they interrupt your business. Break-fix is hourly ($75/hr remote, $125/hr on-site) and only applies when something breaks.",
+  },
+  {
+    q: "How quickly do you respond in Tampa?",
+    a: "During business hours (Mon–Fri, 8am–6pm) we typically respond within 2 hours. Remote issues are often resolved the same day; on-site visits are scheduled at your convenience, typically next business day across Tampa and Hillsborough County.",
+  },
+  {
+    q: "Do you serve small businesses with 5–500 employees?",
+    a: "Yes. Our managed IT plans are built for Tampa businesses with 5–500 employees, from small professional offices to multi-location operations.",
+  },
+  {
+    q: "Is there a long-term contract for managed IT?",
+    a: "Managed plans are monthly with no long-term lock-in. Hourly break-fix support requires no commitment at all — you only pay for the time used.",
   },
 ];
 
@@ -140,6 +156,126 @@ export default async function ManagedItServicesTampaPage() {
             <p className="mt-4 text-sm text-muted-foreground">
               <span className="font-medium text-foreground">Pricing: </span>
               Remote support from $75/hr, on-site from $125/hr. Managed plans quoted by scope.
+            </p>
+          </div>
+
+          <div className="mx-auto mb-16 max-w-3xl rounded-xl border border-border bg-background p-6">
+            <h2 className="mb-3 text-lg font-semibold text-foreground">Managed IT pricing for Tampa businesses</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Monthly plans are billed per user and include proactive monitoring, security, and
+              help desk support. Hourly break-fix remains available for one-off needs.
+            </p>
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="pb-3 font-medium text-foreground">Plan</th>
+                  <th className="pb-3 font-medium text-foreground text-right">Price</th>
+                  <th className="pb-3 font-medium text-foreground">Devices included</th>
+                  <th className="pb-3 font-medium text-foreground">Best for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-border">
+                  <td className="py-3 font-medium text-foreground">Essentials</td>
+                  <td className="py-3 text-right text-foreground">$89/user/mo</td>
+                  <td className="py-3 text-muted-foreground">Up to 10 devices</td>
+                  <td className="py-3 text-muted-foreground">Small teams needing monitoring and help desk</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 font-medium text-foreground">Managed</td>
+                  <td className="py-3 text-right text-foreground">$139/user/mo</td>
+                  <td className="py-3 text-muted-foreground">Up to 25 devices</td>
+                  <td className="py-3 text-muted-foreground">Growing businesses wanting full IT management</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 font-medium text-foreground">Complete</td>
+                  <td className="py-3 text-right text-foreground">$189/user/mo</td>
+                  <td className="py-3 text-muted-foreground">Unlimited devices</td>
+                  <td className="py-3 text-muted-foreground">Businesses needing advanced security and vCIO</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Pay As You Go break-fix: remote support from $75/hr, on-site from $125/hr.
+              {" "}
+              <Link href="/pricing" className="text-primary hover:underline font-medium">
+                See all pricing
+              </Link>
+            </p>
+          </div>
+
+          <div className="mx-auto mb-16 max-w-3xl rounded-xl border border-border bg-background p-6">
+            <h2 className="mb-3 text-lg font-semibold text-foreground">Industries we serve in Tampa Bay</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              We provide business IT support to Tampa companies across healthcare, legal, accounting,
+              construction, real estate, retail, and professional services — with 5–500 employees.
+            </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-muted-foreground" role="list">
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Healthcare and medical offices — HIPAA-aware IT and backup</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Law firms — secure document and email management</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Accounting and bookkeeping — reliable systems for tax season</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Construction and trades — field-office connectivity</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Real estate — transaction-ready networks and backups</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Retail — point-of-sale and guest Wi-Fi reliability</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mx-auto mb-16 max-w-3xl rounded-xl border border-border bg-background p-6">
+            <h2 className="mb-3 text-lg font-semibold text-foreground">Why Tampa businesses choose us</h2>
+            <ul className="space-y-2 text-muted-foreground" role="list">
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Same-day remote support for Tampa businesses, Mon–Fri 8am–6pm</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Next-business-day on-site visits across Tampa and Hillsborough County</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Flat, per-user monthly pricing — no surprise invoices</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>No long-term lock-in on hourly break-fix support</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary" aria-hidden="true">•</span>
+                <span>Local Tampa team that understands your industry and your equipment</span>
+              </li>
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Need cybersecurity, Microsoft 365 management, or backup and disaster recovery?
+              {" "}
+              <Link href="/services/it-security" className="text-primary hover:underline font-medium">
+                IT security
+              </Link>{" "}
+              ·{" "}
+              <Link href="/services/cloud-solutions/microsoft-365" className="text-primary hover:underline font-medium">
+                Microsoft 365
+              </Link>{" "}
+              ·{" "}
+              <Link href="/services/backup-disaster-recovery" className="text-primary hover:underline font-medium">
+                Backup and DR
+              </Link>
             </p>
           </div>
 
