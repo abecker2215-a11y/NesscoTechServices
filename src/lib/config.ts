@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
     { name: "BrownBook", href: "https://www.brownbook.net/business/56096427/nessco-tech-services" },
     { name: "EzLocal", href: "https://ezlocal.com/fl/tampa/computer-repair-service/0919929723" },
     { name: "Chamber Of Commerce", href: "https://www.chamberofcommerce.com/business-directory/florida/tampa/computer-support-and-services/2034583430-nessco-tech-services" },
-    { name: "IT Firms Ranked", href: "https://www.itfirmsranked.com/it-firm/carrollwood-fl/nessco-tech-services", html: `<a href="https://www.itfirmsranked.com/it-firm/carrollwood-fl/nessco-tech-services" target="_blank" rel="noopener"><img src="https://www.itfirmsranked.com/brands/itfirms/badges/listed.svg" alt="Listed on IT Firms Ranked" width="240" height="80" loading="lazy" style="border:0;max-width:100%;height:auto" /></a>` },
+    { name: "IT Firms Ranked", href: "https://www.itfirmsranked.com/managed-it-services/tampa-fl", html: `<a href="https://www.itfirmsranked.com/managed-it-services/tampa-fl" target="_blank" rel="noopener"><img src="https://www.itfirmsranked.com/api/badge/rank?business=3b317f1a-6f0c-47d0-82c8-1e7dda429999&theme=dark" alt="Our ranking among Managed IT service providers in Tampa, FL on IT Firms Ranked" width="240" height="80" loading="lazy" style="border:0;max-width:100%;height:auto" /></a>` },
     { name: "GoodFirms", href: "https://www.goodfirms.co/company/nessco-tech-services" },
   ],
 };
