@@ -9,6 +9,7 @@ import { BookOpen, Tag, TrendingUp, ExternalLink, ArrowLeft } from "lucide-react
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { ShareButtons } from "@/components/glossary/ShareButtons";
+import { CommercialCta } from "@/components/guides/CommercialCta";
 import { siteConfig } from "@/lib/config";
 import { pageTitle, metaDescription } from "@/lib/meta";
 
@@ -220,6 +221,8 @@ export default async function GlossaryTermPage({ params }: GlossaryTermPageProps
               </div>
             </section>
           )}
+
+          <CommercialCta />
 
           <section className="border-t border-border pt-8" aria-labelledby="share-heading">
             <h2 id="share-heading" className="text-lg font-semibold text-foreground mb-4">Share this term</h2>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { fixes, getFix, getFixesForService } from "@/lib/fixes";
 import { Button, Reveal } from "@/components/ui";
 import { GuideActions } from "@/components/guides/GuideActions";
+import { CommercialCta } from "@/components/guides/CommercialCta";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
@@ -174,6 +175,8 @@ export default async function FixPage({ params }: Props) {
                 {fix.serviceLabel} →
               </Link>
             </p>
+
+            <CommercialCta />
 
             {others.length > 0 && (
               <div className="mt-10">

@@ -5,6 +5,7 @@ import { guides, getGuide, getGuidesForService } from "@/lib/guides";
 import { guideUpdated } from "@/lib/guides";
 import { Button, FAQAccordion, Reveal } from "@/components/ui";
 import { GuideActions } from "@/components/guides/GuideActions";
+import { CommercialCta } from "@/components/guides/CommercialCta";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/config";
@@ -173,6 +174,8 @@ export default async function GuidePage({ params }: Props) {
                 {guide.serviceLabel} →
               </Link>
             </p>
+
+            <CommercialCta />
           </div>
         </div>
       </section>
