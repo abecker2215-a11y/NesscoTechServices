@@ -106,6 +106,25 @@ const nextConfig: NextConfig = {
       { source: "/services/voip-phone-systems", destination: "/services/communications/phone-systems", permanent: true },
       { source: "/services/it-consulting", destination: "/services/managed-it-services/consulting", permanent: true },
       { source: "/services/compliance-support", destination: "/services/it-security/audit-compliance", permanent: true },
+      // Old service paths that 404 (recover link equity)
+      { source: "/services/backup", destination: "/services/backup-disaster-recovery", permanent: true },
+      { source: "/services/phone-systems", destination: "/services/communications/phone-systems", permanent: true },
+      { source: "/services/cybersecurity-suite", destination: "/services/it-security", permanent: true },
+      { source: "/services/offsite-dr", destination: "/services/backup-disaster-recovery", permanent: true },
+      { source: "/services/mobile-seo", destination: "/services", permanent: true },
+      { source: "/services/monthly-seo-reporting", destination: "/services", permanent: true },
+      { source: "/services/testimonial-strategy", destination: "/services", permanent: true },
+      { source: "/services/ai-data-analytics", destination: "/services", permanent: true },
+      { source: "/services/ai-strategy-consulting", destination: "/services", permanent: true },
+      { source: "/services/green-hosting", destination: "/services", permanent: true },
+      // Old trailing-dash glossary slugs -> clean slugs
+      { source: "/glossary/mttr-mean-time-to-repair-", destination: "/glossary/mttr", permanent: true },
+      { source: "/glossary/slo-service-level-objective-", destination: "/glossary/slo", permanent: true },
+      { source: "/glossary/san-storage-area-network-", destination: "/glossary/san", permanent: true },
+      { source: "/glossary/raid-redundant-array-of-independent-disks-", destination: "/glossary/raid", permanent: true },
+      { source: "/glossary/sla-service-level-agreement-", destination: "/glossary/sla", permanent: true },
+      { source: "/glossary/siem-security-information-event-management-", destination: "/glossary/siem", permanent: true },
+      { source: "/glossary/soc-security-operations-center-", destination: "/glossary/soc", permanent: true },
       // Managed IT cannibalization: keep /managed-it-services-tampa as the canonical Tampa page
       { source: "/managed-it-services/", destination: "/managed-it-services-tampa", permanent: true },
       // Business IT Support Tampa: consolidate /services/managed-it-services to the Tampa location page
