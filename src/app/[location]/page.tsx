@@ -285,10 +285,10 @@ export default async function LocationPage({ params }: Props) {
                   <ul className="space-y-2" role="list">
                     {cityGuides.map((g) => (
                       <li key={g.slug}>
-                        <a href={`/guides/${g.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
+                        <Link href={`/guides/${g.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
                           <span className="block text-sm font-medium text-foreground">{g.title.split(/[—:(]/)[0].trim()}</span>
                           <span className="text-xs text-muted-foreground">{g.readMinutes} min read</span>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -298,10 +298,10 @@ export default async function LocationPage({ params }: Props) {
                   <ul className="space-y-2" role="list">
                     {cityFixes.map((f) => (
                       <li key={f.slug}>
-                        <a href={`/fixes/${f.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
+                        <Link href={`/fixes/${f.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
                           <span className="block text-sm font-medium text-foreground">{f.title}</span>
                           <span className="text-xs text-muted-foreground">{f.readMinutes} min fix</span>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -312,6 +312,15 @@ export default async function LocationPage({ params }: Props) {
                 {" · "}
                 <Link href="/fixes" className="font-medium text-primary hover:underline">All quick fixes</Link>
               </p>
+              <p className="mt-3 text-center text-sm text-muted-foreground">
+                <Link href="/managed-it-services-tampa" className="font-medium text-primary hover:underline">Managed IT services in Tampa</Link>
+                {" · "}
+                <Link href="/managed-it-services-cost-tampa" className="font-medium text-primary hover:underline">Managed IT cost in Tampa</Link>
+                {" · "}
+                <Link href="/managed-it-vs-break-fix" className="font-medium text-primary hover:underline">Managed IT vs break-fix</Link>
+                {" · "}
+                <Link href="/how-to-choose-an-msp-tampa" className="font-medium text-primary hover:underline">How to choose an MSP</Link>
+              </p>
               {loc.slug === "it-support-tampa" && (
                 <div className="mt-8">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tampa IT resources</p>
@@ -319,10 +328,10 @@ export default async function LocationPage({ params }: Props) {
                     {tampaPosts
                       .map((a) => (
                         <li key={a.slug}>
-                          <a href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
+                          <Link href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
                             <span className="block text-sm font-medium text-foreground">{a.title}</span>
                             <span className="text-xs text-muted-foreground">{a.readTime}</span>
-                          </a>
+                          </Link>
                         </li>
                       ))}
                   </ul>
@@ -344,13 +353,13 @@ export default async function LocationPage({ params }: Props) {
             </div>
             <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
               {nearbyLocations.map((l) => (
-                <a
+                <Link
                   key={l.slug}
                   href={`/${l.slug}`}
                   className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground lift-hover"
                 >
                   IT Support in {l.name}
-                </a>
+                </Link>
               ))}
             </div>
           </Reveal>
