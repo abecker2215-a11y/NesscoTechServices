@@ -47,7 +47,7 @@ const managedFaqs: FAQItem[] = [
 export const metadata: Metadata = {
   title: pageTitle("Managed IT Services in Tampa, FL"),
   description: metaDescription(
-    "Managed IT services in Tampa, FL for businesses with 5-500 employees. 24/7 monitoring, cybersecurity, Microsoft 365, backups, and helpdesk. Remote from $75/hr."
+    "Managed IT services in Tampa, FL for businesses with 5-500 employees. Per-user plans from $89/mo with 24/7 monitoring, cybersecurity, Microsoft 365, backups, and helpdesk."
   ),
   alternates: { canonical: "https://nesscotech.com/managed-it-services-tampa" },
   openGraph: {
@@ -155,7 +155,7 @@ export default async function ManagedItServicesTampaPage() {
             </ul>
             <p className="mt-4 text-sm text-muted-foreground">
               <span className="font-medium text-foreground">Pricing: </span>
-              Remote support from $75/hr, on-site from $125/hr. Managed plans quoted by scope.
+              Remote support from $75/hr, on-site from $125/hr. Managed plans from $89/user/mo — see the pricing table below.
             </p>
           </div>
 
@@ -331,16 +331,23 @@ export default async function ManagedItServicesTampaPage() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {tampaPosts.map((a) => (
-                  <a key={a.slug} href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
+                  <Link key={a.slug} href={`/blog/${a.slug}`} className="block rounded-lg border border-border p-3 hover:border-primary/50 transition-colors">
                     <span className="block text-sm font-medium text-foreground">{a.title}</span>
                     <span className="text-xs text-muted-foreground">{a.readTime}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
               <p className="mt-6 text-center text-sm text-muted-foreground">
                 <Link href="/it-support-tampa" className="font-medium text-primary hover:underline">IT support in Tampa</Link>
                 {" · "}
-                <Link href="/services/managed-it-services" className="font-medium text-primary hover:underline">Managed IT services</Link>
+                <Link href="/managed-it-services" className="font-medium text-primary hover:underline">Managed IT services</Link>
+              </p>
+              <p className="mt-3 text-center text-sm text-muted-foreground">
+                <Link href="/managed-it-services-cost-tampa" className="font-medium text-primary hover:underline">How much managed IT costs in Tampa</Link>
+                {" · "}
+                <Link href="/managed-it-vs-break-fix" className="font-medium text-primary hover:underline">Managed IT vs break-fix</Link>
+                {" · "}
+                <Link href="/how-to-choose-an-msp-tampa" className="font-medium text-primary hover:underline">How to choose an MSP</Link>
               </p>
             </div>
           </Reveal>
