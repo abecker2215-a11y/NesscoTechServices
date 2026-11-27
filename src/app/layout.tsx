@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: "Managed IT, cybersecurity, cloud, and network services for Tampa Bay businesses.",
     images: [
       {
-        url: "https://nesscotech.com/hero/homepage-hero.png",
+        url: "https://nesscotech.com/hero/homepage-hero.webp",
         width: 1200,
         height: 630,
         alt: "Nessco Tech Services — Tampa Bay IT Support",

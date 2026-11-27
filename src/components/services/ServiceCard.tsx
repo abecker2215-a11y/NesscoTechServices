@@ -10,14 +10,14 @@ interface ServiceCardProps {
 }
 
 const imageMap: Record<string, string> = {
-  "managed-it-services": "/services-images/managed-it-services.png",
-  "it-security": "/services-images/it-security.png",
-  "cloud-solutions": "/services-images/cloud-solutions.png",
-  "network-server": "/services-images/network-server.png",
-  "it-support": "/services-images/it-support.png",
-  "backup-disaster-recovery": "/services-images/backup-disaster-recovery.png",
-  applications: "/services-images/applications.png",
-  communications: "/services-images/communications.png",
+  "managed-it-services": "/services-images/managed-it-services.webp",
+  "it-security": "/services-images/it-security.webp",
+  "cloud-solutions": "/services-images/cloud-solutions.webp",
+  "network-server": "/services-images/network-server.webp",
+  "it-support": "/services-images/it-support.webp",
+  "backup-disaster-recovery": "/services-images/backup-disaster-recovery.webp",
+  applications: "/services-images/applications.webp",
+  communications: "/services-images/communications.webp",
 };
 
 export function ServiceCard({ service, variant = "grid" }: ServiceCardProps) {

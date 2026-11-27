@@ -17,11 +17,11 @@ export function HeroBanner({ src: customSrc }: HeroBannerProps) {
           return;
         }
         if (window.innerWidth <= 639) {
-          setSrc("/hero/homepage-hero-mobile.png");
-        } else if (window.innerWidth <= 1023) {
-          setSrc("/hero/homepage-hero-tablet.png");
+          setSrc("/hero/homepage-hero-mobile.webp");
+        } else if (window.innerWidth <= 1024) {
+          setSrc("/hero/homepage-hero-tablet.webp");
         } else {
-          setSrc("/hero/homepage-hero.png");
+          setSrc("/hero/homepage-hero.webp");
         }
       }
     };

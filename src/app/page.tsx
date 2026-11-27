@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://nesscotech.com/hero/homepage-hero.png",
+        url: "https://nesscotech.com/hero/homepage-hero.webp",
         width: 1200,
         height: 630,
         alt: "Nessco Tech Services — Managed IT Services & Cybersecurity Tampa Bay",
@@ -46,49 +46,49 @@ const serviceCategories = [
   {
     id: "managed-it-services",
     label: "Managed IT Services",
-    image: "/services-images/managed-it-services.png",
+    image: "/services-images/managed-it-services.webp",
     description: "Complete IT management, monitoring, and strategy.",
   },
   {
     id: "it-security",
     label: "IT Security",
-    image: "/services-images/it-security.png",
+    image: "/services-images/it-security.webp",
     description: "Protect your business from cyber threats.",
   },
   {
     id: "cloud-solutions",
     label: "Cloud Solutions",
-    image: "/services-images/cloud-solutions.png",
+    image: "/services-images/cloud-solutions.webp",
     description: "Migrate and manage workloads in the cloud.",
   },
   {
     id: "network-server",
     label: "Network & Server",
-    image: "/services-images/network-server.png",
+    image: "/services-images/network-server.webp",
     description: "Design, build, and manage your infrastructure.",
   },
   {
     id: "it-support",
     label: "IT Support & Helpdesk",
-    image: "/services-images/it-support.png",
+    image: "/services-images/it-support.webp",
     description: "Responsive helpdesk and on-site support.",
   },
   {
     id: "backup-disaster-recovery",
     label: "Backup & Disaster Recovery",
-    image: "/services-images/backup-disaster-recovery.png",
+    image: "/services-images/backup-disaster-recovery.webp",
     description: "Protect data and keep the business running.",
   },
   {
     id: "applications",
     label: "Applications",
-    image: "/services-images/applications.png",
+    image: "/services-images/applications.webp",
     description: "Host, migrate, and manage business applications.",
   },
   {
     id: "communications",
     label: "Communications",
-    image: "/services-images/communications.png",
+    image: "/services-images/communications.webp",
     description: "Unified voice, video, and team messaging.",
   },
 ].map((c) => ({
@@ -203,7 +203,7 @@ export default function HomePage() {
             aria-label="Get Help - Step 1: Tell Us the Problem"
           >
             <Image
-              src="/services-images/how-it-works.png"
+              src="/services-images/how-it-works.webp"
               alt="How It Works: Get Help in 3 Steps — Three simple steps: Tell Us the Problem, We Diagnose & Quote, Fixed & Follow Up"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -282,7 +282,7 @@ export default function HomePage() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg bg-background">
                 <Image
-                  src="/services-images/remote-support.png"
+                  src="/services-images/remote-support.webp"
                   alt="Remote Support — secure remote desktop sessions starting at $75/hr for software issues, configuration, and quick fixes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -305,7 +305,7 @@ export default function HomePage() {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg bg-background">
                 <Image
-                  src="/services-images/on-site-support.png"
+                  src="/services-images/on-site-support.webp"
                   alt="On-Site Support — hardware repair, network cabling, and device setup starting at $125/hr in the Tampa Bay area"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
