@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Star, MapPin, BadgeCheck } from "lucide-react";
 import { Reveal } from "@/components/ui";
 import { testimonials, businessStats, type Testimonial } from "@/lib/testimonials";
@@ -18,8 +19,7 @@ function initials(name: string) {
 
 function Avatar({ t }: { t: Testimonial }) {
   if (t.photoUrl) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={t.photoUrl} alt={`${t.name}`} width={40} height={40} className="h-10 w-10 rounded-full object-cover" loading="lazy" />;
+    return <Image src={t.photoUrl} alt={`${t.name}`} width={40} height={40} className="h-10 w-10 rounded-full object-cover" />;
   }
   return (
     <span

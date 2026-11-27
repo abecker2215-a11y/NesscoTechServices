@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface HeroBannerProps {
   src?: string;
@@ -33,12 +34,15 @@ export function HeroBanner({ src: customSrc }: HeroBannerProps) {
   if (!src) return null;
 
   return (
-    <img
+    <Image
       src={src}
       alt="Nessco Tech Services banner"
+      width={1200}
+      height={630}
+      priority
+      sizes="100vw"
       className="object-contain object-top w-full h-auto block"
       decoding="async"
-      loading="eager"
     />
   );
 }

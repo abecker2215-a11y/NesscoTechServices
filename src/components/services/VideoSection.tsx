@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Play, X, Clock, BadgeCheck, Video } from "lucide-react";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { trackEvent } from "@/lib/analytics";
@@ -68,8 +69,7 @@ export function VideoSection({ serviceSlug, serviceTitle, pageUrl }: { serviceSl
               >
                 <div className="relative aspect-video bg-muted flex items-center justify-center">
                   {v.poster ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={v.poster} alt="" width={640} height={360} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    <Image src={v.poster} alt="" width={640} height={360} className="absolute inset-0 h-full w-full object-cover" />
                   ) : null}
                   <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform group-hover:scale-110">
                     <Play className="h-6 w-6 ml-0.5" aria-hidden="true" />

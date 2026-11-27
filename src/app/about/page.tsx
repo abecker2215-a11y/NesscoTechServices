@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { locations } from "@/lib/locations";
 import { businessStats } from "@/lib/testimonials";
@@ -246,12 +247,11 @@ export default function AboutPage() {
                   className="flex flex-row gap-4 items-center rounded-xl border border-border bg-background p-6 hover:border-primary/50 transition-colors"
                 >
                   <div className="shrink-0 h-64 w-64 aspect-square rounded-xl overflow-hidden border border-border bg-muted">
-                      <img
+                      <Image
                       src={service.image}
                       alt={service.title}
                       width={256}
                       height={256}
-                      loading="lazy"
                       className="h-64 w-64 object-cover"
                     />
                   </div>
@@ -460,14 +460,12 @@ export default function AboutPage() {
                 {team.map((member, index) => (
                   <article key={index} className="p-8 rounded-xl border border-border bg-background text-center lift-hover">
                     {member.photoUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
+                      <Image
                         src={member.photoUrl}
                         alt={member.name}
                         width={128}
                         height={128}
                         className="mx-auto mb-4 h-32 w-32 rounded-full object-cover shadow-md"
-                        loading="lazy"
                       />
                     ) : (
                       <div

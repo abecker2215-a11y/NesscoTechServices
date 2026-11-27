@@ -3,9 +3,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MobileCTABar } from "./MobileCTABar";
-import { ChatWidget } from "@/components/chat/ChatWidget";
-import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
-import { CallTracker } from "@/components/CallTracker";
+import { LazyWidgets } from "./LazyWidgets";
 
 export interface PageContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -26,9 +24,7 @@ export function PageContainer({ children, skipLink = true, className, ...props }
       </main>
       <Footer />
       <MobileCTABar />
-      <ChatWidget />
-      <ExitIntentPopup />
-      <CallTracker />
+      <LazyWidgets />
     </div>
   );
 }
