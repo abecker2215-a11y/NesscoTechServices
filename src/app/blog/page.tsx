@@ -25,7 +25,7 @@ const baseMetadata: Metadata = {
   title: pageTitle("IT Resources & Blog"),
   description:
     metaDescription("IT tips and security alerts for Tampa Bay businesses. Free guides, quick fixes, and technology advice from your local IT team."),
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "https://nesscotech.com/blog" },
   openGraph: {
     title: pageTitle("IT Resources & Blog"),
     description:
@@ -108,10 +108,10 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   // Canonical should point to the proper category route, not a query-param filter URL.
   let canonical: string;
   if (slug && slug !== "all") {
-    canonical = `/blog/category/${slug}`;
+    canonical = `https://nesscotech.com/blog/category/${slug}`;
     if (currentPage > 1) canonical += `?page=${currentPage}`;
   } else {
-    canonical = buildHref({ category, q, page: currentPage });
+    canonical = `https://nesscotech.com${buildHref({ category, q, page: currentPage })}`;
   }
 
   return {
