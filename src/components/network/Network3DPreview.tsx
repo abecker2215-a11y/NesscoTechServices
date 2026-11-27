@@ -181,7 +181,7 @@ export function Network3DPreview({ className }: Network3DPreviewProps) {
         </button>
         <Button
           size="sm"
-          href="/network-visualization"
+          href="/services/network-server"
           className="gap-1 text-xs"
         >
           Full Demo <ArrowRight className="h-3 w-3" />

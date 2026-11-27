@@ -94,6 +94,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/ai-vendor-due-diligence-the-questions-that-matter", destination: "/blog/ai-vendor-due-diligence", permanent: true },
       { source: "/blog/microsoft-365-teams-call-queues-and-auto-attendants", destination: "/blog/teams-phone-call-queues-and-auto-attendants", permanent: true },
       { source: "/:path*", has: [{ type: "host", value: "www.nesscotech.com" }], destination: "https://nesscotech.com/:path*", permanent: true },
+      { source: "/network-visualization", destination: "/services/network-server", permanent: true },
       { source: "/services/computer-repair", destination: "/services/it-support/pc-mac", permanent: true },
       { source: "/services/wifi-networking", destination: "/services/network-server/wireless", permanent: true },
       { source: "/services/network-installation", destination: "/services/network-server/infrastructure", permanent: true },
